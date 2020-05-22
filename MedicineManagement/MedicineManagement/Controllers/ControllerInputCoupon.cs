@@ -100,7 +100,7 @@ namespace MedicineManagement.Controllers
         }
 
         // update all Inputcoupon row
-        public void Update()
+        public void refresh()
         {
             try
             {
@@ -109,7 +109,7 @@ namespace MedicineManagement.Controllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Cập nhật thất bại");
+                MessageBox.Show(ex.Message, "Lỗi refresh");
             }
             finally
             {
@@ -117,14 +117,47 @@ namespace MedicineManagement.Controllers
             }
         }
 
-        // update 1 Inputcouponline row
+
+
+        public void Insert(Inputcoupon inputcoupon)
+        {
+            using (var command = new SqlCommand { Connection = connection })
+            {
+                connection.Open();
+                command.CommandText = QueryInsert(inputcoupon); 
+                var count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                }
+                connection.Close();
+            }
+        }
+
+        private string QueryInsert(Inputcoupon inputcoupon)
+        {
+            string query ="";            
+
+            string CreateDate; try { CreateDate = inputcoupon.CreateDate.ToShortDateString().Trim(); } catch { CreateDate = ""; }
+            string ID_Supplier; try { ID_Supplier = inputcoupon.ID_Supplier.ToString().Trim(); } catch { ID_Supplier = ""; }
+            string TotalMoney; try { TotalMoney = inputcoupon.TotalMoney.ToString().Trim(); } catch { TotalMoney = ""; }
+            
+            if (CreateDate == "") { CreateDate = "null"; }
+            if (ID_Supplier == "") { ID_Supplier = "null"; }
+            if (TotalMoney == "") { TotalMoney = "0"; }
+            query = "INSERT DBO.INPUTCOUPON(CreateDate, ID_Supplier, TotalMoney) VALUES ( "+ CreateDate + ", " + ID_Supplier + ", " + TotalMoney+ ")";
+            return query;
+        }
+
+        // update 1 Inputcoupon row
         public void Update(Inputcoupon inputcoupon)
         {
             string query = QueryUpdate(inputcoupon);
-            if (QueryUpdate(inputcoupon) == "")
+            if (query == "")
+            {
+                MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
                 return;
-
-
+            }
             using (var command = new SqlCommand { Connection = connection })
             {
                 connection.Open();
@@ -146,16 +179,40 @@ namespace MedicineManagement.Controllers
             string ID_Supplier; try { ID_Supplier = inputcoupon.ID_Supplier.ToString().Trim(); } catch { ID_Supplier = ""; }
             string TotalMoney; try { TotalMoney = inputcoupon.TotalMoney.ToString().Trim(); } catch { TotalMoney = ""; }
            
-            if (ID_InputCoupon == null)
-                return query;            
+            if (ID_InputCoupon == "")
+            {                
+                return query;
+            }                          
 
             if (CreateDate == "") { CreateDate = "null"; }
             if (ID_Supplier == "") { ID_Supplier = "null"; }
             if (TotalMoney == "") { TotalMoney = "0"; }
             
-            query = "Update DBO.INPUTCOUPONLINE set " + ID_InputCouponLine + ", " + ID_InputCoupon + ", " + ID_Medicine + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", " + ExpiryDate + ", " + NumUnitOutput + ", " + ProductionBatch;
+            query = "EXEC UpdateINPUTCOUPON " + ID_InputCoupon + ", " + CreateDate + ", " + ID_Supplier + ", " + TotalMoney;
 
             return query;
         }
+
+        public void Delete(string ID_InputCoupon)
+        {
+            try
+            {
+                ID_InputCoupon = ID_InputCoupon.Trim();
+                string query = "Delete DBO.INPUTCOUPON WHERE ID_InputCoupon = " + ID_InputCoupon;
+                using (var command = new SqlCommand { Connection = connection })
+                {
+                    connection.Open();
+                    command.CommandText = query;
+                    var count = command.ExecuteNonQuery();                    
+                    connection.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+       
     }
 }

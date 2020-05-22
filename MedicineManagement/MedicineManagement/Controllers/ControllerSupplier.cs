@@ -95,5 +95,125 @@ namespace MedicineManagement.Controllers
             }
             return query;
         }
+
+        public void refresh()
+        {
+            try
+            {
+                adapter.Update(ds, "SUPPLIER");
+                cb.RefreshSchema();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi refresh");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+
+        public void Insert(Supplier supplier)
+        {
+                       
+            using (var command = new SqlCommand { Connection = connection })
+            {
+                connection.Open();
+                command.CommandText = QueryInsert(supplier);
+                var count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                }
+                connection.Close();
+            }
+        }
+
+        private string QueryInsert(Supplier supplier)
+        {
+            string query = "";
+            string Name; try { Name = supplier.Name.ToString().Trim(); } catch { Name = ""; }
+            string Address; try { Address = supplier.Address.ToString().Trim(); } catch { Address = ""; }
+            string Phone; try { Phone = supplier.Phone.ToString().Trim(); } catch { Phone = ""; }
+            string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }       
+
+            if (Name == "") { Name = "null"; }
+            if (Address == "") { Address = "null"; }
+            if (Phone == "") { Phone = "null"; }
+            if (Email == "") { Email = "null"; }
+
+            query = "INSERT DBO.SUPPLIER (Name, Address, Phone, Email) VALUES ( " + Name + ", " + Address + ", " + Phone + ", " + Email + ")";
+            return query;
+        }
+
+        // update 1 Inputcoupon row
+        public void Update(Supplier supplier)
+        {
+            string query = QueryUpdate(supplier);
+            if (query == "")
+            {
+                MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            using (var command = new SqlCommand { Connection = connection })
+            {
+                connection.Open();
+                command.CommandText = query;
+                var count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                }
+                connection.Close();
+            }
+        }
+        public string QueryUpdate(Supplier supplier)
+        {
+            string query = "";
+            string ID_Supplier; try { ID_Supplier = supplier.ID_Supplier.ToString().Trim(); } catch { ID_Supplier = ""; }
+
+            string Name; try { Name = supplier.Name.ToString().Trim(); } catch { Name = ""; }
+            string Address; try { Address = supplier.Address.ToString().Trim(); } catch { Address = ""; }
+            string Phone; try { Phone = supplier.Phone.ToString().Trim(); } catch { Phone = ""; }
+            string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }
+
+            if (ID_Supplier == "")
+            {
+                return query;
+            }
+
+            if (Name == "") { Name = "null"; }
+            if (Address == "") { Address = "null"; }
+            if (Phone == "") { Phone = "null"; }
+            if (Email == "") { Email = "null"; }
+
+            query = "EXEC UpdateSUPPLIER " + ID_Supplier + ", " + Name + ", " + Address + ", " + Phone + ", " + Email;
+
+            return query;
+        }
+
+        public void Delete(string ID_Supplier)
+        {
+            try
+            {
+                ID_Supplier = ID_Supplier.Trim();
+                string query = "Delete DBO.SUPPLIER  WHERE ID_Supplier = " + ID_Supplier;
+                using (var command = new SqlCommand { Connection = connection })
+                {
+                    connection.Open();
+                    command.CommandText = query;
+                    var count = command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }

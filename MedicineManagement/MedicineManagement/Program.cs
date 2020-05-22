@@ -21,9 +21,7 @@ namespace MedicineManagement
 
 
             Application.Run(new Form1());
-            ControllerPrescription ctr = new ControllerPrescription();
-
-            DataTable dt = ctr.Search(new Models.Prescription { });
+            
 
         }
     }

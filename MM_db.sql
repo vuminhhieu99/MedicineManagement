@@ -69,7 +69,7 @@ CREATE TABLE SUPPLIER (
 	 Name nvarchar (max) NULL,
 	 Address nvarchar (max) NULL,
 	 Phone varchar (20) NULL,
-	 Email varbinary (max) NULL,
+	 Email varchar (100) NULL,
  CONSTRAINT  PK_NHACUNGCAP  PRIMARY KEY (	 ID_Supplier )
  )
 GO
@@ -267,14 +267,33 @@ BEGIN
 	UPDATE dbo.INPUTCOUPON SET [CreateDate] = @CreateDate, [TotalMoney] = @TotalMoney, [ID_Supplier] =@ID_Supplier
 	WHERE ID_InputCoupon = @ID_InputCoupon
 END
-
+GO
 -- Update PRESCRIPTION
 CREATE PROC UpdatePRESCRIPTION (@ID_Prescription INT, @CreateDate DATE, @Doctor NVARCHAR(100), @MedicalRecord INT, @Drugstores INT, @TotalMoney DECIMAL(10,0))
 AS
 BEGIN
-	UPDATE dbo.INPUTCOUPON SET [CreateDate] = @CreateDate, [TotalMoney] = @TotalMoney, [ID_Supplier] =@ID_Supplier
-	WHERE ID_InputCoupon = @ID_InputCoupon
+	UPDATE dbo.PRESCRIPTION SET [CreateDate] = @CreateDate, [Doctor] =@Doctor, [MedicalRecord] = @MedicalRecord, [TotalMoney]= @TotalMoney
+	WHERE [ID_Prescription] = @ID_Prescription
 END
+GO
+
+-- Update SUPPLIER
+CREATE PROC UpdateSUPPLIER(@ID_Supplier INT, @Name NVARCHAR(MAX), @Address NVARCHAR(MAX), @Phone VARCHAR(20), @Email INT)
+AS
+BEGIN
+	UPDATE dbo.SUPPLIER SET [Name] = @Name, [Address] =@Address, [Phone] = @Phone, [Email]= @Email
+	WHERE [ID_Supplier] = @ID_Supplier
+END
+GO
+
+
+CREATE PROC UpdateMEDICINE (@ID_Medicine INT, @Name NVARCHAR(100), @MedicineGroup NVARCHAR(100), @Uses NVARCHAR(MAX), @Unit NVARCHAR(50), @Price DECIMAL(10,0), @TotalInventory INT, @Note NVARCHAR(MAX), @MostUsedMonth INT)
+AS
+BEGIN
+	UPDATE dbo.MEDICINE SET [Name] = @Name, [MedicineGroup] = @MedicineGroup, [Uses] =@Uses, [Unit] = @Unit, [Price] = @Price, [TotalInventory] = @TotalInventory, [Note] = @Note, [MostUsedMonth] = @MostUsedMonth
+	WHERE [ID_Medicine] = @ID_Medicine
+END
+GO
 ------------------
 
 -- Update INPUTCOUPONLINE
