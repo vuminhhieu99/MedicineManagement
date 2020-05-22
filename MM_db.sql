@@ -56,7 +56,7 @@ GO
 
 CREATE TABLE PRESCRIPTIONLINE (
 	 ID_Prescription int  NOT NULL,
-	 ID_Medicine int  NOT NULL,
+	 ID_Medicine int NULL,
 	 Amount int  NULL,
 	 HealthInsurance decimal (10, 0) NULL,
 	 IntoMoney decimal (10, 0) NULL,

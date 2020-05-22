@@ -100,7 +100,7 @@ namespace MedicineManagement.Controllers
         }
 
         // update all Inputcoupon row
-        public void refresh()
+        public void Refresh()
         {
             try
             {
@@ -116,9 +116,7 @@ namespace MedicineManagement.Controllers
                 connection.Close();
             }
         }
-
-
-
+                
         public void Insert(Inputcoupon inputcoupon)
         {
             using (var command = new SqlCommand { Connection = connection })
