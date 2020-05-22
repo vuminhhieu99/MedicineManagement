@@ -7,3 +7,25 @@ E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManage
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.pdb
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe.config
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.pdb
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CopyComplete
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTrangChu.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.CaiDat.UcCaiDat.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.DonThuoc.UcDonThuoc.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.UcNhaCungCap.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhapHang.UcNhapHang.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.UcPhieuNhap.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.ThongTin.UcThongTin.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UcBanThuoc.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UcQuanLyThuoc.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UI_Example.UcExample.resources
+C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.FormMain.resources

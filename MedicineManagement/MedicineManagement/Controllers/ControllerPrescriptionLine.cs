@@ -76,7 +76,7 @@ namespace MedicineManagement.Controllers
 
             string ID_Prescription; try { ID_Prescription = prescriptionline.ID_Prescription.ToString().Trim(); } catch { ID_Prescription = ""; }
             string ID_Medicine; try { ID_Medicine = prescriptionline.ID_Medicine.ToString().Trim(); } catch { ID_Medicine = ""; }
-            string Search_MinAmount; try { Search_MinAmount = prescriptionline.Search_MinAmount.ToString().Trim(); } catch { Search_MinAmount="" }
+            string Search_MinAmount; try { Search_MinAmount = prescriptionline.Search_MinAmount.ToString().Trim(); } catch { Search_MinAmount = ""; }
             string Search_MaxAmount = prescriptionline.Search_MaxAmount.ToString().Trim();
             string HealthInsurance = prescriptionline.HealthInsurance.ToString().Trim();           
             string Search_MinIntoMoney = prescriptionline.Search_MinIntoMoney.ToString().Trim();
