@@ -118,25 +118,8 @@ namespace MedicineManagement.Controllers
                 
         public void Insert(Inputcoupon inputcoupon)
         {
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = QueryInsert(inputcoupon);
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message)
-            }
-           
+            string query = QueryInsert(inputcoupon);
+            ExecuteNonQuery(query);  
         }
 
         private string QueryInsert(Inputcoupon inputcoupon)
@@ -163,25 +146,8 @@ namespace MedicineManagement.Controllers
                 MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            ExecuteNonQuery(query);
+
         }
         public string QueryUpdate(Inputcoupon inputcoupon)
         {
@@ -208,22 +174,10 @@ namespace MedicineManagement.Controllers
 
         public void Delete(string ID_InputCoupon)
         {
-            try
-            {
-                ID_InputCoupon = ID_InputCoupon.Trim();
-                string query = "Delete DBO.INPUTCOUPON WHERE ID_InputCoupon = " + ID_InputCoupon;
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();                    
-                    connection.Close();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+            ID_InputCoupon = ID_InputCoupon.Trim();
+            string query = "Delete DBO.INPUTCOUPON WHERE ID_InputCoupon = " + ID_InputCoupon;
+            ExecuteNonQuery(query);           
         }
        
     }

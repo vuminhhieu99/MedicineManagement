@@ -113,29 +113,10 @@ namespace MedicineManagement.Controllers
             }
         }
 
-
-
         public void Insert(Supplier supplier)
         {
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = QueryInsert(supplier);
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            string query = QueryInsert(supplier);
+            ExecuteNonQuery(query); 
         }
 
         private string QueryInsert(Supplier supplier)
@@ -164,26 +145,9 @@ namespace MedicineManagement.Controllers
                 MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            ExecuteNonQuery(query);            
         }
+
         public string QueryUpdate(Supplier supplier)
         {
             string query = "";
@@ -205,29 +169,14 @@ namespace MedicineManagement.Controllers
             if (Email == "") { Email = "null"; }
 
             query = "EXEC UpdateSUPPLIER " + ID_Supplier + ", " + Name + ", " + Address + ", " + Phone + ", " + Email;
-
             return query;
         }
 
         public void Delete(string ID_Supplier)
-        {
-            try
-            {
-                ID_Supplier = ID_Supplier.Trim();
-                string query = "Delete DBO.SUPPLIER  WHERE ID_Supplier = " + ID_Supplier;
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+        {            
+            ID_Supplier = ID_Supplier.Trim();
+            string query = "Delete DBO.SUPPLIER  WHERE ID_Supplier = " + ID_Supplier;
+            ExecuteNonQuery(query);
         }
 
     }

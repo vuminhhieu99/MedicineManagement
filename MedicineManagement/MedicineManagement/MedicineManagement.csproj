@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Thực tập CSDL\something\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,11 +58,23 @@
     <Compile Include="Controllers\ControllerPrescription.cs" />
     <Compile Include="Controllers\ControllerPrescriptionLine.cs" />
     <Compile Include="Controllers\ControllerSupplier.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Views\CaiDat\UcCaiDat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CaiDat\UcCaiDat.Designer.cs">
+      <DependentUpon>UcCaiDat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DonThuoc\UcDonThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DonThuoc\UcDonThuoc.Designer.cs">
+      <DependentUpon>UcDonThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainUI\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\MainUI\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Inputcoupon.cs" />
     <Compile Include="Models\Inputcouponline.cs" />
@@ -67,6 +84,63 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\NhaCungCap\UcNhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NhaCungCap\UcNhaCungCap.Designer.cs">
+      <DependentUpon>UcNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhapHang\UcNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NhapHang\UcNhapHang.Designer.cs">
+      <DependentUpon>UcNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhieuNhap\UcPhieuNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PhieuNhap\UcPhieuNhap.Designer.cs">
+      <DependentUpon>UcPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThongTin\UcThongTin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ThongTin\UcThongTin.Designer.cs">
+      <DependentUpon>UcThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcTrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcTrangChu.Designer.cs">
+      <DependentUpon>UcTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BanThuoc\UcBanThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BanThuoc\UcBanThuoc.Designer.cs">
+      <DependentUpon>UcBanThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\UcQuanLyThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\UcQuanLyThuoc.Designer.cs">
+      <DependentUpon>UcQuanLyThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UI Example\UcExample.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UI Example\UcExample.Designer.cs">
+      <DependentUpon>UcExample.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\CaiDat\UcCaiDat.resx">
+      <DependentUpon>UcCaiDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DonThuoc\UcDonThuoc.resx">
+      <DependentUpon>UcDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainUI\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,7 +149,32 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\NhaCungCap\UcNhaCungCap.resx">
+      <DependentUpon>UcNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhapHang\UcNhapHang.resx">
+      <DependentUpon>UcNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhieuNhap\UcPhieuNhap.resx">
+      <DependentUpon>UcPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ThongTin\UcThongTIn.resx">
+      <DependentUpon>UcThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrangChu\UcTrangChu.resx">
+      <DependentUpon>UcTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BanThuoc\UcBanThuoc.resx">
+      <DependentUpon>UcBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLyThuoc\UcQuanLyThuoc.resx">
+      <DependentUpon>UcQuanLyThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UI Example\UcExample.resx">
+      <DependentUpon>UcExample.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,8 +189,33 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
     <Folder Include="Views\Template\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\alert.png" />
+    <Content Include="Content\bell.png" />
+    <Content Include="Content\btn exit.png" />
+    <Content Include="Content\btn minimize.png" />
+    <Content Include="Content\create.png" />
+    <Content Include="Content\delete.png" />
+    <Content Include="Content\detail.png" />
+    <Content Include="Content\edit.png" />
+    <Content Include="Content\export.png" />
+    <Content Include="Content\icon program.ico" />
+    <Content Include="Content\icon-home.png" />
+    <Content Include="Content\icon-info.png" />
+    <Content Include="Content\icon-input.png" />
+    <Content Include="Content\icon-manage.png" />
+    <Content Include="Content\icon-medicine.png" />
+    <Content Include="Content\icon-output.png" />
+    <Content Include="Content\icon-paper.png" />
+    <Content Include="Content\icon-provided.png" />
+    <Content Include="Content\icon-sell.png" />
+    <Content Include="Content\icon-setup.png" />
+    <Content Include="Content\kissclipart-medical-symbol-clipart-caduceus-as-a-symbol-of-med-4ad9414f9ee75178.png" />
+    <Content Include="Content\logo.png" />
+    <Content Include="Content\search.png" />
+    <Content Include="Content\statistical.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

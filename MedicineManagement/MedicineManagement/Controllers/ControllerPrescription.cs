@@ -122,24 +122,8 @@ namespace MedicineManagement.Controllers
 
         public void Insert(Prescription prescription)
         {
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = QueryInsert(prescription);
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            string query= QueryInsert(prescription);
+            ExecuteNonQuery(query);           
         }
 
         private string QueryInsert(Prescription prescription)
@@ -170,24 +154,7 @@ namespace MedicineManagement.Controllers
                 MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }            
+            ExecuteNonQuery(query);
         }
 
         public string QueryUpdate(Prescription prescription)
@@ -217,23 +184,10 @@ namespace MedicineManagement.Controllers
 
         public void Delete(string ID_Prescription)
         {
-            try
-            {
-                ID_InputCoupon = ID_InputCoupon.Trim();
-                string query = "Delete DBO.PRESCRIPTION WHERE ID_Prescription = " + ID_Prescription;
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            ID_Prescription = ID_Prescription.Trim();
+            string query = "Delete DBO.PRESCRIPTION WHERE ID_Prescription = " + ID_Prescription;
+            ExecuteNonQuery(query);
+            
         }
     }
 }

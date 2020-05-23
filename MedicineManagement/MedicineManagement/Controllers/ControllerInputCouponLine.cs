@@ -129,24 +129,8 @@ namespace MedicineManagement.Controllers
 
         public void Insert(Inputcouponline inputcouponline)
         {
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = QueryInsert(inputcouponline);
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }            
+            string query = QueryInsert(inputcouponline);
+            ExecuteNonQuery(query);           
         }
 
         private string QueryInsert(Inputcouponline inputcouponline)
@@ -172,7 +156,7 @@ namespace MedicineManagement.Controllers
             if (NumUnitOutput == "") { NumUnitOutput = "1"; }
             if (ProductionBatch == "") { UnitInput = "null"; }
             
-            query = "EXEC UpdateINPUTCOUPONLINE " + ID_InputCoupon + ", " + ID_Medicine + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", " + ExpiryDate + ", " + NumUnitOutput + ", " + ProductionBatch;
+            query = "EXEC InsertINPUTCOUPONLINE " + ID_InputCoupon + ", " + ID_Medicine + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", " + ExpiryDate + ", " + NumUnitOutput + ", " + ProductionBatch;
             return query;
         }
         // update 1 Inputcouponline row
@@ -181,26 +165,7 @@ namespace MedicineManagement.Controllers
             string query = QueryUpdate(inputcouponline);
             if (query == "")                        
                 return;
-            try
-            {
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                    }
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            
+            QueryInsert(inputcouponline);
         }
 
         public string QueryUpdate(Inputcouponline inputcouponline)
@@ -245,22 +210,9 @@ namespace MedicineManagement.Controllers
 
         public void Delete(string ID_InputCouponLine)
         {
-            try
-            {
-                ID_InputCouponLine = ID_InputCouponLine.Trim();
-                string query = "Delete DBO.INPUTCOUPONLINE WHERE ID_InputCouponLine = " + ID_InputCouponLine;
-                using (var command = new SqlCommand { Connection = connection })
-                {
-                    connection.Open();
-                    command.CommandText = query;
-                    var count = command.ExecuteNonQuery();
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            ID_InputCouponLine = ID_InputCouponLine.Trim();
+            string query = "Delete DBO.INPUTCOUPONLINE WHERE ID_InputCouponLine = " + ID_InputCouponLine;
+            ExecuteNonQuery(query);
         }
     }
 }

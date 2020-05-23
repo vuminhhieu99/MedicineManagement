@@ -102,5 +102,109 @@ namespace MedicineManagement.Controllers
             }
             return query;
         }
+
+        public void Refresh()
+        {
+            try
+            {
+                adapter.Update(ds, "MEDICINE");
+                cb.RefreshSchema();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi refresh");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void Insert(Medicine medicine)
+        {
+            string query = QueryInsert(medicine);
+            ExecuteNonQuery(query);
+        }
+
+        private string QueryInsert(Medicine medicine)
+        {
+            string query = "";
+
+            string Name; try { Name = medicine.Name.ToString().Trim(); } catch { Name = ""; }
+            string MedicineGroup; try { MedicineGroup = medicine.MedicineGroup.ToString().Trim(); } catch { MedicineGroup = ""; }
+            string Uses; try { Uses = medicine.Uses.ToString().Trim(); } catch { Uses = ""; }
+            string Unit; try { Unit = medicine.Unit.ToString().Trim(); } catch { Unit = ""; }
+            string Price; try { Price = medicine.Price.ToString().Trim(); } catch { Price = ""; }
+            string TotalInventory; try { TotalInventory = medicine.TotalInventory.ToString().Trim(); } catch { TotalInventory = ""; }
+            string Note; try { Note = medicine.Note.ToString().Trim(); } catch { Note = ""; }
+            string MostUsedMonth; try { MostUsedMonth = medicine.MostUsedMonth.ToString().Trim(); } catch { MostUsedMonth = ""; }
+           
+            if (Name == "") { Name = "null"; }
+            if (MedicineGroup == "") { MedicineGroup = "null"; }
+            if (Uses == "") { Uses = "null"; }
+            if (Unit == "") { Unit = "null"; }
+            if (Price == "") { Price = "0"; }
+            if (TotalInventory == "") { TotalInventory = "0"; }
+            if (Note == "") { Note = "null"; }
+            if (MostUsedMonth == "") { MostUsedMonth = "null"; }
+            
+            query = "EXEC InserMEDICINE " + Name + ", " + MedicineGroup + ", " + Uses + ", " + Unit + ", " + Price  + ", " + TotalInventory + ", " + Note + ", " + MostUsedMonth;
+            return query;
+        }
+
+        // update 1 Medicine row
+        public void Update(Medicine medicine)
+        {
+            string query = QueryUpdate(medicine);
+            if (query == "")
+            {
+                MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            ExecuteNonQuery(query);
+        }
+
+        public string QueryUpdate(Medicine medicine)
+        {
+            string query = "";
+            string ID_Medicine; try { ID_Medicine = medicine.ID_Medicine.ToString().Trim(); } catch { ID_Medicine = ""; }
+
+            string Name; try { Name = medicine.Name.ToString().Trim(); } catch { Name = ""; }
+            string MedicineGroup; try { MedicineGroup = medicine.MedicineGroup.ToString().Trim(); } catch { MedicineGroup = ""; }
+            string Uses; try { Uses = medicine.Uses.ToString().Trim(); } catch { Uses = ""; }
+            string Unit; try { Unit = medicine.Unit.ToString().Trim(); } catch { Unit = ""; }
+            string Price; try { Price = medicine.Price.ToString().Trim(); } catch { Price = ""; }
+            string TotalInventory; try { TotalInventory = medicine.TotalInventory.ToString().Trim(); } catch { TotalInventory = ""; }
+            string Note; try { Note = medicine.Note.ToString().Trim(); } catch { Note = ""; }
+            string MostUsedMonth; try { MostUsedMonth = medicine.MostUsedMonth.ToString().Trim(); } catch { MostUsedMonth = ""; }
+
+            if (ID_Medicine == "")
+            {
+                return query;
+            }
+
+            if (Name == "") { Name = "null"; }
+            if (MedicineGroup == "") { MedicineGroup = "null"; }
+            if (Uses == "") { Uses = "null"; }
+            if (Unit == "") { Unit = "null"; }
+            if (Price == "") { Price = "0"; }
+            if (TotalInventory == "") { TotalInventory = "0"; }
+            if (Note == "") { Note = "null"; }
+            if (MostUsedMonth == "") { MostUsedMonth = "null"; }
+           
+            
+
+            query = "EXEC UpdateMEDICINE " + ID_Medicine + ", " + Name + ", " + MedicineGroup + ", " + Uses + ", " + Unit + ", " + Price + ", " + TotalInventory + ", " + Note + ", " + MostUsedMonth;
+
+            return query;
+        }
+
+        public void Delete(string ID_Medicine)
+        {
+            ID_Medicine = ID_Medicine.Trim();
+            string query = "Delete DBO.MEDICINE WHERE ID_Medicine = " + ID_Medicine;
+            ExecuteNonQuery(query);
+
+        }
     }
 }
