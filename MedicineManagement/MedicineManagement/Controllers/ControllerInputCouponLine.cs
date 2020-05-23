@@ -110,7 +110,7 @@ namespace MedicineManagement.Controllers
         }
 
         // update all Inputcouponline row
-        public void Update()
+        public void Refresh()
         {
             try
             {
@@ -127,6 +127,41 @@ namespace MedicineManagement.Controllers
             }
         }
 
+        public void Insert(Inputcouponline inputcouponline)
+        {
+            using (var command = new SqlCommand { Connection = connection })
+            {
+                connection.Open();
+                command.CommandText = QueryInsert(inputcouponline);
+                var count = command.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                }
+                connection.Close();
+            }
+        }
+
+        private string QueryInsert(Inputcouponline inputcouponline)
+        {
+            string query = "";
+
+            string ID_InputCoupon; try { ID_InputCoupon = inputcouponline.ID_InputCoupon.ToString().Trim(); } catch { ID_InputCoupon = ""; }
+            string ID_Medicine; try { ID_Medicine = inputcouponline.ID_Medicine.ToString().Trim(); } catch { ID_Medicine = ""; }
+            string Name; try { Name = inputcouponline.Name.ToString().Trim(); } catch { Name = ""; }
+            string UnitInput; try { UnitInput = inputcouponline.UnitInput.ToString().Trim(); } catch { UnitInput = ""; }           
+            string Amount; try { Amount = inputcouponline.Name.ToString().Trim(); } catch { Amount = ""; }
+            string Price; try { Price = inputcouponline.Name.ToString().Trim(); } catch { Price = ""; }
+            string ExpiryDate; try { ExpiryDate = inputcouponline.ExpiryDate.ToShortDateString().Trim(); } catch { ExpiryDate = ""; }
+            string NumUnitOutput; try { NumUnitOutput = inputcouponline.NumUnitOutput.ToString().Trim(); } catch { NumUnitOutput = ""; }
+            string ProductionBatch; try { ProductionBatch = inputcouponline.ProductionBatch.ToString().Trim(); } catch { ProductionBatch = ""; }
+
+            if (CreateDate == "") { CreateDate = "null"; }
+            if (ID_Supplier == "") { ID_Supplier = "null"; }
+            if (TotalMoney == "") { TotalMoney = "0"; }
+            query = "INSERT DBO.INPUTCOUPON(CreateDate, ID_Supplier, TotalMoney) VALUES ( " + CreateDate + ", " + ID_Supplier + ", " + TotalMoney + ")";
+            return query;
+        }
         // update 1 Inputcouponline row
         public void Update(Inputcouponline inputcouponline)
         {
@@ -147,6 +182,7 @@ namespace MedicineManagement.Controllers
                 connection.Close();
             }
         }
+
         public string QueryUpdate(Inputcouponline inputcouponline)
         {
             string query = "";

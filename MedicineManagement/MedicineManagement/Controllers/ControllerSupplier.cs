@@ -96,7 +96,7 @@ namespace MedicineManagement.Controllers
             return query;
         }
 
-        public void refresh()
+        public void Refresh()
         {
             try
             {
