@@ -102,5 +102,138 @@ namespace MedicineManagement.Controllers
             }
             return query;
         }
+
+        public void Refresh()
+        {
+            try
+            {
+                adapter.Update(ds, "PRESCRIPTION");
+                cb.RefreshSchema();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi refresh");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void Insert(Prescription prescription)
+        {
+            try
+            {
+                using (var command = new SqlCommand { Connection = connection })
+                {
+                    connection.Open();
+                    command.CommandText = QueryInsert(prescription);
+                    var count = command.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private string QueryInsert(Prescription prescription)
+        {
+            string query = "";
+
+            string CreateDate; try { CreateDate = prescription.CreateDate.ToShortDateString().Trim(); } catch { CreateDate = ""; }
+            string Doctor; try { Doctor = prescription.Doctor.ToString().Trim(); } catch { Doctor = ""; }
+            string MedicalRecord; try { MedicalRecord = prescription.MedicalRecord.ToString().Trim(); } catch { MedicalRecord = ""; }
+            string Drugstores; try { Drugstores = prescription.Drugstores.ToString().Trim(); } catch { Drugstores = ""; }
+            string TotalMoney; try { TotalMoney = prescription.TotalMoney.ToString().Trim(); } catch { TotalMoney = ""; }
+
+            if (CreateDate == "") { CreateDate = "null"; }
+            if (Doctor == "") { Doctor = "null"; }
+            if (MedicalRecord == "") { MedicalRecord = "null"; }
+            if (Drugstores == "") { Drugstores = "null"; }           
+            if (TotalMoney == "") { TotalMoney = "0"; }
+            query = "EXEC InsertPRESCRIPTION " + CreateDate + ", " + Doctor + ", " + MedicalRecord + ", " + Drugstores + ", " + TotalMoney;
+            return query;
+        }
+
+        // update 1 Inputcoupon row
+        public void Update(Prescription prescription)
+        {
+            string query = QueryUpdate(prescription);
+            if (query == "")
+            {
+                MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
+                return;
+            }
+            try
+            {
+                using (var command = new SqlCommand { Connection = connection })
+                {
+                    connection.Open();
+                    command.CommandText = query;
+                    var count = command.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
+        }
+
+        public string QueryUpdate(Prescription prescription)
+        {
+            string query = "";
+            string ID_Prescription; try { ID_Prescription = prescription.ID_Prescription.ToString().Trim(); } catch { ID_Prescription = ""; }
+            string CreateDate; try { CreateDate = prescription.CreateDate.ToShortDateString().Trim(); } catch { CreateDate = ""; }
+            string Doctor; try { Doctor = prescription.Doctor.ToString().Trim(); } catch { Doctor = ""; }
+            string MedicalRecord; try { MedicalRecord = prescription.MedicalRecord.ToString().Trim(); } catch { MedicalRecord = ""; }
+            string Drugstores; try { Drugstores = prescription.Drugstores.ToString().Trim(); } catch { Drugstores = ""; }
+            string TotalMoney; try { TotalMoney = prescription.TotalMoney.ToString().Trim(); } catch { TotalMoney = ""; }
+
+            if (ID_Prescription == "")
+            {
+                return query;
+            }
+            if (CreateDate == "") { CreateDate = "null"; }
+            if (Doctor == "") { Doctor = "null"; }
+            if (MedicalRecord == "") { MedicalRecord = "null"; }
+            if (Drugstores == "") { Drugstores = "null"; }
+            if (TotalMoney == "") { TotalMoney = "0"; }
+
+            query = "EXEC UpdatePRESCRIPTION " + ID_Prescription + CreateDate + ", " + Doctor + ", " + MedicalRecord + ", " + Drugstores + ", " + TotalMoney;
+
+            return query;
+        }
+
+        public void Delete(string ID_Prescription)
+        {
+            try
+            {
+                ID_InputCoupon = ID_InputCoupon.Trim();
+                string query = "Delete DBO.PRESCRIPTION WHERE ID_Prescription = " + ID_Prescription;
+                using (var command = new SqlCommand { Connection = connection })
+                {
+                    connection.Open();
+                    command.CommandText = query;
+                    var count = command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

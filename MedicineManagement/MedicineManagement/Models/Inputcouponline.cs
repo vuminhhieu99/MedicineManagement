@@ -54,7 +54,7 @@ namespace MedicineManagement.Models
         {
             Amount = 0;
             Price = 0;
-            NumUnitOutput = 0;
+            NumUnitOutput = 1;
             IntoMoney = 0;
         }
     }

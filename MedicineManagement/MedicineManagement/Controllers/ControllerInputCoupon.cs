@@ -98,8 +98,7 @@ namespace MedicineManagement.Controllers
             }
             return query;
         }
-
-        // update all Inputcoupon row
+                
         public void Refresh()
         {
             try
@@ -119,17 +118,25 @@ namespace MedicineManagement.Controllers
                 
         public void Insert(Inputcoupon inputcoupon)
         {
-            using (var command = new SqlCommand { Connection = connection })
+            try
             {
-                connection.Open();
-                command.CommandText = QueryInsert(inputcoupon); 
-                var count = command.ExecuteNonQuery();
-                if (count > 0)
+                using (var command = new SqlCommand { Connection = connection })
                 {
-                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    connection.Open();
+                    command.CommandText = QueryInsert(inputcoupon);
+                    var count = command.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
                 }
-                connection.Close();
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message)
+            }
+           
         }
 
         private string QueryInsert(Inputcoupon inputcoupon)
@@ -143,7 +150,7 @@ namespace MedicineManagement.Controllers
             if (CreateDate == "") { CreateDate = "null"; }
             if (ID_Supplier == "") { ID_Supplier = "null"; }
             if (TotalMoney == "") { TotalMoney = "0"; }
-            query = "INSERT DBO.INPUTCOUPON(CreateDate, ID_Supplier, TotalMoney) VALUES ( "+ CreateDate + ", " + ID_Supplier + ", " + TotalMoney+ ")";
+            query = "EXEC InsertINPUTCOUPON " + CreateDate + ", " + ID_Supplier + ", " + TotalMoney;
             return query;
         }
 
@@ -156,17 +163,25 @@ namespace MedicineManagement.Controllers
                 MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            using (var command = new SqlCommand { Connection = connection })
+            try
             {
-                connection.Open();
-                command.CommandText = query;
-                var count = command.ExecuteNonQuery();
-                if (count > 0)
+                using (var command = new SqlCommand { Connection = connection })
                 {
-                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    connection.Open();
+                    command.CommandText = query;
+                    var count = command.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
                 }
-                connection.Close();
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         public string QueryUpdate(Inputcoupon inputcoupon)
         {
@@ -209,7 +224,6 @@ namespace MedicineManagement.Controllers
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
        
     }

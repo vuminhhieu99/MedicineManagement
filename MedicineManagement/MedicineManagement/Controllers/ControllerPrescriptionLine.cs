@@ -98,6 +98,8 @@ namespace MedicineManagement.Controllers
                 query = "SELECT* FROM DBO.PRESCRIPTIONLINE" + sqlSelect;
             }
             return query;
+
+
         }
     }
 }

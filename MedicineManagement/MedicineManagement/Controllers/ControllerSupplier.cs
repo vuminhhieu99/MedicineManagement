@@ -117,18 +117,25 @@ namespace MedicineManagement.Controllers
 
         public void Insert(Supplier supplier)
         {
-                       
-            using (var command = new SqlCommand { Connection = connection })
+            try
             {
-                connection.Open();
-                command.CommandText = QueryInsert(supplier);
-                var count = command.ExecuteNonQuery();
-                if (count > 0)
+                using (var command = new SqlCommand { Connection = connection })
                 {
-                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    connection.Open();
+                    command.CommandText = QueryInsert(supplier);
+                    var count = command.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
                 }
-                connection.Close();
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private string QueryInsert(Supplier supplier)
@@ -144,7 +151,7 @@ namespace MedicineManagement.Controllers
             if (Phone == "") { Phone = "null"; }
             if (Email == "") { Email = "null"; }
 
-            query = "INSERT DBO.SUPPLIER (Name, Address, Phone, Email) VALUES ( " + Name + ", " + Address + ", " + Phone + ", " + Email + ")";
+            query = "EXEC InsertSUPPLIER " + Name + ", " + Address + ", " + Phone + ", " + Email;
             return query;
         }
 
@@ -157,17 +164,25 @@ namespace MedicineManagement.Controllers
                 MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
                 return;
             }
-            using (var command = new SqlCommand { Connection = connection })
+            try
             {
-                connection.Open();
-                command.CommandText = query;
-                var count = command.ExecuteNonQuery();
-                if (count > 0)
+                using (var command = new SqlCommand { Connection = connection })
                 {
-                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    connection.Open();
+                    command.CommandText = query;
+                    var count = command.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
                 }
-                connection.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         public string QueryUpdate(Supplier supplier)
         {
