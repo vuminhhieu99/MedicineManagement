@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MedicineManagement.Controllers
 {
@@ -30,6 +31,28 @@ namespace MedicineManagement.Controllers
             adapter = new SqlDataAdapter();
         }
         public abstract DataTable Load();
-        
+        public void ExecuteNonQuery(string query)
+        {
+            try
+            {
+                using (var command = new SqlCommand { Connection = connection })
+                {
+                    connection.Open();
+                    command.CommandText = query;
+                    var count = command.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Thành công", "thông báo", MessageBoxButtons.OK);
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
     }
 }

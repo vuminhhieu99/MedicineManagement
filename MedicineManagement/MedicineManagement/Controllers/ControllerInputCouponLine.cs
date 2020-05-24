@@ -129,17 +129,8 @@ namespace MedicineManagement.Controllers
 
         public void Insert(Inputcouponline inputcouponline)
         {
-            using (var command = new SqlCommand { Connection = connection })
-            {
-                connection.Open();
-                command.CommandText = QueryInsert(inputcouponline);
-                var count = command.ExecuteNonQuery();
-                if (count > 0)
-                {
-                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                }
-                connection.Close();
-            }
+            string query = QueryInsert(inputcouponline);
+            ExecuteNonQuery(query);           
         }
 
         private string QueryInsert(Inputcouponline inputcouponline)
@@ -156,10 +147,16 @@ namespace MedicineManagement.Controllers
             string NumUnitOutput; try { NumUnitOutput = inputcouponline.NumUnitOutput.ToString().Trim(); } catch { NumUnitOutput = ""; }
             string ProductionBatch; try { ProductionBatch = inputcouponline.ProductionBatch.ToString().Trim(); } catch { ProductionBatch = ""; }
 
-            if (CreateDate == "") { CreateDate = "null"; }
-            if (ID_Supplier == "") { ID_Supplier = "null"; }
-            if (TotalMoney == "") { TotalMoney = "0"; }
-            query = "INSERT DBO.INPUTCOUPON(CreateDate, ID_Supplier, TotalMoney) VALUES ( " + CreateDate + ", " + ID_Supplier + ", " + TotalMoney + ")";
+            if (ID_InputCoupon == "" || ID_Medicine == "") { return query; }
+            if (Name == "") { Name = "null"; }
+            if (UnitInput == "") { UnitInput = "null"; }
+            if (Amount == "") { Amount = "0"; }
+            if (Price == "") { Price = "0"; }
+            if (ExpiryDate == "") { ExpiryDate = "null"; }
+            if (NumUnitOutput == "") { NumUnitOutput = "1"; }
+            if (ProductionBatch == "") { UnitInput = "null"; }
+            
+            query = "EXEC InsertINPUTCOUPONLINE " + ID_InputCoupon + ", " + ID_Medicine + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", " + ExpiryDate + ", " + NumUnitOutput + ", " + ProductionBatch;
             return query;
         }
         // update 1 Inputcouponline row
@@ -168,19 +165,7 @@ namespace MedicineManagement.Controllers
             string query = QueryUpdate(inputcouponline);
             if (query == "")                        
                 return;
-            
-
-            using (var command = new SqlCommand { Connection = connection })
-            {
-                connection.Open();
-                command.CommandText = query;
-                var count = command.ExecuteNonQuery();
-                if (count > 0)
-                {
-                    MessageBox.Show("cập nhật thành công", "thông báo", MessageBoxButtons.OK);
-                }
-                connection.Close();
-            }
+            QueryInsert(inputcouponline);
         }
 
         public string QueryUpdate(Inputcouponline inputcouponline)
@@ -221,6 +206,13 @@ namespace MedicineManagement.Controllers
             query = "EXEC UpdateINPUTCOUPONLINE " + ID_InputCouponLine + ", " + ID_InputCoupon + ", " + ID_Medicine  + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", " + ExpiryDate + ", " + NumUnitOutput + ", " + ProductionBatch ;
 
             return query;
+        }
+
+        public void Delete(string ID_InputCouponLine)
+        {
+            ID_InputCouponLine = ID_InputCouponLine.Trim();
+            string query = "Delete DBO.INPUTCOUPONLINE WHERE ID_InputCouponLine = " + ID_InputCouponLine;
+            ExecuteNonQuery(query);
         }
     }
 }

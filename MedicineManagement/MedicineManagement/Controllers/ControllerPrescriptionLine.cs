@@ -99,5 +99,86 @@ namespace MedicineManagement.Controllers
             }
             return query;
         }
+
+        public void Refresh()
+        {
+            try
+            {
+                adapter.Update(ds, "PRESCRIPTIONLINE");
+                cb.RefreshSchema();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Cập nhật thất bại");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public void Insert(Prescriptionline prescriptionline)
+        {
+            string query = QueryInsert(prescriptionline);
+            if (query == "")
+                return;
+            ExecuteNonQuery(query);
+        }
+
+        private string QueryInsert(Prescriptionline prescriptionline)
+        {
+            string query = "";
+
+            string ID_Prescription; try { ID_Prescription = prescriptionline.ID_Prescription.ToString().Trim(); } catch { ID_Prescription = ""; }
+            string ID_Medicine; try { ID_Medicine = prescriptionline.ID_Medicine.ToString().Trim(); } catch { ID_Medicine = ""; }
+            string Amount; try { Amount = prescriptionline.Amount.ToString().Trim(); } catch { Amount = ""; }
+            string HealthInsurance; try { HealthInsurance = prescriptionline.HealthInsurance.ToString().Trim(); } catch { HealthInsurance = ""; }
+           
+            if (ID_Prescription == "" || ID_Medicine == "") {
+                MessageBox.Show("ID_Prescription và ID_Medicine không được bỏ trống", "Cập nhật thất bại");
+                return query;
+            }
+            if (Amount == "") { Amount = "0"; }
+            if (HealthInsurance == "") { HealthInsurance = "0"; }            
+
+            query = "EXEC InsertPRESCRIPTIONLINE " + ID_Prescription + ", " + ID_Medicine + ", " + Amount + ", " + HealthInsurance;
+            return query;
+        }
+        // update 1 Inputcouponline row
+        public void Update(Prescriptionline prescriptionline)
+        {
+            string query = QueryUpdate(prescriptionline);
+            if (query == "")
+                return;
+            ExecuteNonQuery(query);
+        }
+
+        public string QueryUpdate(Prescriptionline prescriptionline)
+        {
+            string query = "";
+            string ID_Prescription; try { ID_Prescription = prescriptionline.ID_Prescription.ToString().Trim(); } catch { ID_Prescription = ""; }
+            string ID_Medicine; try { ID_Medicine = prescriptionline.ID_Medicine.ToString().Trim(); } catch { ID_Medicine = ""; }
+            string Amount; try { Amount = prescriptionline.Amount.ToString().Trim(); } catch { Amount = ""; }
+            string HealthInsurance; try { HealthInsurance = prescriptionline.HealthInsurance.ToString().Trim(); } catch { HealthInsurance = ""; }
+
+            if (ID_Prescription == "" || ID_Medicine == "")
+            {
+                MessageBox.Show("ID_Prescription và ID_Medicine không được bỏ trống", "Cập nhật thất bại");
+                return query;
+            }
+            if (Amount == "") { Amount = "0"; }
+            if (HealthInsurance == "") { HealthInsurance = "0"; }
+            query = "EXEC UpdatePRESCRIPTIONLINE " + ID_Prescription + ", " + ID_Medicine + ", " + Amount + ", " + HealthInsurance;
+
+            return query;
+        }
+
+        public void Delete(string ID_Prescription, string ID_Medicine)
+        {
+            ID_Prescription = ID_Prescription.Trim();
+            ID_Medicine = ID_Medicine.Trim();
+            string query = "Delete DBO.PRESCRIPTIONLINE WHERE ID_Prescription = " + ID_Prescription + " AND ID_Medicine = "+ ID_Medicine;
+            ExecuteNonQuery(query);            
+        }
     }
 }

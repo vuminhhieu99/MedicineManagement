@@ -29,6 +29,7 @@ C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\
 C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UcQuanLyThuoc.resources
 C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UI_Example.UcExample.resources
 C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.FormMain.resources
+<<<<<<< HEAD
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.CaiDat.UcCaiDat.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.DonThuoc.UcDonThuoc.resources
@@ -46,3 +47,17 @@ C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\Medicin
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
+=======
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.CaiDat.UcCaiDat.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.DonThuoc.UcDonThuoc.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.FormMain.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.UcNhaCungCap.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhapHang.UcNhapHang.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.UcPhieuNhap.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.ThongTin.UcThongTin.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTrangChu.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UcBanThuoc.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UcQuanLyThuoc.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UI_Example.UcExample.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CopyComplete
+>>>>>>> b801a42aed8546aa4f2cd20332e062bb29855730
