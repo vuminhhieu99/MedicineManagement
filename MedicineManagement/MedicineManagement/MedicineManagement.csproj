@@ -216,6 +216,8 @@
     <Content Include="Content\logo.png" />
     <Content Include="Content\search.png" />
     <Content Include="Content\statistical.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
