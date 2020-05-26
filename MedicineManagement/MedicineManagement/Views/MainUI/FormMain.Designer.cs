@@ -54,6 +54,10 @@
             this.labelUserName = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelStatus = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.labeDateTime = new System.Windows.Forms.Label();
+            this.labelTask = new System.Windows.Forms.Label();
             this.ucTrangChu1 = new MedicineManagement.Views.TrangChu.UcTrangChu();
             this.ucBanThuoc1 = new MedicineManagement.Views.UcBanThuoc();
             this.ucQuanLyThuoc1 = new MedicineManagement.Views.UcQuanLyThuoc();
@@ -63,10 +67,6 @@
             this.ucNhaCungCap1 = new MedicineManagement.Views.NhaCungCap.UcNhaCungCap();
             this.ucCaiDat1 = new MedicineManagement.Views.CaiDat.UcCaiDat();
             this.ucThongTin1 = new MedicineManagement.Views.ThongTin.UcThongTin();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelStatus = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.labeDateTime = new System.Windows.Forms.Label();
-            this.labelTask = new System.Windows.Forms.Label();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
@@ -613,6 +613,53 @@
             this.panelContent.Size = new System.Drawing.Size(1312, 822);
             this.panelContent.TabIndex = 0;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panelStatus
+            // 
+            this.panelStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelStatus.BackgroundImage")));
+            this.panelStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStatus.Controls.Add(this.labeDateTime);
+            this.panelStatus.Controls.Add(this.labelTask);
+            this.panelStatus.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStatus.GradientBottomLeft = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelStatus.GradientBottomRight = System.Drawing.Color.White;
+            this.panelStatus.GradientTopLeft = System.Drawing.Color.White;
+            this.panelStatus.GradientTopRight = System.Drawing.Color.White;
+            this.panelStatus.Location = new System.Drawing.Point(280, 40);
+            this.panelStatus.Name = "panelStatus";
+            this.panelStatus.Quality = 10;
+            this.panelStatus.Size = new System.Drawing.Size(1320, 30);
+            this.panelStatus.TabIndex = 2;
+            // 
+            // labeDateTime
+            // 
+            this.labeDateTime.AutoSize = true;
+            this.labeDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.labeDateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeDateTime.ForeColor = System.Drawing.Color.Navy;
+            this.labeDateTime.Location = new System.Drawing.Point(1113, 6);
+            this.labeDateTime.Name = "labeDateTime";
+            this.labeDateTime.Size = new System.Drawing.Size(201, 19);
+            this.labeDateTime.TabIndex = 1;
+            this.labeDateTime.Text = "00:00:00 AM   ●   0000-00-00";
+            this.labeDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTask
+            // 
+            this.labelTask.AutoSize = true;
+            this.labelTask.BackColor = System.Drawing.Color.Transparent;
+            this.labelTask.Font = new System.Drawing.Font("Calibri", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTask.ForeColor = System.Drawing.Color.Crimson;
+            this.labelTask.Location = new System.Drawing.Point(5, 3);
+            this.labelTask.Name = "labelTask";
+            this.labelTask.Size = new System.Drawing.Size(87, 23);
+            this.labelTask.TabIndex = 0;
+            this.labelTask.Text = "Trang chủ";
+            // 
             // ucTrangChu1
             // 
             this.ucTrangChu1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -684,52 +731,6 @@
             this.ucThongTin1.Name = "ucThongTin1";
             this.ucThongTin1.Size = new System.Drawing.Size(1310, 820);
             this.ucThongTin1.TabIndex = 0;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelStatus
-            // 
-            this.panelStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelStatus.BackgroundImage")));
-            this.panelStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelStatus.Controls.Add(this.labeDateTime);
-            this.panelStatus.Controls.Add(this.labelTask);
-            this.panelStatus.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelStatus.GradientBottomLeft = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panelStatus.GradientBottomRight = System.Drawing.Color.White;
-            this.panelStatus.GradientTopLeft = System.Drawing.Color.White;
-            this.panelStatus.GradientTopRight = System.Drawing.Color.White;
-            this.panelStatus.Location = new System.Drawing.Point(280, 40);
-            this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Quality = 10;
-            this.panelStatus.Size = new System.Drawing.Size(1320, 30);
-            this.panelStatus.TabIndex = 2;
-            // 
-            // labeDateTime
-            // 
-            this.labeDateTime.AutoSize = true;
-            this.labeDateTime.BackColor = System.Drawing.Color.Transparent;
-            this.labeDateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeDateTime.ForeColor = System.Drawing.Color.Navy;
-            this.labeDateTime.Location = new System.Drawing.Point(1113, 6);
-            this.labeDateTime.Name = "labeDateTime";
-            this.labeDateTime.Size = new System.Drawing.Size(201, 19);
-            this.labeDateTime.TabIndex = 1;
-            this.labeDateTime.Text = "00:00:00 AM   ●   0000-00-00";
-            // 
-            // labelTask
-            // 
-            this.labelTask.AutoSize = true;
-            this.labelTask.BackColor = System.Drawing.Color.Transparent;
-            this.labelTask.Font = new System.Drawing.Font("Calibri", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTask.ForeColor = System.Drawing.Color.Crimson;
-            this.labelTask.Location = new System.Drawing.Point(5, 3);
-            this.labelTask.Name = "labelTask";
-            this.labelTask.Size = new System.Drawing.Size(87, 23);
-            this.labelTask.TabIndex = 0;
-            this.labelTask.Text = "Trang chủ";
             // 
             // FormMain
             // 
