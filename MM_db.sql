@@ -56,7 +56,7 @@ GO
 
 CREATE TABLE PRESCRIPTIONLINE (
 	 ID_Prescription int  NOT NULL,
-	 ID_Medicine int NULL,
+	 ID_Medicine int NOT NULL,
 	 Amount int  NULL,
 	 HealthInsurance decimal (10, 0) NULL,
 	 IntoMoney decimal (10, 0) NULL,
@@ -176,7 +176,8 @@ END
 GO
 
 -- Delete INPUTCOUPONLINE
-CREATE PROC DeleteINPUTCOUPONLINE ( @ID_inputCouponLine INT )
+CREATE TRIGGER DeleteINPUTCOUPONLINE ON INPUTCOUPONLINE
+FOR DELETE
 AS
 BEGIN
 	DECLARE @intoMoney DECIMAL(12,0)
@@ -194,7 +195,7 @@ BEGIN
 		@ID_inputCoupon = ID_inputCoupon,
 		@ID_Medicine = ID_Medicine 
 	FROM dbo.INPUTCOUPONLINE
-	WHERE ID_InputCouponLine = @ID_inputCouponLine
+	WHERE ID_InputCouponLine IN	( SELECT deleted.ID_InputCouponLine  FROM  deleted)
 
 	SET @totalNumUnitOutput = @numUnitOutput * @amount
 	 
@@ -205,10 +206,6 @@ BEGIN
 
 	UPDATE dbo.MEDICINE SET TotalInventory = TotalInventory - @totalNumUnitOutput
 	WHERE ID_Medicine = @ID_medicine
-
-	DELETE FROM dbo.INPUTCOUPONLINE
-	WHERE ID_InputCouponLine = @ID_inputCouponLine
-
 END
 GO
 -- Insert PRESCRIPTIONLINE
@@ -235,10 +232,16 @@ END
 GO
 
 -- Delete PRESCRIPTIONLINE
-CREATE PROC DeletePRESCRIPTIONLINE ( @ID_prescription INT, @ID_medicine INT )
+CREATE TRIGGER DeletePRESCRIPTIONLINE ON PRESCRIPTIONLINE
+FOR DELETE
 AS
 BEGIN
 	DECLARE @intoMoney DECIMAL(10,0)
+	DECLARE @ID_prescription INT
+	DECLARE @ID_medicine INT
+
+	SELECT @ID_prescription = ID_prescription, @ID_medicine = ID_medicine FROM deleted
+
 	SELECT @intoMoney = IntoMoney FROM dbo.PRESCRIPTIONLINE
 	WHERE ID_Prescription = @ID_prescription AND ID_Medicine = @ID_medicine
 
