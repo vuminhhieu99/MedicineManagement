@@ -31,6 +31,7 @@ namespace MedicineManagement.Controllers
             adapter = new SqlDataAdapter();
         }
         public abstract DataTable Load();
+        public abstract DataTable Load(string ID);
         public void ExecuteNonQuery(string query)
         {
             try
