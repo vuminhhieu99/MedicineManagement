@@ -58,6 +58,11 @@
     <Compile Include="Controllers\ControllerPrescription.cs" />
     <Compile Include="Controllers\ControllerPrescriptionLine.cs" />
     <Compile Include="Controllers\ControllerSupplier.cs" />
+    <Compile Include="QuanLyThuocDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThuocDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Views\CaiDat\UcCaiDat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +89,24 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\NhaCungCap\FormAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NhaCungCap\FormAddSupplier.Designer.cs">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhaCungCap\FormDetailSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NhaCungCap\FormDetailSupplier.Designer.cs">
+      <DependentUpon>FormDetailSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NhaCungCap\FormEditSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NhaCungCap\FormEditSupplier.Designer.cs">
+      <DependentUpon>FormEditSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\NhaCungCap\UcNhaCungCap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +124,30 @@
     </Compile>
     <Compile Include="Views\PhieuNhap\UcPhieuNhap.Designer.cs">
       <DependentUpon>UcPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormAddMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormAddMedicine.Designer.cs">
+      <DependentUpon>FormAddMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormDetailMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormDetailMedicine.Designer.cs">
+      <DependentUpon>FormDetailMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormEditMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormEditMedicine.Designer.cs">
+      <DependentUpon>FormEditMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormFilterMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\FormFilterMedicine.Designer.cs">
+      <DependentUpon>FormFilterMedicine.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ThongTin\UcThongTin.cs">
       <SubType>UserControl</SubType>
@@ -151,6 +198,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\NhaCungCap\FormAddSupplier.resx">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhaCungCap\FormDetailSupplier.resx">
+      <DependentUpon>FormDetailSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NhaCungCap\FormEditSupplier.resx">
+      <DependentUpon>FormEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\NhaCungCap\UcNhaCungCap.resx">
       <DependentUpon>UcNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +215,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PhieuNhap\UcPhieuNhap.resx">
       <DependentUpon>UcPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLyThuoc\FormAddMedicine.resx">
+      <DependentUpon>FormAddMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLyThuoc\FormDetailMedicine.resx">
+      <DependentUpon>FormDetailMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLyThuoc\FormEditMedicine.resx">
+      <DependentUpon>FormEditMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLyThuoc\FormFilterMedicine.resx">
+      <DependentUpon>FormFilterMedicine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ThongTin\UcThongTIn.resx">
       <DependentUpon>UcThongTin.cs</DependentUpon>
@@ -184,6 +252,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QuanLyThuocDataSet.xsc">
+      <DependentUpon>QuanLyThuocDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyThuocDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyThuocDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyThuocDataSet.xss">
+      <DependentUpon>QuanLyThuocDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -201,7 +280,13 @@
     <Content Include="Content\detail.png" />
     <Content Include="Content\edit.png" />
     <Content Include="Content\export.png" />
+    <Content Include="Content\filter.png" />
+    <Content Include="Content\icon delete.png" />
+    <Content Include="Content\icon detail.png" />
+    <Content Include="Content\icon edit.png" />
+    <Content Include="Content\icon left-arrow.png" />
     <Content Include="Content\icon program.ico" />
+    <Content Include="Content\icon search.png" />
     <Content Include="Content\icon-home.png" />
     <Content Include="Content\icon-info.png" />
     <Content Include="Content\icon-input.png" />
@@ -213,6 +298,7 @@
     <Content Include="Content\icon-sell.png" />
     <Content Include="Content\icon-setup.png" />
     <Content Include="Content\kissclipart-medical-symbol-clipart-caduceus-as-a-symbol-of-med-4ad9414f9ee75178.png" />
+    <Content Include="Content\left-arrow.png" />
     <Content Include="Content\logo.png" />
     <Content Include="Content\search.png" />
     <Content Include="Content\statistical.png" />

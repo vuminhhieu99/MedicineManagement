@@ -43,7 +43,7 @@ namespace MedicineManagement
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult dlr = MessageBox.Show("Chắc chắn muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dlr = MessageBox.Show("Chắc chắn muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
                 Application.Exit();
         }

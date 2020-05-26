@@ -25,7 +25,7 @@ namespace MedicineManagement.Controllers
 
         public ControllerBase()
         {
-            connectionSTR = "Data Source=.\\SQLEXPRESS;Initial Catalog=QuanLyThuoc;Integrated Security=True";
+            connectionSTR = "Data Source=DESKTOP-9DHLIM0;Initial Catalog=QuanLyThuoc;Integrated Security=True";
             connection = new SqlConnection(connectionSTR);
             ds = new DataSet();
             adapter = new SqlDataAdapter();
