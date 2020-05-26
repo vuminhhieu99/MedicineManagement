@@ -195,7 +195,7 @@ namespace MedicineManagement.Controllers
             string query = QueryUpdate(inputcouponline);
             if (query == "")                        
                 return;
-            ExecuteNonQuery(inputcouponline);
+            ExecuteNonQuery(query);
         }
 
         public string QueryUpdate(Inputcouponline inputcouponline)
