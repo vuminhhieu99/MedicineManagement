@@ -28,10 +28,12 @@ namespace MedicineManagement.Views.DonThuoc
         public void LoadData()
         {
             dataGridView1.DataSource = ctrl.Load();
+            btn_Save.Visible = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btn_Save.Visible = false;
             if (e.RowIndex >= 0)
             {
                 // Lay ID cua ban ghi duoc chon --> chuan bi cho Xem, Sua, Xoa
@@ -47,6 +49,8 @@ namespace MedicineManagement.Views.DonThuoc
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["edit"].Index)
                 {
+                    btn_Save.Visible = true;
+
                     // Code xu ly lay du lieu tu ban ghi chuyen sang FormEditMedicine
                     // ...
 

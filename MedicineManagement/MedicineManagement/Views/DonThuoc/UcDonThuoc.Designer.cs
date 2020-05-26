@@ -66,10 +66,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pRESCRIPTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mEDICINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.MEDICINETableAdapter();
-            this.pRESCRIPTIONTableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.PRESCRIPTIONTableAdapter();
-            this.btn_Save = new Bunifu.Framework.UI.BunifuThinButton2();
             this.iDPrescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doctorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicalRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +73,11 @@
             this.detail = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pRESCRIPTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mEDICINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.MEDICINETableAdapter();
+            this.pRESCRIPTIONTableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.PRESCRIPTIONTableAdapter();
+            this.btn_Save = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.quanLyThuocDataSet1 = new MedicineManagement.QuanLyThuocDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).BeginInit();
@@ -84,6 +85,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRESCRIPTIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Reload
@@ -485,45 +487,6 @@
             this.dataGridView1.TabIndex = 74;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // pRESCRIPTIONBindingSource
-            // 
-            this.pRESCRIPTIONBindingSource.DataMember = "PRESCRIPTION";
-            this.pRESCRIPTIONBindingSource.DataSource = this.quanLyThuocDataSet;
-            // 
-            // mEDICINETableAdapter
-            // 
-            this.mEDICINETableAdapter.ClearBeforeFill = true;
-            // 
-            // pRESCRIPTIONTableAdapter
-            // 
-            this.pRESCRIPTIONTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.ActiveBorderThickness = 1;
-            this.btn_Save.ActiveCornerRadius = 20;
-            this.btn_Save.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btn_Save.ActiveForecolor = System.Drawing.Color.DarkRed;
-            this.btn_Save.ActiveLineColor = System.Drawing.Color.DarkRed;
-            this.btn_Save.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Save.BackgroundImage")));
-            this.btn_Save.ButtonText = "Lưu";
-            this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Save.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btn_Save.IdleBorderThickness = 1;
-            this.btn_Save.IdleCornerRadius = 20;
-            this.btn_Save.IdleFillColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_Save.IdleForecolor = System.Drawing.Color.Navy;
-            this.btn_Save.IdleLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Save.Location = new System.Drawing.Point(1037, 765);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(124, 45);
-            this.btn_Save.TabIndex = 86;
-            this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Save.Visible = false;
-            // 
             // iDPrescriptionDataGridViewTextBoxColumn
             // 
             this.iDPrescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -588,6 +551,50 @@
             this.delete.ReadOnly = true;
             this.delete.Width = 32;
             // 
+            // pRESCRIPTIONBindingSource
+            // 
+            this.pRESCRIPTIONBindingSource.DataMember = "PRESCRIPTION";
+            this.pRESCRIPTIONBindingSource.DataSource = this.quanLyThuocDataSet;
+            // 
+            // mEDICINETableAdapter
+            // 
+            this.mEDICINETableAdapter.ClearBeforeFill = true;
+            // 
+            // pRESCRIPTIONTableAdapter
+            // 
+            this.pRESCRIPTIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.ActiveBorderThickness = 1;
+            this.btn_Save.ActiveCornerRadius = 20;
+            this.btn_Save.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btn_Save.ActiveForecolor = System.Drawing.Color.DarkRed;
+            this.btn_Save.ActiveLineColor = System.Drawing.Color.DarkRed;
+            this.btn_Save.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Save.BackgroundImage")));
+            this.btn_Save.ButtonText = "Lưu";
+            this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Save.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btn_Save.IdleBorderThickness = 1;
+            this.btn_Save.IdleCornerRadius = 20;
+            this.btn_Save.IdleFillColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_Save.IdleForecolor = System.Drawing.Color.Navy;
+            this.btn_Save.IdleLineColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Save.Location = new System.Drawing.Point(1037, 765);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(124, 45);
+            this.btn_Save.TabIndex = 86;
+            this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Save.Visible = false;
+            // 
+            // quanLyThuocDataSet1
+            // 
+            this.quanLyThuocDataSet1.DataSetName = "QuanLyThuocDataSet";
+            this.quanLyThuocDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // UcDonThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,6 +620,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pRESCRIPTIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -667,5 +675,6 @@
         private System.Windows.Forms.DataGridViewImageColumn detail;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private QuanLyThuocDataSet quanLyThuocDataSet1;
     }
 }
