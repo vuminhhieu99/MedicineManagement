@@ -179,6 +179,10 @@ namespace MedicineManagement.Controllers
             string query = "Delete DBO.INPUTCOUPON WHERE ID_InputCoupon = " + ID_InputCoupon;
             ExecuteNonQuery(query);           
         }
-       
+
+        public override DataTable Load(string ID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

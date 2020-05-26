@@ -40,6 +40,36 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
+        public override DataTable Load(string ID_InputCoupon)
+        {
+            try { ID_InputCoupon = ID_InputCoupon.ToString().Trim(); } catch { ID_InputCoupon = ""; }
+            if (ID_InputCoupon == "")
+            {
+                return null;
+            }
+
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                string query = "SELECT * FROM DBO.INPUTCOUPONLINE WHERE ID_InputCoupon = '" + ID_InputCoupon + "'";
+                adapter.SelectCommand = new SqlCommand(query, connection);                
+                cb = new SqlCommandBuilder(adapter);
+                adapter.Fill(ds, "INPUTCOUPONLINE");
+                dt = ds.Tables["INPUTCOUPONLINE"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            connection.Close();
+            return dt;
+        }
+
         public DataTable Search(Inputcouponline inputcouponline)
         {
             DataTable dt = new DataTable();
@@ -165,7 +195,7 @@ namespace MedicineManagement.Controllers
             string query = QueryUpdate(inputcouponline);
             if (query == "")                        
                 return;
-            QueryInsert(inputcouponline);
+            ExecuteNonQuery(inputcouponline);
         }
 
         public string QueryUpdate(Inputcouponline inputcouponline)

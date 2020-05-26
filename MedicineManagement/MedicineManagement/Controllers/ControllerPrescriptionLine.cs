@@ -40,6 +40,36 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
+        public override DataTable Load(string ID_Prescription)
+        {
+            try { ID_Prescription = ID_Prescription.ToString().Trim(); } catch { ID_Prescription = ""; }
+            if (ID_Prescription == "")
+            {
+                return null;
+            }
+
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                string query = "SELECT * FROM DBO.PRESCRIPTIONLINE WHERE ID_Prescription = '" + ID_Prescription + "'";
+                adapter.SelectCommand = new SqlCommand(query, connection);
+                cb = new SqlCommandBuilder(adapter);
+                adapter.Fill(ds, "PRESCRIPTIONLINE");
+                dt = ds.Tables["PRESCRIPTIONLINE"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            connection.Close();
+            return dt;
+        }
+
         public DataTable Search(Prescriptionline prescriptionline)
         {
             DataTable dt = new DataTable();

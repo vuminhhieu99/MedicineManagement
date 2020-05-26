@@ -179,5 +179,9 @@ namespace MedicineManagement.Controllers
             ExecuteNonQuery(query);
         }
 
+        public override DataTable Load(string ID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
