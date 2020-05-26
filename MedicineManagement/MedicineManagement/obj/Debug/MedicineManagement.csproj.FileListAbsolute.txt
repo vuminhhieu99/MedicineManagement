@@ -1,4 +1,3 @@
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Properties.Resources.resources
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.GenerateResource.cache
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CoreCompileInputs.cache
@@ -69,3 +68,11 @@ C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\Medicin
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormAddSupplier.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormDetailSupplier.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormEditSupplier.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormAddSupplier.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormDetailSupplier.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormEditSupplier.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormAddMedicine.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormDetailMedicine.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormEditMedicine.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormFilterMedicine.resources
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache

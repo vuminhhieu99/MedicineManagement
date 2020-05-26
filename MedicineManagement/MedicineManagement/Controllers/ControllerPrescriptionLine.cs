@@ -21,6 +21,7 @@ namespace MedicineManagement.Controllers
             DataTable dt = new DataTable();
             try
             {
+                ds.Clear();
                 string query = "SELECT * FROM DBO.PRESCRIPTIONLINE";
                 adapter.SelectCommand = new SqlCommand(query, connection);
                 cb = new SqlCommandBuilder(adapter);
@@ -70,12 +71,12 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        public DataTable Search(Prescriptionline prescriptionline)
+        public override DataTable Search(string value)
         {
             DataTable dt = new DataTable();
             try
             {
-                string query = this.QuerySearch(prescriptionline);
+                string query = this.QuerySearch(value);
                 ds.Clear();
                 if (query == "")
                 {
@@ -100,7 +101,63 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        private string QuerySearch(Prescriptionline prescriptionline)
+        private string QuerySearch(string value)
+        {
+            string sqlSelect = "";
+
+            string ID_Prescription; try { ID_Prescription = value.ToString().Trim(); } catch { ID_Prescription = ""; }
+            string ID_Medicine; try { ID_Medicine = value.ToString().Trim(); } catch { ID_Medicine = ""; }
+            string Amount; try { Amount = value.ToString().Trim(); } catch { Amount = ""; }
+            string HealthInsurance; try { HealthInsurance = value.ToString().Trim(); } catch { HealthInsurance = ""; }
+            string IntoMoney; try { IntoMoney = value.ToString().Trim(); } catch { IntoMoney = ""; }
+
+            if (ID_Prescription != "") { sqlSelect = sqlSelect + " or ID_Prescription like '%" + ID_Prescription + "%'"; }
+            if (ID_Medicine != "") { sqlSelect = sqlSelect + " or ID_Medicine like '%" + ID_Medicine + "%'"; }
+            if (Amount != "") { sqlSelect = sqlSelect + " or Amount like '%" + Amount + "%'"; }
+            if (HealthInsurance != "") { sqlSelect = sqlSelect + " or HealthInsurance like '%" + HealthInsurance + "%'"; }
+            if (IntoMoney != "") { sqlSelect = sqlSelect + " or IntoMoney like '%" + IntoMoney + "%'"; }
+            
+            string query = "";
+            if (sqlSelect != "")
+            {
+                sqlSelect = sqlSelect.Remove(0, 4); // xoa chu " and" dau tien
+                sqlSelect = " WHERE" + sqlSelect;
+                query = "SELECT* FROM DBO.PRESCRIPTIONLINE" + sqlSelect;
+            }
+            return query;
+        }
+
+        public DataTable SearchAdvance(Prescriptionline prescriptionline)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = this.QuerySearchAdvance(prescriptionline);
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "PRESCRIPTIONLINE");
+                    dt = ds.Tables["PRESCRIPTIONLINE"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        private string QuerySearchAdvance(Prescriptionline prescriptionline)
         {
             string sqlSelect = "";
 
