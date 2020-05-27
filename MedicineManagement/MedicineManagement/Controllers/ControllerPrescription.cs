@@ -21,6 +21,7 @@ namespace MedicineManagement.Controllers
             DataTable dt = new DataTable();
             try
             {
+                ds.Clear();
                 string query = "SELECT * FROM DBO.PRESCRIPTION";
                 adapter.SelectCommand = new SqlCommand(query, connection);
                 cb = new SqlCommandBuilder(adapter);
@@ -40,12 +41,42 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        public DataTable Search(Prescription prescription)
+        public override DataTable Load(string ID_Supplier)
+        {
+            try { ID_Supplier = ID_Supplier.ToString().Trim(); } catch { ID_Supplier = ""; }
+            if (ID_Supplier == "")
+            {
+                return null;
+            }
+
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                string query = "SELECT * FROM DBO.PRESCRIPTION WHERE ID_Supplier = '" + ID_Supplier + "'";
+                adapter.SelectCommand = new SqlCommand(query, connection);
+                cb = new SqlCommandBuilder(adapter);
+                adapter.Fill(ds, "PRESCRIPTION");
+                dt = ds.Tables["PRESCRIPTION"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            connection.Close();
+            return dt;
+        }
+
+        public override DataTable Search(string value)
         {
             DataTable dt = new DataTable();
             try
             {
-                string query = this.QuerySearch(prescription);
+                string query = this.QuerySearch(value);
                 ds.Clear();
                 if (query == "")
                 {
@@ -70,7 +101,66 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        private string QuerySearch(Prescription prescription)
+        private string QuerySearch(string value)
+        {
+            string sqlSelect = "";
+
+            string ID_Prescription; try { ID_Prescription = value.ToString().Trim(); } catch { ID_Prescription = ""; }            
+            string CreateDate; try { CreateDate = value.ToString().Trim(); } catch { CreateDate = ""; }
+            string Doctor; try { Doctor = value.ToString().Trim(); } catch { Doctor = ""; }
+            string MedicalRecord; try { MedicalRecord = value.ToString().Trim(); } catch { MedicalRecord = ""; }
+            string Drugstores; try { Drugstores = value.ToString().Trim(); } catch { Drugstores = ""; }
+            string TotalMoney; try { TotalMoney = value.ToString().Trim(); } catch { TotalMoney = ""; }
+
+            if (ID_Prescription != "") { sqlSelect = sqlSelect + " or ID_Prescription like '%" + ID_Prescription + "%'"; }
+            if (CreateDate != "") { sqlSelect = sqlSelect + " or CreateDate like '%" + CreateDate + "%'"; }
+            if (Doctor != "") { sqlSelect = sqlSelect + " or Doctor like '%" + Doctor + "%'"; }
+            if (MedicalRecord != "") { sqlSelect = sqlSelect + " or MedicalRecord like '%" + MedicalRecord + "%'"; }
+            if (Drugstores != "") { sqlSelect = sqlSelect + " or Drugstores like '%" + Drugstores + "%'"; }
+            if (TotalMoney != "") { sqlSelect = sqlSelect + " or TotalMoney like '%" + TotalMoney + "%'"; }
+
+            string query = "";
+            if (sqlSelect != "")
+            {
+                sqlSelect = sqlSelect.Remove(0, 3); // xoa chu " and" dau tien
+                sqlSelect = " WHERE" + sqlSelect;
+                query = "SELECT* FROM DBO.PRESCRIPTION" + sqlSelect;
+
+            }
+            return query;
+        }
+
+        public DataTable SearchAdvance(Prescription prescription)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = this.QuerySearchAdvance(prescription);
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "PRESCRIPTION");
+                    dt = ds.Tables["PRESCRIPTION"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        private string QuerySearchAdvance(Prescription prescription)
         {
             string sqlSelect = "";
 
@@ -190,9 +280,6 @@ namespace MedicineManagement.Controllers
             
         }
 
-        public override DataTable Load(string ID)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

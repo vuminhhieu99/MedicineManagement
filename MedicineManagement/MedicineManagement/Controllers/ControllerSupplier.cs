@@ -21,6 +21,7 @@ namespace MedicineManagement.Controllers
             DataTable dt = new DataTable();
             try
             {
+                ds.Clear();
                 string query = "SELECT * FROM DBO.SUPPLIER";
                 adapter.SelectCommand = new SqlCommand(query, connection);
                 cb = new SqlCommandBuilder(adapter);
@@ -40,12 +41,12 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        public DataTable Search(Supplier supplier)
+        public override DataTable Search(string value)
         {
             DataTable dt = new DataTable();
             try
             {
-                string query = this.QuerySearch(supplier);
+                string query = this.QuerySearch(value);
                 ds.Clear();
                 if (query == "")
                 {
@@ -70,15 +71,71 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        private string QuerySearch(Supplier supplier)
+        private string QuerySearch(string value)
         {
             string sqlSelect = "";
 
-            var ID_Supplier = supplier.ID_Supplier.ToString().Trim();
-            var Name = supplier.Name.ToString().Trim();
-            var Address = supplier.Address.ToString().Trim();
-            var Phone = supplier.Phone.ToString().Trim();
-            var Email = supplier.Email.ToString().Trim();
+            string ID_Supplier; try { ID_Supplier = value.ToString().Trim(); } catch { ID_Supplier = ""; }
+            string Name; try { Name = value.ToString().Trim(); } catch { Name = ""; }
+            string Address; try { Address = value.ToString().Trim(); } catch { Address = ""; }
+            string Phone; try { Phone = value.ToString().Trim(); } catch { Phone = ""; }
+            string Email; try { Email = value.ToString().Trim(); } catch { Email = ""; }
+
+            if (ID_Supplier != "") { sqlSelect = sqlSelect + " or ID_Supplier like '%" + ID_Supplier + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " or Name like '%" + Name + "%'"; }
+            if (Address != "") { sqlSelect = sqlSelect + " or Address like '%" + Address + "%'"; }
+            if (Phone != "") { sqlSelect = sqlSelect + " or Phone like '%" + Phone + "%'"; }
+            if (Email != "") { sqlSelect = sqlSelect + " or Email like '%" + Email + "%'"; }
+
+            string query = "";
+            if (sqlSelect != "")
+            {
+                sqlSelect = sqlSelect.Remove(0, 3); // xoa chu " or" dau tien
+                sqlSelect = " WHERE" + sqlSelect;
+                query = "SELECT* FROM DBO.SUPPLIER" + sqlSelect;
+            }
+            return query;
+        }
+
+        public DataTable SearchAdvane(Supplier supplier)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = this.QuerySearchAdvance(supplier);
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "SUPPLIER");
+                    dt = ds.Tables["SUPPLIER"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        private string QuerySearchAdvance(Supplier supplier)
+        {
+            string sqlSelect = "";
+
+            string ID_Supplier; try { ID_Supplier = supplier.ID_Supplier.ToString().Trim(); } catch { ID_Supplier = ""; }
+            string Name; try { Name = supplier.Name.ToString().Trim(); } catch { Name = ""; }
+            string Address; try { Address = supplier.Address.ToString().Trim(); } catch { Address = ""; }
+            string Phone; try { Phone = supplier.Phone.ToString().Trim(); } catch { Phone = ""; }
+            string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }            
 
             if (ID_Supplier != "") { sqlSelect = sqlSelect + " and ID_Supplier like '%" + ID_Supplier + "%'"; }
             if (Name != "") { sqlSelect = sqlSelect + " and Name like '%" + Name + "%'"; }
