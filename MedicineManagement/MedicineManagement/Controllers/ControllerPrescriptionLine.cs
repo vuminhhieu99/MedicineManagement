@@ -120,7 +120,7 @@ namespace MedicineManagement.Controllers
             string query = "";
             if (sqlSelect != "")
             {
-                sqlSelect = sqlSelect.Remove(0, 4); // xoa chu " and" dau tien
+                sqlSelect = sqlSelect.Remove(0, 3); // xoa chu " or" dau tien
                 sqlSelect = " WHERE" + sqlSelect;
                 query = "SELECT* FROM DBO.PRESCRIPTIONLINE" + sqlSelect;
             }
