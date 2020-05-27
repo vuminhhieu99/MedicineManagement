@@ -98,7 +98,7 @@ namespace MedicineManagement.Controllers
             string query = "";
             if (sqlSelect != "")
             {
-                sqlSelect = sqlSelect.Remove(0, 4); // xoa chu " and" dau tien
+                sqlSelect = sqlSelect.Remove(0, 3); // xoa chu " or" dau tien
                 sqlSelect = " WHERE" + sqlSelect;
                 query = "SELECT* FROM DBO.MEDICINE" + sqlSelect;
             }
@@ -150,15 +150,15 @@ namespace MedicineManagement.Controllers
             string Search_StartMostUsedMonth; try { Search_StartMostUsedMonth = medicine.Search_StartMostUsedMonth.ToString().Trim(); } catch { Search_StartMostUsedMonth = ""; }
             string Search_EndMostUsedMonth; try { Search_EndMostUsedMonth = medicine.Search_EndMostUsedMonth.ToString().Trim(); } catch { Search_EndMostUsedMonth = ""; }
 
-            if (ID_Medicine != "") { sqlSelect = sqlSelect + " or ID_Medicine like '%" + ID_Medicine + "%'"; }
-            if (Name != "") { sqlSelect = sqlSelect + " or Name like '%" + Name + "%'"; }
-            if (MedicineGroup != "") { sqlSelect = sqlSelect + " or MedicineGroup like '%" + MedicineGroup + "%'"; }
-            if (Search_MinPrice != "") { sqlSelect = sqlSelect + " or Price >= " + Search_MinPrice; }
-            if (Search_MaxPrice != "") { sqlSelect = sqlSelect + " or Price <= " + Search_MaxPrice; }
-            if (Search_MinTotalInventory != "") { sqlSelect = sqlSelect + " or TotalInventory >= " + Search_MinTotalInventory; }
-            if (Search_MaxTotalInventory != "") { sqlSelect = sqlSelect + " or TotalInventory <= " + Search_MaxTotalInventory; }
-            if (Search_StartMostUsedMonth != "") { sqlSelect = sqlSelect + " or MostUsedMonth >= " + Search_StartMostUsedMonth; }
-            if (Search_EndMostUsedMonth != "") { sqlSelect = sqlSelect + " or MostUsedMonth <= " + Search_EndMostUsedMonth; }
+            if (ID_Medicine != "") { sqlSelect = sqlSelect + " and ID_Medicine like '%" + ID_Medicine + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " and Name like '%" + Name + "%'"; }
+            if (MedicineGroup != "") { sqlSelect = sqlSelect + " and MedicineGroup like '%" + MedicineGroup + "%'"; }
+            if (Search_MinPrice != "") { sqlSelect = sqlSelect + " and Price >= " + Search_MinPrice; }
+            if (Search_MaxPrice != "") { sqlSelect = sqlSelect + " and Price <= " + Search_MaxPrice; }
+            if (Search_MinTotalInventory != "") { sqlSelect = sqlSelect + " and TotalInventory >= " + Search_MinTotalInventory; }
+            if (Search_MaxTotalInventory != "") { sqlSelect = sqlSelect + " and TotalInventory <= " + Search_MaxTotalInventory; }
+            if (Search_StartMostUsedMonth != "") { sqlSelect = sqlSelect + " and MostUsedMonth >= " + Search_StartMostUsedMonth; }
+            if (Search_EndMostUsedMonth != "") { sqlSelect = sqlSelect + " and MostUsedMonth <= " + Search_EndMostUsedMonth; }
 
             string query = "";
             if (sqlSelect != "")
