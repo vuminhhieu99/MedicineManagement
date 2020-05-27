@@ -21,6 +21,7 @@ namespace MedicineManagement.Controllers
             DataTable dt = new DataTable();
             try
             {
+                ds.Clear();
                 string query = "SELECT * FROM DBO.INPUTCOUPONLINE";
                 adapter.SelectCommand = new SqlCommand(query, connection);
                 cb = new SqlCommandBuilder(adapter);
@@ -40,12 +41,42 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        public DataTable Search(Inputcouponline inputcouponline)
+        public override DataTable Load(string ID_InputCoupon)
+        {
+            try { ID_InputCoupon = ID_InputCoupon.ToString().Trim(); } catch { ID_InputCoupon = ""; }
+            if (ID_InputCoupon == "")
+            {
+                return null;
+            }
+
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                string query = "SELECT * FROM DBO.INPUTCOUPONLINE WHERE ID_InputCoupon = '" + ID_InputCoupon + "'";
+                adapter.SelectCommand = new SqlCommand(query, connection);                
+                cb = new SqlCommandBuilder(adapter);
+                adapter.Fill(ds, "INPUTCOUPONLINE");
+                dt = ds.Tables["INPUTCOUPONLINE"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            connection.Close();
+            return dt;
+        }
+
+        public override DataTable Search(string value)
         {
             DataTable dt = new DataTable();
             try
             {
-                string query = this.QuerySearch(inputcouponline);
+                string query = this.QuerySearch(value);
                 ds.Clear();
                 if (query == "")
                 {
@@ -70,7 +101,74 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        private string QuerySearch(Inputcouponline inputcouponline)
+        private string QuerySearch(string value)
+        {
+            string sqlSelect = "";
+            string ID_InputCouponLine; try { ID_InputCouponLine = value.ToString().Trim(); } catch { ID_InputCouponLine = ""; }
+            string ID_InputCoupon; try { ID_InputCoupon = value.ToString().Trim(); } catch { ID_InputCoupon = ""; }
+            string ID_Medicine; try { ID_Medicine = value.ToString().Trim(); } catch { ID_Medicine = ""; }
+            string Name; try { Name = value.ToString().Trim(); } catch { Name = ""; }
+            string UnitInput; try { UnitInput = value.ToString().Trim(); } catch { UnitInput = ""; }
+            string Amount; try { Amount = value.ToString().Trim(); } catch { Amount = ""; }
+            string Price; try { Price = value.ToString().Trim(); } catch { Price = ""; }
+            string ExpiryDate; try { ExpiryDate = value.ToString().Trim(); } catch { ExpiryDate = ""; }
+            string NumUnitOutput; try { NumUnitOutput = value.ToString().Trim(); } catch { NumUnitOutput = ""; }
+            string ProductionBatch; try { ProductionBatch = value.ToString().Trim(); } catch { ProductionBatch = ""; }
+            string IntoMoney; try { IntoMoney = value.ToString().Trim(); } catch { IntoMoney = ""; }            
+
+            if (ID_InputCouponLine != "") { sqlSelect = sqlSelect + " or ID_InputCouponLine like '%" + ID_InputCouponLine + "%'"; }
+            if (ID_InputCoupon != "") { sqlSelect = sqlSelect + " or ID_InputCoupon like '%" + ID_InputCoupon + "%'"; }
+            if (ID_Medicine != "") { sqlSelect = sqlSelect + " or ID_Medicine like '%" + ID_Medicine + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " or Name like '%" + Name + "%'"; }
+            if (UnitInput != "") { sqlSelect = sqlSelect + " or UnitInput like '%" + UnitInput + "%'"; }
+            if (Amount != "") { sqlSelect = sqlSelect + " or Amount like '%" + Amount + "%'"; }           
+            if (Price != "") { sqlSelect = sqlSelect + " or TotalMoney like '%" + Price + "%'"; }
+            if (ExpiryDate != "") { sqlSelect = sqlSelect + " or ExpiryDate like '%" + ExpiryDate + "%'"; }
+            if (NumUnitOutput != "") { sqlSelect = sqlSelect + " or NumUnitOutput like '%" + NumUnitOutput + "%'"; }
+            if (ProductionBatch != "") { sqlSelect = sqlSelect + " or ProductionBatch like '%" + ProductionBatch + "%'"; }
+            if (IntoMoney != "") { sqlSelect = sqlSelect + " or IntoMoney like '%" + IntoMoney + "%'"; }
+           
+            string query = "";
+            if (sqlSelect != "")
+            {
+                sqlSelect = sqlSelect.Remove(0, 3); // xoa chu " or" dau tien
+                sqlSelect = " WHERE" + sqlSelect;
+                query = "SELECT* FROM DBO.INPUTCOUPONLINE" + sqlSelect;
+            }
+            return query;
+        }
+
+        public DataTable SearchAdvance(Inputcouponline inputcouponline)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = this.QuerySearchAdvance(inputcouponline);
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "INPUTCOUPONLINE");
+                    dt = ds.Tables["INPUTCOUPONLINE"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        private string QuerySearchAdvance(Inputcouponline inputcouponline)
         {
             string sqlSelect = "";
             string ID_InputCouponLine; try { ID_InputCouponLine = inputcouponline.ID_InputCouponLine.ToString().Trim(); } catch { ID_InputCouponLine = ""; }
@@ -141,8 +239,8 @@ namespace MedicineManagement.Controllers
             string ID_Medicine; try { ID_Medicine = inputcouponline.ID_Medicine.ToString().Trim(); } catch { ID_Medicine = ""; }
             string Name; try { Name = inputcouponline.Name.ToString().Trim(); } catch { Name = ""; }
             string UnitInput; try { UnitInput = inputcouponline.UnitInput.ToString().Trim(); } catch { UnitInput = ""; }           
-            string Amount; try { Amount = inputcouponline.Name.ToString().Trim(); } catch { Amount = ""; }
-            string Price; try { Price = inputcouponline.Name.ToString().Trim(); } catch { Price = ""; }
+            string Amount; try { Amount = inputcouponline.Amount.ToString().Trim(); } catch { Amount = ""; }
+            string Price; try { Price = inputcouponline.Price.ToString().Trim(); } catch { Price = ""; }
             string ExpiryDate; try { ExpiryDate = inputcouponline.ExpiryDate.ToShortDateString().Trim(); } catch { ExpiryDate = ""; }
             string NumUnitOutput; try { NumUnitOutput = inputcouponline.NumUnitOutput.ToString().Trim(); } catch { NumUnitOutput = ""; }
             string ProductionBatch; try { ProductionBatch = inputcouponline.ProductionBatch.ToString().Trim(); } catch { ProductionBatch = ""; }
@@ -165,7 +263,7 @@ namespace MedicineManagement.Controllers
             string query = QueryUpdate(inputcouponline);
             if (query == "")                        
                 return;
-            QueryInsert(inputcouponline);
+            ExecuteNonQuery(query);
         }
 
         public string QueryUpdate(Inputcouponline inputcouponline)

@@ -21,6 +21,7 @@ namespace MedicineManagement.Controllers
             DataTable dt = new DataTable();
             try
             {
+                ds.Clear();
                 string query = "SELECT * FROM DBO.MEDICINE";
                 adapter.SelectCommand = new SqlCommand(query, connection);
                 cb = new SqlCommandBuilder(adapter);
@@ -39,12 +40,12 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        public DataTable Search(Medicine medicine)
+        public override DataTable Search(string value)
         {
             DataTable dt = new DataTable();
             try
             {
-                string query = this.QuerySearch(medicine);
+                string query = this.QuerySearch(value);
                 ds.Clear();
                 if (query == "")
                 {
@@ -69,7 +70,73 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        private string QuerySearch(Medicine medicine)
+        private string QuerySearch(string value)
+        {
+            string sqlSelect = "";
+
+            string ID_Medicine; try { ID_Medicine = value.ToString().Trim(); } catch { ID_Medicine = ""; }
+            string Name; try { Name = value.ToString().Trim(); } catch { Name = ""; }
+            string MedicineGroup; try { MedicineGroup = value.ToString().Trim(); } catch { MedicineGroup = ""; }
+            string Uses; try { Uses = value.ToString().Trim(); } catch { Uses = ""; }
+            string Unit; try { Unit = value.ToString().Trim(); } catch { Unit = ""; }
+            string Price; try { Price = value.ToString().Trim(); } catch { Price = ""; }
+            string TotalInventory; try { TotalInventory = value.ToString().Trim(); } catch { TotalInventory = ""; }
+            string Note; try { Note = value.ToString().Trim(); } catch { Note = ""; }
+            string MostUsedMonth; try { MostUsedMonth = value.ToString().Trim(); } catch { MostUsedMonth = ""; }
+
+            if (ID_Medicine != "") { sqlSelect = sqlSelect + " or ID_Medicine like '%" + ID_Medicine + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " or Name like '%" + Name + "%'"; }
+            if (MedicineGroup != "") { sqlSelect = sqlSelect + " or MedicineGroup like '%" + MedicineGroup + "%'"; }
+            if (Uses != "") { sqlSelect = sqlSelect + " or Uses like '%" + Uses + "%'"; }
+            if (Unit != "") { sqlSelect = sqlSelect + " or Unit like '%" + Unit + "%'"; }
+            if (Price != "") { sqlSelect = sqlSelect + " or Price like '%" + Price + "%'"; }
+            if (TotalInventory != "") { sqlSelect = sqlSelect + " or TotalInventory like '%" + TotalInventory + "%'"; }
+            if (Note != "") { sqlSelect = sqlSelect + " or Note like '%" + Note + "%'"; }
+            if (MostUsedMonth != "") { sqlSelect = sqlSelect + " or MostUsedMonth like '%" + MostUsedMonth + "%'"; }
+                 
+
+            string query = "";
+            if (sqlSelect != "")
+            {
+                sqlSelect = sqlSelect.Remove(0, 3); // xoa chu " or" dau tien
+                sqlSelect = " WHERE" + sqlSelect;
+                query = "SELECT* FROM DBO.MEDICINE" + sqlSelect;
+            }
+            return query;
+        }
+
+
+        public DataTable SearchAdvance(Medicine medicine)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = this.QuerySearchAdvance(medicine);
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "MEDICINE");
+                    dt = ds.Tables["MEDICINE"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        private string QuerySearchAdvance(Medicine medicine)
         {
             string sqlSelect = "";
 
@@ -205,6 +272,11 @@ namespace MedicineManagement.Controllers
             string query = "Delete DBO.MEDICINE WHERE ID_Medicine = " + ID_Medicine;
             ExecuteNonQuery(query);
 
+        }
+
+        public override DataTable Load(string ID)
+        {
+            throw new NotImplementedException();
         }
     }
 }
