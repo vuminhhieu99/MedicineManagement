@@ -57,7 +57,9 @@
     <Compile Include="Controllers\ControllerMedicine.cs" />
     <Compile Include="Controllers\ControllerPrescription.cs" />
     <Compile Include="Controllers\ControllerPrescriptionLine.cs" />
+    <Compile Include="Controllers\ControllerStatistics.cs" />
     <Compile Include="Controllers\ControllerSupplier.cs" />
+    <Compile Include="Models\Chart.cs" />
     <Compile Include="QuanLyThuocDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
