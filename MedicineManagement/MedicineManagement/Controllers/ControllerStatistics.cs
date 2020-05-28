@@ -403,5 +403,6 @@ namespace MedicineManagement.Controllers
             return chart;
         }
 
+
     }
 }
