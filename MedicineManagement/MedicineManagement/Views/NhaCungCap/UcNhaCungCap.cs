@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicineManagement.Controllers;
+using MedicineManagement.Models;
 
 namespace MedicineManagement.Views.NhaCungCap
 {
     public partial class UcNhaCungCap : UserControl
     {
+        ControllerSupplier ctr = new ControllerSupplier();
+        public static string maNCC, tenNCC, diaChi, sdt, email;
+
         public UcNhaCungCap()
         {
             InitializeComponent();
@@ -25,26 +30,14 @@ namespace MedicineManagement.Views.NhaCungCap
         // Load du lieu tu database vao datagridview
         public void LoadData()
         {
-            // Vidu: them data de test thu
-            for (int i = 0; i < 30; i++)
-            {
-                DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
-                row.Cells[0].Value = i + 1;
-                row.Cells[1].Value = "name";
-                row.Cells[2].Value = "address";
-                row.Cells[3].Value = "phonenumber";
-                row.Cells[4].Value = "email";
-                dataGridView1.Rows.Add(row);
-            }
-
             // Code chinh
-            // .....
+            dataGridView1.DataSource = ctr.Load();
         }
 
         private void btn_Reload_Click(object sender, EventArgs e)
         {
             // Code xu ly reload
-            // ...
+            dataGridView1.DataSource = ctr.Load();
         }
 
         private void btn_Export_Click(object sender, EventArgs e)
@@ -56,11 +49,14 @@ namespace MedicineManagement.Views.NhaCungCap
         private void btn_Add_Click(object sender, EventArgs e)
         {
             Form form = new NhaCungCap.FormAddSupplier();
-            form.Show();
-        }
+            form.ShowDialog();
 
+            dataGridView1.DataSource = ctr.Load();
+        }
+        int index;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            index = e.RowIndex;
             if (e.RowIndex >= 0)
             {
                 // Lay ID cua ban ghi duoc chon --> chuan bi cho Xem, Sua, Xoa
@@ -70,20 +66,31 @@ namespace MedicineManagement.Views.NhaCungCap
                 if (e.ColumnIndex == dataGridView1.Columns["detail"].Index)
                 {
                     // Code xu ly lay du lieu tu ban ghi chuyen sang FormDetailSupplier
-                    // ...
+                    maNCC = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                    tenNCC = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                    diaChi = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                    sdt = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                    email = dataGridView1.Rows[index].Cells[4].Value.ToString();
 
                     // Hien thi FormDetailSupplier
-                    Form form = new NhaCungCap.FormDetailSupplier();
-                    form.Show();
+                    FormDetailSupplier form = new NhaCungCap.FormDetailSupplier();
+                    form.ShowDialog();
+                    dataGridView1.DataSource = ctr.Load();
+
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["edit"].Index)
                 {
                     // Code xu ly lay du lieu tu ban ghi chuyen sang FormEditSupplier
-                    // ...
+                    maNCC = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                    tenNCC = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                    diaChi = dataGridView1.Rows[index].Cells[2].Value.ToString();
+                    sdt = dataGridView1.Rows[index].Cells[3].Value.ToString();
+                    email = dataGridView1.Rows[index].Cells[4].Value.ToString();
 
                     // Hien thi FormEditSupplier
                     Form form = new NhaCungCap.FormEditSupplier();
-                    form.Show();
+                    form.ShowDialog();
+                    dataGridView1.DataSource = ctr.Load();
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["delete"].Index)
                 {
@@ -91,11 +98,17 @@ namespace MedicineManagement.Views.NhaCungCap
                     if (dlr == DialogResult.Yes)
                     {
                         // Code xu ly xoa nha cung cap
-                        //...
-                        MessageBox.Show("Xoá thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        maNCC = dataGridView1.Rows[index].Cells[0].Value.ToString();
+                        ctr.Delete(maNCC);
+                        dataGridView1.DataSource = ctr.Load();
                     }
                 }
             }
+        }
+
+        private void btn_Search_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource =  ctr.Search(textBox_Search.Text);
         }
     }
 }

@@ -82,8 +82,8 @@ namespace MedicineManagement.Controllers
             string Email; try { Email = value.ToString().Trim(); } catch { Email = ""; }
 
             if (ID_Supplier != "") { sqlSelect = sqlSelect + " or ID_Supplier like '%" + ID_Supplier + "%'"; }
-            if (Name != "") { sqlSelect = sqlSelect + " or Name like '%" + Name + "%'"; }
-            if (Address != "") { sqlSelect = sqlSelect + " or Address like '%" + Address + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " or Name like N'%" + Name + "%'"; }
+            if (Address != "") { sqlSelect = sqlSelect + " or Address like N'%" + Address + "%'"; }
             if (Phone != "") { sqlSelect = sqlSelect + " or Phone like '%" + Phone + "%'"; }
             if (Email != "") { sqlSelect = sqlSelect + " or Email like '%" + Email + "%'"; }
 
@@ -135,7 +135,7 @@ namespace MedicineManagement.Controllers
             string Name; try { Name = supplier.Name.ToString().Trim(); } catch { Name = ""; }
             string Address; try { Address = supplier.Address.ToString().Trim(); } catch { Address = ""; }
             string Phone; try { Phone = supplier.Phone.ToString().Trim(); } catch { Phone = ""; }
-            string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }            
+            string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }
 
             if (ID_Supplier != "") { sqlSelect = sqlSelect + " and ID_Supplier like '%" + ID_Supplier + "%'"; }
             if (Name != "") { sqlSelect = sqlSelect + " and Name like '%" + Name + "%'"; }
@@ -172,8 +172,17 @@ namespace MedicineManagement.Controllers
 
         public void Insert(Supplier supplier)
         {
-            string query = QueryInsert(supplier);
-            ExecuteNonQuery(query); 
+            try
+            {
+                string query = QueryInsert(supplier);
+                ExecuteNonQuery(query);
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thêm thât bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private string QueryInsert(Supplier supplier)
@@ -182,27 +191,36 @@ namespace MedicineManagement.Controllers
             string Name; try { Name = supplier.Name.ToString().Trim(); } catch { Name = ""; }
             string Address; try { Address = supplier.Address.ToString().Trim(); } catch { Address = ""; }
             string Phone; try { Phone = supplier.Phone.ToString().Trim(); } catch { Phone = ""; }
-            string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }       
+            string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }
 
             if (Name == "") { Name = "null"; }
             if (Address == "") { Address = "null"; }
             if (Phone == "") { Phone = "null"; }
             if (Email == "") { Email = "null"; }
 
-            query = "EXEC InsertSUPPLIER " + Name + ", " + Address + ", " + Phone + ", " + Email;
+            query = $"EXEC InsertSUPPLIER  N'{Name}' , N'{Address}', '{Phone}' , '{Email}'";
             return query;
         }
 
         // update 1 Inputcoupon row
         public void Update(Supplier supplier)
         {
-            string query = QueryUpdate(supplier);
-            if (query == "")
+            try
             {
-                MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
-                return;
+                string query = QueryUpdate(supplier);
+                if (query == "")
+                {
+                    MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
+                    return;
+                }
+                ExecuteNonQuery(query);
+                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            ExecuteNonQuery(query);            
+            catch (Exception)
+            {
+                MessageBox.Show("Sửa thât bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         public string QueryUpdate(Supplier supplier)
@@ -225,15 +243,23 @@ namespace MedicineManagement.Controllers
             if (Phone == "") { Phone = "null"; }
             if (Email == "") { Email = "null"; }
 
-            query = "EXEC UpdateSUPPLIER " + ID_Supplier + ", " + Name + ", " + Address + ", " + Phone + ", " + Email;
+            query = $"EXEC UpdateSUPPLIER  {ID_Supplier} , N'{Name}' , N'{Address}' , '{Phone}' , '{Email}'";
             return query;
         }
 
         public void Delete(string ID_Supplier)
-        {            
-            ID_Supplier = ID_Supplier.Trim();
-            string query = "Delete DBO.SUPPLIER  WHERE ID_Supplier = " + ID_Supplier;
-            ExecuteNonQuery(query);
+        {
+            try
+            {
+                ID_Supplier = ID_Supplier.Trim();
+                string query = $"Delete DBO.SUPPLIER  WHERE ID_Supplier = {ID_Supplier}";
+                ExecuteNonQuery(query);
+                MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa thât bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public override DataTable Load(string ID)

@@ -227,8 +227,19 @@ namespace MedicineManagement.Controllers
 
         public void Insert(Inputcouponline inputcouponline)
         {
-            string query = QueryInsert(inputcouponline);
-            ExecuteNonQuery(query);           
+            try
+            {
+                string query = QueryInsert(inputcouponline);
+                ExecuteNonQuery(query);
+                MessageBox.Show("Thêm Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thêm Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
         }
 
         private string QueryInsert(Inputcouponline inputcouponline)
@@ -254,16 +265,26 @@ namespace MedicineManagement.Controllers
             if (NumUnitOutput == "") { NumUnitOutput = "1"; }
             if (ProductionBatch == "") { UnitInput = "null"; }
             
-            query = "EXEC InsertINPUTCOUPONLINE " + ID_InputCoupon + ", " + ID_Medicine + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", " + ExpiryDate + ", " + NumUnitOutput + ", " + ProductionBatch;
+            query = "EXEC InsertINPUTCOUPONLINE " + ID_InputCoupon + ", " + ID_Medicine + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", '" + ExpiryDate + "', " + NumUnitOutput + ", " + ProductionBatch;
             return query;
         }
         // update 1 Inputcouponline row
         public void Update(Inputcouponline inputcouponline)
         {
-            string query = QueryUpdate(inputcouponline);
-            if (query == "")                        
-                return;
-            ExecuteNonQuery(query);
+            try
+            {
+                string query = QueryUpdate(inputcouponline);
+                if (query == "")
+                    return;
+                ExecuteNonQuery(query);
+                MessageBox.Show("Sửa Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Sửa Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
         }
 
         public string QueryUpdate(Inputcouponline inputcouponline)
@@ -275,8 +296,8 @@ namespace MedicineManagement.Controllers
 
             string Name; try { Name = inputcouponline.Name.ToString().Trim(); } catch { Name = ""; }
             string UnitInput; try { UnitInput = inputcouponline.UnitInput.ToString().Trim(); } catch { UnitInput = ""; }
-            string Amount; try { Amount = inputcouponline.Name.ToString().Trim(); } catch { Amount = ""; }
-            string Price; try { Price = inputcouponline.Name.ToString().Trim(); } catch { Price = ""; }
+            string Amount; try { Amount = inputcouponline.Amount.ToString().Trim(); } catch { Amount = ""; }
+            string Price; try { Price = inputcouponline.Price.ToString().Trim(); } catch { Price = ""; }
             string ExpiryDate; try { ExpiryDate = inputcouponline.ExpiryDate.ToShortDateString().Trim(); } catch { ExpiryDate = ""; }
             string NumUnitOutput; try { NumUnitOutput = inputcouponline.NumUnitOutput.ToString().Trim(); } catch { NumUnitOutput = ""; }
             string ProductionBatch; try { ProductionBatch = inputcouponline.ProductionBatch.ToString().Trim(); } catch { ProductionBatch = ""; }
@@ -301,16 +322,27 @@ namespace MedicineManagement.Controllers
             if (ExpiryDate == "") { ExpiryDate = "null"; }
             if (NumUnitOutput == "") { NumUnitOutput = "0"; }
             if (ProductionBatch == "") { ExpiryDate = "null"; }
-            query = "EXEC UpdateINPUTCOUPONLINE " + ID_InputCouponLine + ", " + ID_InputCoupon + ", " + ID_Medicine  + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", " + ExpiryDate + ", " + NumUnitOutput + ", " + ProductionBatch ;
+            query = "EXEC UpdateINPUTCOUPONLINE " + ID_InputCouponLine + ", " + ID_InputCoupon + ", " + ID_Medicine  + ", '" + Name + "', " + UnitInput + ", " + Amount + ", " + Price + ", '" + ExpiryDate + "', " + NumUnitOutput + ", " + ProductionBatch ;
 
             return query;
         }
 
         public void Delete(string ID_InputCouponLine)
         {
+            try
+            {
+
             ID_InputCouponLine = ID_InputCouponLine.Trim();
             string query = "Delete DBO.INPUTCOUPONLINE WHERE ID_InputCouponLine = " + ID_InputCouponLine;
             ExecuteNonQuery(query);
+                MessageBox.Show("Xoá Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xoá Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }
