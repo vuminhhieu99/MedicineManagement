@@ -40,6 +40,30 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
+        public DataTable WarnInventory()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                string query = "SELECT * FROM DBO.MEDICINE WHERE totalInventory <= 10 ORDER BY totalInventory";
+                adapter.SelectCommand = new SqlCommand(query, connection);
+                cb = new SqlCommandBuilder(adapter);
+                adapter.Fill(ds, "MEDICINE");
+                dt = ds.Tables["MEDICINE"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            connection.Close();
+            return dt;
+        }
+
         public override DataTable Search(string value)
         {
             DataTable dt = new DataTable();
@@ -147,8 +171,8 @@ namespace MedicineManagement.Controllers
             string Search_MaxPrice; try { Search_MaxPrice = medicine.Search_MaxPrice.ToString().Trim(); } catch { Search_MaxPrice = ""; }
             string Search_MinTotalInventory; try { Search_MinTotalInventory = medicine.Search_MinTotalInventory.ToString().Trim(); } catch { Search_MinTotalInventory = ""; }
             string Search_MaxTotalInventory; try { Search_MaxTotalInventory = medicine.Search_MaxTotalInventory.ToString().Trim(); } catch { Search_MaxTotalInventory = ""; }
-            string Search_StartMostUsedMonth; try { Search_StartMostUsedMonth = medicine.Search_StartMostUsedMonth.ToString().Trim(); } catch { Search_StartMostUsedMonth = ""; }
-            string Search_EndMostUsedMonth; try { Search_EndMostUsedMonth = medicine.Search_EndMostUsedMonth.ToString().Trim(); } catch { Search_EndMostUsedMonth = ""; }
+            string MostUsedMonth; try { MostUsedMonth = medicine.MostUsedMonth.ToString().Trim(); } catch { MostUsedMonth = ""; }
+            
 
             if (ID_Medicine != "") { sqlSelect = sqlSelect + " and ID_Medicine like '%" + ID_Medicine + "%'"; }
             if (Name != "") { sqlSelect = sqlSelect + " and Name like '%" + Name + "%'"; }
@@ -157,8 +181,21 @@ namespace MedicineManagement.Controllers
             if (Search_MaxPrice != "") { sqlSelect = sqlSelect + " and Price <= " + Search_MaxPrice; }
             if (Search_MinTotalInventory != "") { sqlSelect = sqlSelect + " and TotalInventory >= " + Search_MinTotalInventory; }
             if (Search_MaxTotalInventory != "") { sqlSelect = sqlSelect + " and TotalInventory <= " + Search_MaxTotalInventory; }
-            if (Search_StartMostUsedMonth != "") { sqlSelect = sqlSelect + " and MostUsedMonth >= " + Search_StartMostUsedMonth; }
-            if (Search_EndMostUsedMonth != "") { sqlSelect = sqlSelect + " and MostUsedMonth <= " + Search_EndMostUsedMonth; }
+            
+            if (MostUsedMonth != "")
+            {
+                int count = ListMostUsedMonth(MostUsedMonth).Length;
+                if (count > 0)
+                {
+                    string[] month = ListMostUsedMonth(MostUsedMonth);
+                    for (int i=0; i < count; i++)
+                    {
+                        sqlSelect = sqlSelect + " and MostUsedMonth like '%" + month[i] + "%'";
+                    }
+                }
+
+            }
+            
 
             string query = "";
             if (sqlSelect != "")
@@ -278,5 +315,33 @@ namespace MedicineManagement.Controllers
         {
             throw new NotImplementedException();
         }
+
+        public DataTable WarnInventory(string ID_Medicine)
+        {
+            DataTable dt = new DataTable();
+
+
+            return dt;
+        }
+
+        public string[] ListMostUsedMonth(string mostUsedMonth)
+        {
+            mostUsedMonth = mostUsedMonth.Trim();
+            string[] arrListStr = mostUsedMonth.Split(',');           
+
+            return arrListStr;
+        }
+
+        // cảnh báo dịch bệnh theo mùa
+        public DataTable WarDisease()
+        {
+            DataTable dt = new DataTable();
+            int warnMonth = DateTime.Now.AddMonths(1).Month;
+            Medicine medicine = new Medicine();
+            medicine.MostUsedMonth = warnMonth.ToString();
+            dt = this.SearchAdvance(medicine);
+            return dt;
+        }
+
     }
 }

@@ -32,6 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcQuanLyThuoc));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDMedicineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicineGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalInventoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detail = new System.Windows.Forms.DataGridViewImageColumn();
+            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.mEDICINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyThuocDataSet = new MedicineManagement.QuanLyThuocDataSet();
             this.textBox_Search = new System.Windows.Forms.TextBox();
             this.label_CountRecord = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -42,22 +53,11 @@
             this.btn_Reload = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Search = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Add = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.quanLyThuocDataSet = new MedicineManagement.QuanLyThuocDataSet();
-            this.mEDICINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mEDICINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.MEDICINETableAdapter();
-            this.iDMedicineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicineGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalInventoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detail = new System.Windows.Forms.DataGridViewImageColumn();
-            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -95,6 +95,88 @@
             this.dataGridView1.Size = new System.Drawing.Size(1272, 668);
             this.dataGridView1.TabIndex = 54;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // iDMedicineDataGridViewTextBoxColumn
+            // 
+            this.iDMedicineDataGridViewTextBoxColumn.DataPropertyName = "ID_Medicine";
+            this.iDMedicineDataGridViewTextBoxColumn.HeaderText = "Mã thuốc";
+            this.iDMedicineDataGridViewTextBoxColumn.Name = "iDMedicineDataGridViewTextBoxColumn";
+            this.iDMedicineDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên thuốc";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // medicineGroupDataGridViewTextBoxColumn
+            // 
+            this.medicineGroupDataGridViewTextBoxColumn.DataPropertyName = "MedicineGroup";
+            this.medicineGroupDataGridViewTextBoxColumn.HeaderText = "Nhóm thuốc";
+            this.medicineGroupDataGridViewTextBoxColumn.Name = "medicineGroupDataGridViewTextBoxColumn";
+            this.medicineGroupDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Giá tiền";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalInventoryDataGridViewTextBoxColumn
+            // 
+            this.totalInventoryDataGridViewTextBoxColumn.DataPropertyName = "TotalInventory";
+            this.totalInventoryDataGridViewTextBoxColumn.HeaderText = "Tồn kho";
+            this.totalInventoryDataGridViewTextBoxColumn.Name = "totalInventoryDataGridViewTextBoxColumn";
+            this.totalInventoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // detail
+            // 
+            this.detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.detail.HeaderText = "Xem";
+            this.detail.Image = global::MedicineManagement.Properties.Resources.icon_detail;
+            this.detail.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.detail.Name = "detail";
+            this.detail.ReadOnly = true;
+            this.detail.Width = 34;
+            // 
+            // edit
+            // 
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.edit.HeaderText = "Sửa";
+            this.edit.Image = global::MedicineManagement.Properties.Resources.icon_edit;
+            this.edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Width = 32;
+            // 
+            // delete
+            // 
+            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.delete.HeaderText = "Xoá";
+            this.delete.Image = global::MedicineManagement.Properties.Resources.icon_delete;
+            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Width = 32;
+            // 
+            // mEDICINEBindingSource
+            // 
+            this.mEDICINEBindingSource.DataMember = "MEDICINE";
+            this.mEDICINEBindingSource.DataSource = this.quanLyThuocDataSet;
+            // 
+            // quanLyThuocDataSet
+            // 
+            this.quanLyThuocDataSet.DataSetName = "QuanLyThuocDataSet";
+            this.quanLyThuocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox_Search
             // 
@@ -262,91 +344,9 @@
             this.btn_Add.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
-            // quanLyThuocDataSet
-            // 
-            this.quanLyThuocDataSet.DataSetName = "QuanLyThuocDataSet";
-            this.quanLyThuocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mEDICINEBindingSource
-            // 
-            this.mEDICINEBindingSource.DataMember = "MEDICINE";
-            this.mEDICINEBindingSource.DataSource = this.quanLyThuocDataSet;
-            // 
             // mEDICINETableAdapter
             // 
             this.mEDICINETableAdapter.ClearBeforeFill = true;
-            // 
-            // iDMedicineDataGridViewTextBoxColumn
-            // 
-            this.iDMedicineDataGridViewTextBoxColumn.DataPropertyName = "ID_Medicine";
-            this.iDMedicineDataGridViewTextBoxColumn.HeaderText = "Mã thuốc";
-            this.iDMedicineDataGridViewTextBoxColumn.Name = "iDMedicineDataGridViewTextBoxColumn";
-            this.iDMedicineDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên thuốc";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // medicineGroupDataGridViewTextBoxColumn
-            // 
-            this.medicineGroupDataGridViewTextBoxColumn.DataPropertyName = "MedicineGroup";
-            this.medicineGroupDataGridViewTextBoxColumn.HeaderText = "Nhóm thuốc";
-            this.medicineGroupDataGridViewTextBoxColumn.Name = "medicineGroupDataGridViewTextBoxColumn";
-            this.medicineGroupDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Giá tiền";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalInventoryDataGridViewTextBoxColumn
-            // 
-            this.totalInventoryDataGridViewTextBoxColumn.DataPropertyName = "TotalInventory";
-            this.totalInventoryDataGridViewTextBoxColumn.HeaderText = "Tồn kho";
-            this.totalInventoryDataGridViewTextBoxColumn.Name = "totalInventoryDataGridViewTextBoxColumn";
-            this.totalInventoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // detail
-            // 
-            this.detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.detail.HeaderText = "Xem";
-            this.detail.Image = global::MedicineManagement.Properties.Resources.icon_detail;
-            this.detail.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.detail.Name = "detail";
-            this.detail.ReadOnly = true;
-            this.detail.Width = 34;
-            // 
-            // edit
-            // 
-            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.edit.HeaderText = "Sửa";
-            this.edit.Image = global::MedicineManagement.Properties.Resources.icon_edit;
-            this.edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Width = 32;
-            // 
-            // delete
-            // 
-            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.delete.HeaderText = "Xoá";
-            this.delete.Image = global::MedicineManagement.Properties.Resources.icon_delete;
-            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Width = 32;
             // 
             // UcQuanLyThuoc
             // 
@@ -365,9 +365,9 @@
             this.Size = new System.Drawing.Size(1312, 822);
             this.Load += new System.EventHandler(this.UcQuanLyThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

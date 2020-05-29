@@ -32,7 +32,7 @@ namespace MedicineManagement.Controllers
         }
         public abstract DataTable Load();
         public abstract DataTable Load(string ID);
-        public abstract DataTable Search(string text);        
+        public abstract DataTable Search(string text); 
         public void ExecuteNonQuery(string query)
         {
             try
@@ -55,6 +55,7 @@ namespace MedicineManagement.Controllers
             }
         }
 
+        
 
     }
 }

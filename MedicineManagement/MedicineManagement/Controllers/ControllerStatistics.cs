@@ -8,9 +8,10 @@ using MedicineManagement.Models;
 
 namespace MedicineManagement.Controllers
 {
+    public enum DateStatistics { NGAY = 1, THANG = 2, NAM = 3 };
     public class ControllerStatistics
     {
-        public enum DateStatistics { NGAY = 1, THANG = 2, NAM = 3 };
+        
         public ControllerStatistics()
         {
             ;
@@ -76,7 +77,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < monthCount - 1; i++)
                 {
                     column cl = chart.listColumn[i];
-                    cl.percent = cl.value * 100 / maxValue;
+                    cl.percent = cl.value/ maxValue;
                     chart.listColumn[i] = cl;
                 }
 
@@ -139,7 +140,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < dayCount - 1; i++)
                 {
                     column cl = chart.listColumn[i];
-                    cl.percent = cl.value * 100 / maxValue;
+                    cl.percent = cl.value/ maxValue;
                     chart.listColumn[i] = cl;
                 }
             }
@@ -200,7 +201,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < namCount - 1; i++)
                 {
                     column cl = chart.listColumn[i];
-                    cl.percent = cl.value * 100 / maxValue;
+                    cl.percent = cl.value/ maxValue;
                     chart.listColumn[i] = cl;
                 }
 
@@ -270,7 +271,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < monthCount - 1; i++)
                 {
                     column cl = chart.listColumn[i];
-                    cl.percent = cl.value * 100 / maxValue;
+                    cl.percent = cl.value/ maxValue;
                     chart.listColumn[i] = cl;
                 }
 
@@ -333,7 +334,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < dayCount - 1; i++)
                 {
                     column cl = chart.listColumn[i];
-                    cl.percent = cl.value * 100 / maxValue;
+                    cl.percent = cl.value / maxValue;
                     chart.listColumn[i] = cl;
                 }
             }
@@ -346,7 +347,7 @@ namespace MedicineManagement.Controllers
                 int Pyear;
 
                 chart.NameChart = "Thống kê doanh thu theo năm";
-                chart.NameX = "tháng";
+                chart.NameX = "năm";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = namCount;
 
@@ -364,7 +365,7 @@ namespace MedicineManagement.Controllers
                     cl.percent = 0;
 
                     time = time.AddYears(i);
-                    cl.name = time.Month + "/" + time.Year;
+                    cl.name =""+ time.Year;
 
                     chart.ListColumn.Add(cl);
                 }
@@ -394,7 +395,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < namCount - 1; i++)
                 {
                     column cl = chart.listColumn[i];
-                    cl.percent = cl.value * 100 / maxValue;
+                    cl.percent = cl.value/ maxValue;
                     chart.listColumn[i] = cl;
                 }
 
@@ -403,6 +404,62 @@ namespace MedicineManagement.Controllers
             return chart;
         }
 
+        public Chart Profits(DateTime Start, DateTime End, DateStatistics format)
+        {
+            Chart chartTevenue = Tevenue(Start, End, format);
+            Chart chartImportMoney = ImportMoney(Start, End, format);
+            Chart chartProfits = new Chart();
+
+            int count = chartTevenue.ColumnCount;
+            long maxValue = 0; 
+            for (int i = 0; i < count - 1; i++)
+            {
+                column cl;
+                cl.value = chartTevenue.ListColumn[i].value - chartImportMoney.ListColumn[i].value;
+                cl.percent = 0;
+             
+                cl.name = "" + chartTevenue.ListColumn[i].name;
+                if (cl.value > maxValue)
+                {
+                    maxValue = cl.value;
+                }
+                chartProfits.ListColumn.Add(cl);                 
+            }
+            for (int i = 0; i < count - 1; i++)
+            {
+                column cl = chartProfits.listColumn[i];
+                cl.percent = cl.value/ maxValue;
+                chartProfits.listColumn[i] = cl;
+            }
+
+            return chartProfits;
+        }
+
+        
+
+        //public DataTable WarnInventory()
+        //{
+        //    DataTable dt = new DataTable();
+        //    try
+        //    {
+        //        ds.Clear();
+        //        string query = "SELECT * FROM DBO.MEDICINE WHERE totalInventory <= 10 ORDER BY totalInventory";
+        //        adapter.SelectCommand = new SqlCommand(query, connection);
+        //        cb = new SqlCommandBuilder(adapter);
+        //        adapter.Fill(ds, "MEDICINE");
+        //        dt = ds.Tables["MEDICINE"];
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
+        //    connection.Close();
+        //    return dt;
+        //}
 
     }
 }
