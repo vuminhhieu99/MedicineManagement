@@ -19,6 +19,7 @@ namespace MedicineManagement.Models
         private string nameX;
         private string nameY;
         private int columnCount;
+        private int counting;
         
         public List<column> listColumn;
 

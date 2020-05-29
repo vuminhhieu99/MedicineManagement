@@ -210,6 +210,7 @@ namespace MedicineManagement.Controllers
             return chart;
         }
 
+
         public Chart ImportMoney(DateTime Start, DateTime End, DateStatistics format)
         {
             Chart chart = new Chart();
@@ -409,6 +410,8 @@ namespace MedicineManagement.Controllers
             Chart chartTevenue = Tevenue(Start, End, format);
             Chart chartImportMoney = ImportMoney(Start, End, format);
             Chart chartProfits = new Chart();
+
+            
 
             int count = chartTevenue.ColumnCount;
             long maxValue = 0; 
