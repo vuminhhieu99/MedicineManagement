@@ -38,10 +38,12 @@ GO
 	 Price decimal (10, 0) NULL,
 	 TotalInventory INT NULL,
 	 Note nvarchar (max) NULL,
-	 MostUsedMonth int  NULL,
+	 MostUsedMonth nvarchar(20)  NULL,
  CONSTRAINT  PK_THUOC  PRIMARY KEY ( ID_Medicine  ) 
  )
 GO
+
+
 
 CREATE TABLE PRESCRIPTION (
 	 ID_Prescription int  IDENTITY(1,1) NOT NULL,
