@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicineManagement.Controllers;
+using MedicineManagement.Models;
 
 namespace MedicineManagement.Views.NhaCungCap
 {
@@ -16,7 +18,8 @@ namespace MedicineManagement.Views.NhaCungCap
         {
             InitializeComponent();
         }
-
+        ControllerSupplier ctr = new ControllerSupplier();
+        Supplier ncc = new Supplier();
         // Shadow
         protected override CreateParams CreateParams
         {
@@ -32,12 +35,14 @@ namespace MedicineManagement.Views.NhaCungCap
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             // code xu ly sua thong tin
-            // ...
+            ncc.ID_Supplier =int.Parse(textBoxMaNCC.Text);
+            ncc.Name = textBoxTenNCC.Text;
+            ncc.Address = textBoxDiaChi.Text;
+            ncc.Phone = textBoxSDT.Text;
+            ncc.Email = textBoxEmail.Text;
 
-            // thong bao thanh cong
-            MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // dong form
+            ctr.Update(ncc);
+            // dong formz
             Close();
         }
 
@@ -46,6 +51,15 @@ namespace MedicineManagement.Views.NhaCungCap
             DialogResult dlr = MessageBox.Show("Chắc chắn muốn huỷ ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlr == DialogResult.Yes)
                 Close();
+        }
+
+        private void FormEditSupplier_Load(object sender, EventArgs e)
+        {
+            textBoxMaNCC.Text = UcNhaCungCap.maNCC;
+            textBoxTenNCC.Text = UcNhaCungCap.tenNCC;
+            textBoxDiaChi.Text = UcNhaCungCap.diaChi;
+            textBoxSDT.Text = UcNhaCungCap.sdt;
+            textBoxEmail.Text = UcNhaCungCap.email;
         }
     }
 }

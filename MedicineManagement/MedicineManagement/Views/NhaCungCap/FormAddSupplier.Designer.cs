@@ -30,17 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddSupplier));
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxTenNCC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxSDT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxDiaChi = new System.Windows.Forms.TextBox();
             this.btn_Cancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Submit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel_title = new System.Windows.Forms.Panel();
@@ -55,52 +53,32 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(30, 122);
+            this.label4.Location = new System.Drawing.Point(30, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 19);
             this.label4.TabIndex = 102;
             this.label4.Text = "Địa chỉ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // textBoxTenNCC
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(159, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(609, 27);
-            this.textBox2.TabIndex = 101;
+            this.textBoxTenNCC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTenNCC.Location = new System.Drawing.Point(159, 25);
+            this.textBoxTenNCC.Name = "textBoxTenNCC";
+            this.textBoxTenNCC.Size = new System.Drawing.Size(609, 27);
+            this.textBoxTenNCC.TabIndex = 101;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(30, 78);
+            this.label3.Location = new System.Drawing.Point(30, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 19);
             this.label3.TabIndex = 100;
             this.label3.Text = "Tên nhà cung cấp";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(159, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(609, 27);
-            this.textBox1.TabIndex = 99;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(30, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 19);
-            this.label2.TabIndex = 98;
-            this.label2.Text = "Mã nhà cung cấp";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -117,16 +95,14 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textBoxEmail);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.textBoxSDT);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBoxDiaChi);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBoxTenNCC);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_Cancel);
             this.panel2.Controls.Add(this.btn_Submit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -135,53 +111,53 @@
             this.panel2.Size = new System.Drawing.Size(800, 405);
             this.panel2.TabIndex = 82;
             // 
-            // textBox5
+            // textBoxEmail
             // 
-            this.textBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(159, 215);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(609, 27);
-            this.textBox5.TabIndex = 107;
+            this.textBoxEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(159, 165);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(609, 27);
+            this.textBoxEmail.TabIndex = 107;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(30, 215);
+            this.label6.Location = new System.Drawing.Point(30, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 19);
             this.label6.TabIndex = 106;
             this.label6.Text = "Email";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // textBoxSDT
             // 
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(159, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(609, 27);
-            this.textBox4.TabIndex = 105;
+            this.textBoxSDT.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSDT.Location = new System.Drawing.Point(159, 119);
+            this.textBoxSDT.Name = "textBoxSDT";
+            this.textBoxSDT.Size = new System.Drawing.Size(609, 27);
+            this.textBoxSDT.TabIndex = 105;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(30, 169);
+            this.label5.Location = new System.Drawing.Point(30, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 19);
             this.label5.TabIndex = 104;
             this.label5.Text = "Số điện thoại";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // textBoxDiaChi
             // 
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(159, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(609, 27);
-            this.textBox3.TabIndex = 103;
+            this.textBoxDiaChi.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDiaChi.Location = new System.Drawing.Point(159, 72);
+            this.textBoxDiaChi.Name = "textBoxDiaChi";
+            this.textBoxDiaChi.Size = new System.Drawing.Size(609, 27);
+            this.textBoxDiaChi.TabIndex = 103;
             // 
             // btn_Cancel
             // 
@@ -280,20 +256,18 @@
 
         #endregion
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxTenNCC;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Cancel;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Submit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel_title;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxSDT;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxDiaChi;
     }
 }

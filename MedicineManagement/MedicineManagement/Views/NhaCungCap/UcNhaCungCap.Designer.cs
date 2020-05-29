@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcNhaCungCap));
             this.label_CountRecord = new System.Windows.Forms.Label();
             this.textBox_Search = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -45,11 +41,21 @@
             this.btn_Reload = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Add = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Search = new Bunifu.Framework.UI.BunifuImageButton();
+            this.quanLyThuocDataSet = new MedicineManagement.QuanLyThuocDataSet();
+            this.sUPPLIERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sUPPLIERTableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.SUPPLIERTableAdapter();
+            this.iDSupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detail = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label_CountRecord
@@ -88,53 +94,25 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
+            this.iDSupplierDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
             this.detail,
             this.edit,
             this.delete});
+            this.dataGridView1.DataSource = this.sUPPLIERBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(19, 104);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1272, 668);
             this.dataGridView1.TabIndex = 63;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã nhà cung cấp";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên nhà cung cấp";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Địa chỉ";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Số điện thoại";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Email";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -144,7 +122,6 @@
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 34;
             // 
             // dataGridViewImageColumn2
             // 
@@ -154,7 +131,6 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 32;
             // 
             // dataGridViewImageColumn3
             // 
@@ -164,7 +140,6 @@
             this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Width = 32;
             // 
             // btn_Export
             // 
@@ -257,6 +232,56 @@
             this.btn_Search.TabIndex = 67;
             this.btn_Search.TabStop = false;
             this.btn_Search.Zoom = 10;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // quanLyThuocDataSet
+            // 
+            this.quanLyThuocDataSet.DataSetName = "QuanLyThuocDataSet";
+            this.quanLyThuocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sUPPLIERBindingSource
+            // 
+            this.sUPPLIERBindingSource.DataMember = "SUPPLIER";
+            this.sUPPLIERBindingSource.DataSource = this.quanLyThuocDataSet;
+            // 
+            // sUPPLIERTableAdapter
+            // 
+            this.sUPPLIERTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDSupplierDataGridViewTextBoxColumn
+            // 
+            this.iDSupplierDataGridViewTextBoxColumn.DataPropertyName = "ID_Supplier";
+            this.iDSupplierDataGridViewTextBoxColumn.HeaderText = "Mã nhà cung cấp";
+            this.iDSupplierDataGridViewTextBoxColumn.Name = "iDSupplierDataGridViewTextBoxColumn";
+            this.iDSupplierDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Nhà Cung Cấp";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Địa Chỉ";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Số Điện Thoại";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // detail
             // 
@@ -305,6 +330,8 @@
             this.Load += new System.EventHandler(this.UcNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUPPLIERBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,13 +350,16 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_Search;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDSupplierDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn detail;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.BindingSource sUPPLIERBindingSource;
+        private QuanLyThuocDataSet quanLyThuocDataSet;
+        private QuanLyThuocDataSetTableAdapters.SUPPLIERTableAdapter sUPPLIERTableAdapter;
     }
 }
