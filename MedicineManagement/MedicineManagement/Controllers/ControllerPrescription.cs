@@ -114,7 +114,7 @@ namespace MedicineManagement.Controllers
 
             if (ID_Prescription != "") { sqlSelect = sqlSelect + " or ID_Prescription like '%" + ID_Prescription + "%'"; }
             if (CreateDate != "") { sqlSelect = sqlSelect + " or CreateDate like '%" + CreateDate + "%'"; }
-            if (Doctor != "") { sqlSelect = sqlSelect + " or Doctor like N'%" + Doctor + "%'"; }
+            if (Doctor != "") { sqlSelect = sqlSelect + " or Doctor like '%" + Doctor + "%'"; }
             if (MedicalRecord != "") { sqlSelect = sqlSelect + " or MedicalRecord like '%" + MedicalRecord + "%'"; }
             if (Drugstores != "") { sqlSelect = sqlSelect + " or Drugstores like '%" + Drugstores + "%'"; }
             if (TotalMoney != "") { sqlSelect = sqlSelect + " or TotalMoney like '%" + TotalMoney + "%'"; }
@@ -176,7 +176,7 @@ namespace MedicineManagement.Controllers
             if (ID_Prescription != "") { sqlSelect = sqlSelect + " and ID_Prescription like '%" + ID_Prescription + "%'"; }
             if (search_StartCreateDate != "") { sqlSelect = sqlSelect + " and CreateDate >=  '" + search_StartCreateDate + "'"; }
             if (search_EndCreateDate != "") { sqlSelect = sqlSelect + " and CreateDate <=  '" + search_EndCreateDate + "'"; }
-            if (Doctor != "") { sqlSelect = sqlSelect + " and Doctor like N'%" + Doctor + "%'"; }
+            if (Doctor != "") { sqlSelect = sqlSelect + " and Doctor like '%" + Doctor + "%'"; }
             if (MedicalRecord != "") { sqlSelect = sqlSelect + " and MedicalRecord like '%" + MedicalRecord + "%'"; }
             if (Drugstores != "") { sqlSelect = sqlSelect + " and Drugstores like '%" + Drugstores + "%'"; }
             if (search_MinTotalMoney != "") { sqlSelect = sqlSelect + " and TotalMoney >= " + search_MinTotalMoney; }

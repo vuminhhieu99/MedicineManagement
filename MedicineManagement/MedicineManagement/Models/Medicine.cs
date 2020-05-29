@@ -22,7 +22,8 @@ namespace MedicineManagement.Models
         private decimal search_MaxPrice;
         private decimal search_MinTotalInventory;
         private decimal search_MaxTotalInventory;
-
+        private int search_StartMostUsedMonth;
+        private int search_EndTotalInventory;
 
         public int ID_Medicine { get => iD_Medicine; set => iD_Medicine = value; }
         public string Name { get => name; set => name = value; }
@@ -37,7 +38,8 @@ namespace MedicineManagement.Models
         public decimal Search_MaxPrice { get => search_MaxPrice; set => search_MaxPrice = value; }
         public decimal Search_MinTotalInventory { get => search_MinTotalInventory; set => search_MinTotalInventory = value; }
         public decimal Search_MaxTotalInventory { get => search_MaxTotalInventory; set => search_MaxTotalInventory = value; }
-
+        public int Search_StartMostUsedMonth { get => search_StartMostUsedMonth; set => search_StartMostUsedMonth = value; }
+        public int Search_EndMostUsedMonth { get => search_EndTotalInventory; set => search_EndTotalInventory = value; }
 
         public Medicine()
         {
