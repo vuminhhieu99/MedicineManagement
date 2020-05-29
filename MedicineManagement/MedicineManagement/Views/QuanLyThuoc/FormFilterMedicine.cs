@@ -78,15 +78,11 @@ namespace MedicineManagement.Views.QuanLyThuoc
             // MostUsedMonth: start-end ???
             //mdc.MostUsedMonth = textBox_MostUsed.Text;
 
-            mdc.Search_StartMostUsedMonth = -1;
-            mdc.Search_EndMostUsedMonth = -1;
 
             // ?????
-            if (textBox_MostUsed.Text != "")
-            {
-                mdc.Search_StartMostUsedMonth = Convert.ToInt32(textBox_MostUsed.Text);
-                mdc.Search_EndMostUsedMonth = Convert.ToInt32(textBox_MostUsed.Text);
-            }
+            //if (textBox_MostUsed.Text != "")
+            //{
+            //}
 
             mdc.MedicineGroup = "";
             if (comboBox_MedicineGroup.SelectedIndex != -1)

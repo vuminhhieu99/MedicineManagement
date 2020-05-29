@@ -32,7 +32,7 @@ namespace MedicineManagement.Controllers
         }
         public abstract DataTable Load();
         public abstract DataTable Load(string ID);
-        public abstract DataTable Search(string text);        
+        public abstract DataTable Search(string text); 
         public void ExecuteNonQuery(string query)
         {
             try
@@ -42,12 +42,6 @@ namespace MedicineManagement.Controllers
                     connection.Open();
                     command.CommandText = query;
                     var count = command.ExecuteNonQuery();
-
-                    // khong can thiet
-                    //if (count > 0)
-                    //{
-                    //    MessageBox.Show("Thành công", "thông báo", MessageBoxButtons.OK);
-                    //}
                     connection.Close();
                 }
             }
@@ -57,6 +51,7 @@ namespace MedicineManagement.Controllers
             }
         }
 
+        
 
     }
 }
