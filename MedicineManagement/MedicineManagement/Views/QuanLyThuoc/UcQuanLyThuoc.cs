@@ -140,7 +140,8 @@ namespace MedicineManagement.Views.QuanLyThuoc
 
                     // Hien thi FormDetailMedicine
                     Form form = new QuanLyThuoc.FormDetailMedicine();
-                    form.Show();
+                    form.ShowDialog();
+                    LoadData();
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["edit"].Index)
                 {

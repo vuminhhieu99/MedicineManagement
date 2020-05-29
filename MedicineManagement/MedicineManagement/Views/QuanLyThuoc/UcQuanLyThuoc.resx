@@ -117,8 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<<<<<<< HEAD
-=======
+
   <metadata name="detail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -134,7 +133,6 @@
   <metadata name="quanLyThuocDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
->>>>>>> 537e2b3666a1b87aec349a777fa30c67634cd487
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_Export.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -151,8 +149,6 @@
         BsNEOEBuGfllBhr9ALJ7pyqSX28kjlPCwcJmw+0vQ45ZOwnJBoid486+Khu0CAdY3hFa752suOmOO1Ky
         AZLH6NfY4n1vpqruE1eFX4CrA6P8zbEv8UM7aWsQN8efN+BPHDSf4FrhxD8o3BgUbgwKNwaFmyKSf1MM
         ruvEg36qAAAAAElFTkSuQmCC
-<<<<<<< HEAD
-=======
 </value>
   </data>
   <data name="btn_Filter.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -170,7 +166,6 @@
         BsNEOEBuGfllBhr9ALJ7pyqSX28kjlPCwcJmw+0vQ45ZOwnJBoid486+Khu0CAdY3hFa752suOmOO1Ky
         AZLH6NfY4n1vpqruE1eFX4CrA6P8zbEv8UM7aWsQN8efN+BPHDSf4FrhxD8o3BgUbgwKNwaFmyKSf1MM
         ruvEg36qAAAAAElFTkSuQmCC
->>>>>>> 537e2b3666a1b87aec349a777fa30c67634cd487
 </value>
   </data>
   <data name="btn_Reload.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -207,7 +202,6 @@
         ruvEg36qAAAAAElFTkSuQmCC
 </value>
   </data>
-<<<<<<< HEAD
   <metadata name="detail.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -258,9 +252,4 @@
   <metadata name="mEDICINETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>370, 17</value>
   </metadata>
-=======
-  <metadata name="mEDICINETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>370, 17</value>
-  </metadata>
->>>>>>> 537e2b3666a1b87aec349a777fa30c67634cd487
 </root>
