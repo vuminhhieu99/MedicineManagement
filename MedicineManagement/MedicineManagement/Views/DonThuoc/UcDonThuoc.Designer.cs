@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcDonThuoc));
             this.btn_Reload = new Bunifu.Framework.UI.BunifuThinButton2();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -50,8 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label_CountRecord = new System.Windows.Forms.Label();
-            this.mEDICINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLyThuocDataSet = new MedicineManagement.QuanLyThuocDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -66,26 +63,14 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDPrescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicalRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detail = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pRESCRIPTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mEDICINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.MEDICINETableAdapter();
-            this.pRESCRIPTIONTableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.PRESCRIPTIONTableAdapter();
             this.btn_Save = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.quanLyThuocDataSet1 = new MedicineManagement.QuanLyThuocDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRESCRIPTIONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Reload
@@ -322,16 +307,6 @@
             this.label_CountRecord.TabIndex = 76;
             this.label_CountRecord.Text = "30/30 bản ghi";
             // 
-            // mEDICINEBindingSource
-            // 
-            this.mEDICINEBindingSource.DataMember = "MEDICINE";
-            this.mEDICINEBindingSource.DataSource = this.quanLyThuocDataSet;
-            // 
-            // quanLyThuocDataSet
-            // 
-            this.quanLyThuocDataSet.DataSetName = "QuanLyThuocDataSet";
-            this.quanLyThuocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -468,58 +443,18 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDPrescriptionDataGridViewTextBoxColumn,
-            this.doctorDataGridViewTextBoxColumn,
-            this.medicalRecordDataGridViewTextBoxColumn,
-            this.createDateDataGridViewTextBoxColumn,
             this.detail,
             this.edit,
             this.delete});
-            this.dataGridView1.DataSource = this.pRESCRIPTIONBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(23, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(549, 655);
             this.dataGridView1.TabIndex = 74;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // iDPrescriptionDataGridViewTextBoxColumn
-            // 
-            this.iDPrescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.iDPrescriptionDataGridViewTextBoxColumn.DataPropertyName = "ID_Prescription";
-            this.iDPrescriptionDataGridViewTextBoxColumn.HeaderText = "Mã đơn thuốc";
-            this.iDPrescriptionDataGridViewTextBoxColumn.Name = "iDPrescriptionDataGridViewTextBoxColumn";
-            this.iDPrescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDPrescriptionDataGridViewTextBoxColumn.Width = 99;
-            // 
-            // doctorDataGridViewTextBoxColumn
-            // 
-            this.doctorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.doctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor";
-            this.doctorDataGridViewTextBoxColumn.HeaderText = "Bác sĩ";
-            this.doctorDataGridViewTextBoxColumn.Name = "doctorDataGridViewTextBoxColumn";
-            this.doctorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.doctorDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // medicalRecordDataGridViewTextBoxColumn
-            // 
-            this.medicalRecordDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.medicalRecordDataGridViewTextBoxColumn.DataPropertyName = "MedicalRecord";
-            this.medicalRecordDataGridViewTextBoxColumn.HeaderText = "Hồ sơ bệnh án";
-            this.medicalRecordDataGridViewTextBoxColumn.Name = "medicalRecordDataGridViewTextBoxColumn";
-            this.medicalRecordDataGridViewTextBoxColumn.ReadOnly = true;
-            this.medicalRecordDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // createDateDataGridViewTextBoxColumn
-            // 
-            this.createDateDataGridViewTextBoxColumn.DataPropertyName = "CreateDate";
-            this.createDateDataGridViewTextBoxColumn.HeaderText = "Ngày tạo";
-            this.createDateDataGridViewTextBoxColumn.Name = "createDateDataGridViewTextBoxColumn";
-            this.createDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // detail
             // 
@@ -551,19 +486,6 @@
             this.delete.ReadOnly = true;
             this.delete.Width = 32;
             // 
-            // pRESCRIPTIONBindingSource
-            // 
-            this.pRESCRIPTIONBindingSource.DataMember = "PRESCRIPTION";
-            this.pRESCRIPTIONBindingSource.DataSource = this.quanLyThuocDataSet;
-            // 
-            // mEDICINETableAdapter
-            // 
-            this.mEDICINETableAdapter.ClearBeforeFill = true;
-            // 
-            // pRESCRIPTIONTableAdapter
-            // 
-            this.pRESCRIPTIONTableAdapter.ClearBeforeFill = true;
-            // 
             // btn_Save
             // 
             this.btn_Save.ActiveBorderThickness = 1;
@@ -590,11 +512,6 @@
             this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Save.Visible = false;
             // 
-            // quanLyThuocDataSet1
-            // 
-            this.quanLyThuocDataSet1.DataSetName = "QuanLyThuocDataSet";
-            this.quanLyThuocDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // UcDonThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -614,13 +531,9 @@
             this.Load += new System.EventHandler(this.UcDonThuoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pRESCRIPTIONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,8 +561,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label_CountRecord;
-        private System.Windows.Forms.BindingSource mEDICINEBindingSource;
-        private QuanLyThuocDataSet quanLyThuocDataSet;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label9;
@@ -663,18 +574,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource pRESCRIPTIONBindingSource;
-        private QuanLyThuocDataSetTableAdapters.MEDICINETableAdapter mEDICINETableAdapter;
-        private QuanLyThuocDataSetTableAdapters.PRESCRIPTIONTableAdapter pRESCRIPTIONTableAdapter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Save;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDPrescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn medicalRecordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn detail;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private QuanLyThuocDataSet quanLyThuocDataSet1;
     }
 }

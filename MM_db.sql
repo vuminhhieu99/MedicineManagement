@@ -301,6 +301,7 @@ END
 GO
 ------------------
 
+
 -- Update INPUTCOUPONLINE
 CREATE PROC UpdateINPUTCOUPONLINE (@ID_InputCouponLine INT, @ID_inputCoupon INT, @ID_medicine INT, @name NVARCHAR(100), @unitInput NVARCHAR(50), @amount INT, @price DECIMAL(10,0), @expiryDate DATE, @NumUnitOutput INT, @productionBatch NCHAR(10))
 AS
