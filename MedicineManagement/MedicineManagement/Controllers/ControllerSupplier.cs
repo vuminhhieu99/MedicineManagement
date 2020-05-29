@@ -84,8 +84,8 @@ namespace MedicineManagement.Controllers
             if (ID_Supplier != "") { sqlSelect = sqlSelect + " or ID_Supplier like '%" + ID_Supplier + "%'"; }
             if (Name != "") { sqlSelect = sqlSelect + " or Name like N'%" + Name + "%'"; }
             if (Address != "") { sqlSelect = sqlSelect + " or Address like N'%" + Address + "%'"; }
-            if (Phone != "") { sqlSelect = sqlSelect + " or Phone like '%" + Phone + "%'"; }
-            if (Email != "") { sqlSelect = sqlSelect + " or Email like '%" + Email + "%'"; }
+            if (Phone != "") { sqlSelect = sqlSelect + " or Phone like N'%" + Phone + "%'"; }
+            if (Email != "") { sqlSelect = sqlSelect + " or Email like N'%" + Email + "%'"; }
 
             string query = "";
             if (sqlSelect != "")
@@ -138,8 +138,8 @@ namespace MedicineManagement.Controllers
             string Email; try { Email = supplier.Email.ToString().Trim(); } catch { Email = ""; }
 
             if (ID_Supplier != "") { sqlSelect = sqlSelect + " and ID_Supplier like '%" + ID_Supplier + "%'"; }
-            if (Name != "") { sqlSelect = sqlSelect + " and Name like '%" + Name + "%'"; }
-            if (Address != "") { sqlSelect = sqlSelect + " and Address like '%" + Address + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " and Name like N'%" + Name + "%'"; }
+            if (Address != "") { sqlSelect = sqlSelect + " and Address like N'%" + Address + "%'"; }
             if (Phone != "") { sqlSelect = sqlSelect + " and Phone like '%" + Phone + "%'"; }
             if (Email != "") { sqlSelect = sqlSelect + " and Email like '%" + Email + "%'"; }
 

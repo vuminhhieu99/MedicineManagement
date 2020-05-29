@@ -57,11 +57,19 @@
     <Compile Include="Controllers\ControllerMedicine.cs" />
     <Compile Include="Controllers\ControllerPrescription.cs" />
     <Compile Include="Controllers\ControllerPrescriptionLine.cs" />
+    <Compile Include="Controllers\ControllerStatistics.cs" />
     <Compile Include="Controllers\ControllerSupplier.cs" />
+    <Compile Include="Models\Chart.cs" />
     <Compile Include="QuanLyThuocDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyThuocDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BanThuoc\UcBanThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BanThuoc\UcBanThuoc.Designer.cs">
+      <DependentUpon>UcBanThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CaiDat\UcCaiDat.cs">
       <SubType>UserControl</SubType>
@@ -167,6 +175,12 @@
     <Compile Include="Views\QuanLyThuoc\FormFilterMedicine.Designer.cs">
       <DependentUpon>FormFilterMedicine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\QuanLyThuoc\UcQuanLyThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\QuanLyThuoc\UcQuanLyThuoc.Designer.cs">
+      <DependentUpon>UcQuanLyThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ThongTin\UcThongTin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,24 +193,16 @@
     <Compile Include="Views\TrangChu\UcTrangChu.Designer.cs">
       <DependentUpon>UcTrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BanThuoc\UcBanThuoc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\BanThuoc\UcBanThuoc.Designer.cs">
-      <DependentUpon>UcBanThuoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\QuanLyThuoc\UcQuanLyThuoc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\QuanLyThuoc\UcQuanLyThuoc.Designer.cs">
-      <DependentUpon>UcQuanLyThuoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\UI Example\UcExample.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\UI Example\UcExample.Designer.cs">
       <DependentUpon>UcExample.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\BanThuoc\UcBanThuoc.resx">
+      <DependentUpon>UcBanThuoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CaiDat\UcCaiDat.resx">
       <DependentUpon>UcCaiDat.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +233,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NhaCungCap\UcNhaCungCap.resx">
       <DependentUpon>UcNhaCungCap.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NhapHang\UcNhapHang.resx">
       <DependentUpon>UcNhapHang.cs</DependentUpon>
@@ -255,17 +262,15 @@
     <EmbeddedResource Include="Views\QuanLyThuoc\FormFilterMedicine.resx">
       <DependentUpon>FormFilterMedicine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuanLyThuoc\UcQuanLyThuoc.resx">
+      <DependentUpon>UcQuanLyThuoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ThongTin\UcThongTIn.resx">
       <DependentUpon>UcThongTin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TrangChu\UcTrangChu.resx">
       <DependentUpon>UcTrangChu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\BanThuoc\UcBanThuoc.resx">
-      <DependentUpon>UcBanThuoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\QuanLyThuoc\UcQuanLyThuoc.resx">
-      <DependentUpon>UcQuanLyThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UI Example\UcExample.resx">
       <DependentUpon>UcExample.cs</DependentUpon>

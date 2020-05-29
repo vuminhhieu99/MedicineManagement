@@ -119,8 +119,8 @@ namespace MedicineManagement.Controllers
             if (ID_InputCouponLine != "") { sqlSelect = sqlSelect + " or ID_InputCouponLine like '%" + ID_InputCouponLine + "%'"; }
             if (ID_InputCoupon != "") { sqlSelect = sqlSelect + " or ID_InputCoupon like '%" + ID_InputCoupon + "%'"; }
             if (ID_Medicine != "") { sqlSelect = sqlSelect + " or ID_Medicine like '%" + ID_Medicine + "%'"; }
-            if (Name != "") { sqlSelect = sqlSelect + " or Name like '%" + Name + "%'"; }
-            if (UnitInput != "") { sqlSelect = sqlSelect + " or UnitInput like '%" + UnitInput + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " or Name like N'%" + Name + "%'"; }
+            if (UnitInput != "") { sqlSelect = sqlSelect + " or UnitInput like N'%" + UnitInput + "%'"; }
             if (Amount != "") { sqlSelect = sqlSelect + " or Amount like '%" + Amount + "%'"; }           
             if (Price != "") { sqlSelect = sqlSelect + " or TotalMoney like '%" + Price + "%'"; }
             if (ExpiryDate != "") { sqlSelect = sqlSelect + " or ExpiryDate like '%" + ExpiryDate + "%'"; }
@@ -187,7 +187,7 @@ namespace MedicineManagement.Controllers
             if (ID_InputCouponLine != "") { sqlSelect = sqlSelect + " and ID_InputCouponLine like '%" + ID_InputCouponLine + "%'"; }
             if (ID_InputCoupon != "") { sqlSelect = sqlSelect + " and ID_InputCoupon like '%" + ID_InputCoupon + "%'"; }
             if (ID_Medicine != "") { sqlSelect = sqlSelect + " and ID_Medicine like '%" + ID_Medicine + "%'"; }
-            if (Name != "") { sqlSelect = sqlSelect + " and Name like '%" + Name + "%'"; }
+            if (Name != "") { sqlSelect = sqlSelect + " and Name like N'%" + Name + "%'"; }
             if (Search_MinAmount != "") { sqlSelect = sqlSelect + " and Amount >= " + Search_MinAmount; }
             if (Search_MaxAmount != "") { sqlSelect = sqlSelect + " and Amount <= " + Search_MaxAmount; }
             if (Search_MinPrice != "") { sqlSelect = sqlSelect + " and TotalMoney >= " + Search_MinPrice; }

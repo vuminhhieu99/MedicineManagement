@@ -38,10 +38,12 @@ GO
 	 Price decimal (10, 0) NULL,
 	 TotalInventory INT NULL,
 	 Note nvarchar (max) NULL,
-	 MostUsedMonth int  NULL,
+	 MostUsedMonth nvarchar(20)  NULL,
  CONSTRAINT  PK_THUOC  PRIMARY KEY ( ID_Medicine  ) 
  )
 GO
+
+
 
 CREATE TABLE PRESCRIPTION (
 	 ID_Prescription int  IDENTITY(1,1) NOT NULL,
@@ -281,7 +283,7 @@ END
 GO
 
 -- Update SUPPLIER
-CREATE PROC UpdateSUPPLIER(@ID_Supplier INT, @Name NVARCHAR(MAX), @Address NVARCHAR(MAX), @Phone VARCHAR(20), @Email INT)
+CREATE PROC UpdateSUPPLIER(@ID_Supplier INT, @Name NVARCHAR(MAX), @Address NVARCHAR(MAX), @Phone VARCHAR(20), @Email VARCHAR(100))
 AS
 BEGIN
 	UPDATE dbo.SUPPLIER SET [Name] = @Name, [Address] =@Address, [Phone] = @Phone, [Email]= @Email
@@ -298,6 +300,7 @@ BEGIN
 END
 GO
 ------------------
+
 
 -- Update INPUTCOUPONLINE
 CREATE PROC UpdateINPUTCOUPONLINE (@ID_InputCouponLine INT, @ID_inputCoupon INT, @ID_medicine INT, @name NVARCHAR(100), @unitInput NVARCHAR(50), @amount INT, @price DECIMAL(10,0), @expiryDate DATE, @NumUnitOutput INT, @productionBatch NCHAR(10))

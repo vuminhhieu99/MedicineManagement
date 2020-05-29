@@ -29,43 +29,43 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditMedicine));
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_Note = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.comboBox_Unit = new System.Windows.Forms.ComboBox();
+            this.textBox_Inventory = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_Price = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox_MedicineGroup = new System.Windows.Forms.ComboBox();
+            this.textBox_Uses = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_MedicineName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_MedicineID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox_MostUsed = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Cancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Submit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_title = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_title.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox5
+            // textBox_Note
             // 
-            this.textBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(509, 163);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(259, 158);
-            this.textBox5.TabIndex = 113;
+            this.textBox_Note.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Note.Location = new System.Drawing.Point(509, 163);
+            this.textBox_Note.Multiline = true;
+            this.textBox_Note.Name = "textBox_Note";
+            this.textBox_Note.Size = new System.Drawing.Size(259, 158);
+            this.textBox_Note.TabIndex = 8;
             // 
             // label9
             // 
@@ -79,22 +79,33 @@
             this.label9.Text = "Ghi chú";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox2
+            // comboBox_Unit
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(509, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(260, 27);
-            this.comboBox2.TabIndex = 111;
+            this.comboBox_Unit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox_Unit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_Unit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Unit.FormattingEnabled = true;
+            this.comboBox_Unit.Items.AddRange(new object[] {
+            "vỉ",
+            "mũi tiêm",
+            "chai",
+            "tuýp",
+            "viên",
+            "hộp",
+            "lọ"});
+            this.comboBox_Unit.Location = new System.Drawing.Point(509, 29);
+            this.comboBox_Unit.Name = "comboBox_Unit";
+            this.comboBox_Unit.Size = new System.Drawing.Size(260, 27);
+            this.comboBox_Unit.TabIndex = 4;
             // 
-            // textBox6
+            // textBox_Inventory
             // 
-            this.textBox6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(509, 119);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(259, 27);
-            this.textBox6.TabIndex = 110;
+            this.textBox_Inventory.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Inventory.Location = new System.Drawing.Point(509, 119);
+            this.textBox_Inventory.Name = "textBox_Inventory";
+            this.textBox_Inventory.Size = new System.Drawing.Size(259, 27);
+            this.textBox_Inventory.TabIndex = 6;
+            this.textBox_Inventory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MedicineID_KeyPress);
             // 
             // label6
             // 
@@ -108,13 +119,14 @@
             this.label6.Text = "Tồn kho";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // textBox_Price
             // 
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(509, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(259, 27);
-            this.textBox3.TabIndex = 108;
+            this.textBox_Price.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Price.Location = new System.Drawing.Point(509, 75);
+            this.textBox_Price.Name = "textBox_Price";
+            this.textBox_Price.Size = new System.Drawing.Size(259, 27);
+            this.textBox_Price.TabIndex = 5;
+            this.textBox_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MedicineID_KeyPress);
             // 
             // label7
             // 
@@ -140,23 +152,32 @@
             this.label8.Text = "Đơn vị tính";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox1
+            // comboBox_MedicineGroup
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(260, 27);
-            this.comboBox1.TabIndex = 105;
+            this.comboBox_MedicineGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox_MedicineGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_MedicineGroup.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_MedicineGroup.FormattingEnabled = true;
+            this.comboBox_MedicineGroup.Items.AddRange(new object[] {
+            "bôi",
+            "uống",
+            "tiêm",
+            "miếng dán",
+            "dung dịch rửa",
+            "nhỏ"});
+            this.comboBox_MedicineGroup.Location = new System.Drawing.Point(118, 119);
+            this.comboBox_MedicineGroup.Name = "comboBox_MedicineGroup";
+            this.comboBox_MedicineGroup.Size = new System.Drawing.Size(260, 27);
+            this.comboBox_MedicineGroup.TabIndex = 3;
             // 
-            // textBox4
+            // textBox_Uses
             // 
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(118, 163);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(259, 158);
-            this.textBox4.TabIndex = 104;
+            this.textBox_Uses.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Uses.Location = new System.Drawing.Point(118, 163);
+            this.textBox_Uses.Multiline = true;
+            this.textBox_Uses.Name = "textBox_Uses";
+            this.textBox_Uses.Size = new System.Drawing.Size(259, 158);
+            this.textBox_Uses.TabIndex = 7;
             // 
             // label5
             // 
@@ -182,13 +203,13 @@
             this.label4.Text = "Nhóm thuốc";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // textBox_MedicineName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(119, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(259, 27);
-            this.textBox2.TabIndex = 101;
+            this.textBox_MedicineName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_MedicineName.Location = new System.Drawing.Point(119, 75);
+            this.textBox_MedicineName.Name = "textBox_MedicineName";
+            this.textBox_MedicineName.Size = new System.Drawing.Size(259, 27);
+            this.textBox_MedicineName.TabIndex = 2;
             // 
             // label3
             // 
@@ -202,34 +223,36 @@
             this.label3.Text = "Tên thuốc";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // textBox_MedicineID
             // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(119, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 27);
-            this.textBox1.TabIndex = 99;
+            this.textBox_MedicineID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_MedicineID.Location = new System.Drawing.Point(119, 29);
+            this.textBox_MedicineID.Name = "textBox_MedicineID";
+            this.textBox_MedicineID.ReadOnly = true;
+            this.textBox_MedicineID.Size = new System.Drawing.Size(259, 27);
+            this.textBox_MedicineID.TabIndex = 1;
+            this.textBox_MedicineID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MedicineID_KeyPress);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Controls.Add(this.textBox_MostUsed);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textBox_Note);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.comboBox_Unit);
+            this.panel2.Controls.Add(this.textBox_Inventory);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBox_Price);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.comboBox_MedicineGroup);
+            this.panel2.Controls.Add(this.textBox_Uses);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBox_MedicineName);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBox_MedicineID);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_Cancel);
             this.panel2.Controls.Add(this.btn_Submit);
@@ -238,6 +261,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 405);
             this.panel2.TabIndex = 82;
+            // 
+            // textBox_MostUsed
+            // 
+            this.textBox_MostUsed.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_MostUsed.Location = new System.Drawing.Point(160, 340);
+            this.textBox_MostUsed.Name = "textBox_MostUsed";
+            this.textBox_MostUsed.Size = new System.Drawing.Size(217, 27);
+            this.textBox_MostUsed.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(29, 343);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 19);
+            this.label10.TabIndex = 116;
+            this.label10.Text = "Tháng dùng nhiều";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -273,7 +316,7 @@
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(124, 45);
-            this.btn_Cancel.TabIndex = 97;
+            this.btn_Cancel.TabIndex = 10;
             this.btn_Cancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
@@ -299,7 +342,7 @@
             this.btn_Submit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(124, 45);
-            this.btn_Submit.TabIndex = 96;
+            this.btn_Submit.TabIndex = 10;
             this.btn_Submit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
@@ -337,26 +380,6 @@
             this.panel_title.Size = new System.Drawing.Size(800, 35);
             this.panel_title.TabIndex = 81;
             // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(160, 340);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(217, 27);
-            this.textBox7.TabIndex = 117;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(29, 343);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 19);
-            this.label10.TabIndex = 116;
-            this.label10.Text = "Tháng dùng nhiều";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // FormEditMedicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +392,7 @@
             this.Name = "FormEditMedicine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEditMedicine";
+            this.Load += new System.EventHandler(this.FormEditMedicine_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -380,21 +404,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_Note;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBox_Unit;
+        private System.Windows.Forms.TextBox textBox_Inventory;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_Price;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox comboBox_MedicineGroup;
+        private System.Windows.Forms.TextBox textBox_Uses;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_MedicineName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_MedicineID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Cancel;
@@ -402,7 +426,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_title;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox_MostUsed;
         private System.Windows.Forms.Label label10;
     }
 }
