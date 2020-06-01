@@ -29,7 +29,7 @@ namespace MedicineManagement.Models
         public int ColumnCount { get => columnCount; set => columnCount = value; }
         
         public List<column> ListColumn { get => listColumn; set => listColumn = value; }
-
+        public int Counting { get => counting; set => counting = value; }
 
         public Chart()
         {

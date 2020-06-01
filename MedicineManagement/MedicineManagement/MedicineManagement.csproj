@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -157,6 +158,18 @@
     <Compile Include="Views\ThongTin\UcThongTin.Designer.cs">
       <DependentUpon>UcThongTin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TrangChu\DuBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrangChu\DuBao.Designer.cs">
+      <DependentUpon>DuBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcTonkho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcTonkho.Designer.cs">
+      <DependentUpon>UcTonkho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TrangChu\UcTrangChu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +246,12 @@
     <EmbeddedResource Include="Views\ThongTin\UcThongTIn.resx">
       <DependentUpon>UcThongTin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrangChu\DuBao.resx">
+      <DependentUpon>DuBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrangChu\UcTonkho.resx">
+      <DependentUpon>UcTonkho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\TrangChu\UcTrangChu.resx">
       <DependentUpon>UcTrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +299,7 @@
     <Content Include="Content\create.png" />
     <Content Include="Content\delete.png" />
     <Content Include="Content\detail.png" />
+    <Content Include="Content\e3531baed18523dfc38e320bd7bcf614.png" />
     <Content Include="Content\edit.png" />
     <Content Include="Content\export.png" />
     <Content Include="Content\filter.png" />

@@ -32,6 +32,7 @@ namespace MedicineManagement.Controllers
                 chart.NameX = "tháng";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = monthCount;
+                chart.Counting = 0;
 
                 ControllerPrescription ctr = new ControllerPrescription();
                 Prescription prescription = new Prescription();
@@ -40,7 +41,7 @@ namespace MedicineManagement.Controllers
                 DataTable dt = ctr.SearchAdvance(prescription);
 
                 chart.ListColumn = new List<column>(monthCount);
-                for (int i = 0; i < monthCount - 1; i++)
+                for (int i = 0; i < monthCount; i++)
                 {
                     column cl;
                     cl.value = 0;
@@ -54,7 +55,7 @@ namespace MedicineManagement.Controllers
 
                 long maxValue = 0;
 
-                for (int i = 0; i < monthCount - 1; i++)
+                for (int i = 0; i < monthCount; i++)
                 {
                     time = time.AddMonths(i);
                     Pmonth = time.Month;
@@ -66,6 +67,7 @@ namespace MedicineManagement.Controllers
                         if(createDate.Month == Pmonth)
                         {                            
                             cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            ++chart.Counting;
                         }
                     }
                     chart.listColumn[i] = cl;
@@ -74,19 +76,21 @@ namespace MedicineManagement.Controllers
                         maxValue = cl.value;
                     }
                 }
-                for (int i = 0; i < monthCount - 1; i++)
+                if(maxValue != 0)
                 {
-                    column cl = chart.listColumn[i];
-                    cl.percent = cl.value/ maxValue;
-                    chart.listColumn[i] = cl;
-                }
-
+                    for (int i = 0; i < monthCount; i++)
+                    {
+                        column cl = chart.listColumn[i];
+                        cl.percent = cl.value / maxValue;
+                        chart.listColumn[i] = cl;
+                    }
+                }   
             }
 
             if (format == DateStatistics.NGAY)
             {
                 TimeSpan timespan = End - Start;
-                int dayCount = timespan.Days ;
+                int dayCount = timespan.Days +1;
                 DateTime time = Start;
                 int Pday;
 
@@ -94,6 +98,7 @@ namespace MedicineManagement.Controllers
                 chart.NameX = "tháng";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = dayCount;
+                chart.Counting = 0;
                 
 
                 ControllerPrescription ctr = new ControllerPrescription();
@@ -103,7 +108,7 @@ namespace MedicineManagement.Controllers
                 DataTable dt = ctr.SearchAdvance(prescription);
 
                 chart.ListColumn = new List<column>(dayCount);
-                for (int i = 0; i < dayCount - 1; i++)
+                for (int i = 0; i < dayCount; i++)
                 {
                     column cl;
                     cl.value = 0;
@@ -117,7 +122,7 @@ namespace MedicineManagement.Controllers
 
                 long maxValue = 0;
 
-                for (int i = 0; i < dayCount - 1; i++)
+                for (int i = 0; i < dayCount; i++)
                 {
                     time = time.AddDays(i);
                     Pday = time.Day;
@@ -129,6 +134,7 @@ namespace MedicineManagement.Controllers
                         if (createDate.Day == Pday)
                         {
                             cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            ++chart.Counting;
                         }
                     }
                     chart.listColumn[i] = cl;
@@ -137,12 +143,16 @@ namespace MedicineManagement.Controllers
                         maxValue = cl.value;
                     }
                 }
-                for (int i = 0; i < dayCount - 1; i++)
+                if(maxValue != 0)
                 {
-                    column cl = chart.listColumn[i];
-                    cl.percent = cl.value/ maxValue;
-                    chart.listColumn[i] = cl;
+                    for (int i = 0; i < dayCount; i++)
+                    {
+                        column cl = chart.listColumn[i];
+                        cl.percent = cl.value / maxValue;
+                        chart.listColumn[i] = cl;
+                    }
                 }
+                
             }
 
             if (format == DateStatistics.NAM)
@@ -156,6 +166,7 @@ namespace MedicineManagement.Controllers
                 chart.NameX = "tháng";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = namCount;
+                chart.Counting = 0;
 
                 ControllerPrescription ctr = new ControllerPrescription();
                 Prescription prescription = new Prescription();
@@ -164,7 +175,7 @@ namespace MedicineManagement.Controllers
                 DataTable dt = ctr.SearchAdvance(prescription);
 
                 chart.ListColumn = new List<column>(namCount);
-                for (int i = 0; i < namCount - 1; i++)
+                for (int i = 0; i < namCount; i++)
                 {
                     column cl;
                     cl.value = 0;
@@ -178,7 +189,7 @@ namespace MedicineManagement.Controllers
 
                 long maxValue = 0;
 
-                for (int i = 0; i < namCount - 1; i++)
+                for (int i = 0; i < namCount; i++)
                 {
                     time = time.AddMonths(i);
                     Pyear = time.Month;
@@ -190,6 +201,7 @@ namespace MedicineManagement.Controllers
                         if (createDate.Year == Pyear)
                         {
                             cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            ++chart.Counting;
                         }
                     }
                     chart.listColumn[i] = cl;
@@ -198,12 +210,15 @@ namespace MedicineManagement.Controllers
                         maxValue = cl.value;
                     }
                 }
-                for (int i = 0; i < namCount - 1; i++)
+                if(maxValue != 0)
                 {
-                    column cl = chart.listColumn[i];
-                    cl.percent = cl.value/ maxValue;
-                    chart.listColumn[i] = cl;
-                }
+                    for (int i = 0; i < namCount; i++)
+                    {
+                        column cl = chart.listColumn[i];
+                        cl.percent = cl.value / maxValue;
+                        chart.listColumn[i] = cl;
+                    }
+                }           
 
             }
 
@@ -227,6 +242,7 @@ namespace MedicineManagement.Controllers
                 chart.NameX = "tháng";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = monthCount;
+                chart.Counting = 0;
 
                 ControllerInputCoupon ctr = new ControllerInputCoupon();
                 Inputcoupon inputcoupon = new Inputcoupon();
@@ -235,7 +251,7 @@ namespace MedicineManagement.Controllers
                 DataTable dt = ctr.SearchAdvance(inputcoupon);
 
                 chart.ListColumn = new List<column>(monthCount);
-                for (int i = 0; i < monthCount - 1; i++)
+                for (int i = 0; i < monthCount; i++)
                 {
                     column cl;
                     cl.value = 0;
@@ -249,7 +265,7 @@ namespace MedicineManagement.Controllers
 
                 long maxValue = 0;
 
-                for (int i = 0; i < monthCount - 1; i++)
+                for (int i = 0; i < monthCount; i++)
                 {
                     time = time.AddMonths(i);
                     Pmonth = time.Month;
@@ -261,6 +277,7 @@ namespace MedicineManagement.Controllers
                         if (createDate.Month == Pmonth)
                         {
                             cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            ++chart.Counting;
                         }
                     }
                     chart.listColumn[i] = cl;
@@ -269,19 +286,23 @@ namespace MedicineManagement.Controllers
                         maxValue = cl.value;
                     }
                 }
-                for (int i = 0; i < monthCount - 1; i++)
+                if (maxValue != 0)
                 {
-                    column cl = chart.listColumn[i];
-                    cl.percent = cl.value/ maxValue;
-                    chart.listColumn[i] = cl;
+                    for (int i = 0; i < monthCount; i++)
+                    {
+                        column cl = chart.listColumn[i];
+                        cl.percent = cl.value / maxValue;
+                        chart.listColumn[i] = cl;
+                    }
                 }
+                
 
             }
 
             if (format == DateStatistics.NGAY)
             {
                 TimeSpan timespan = End - Start;
-                int dayCount = timespan.Days;
+                int dayCount = timespan.Days + 1;
                 DateTime time = Start;
                 int Pday;
 
@@ -289,6 +310,7 @@ namespace MedicineManagement.Controllers
                 chart.NameX = "tháng";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = dayCount;
+                chart.Counting = 0;
 
 
                 ControllerInputCoupon ctr = new ControllerInputCoupon();
@@ -298,7 +320,7 @@ namespace MedicineManagement.Controllers
                 DataTable dt = ctr.SearchAdvance(inputcoupon);
 
                 chart.ListColumn = new List<column>(dayCount);
-                for (int i = 0; i < dayCount - 1; i++)
+                for (int i = 0; i < dayCount; i++)
                 {
                     column cl;
                     cl.value = 0;
@@ -312,7 +334,7 @@ namespace MedicineManagement.Controllers
 
                 long maxValue = 0;
 
-                for (int i = 0; i < dayCount - 1; i++)
+                for (int i = 0; i < dayCount; i++)
                 {
                     time = time.AddDays(i);
                     Pday = time.Day;
@@ -324,6 +346,7 @@ namespace MedicineManagement.Controllers
                         if (createDate.Day == Pday)
                         {
                             cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            ++chart.Counting;
                         }
                     }
                     chart.listColumn[i] = cl;
@@ -332,12 +355,16 @@ namespace MedicineManagement.Controllers
                         maxValue = cl.value;
                     }
                 }
-                for (int i = 0; i < dayCount - 1; i++)
+                if (maxValue != 0)
                 {
-                    column cl = chart.listColumn[i];
-                    cl.percent = cl.value / maxValue;
-                    chart.listColumn[i] = cl;
+                    for (int i = 0; i < dayCount; i++)
+                    {
+                        column cl = chart.listColumn[i];
+                        cl.percent = cl.value / maxValue;
+                        chart.listColumn[i] = cl;
+                    }
                 }
+                
             }
 
             if (format == DateStatistics.NAM)
@@ -351,6 +378,7 @@ namespace MedicineManagement.Controllers
                 chart.NameX = "năm";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = namCount;
+                chart.Counting = 0;
 
                 ControllerInputCoupon ctr = new ControllerInputCoupon();
                 Inputcoupon inputcoupon = new Inputcoupon();
@@ -359,7 +387,7 @@ namespace MedicineManagement.Controllers
                 DataTable dt = ctr.SearchAdvance(inputcoupon);
 
                 chart.ListColumn = new List<column>(namCount);
-                for (int i = 0; i < namCount - 1; i++)
+                for (int i = 0; i < namCount; i++)
                 {
                     column cl;
                     cl.value = 0;
@@ -373,7 +401,7 @@ namespace MedicineManagement.Controllers
 
                 long maxValue = 0;
 
-                for (int i = 0; i < namCount - 1; i++)
+                for (int i = 0; i < namCount; i++)
                 {
                     time = time.AddMonths(i);
                     Pyear = time.Month;
@@ -385,6 +413,7 @@ namespace MedicineManagement.Controllers
                         if (createDate.Year == Pyear)
                         {
                             cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            ++chart.Counting;
                         }
                     }
                     chart.listColumn[i] = cl;
@@ -393,13 +422,15 @@ namespace MedicineManagement.Controllers
                         maxValue = cl.value;
                     }
                 }
-                for (int i = 0; i < namCount - 1; i++)
+                if (maxValue !=0)
                 {
-                    column cl = chart.listColumn[i];
-                    cl.percent = cl.value/ maxValue;
-                    chart.listColumn[i] = cl;
-                }
-
+                    for (int i = 0; i < namCount; i++)
+                    {
+                        column cl = chart.listColumn[i];
+                        cl.percent = cl.value / maxValue;
+                        chart.listColumn[i] = cl;
+                    }
+                }              
             }
 
             return chart;
@@ -415,7 +446,7 @@ namespace MedicineManagement.Controllers
 
             int count = chartTevenue.ColumnCount;
             long maxValue = 0; 
-            for (int i = 0; i < count - 1; i++)
+            for (int i = 0; i < count; i++)
             {
                 column cl;
                 cl.value = chartTevenue.ListColumn[i].value - chartImportMoney.ListColumn[i].value;
@@ -428,7 +459,7 @@ namespace MedicineManagement.Controllers
                 }
                 chartProfits.ListColumn.Add(cl);                 
             }
-            for (int i = 0; i < count - 1; i++)
+            for (int i = 0; i < count; i++)
             {
                 column cl = chartProfits.listColumn[i];
                 cl.percent = cl.value/ maxValue;
