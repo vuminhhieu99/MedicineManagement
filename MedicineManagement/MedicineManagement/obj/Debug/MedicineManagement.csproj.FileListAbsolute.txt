@@ -76,3 +76,4 @@ E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManage
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.UcBanThuoc.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources

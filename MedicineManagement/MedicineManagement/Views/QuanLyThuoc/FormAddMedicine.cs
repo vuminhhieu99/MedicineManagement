@@ -80,6 +80,9 @@ namespace MedicineManagement.Views.QuanLyThuoc
                 e.Handled = true;
         }
 
-       
+        private void FormAddMedicine_VisibleChanged(object sender, EventArgs e)
+        {
+            textBox_MedicineID.Text = UcQuanLyThuoc.medicineID;
+        }
     }
 }

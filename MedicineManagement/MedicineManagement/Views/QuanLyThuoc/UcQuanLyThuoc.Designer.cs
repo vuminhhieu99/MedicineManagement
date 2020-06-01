@@ -30,8 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcQuanLyThuoc));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btn_Export = new Bunifu.Framework.UI.BunifuThinButton2();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_Reload = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Search = new Bunifu.Framework.UI.BunifuImageButton();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -66,38 +65,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_Export
-            // 
-            this.btn_Export.ActiveBorderThickness = 1;
-            this.btn_Export.ActiveCornerRadius = 20;
-            this.btn_Export.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btn_Export.ActiveForecolor = System.Drawing.Color.DarkRed;
-            this.btn_Export.ActiveLineColor = System.Drawing.Color.DarkRed;
-            this.btn_Export.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Export.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Export.BackgroundImage")));
-            this.btn_Export.ButtonText = "Xuất file";
-            this.btn_Export.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Export.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Export.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btn_Export.IdleBorderThickness = 1;
-            this.btn_Export.IdleCornerRadius = 20;
-            this.btn_Export.IdleFillColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_Export.IdleForecolor = System.Drawing.Color.Navy;
-            this.btn_Export.IdleLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Export.Location = new System.Drawing.Point(1036, 11);
-            this.btn_Export.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Export.Name = "btn_Export";
-            this.btn_Export.Size = new System.Drawing.Size(124, 45);
-            this.btn_Export.TabIndex = 78;
-            this.btn_Export.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // btn_Reload
             // 
@@ -117,7 +92,7 @@
             this.btn_Reload.IdleFillColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_Reload.IdleForecolor = System.Drawing.Color.Navy;
             this.btn_Reload.IdleLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Reload.Location = new System.Drawing.Point(905, 11);
+            this.btn_Reload.Location = new System.Drawing.Point(1034, 10);
             this.btn_Reload.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(124, 45);
@@ -247,8 +222,8 @@
             // _id
             // 
             this._id.DataPropertyName = "ID_Medicine";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._id.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._id.DefaultCellStyle = dataGridViewCellStyle1;
             this._id.HeaderText = "Mã thuốc";
             this._id.Name = "_id";
             this._id.ReadOnly = true;
@@ -380,7 +355,7 @@
             this.btn_Filter.IdleFillColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_Filter.IdleForecolor = System.Drawing.Color.Navy;
             this.btn_Filter.IdleLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Filter.Location = new System.Drawing.Point(773, 11);
+            this.btn_Filter.Location = new System.Drawing.Point(902, 10);
             this.btn_Filter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Filter.Name = "btn_Filter";
             this.btn_Filter.Size = new System.Drawing.Size(124, 45);
@@ -494,12 +469,21 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Tháng dùng nhiều:  ";
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(431, 3);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(54, 47);
+            this.dataGridView3.TabIndex = 101;
+            this.dataGridView3.Visible = false;
+            // 
             // UcQuanLyThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.btn_Filter);
-            this.Controls.Add(this.btn_Export);
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.btn_Add);
@@ -511,20 +495,20 @@
             this.Name = "UcQuanLyThuoc";
             this.Size = new System.Drawing.Size(1312, 822);
             this.Load += new System.EventHandler(this.UcQuanLyThuoc_Load);
+            this.VisibleChanged += new System.EventHandler(this.UcQuanLyThuoc_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuThinButton2 btn_Export;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Reload;
         private Bunifu.Framework.UI.BunifuImageButton btn_Search;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
@@ -559,5 +543,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }

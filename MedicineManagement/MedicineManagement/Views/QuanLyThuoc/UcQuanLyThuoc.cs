@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MedicineManagement.Controllers;
 using MedicineManagement.Models;
+using System.Data.SqlClient;
 
 namespace MedicineManagement.Views.QuanLyThuoc
 {
@@ -28,8 +29,6 @@ namespace MedicineManagement.Views.QuanLyThuoc
         public static string note;
         public static string mostUsedMonth;
 
-        public static bool update;
-
         public UcQuanLyThuoc()
         {
             InitializeComponent();
@@ -47,11 +46,6 @@ namespace MedicineManagement.Views.QuanLyThuoc
             label_CountRecord.Text = totalRecord.ToString() + "/" + totalRecord.ToString() + " bản ghi";
         }
 
-        public void message()
-        {
-            LoadData();
-        }
-
         public int CountRecord()
         {
             return dataGridView1.Rows.Count - 1;
@@ -60,7 +54,7 @@ namespace MedicineManagement.Views.QuanLyThuoc
         private void btn_Search_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = ctrl.Search(textBox_Search.Text);
-            label_CountRecord.Text = CountRecord().ToString() + "/" + totalRecord.ToString();
+            label_CountRecord.Text = CountRecord().ToString() + "/" + totalRecord.ToString() + " bản ghi";
         }
 
         private void btn_Filter_Click(object sender, EventArgs e)
@@ -85,7 +79,7 @@ namespace MedicineManagement.Views.QuanLyThuoc
 
             // do du lieu vao datagridview
             dataGridView1.DataSource = ctrl.SearchAdvance(medicine);
-            label_CountRecord.Text = CountRecord().ToString() + "/" + totalRecord.ToString();
+            label_CountRecord.Text = CountRecord().ToString() + "/" + totalRecord.ToString() + " bản ghi";
         }
 
         private void btn_Reload_Click(object sender, EventArgs e)
@@ -105,6 +99,8 @@ namespace MedicineManagement.Views.QuanLyThuoc
         private void btn_Add_Click(object sender, EventArgs e)
         {
             UndoChangeFormDisplay();
+
+            medicineID = GetCurrentIdentify().ToString();
 
             Form form = new QuanLyThuoc.FormAddMedicine();
             form.ShowDialog();
@@ -127,39 +123,45 @@ namespace MedicineManagement.Views.QuanLyThuoc
                 // Xu ly cac truong hop Xem(detail), Sua(edit), Xoa(delete)
                 if (e.ColumnIndex == dataGridView1.Columns["detail"].Index)
                 {
-                    // Code xu ly lay du lieu tu ban ghi chuyen sang FormDetailMedicine
-                    medicineID = dataGridView1.SelectedCells[0].OwningRow.Cells["_id"].Value.ToString();
-                    medicineName = dataGridView1.SelectedCells[0].OwningRow.Cells["_name"].Value.ToString();
-                    medicineGroup = dataGridView1.SelectedCells[0].OwningRow.Cells["_group"].Value.ToString();
-                    uses = dataGridView1.SelectedCells[0].OwningRow.Cells["_uses"].Value.ToString();
-                    unit = dataGridView1.SelectedCells[0].OwningRow.Cells["_unit"].Value.ToString();
-                    price = dataGridView1.SelectedCells[0].OwningRow.Cells["_price"].Value.ToString();
-                    inventory = dataGridView1.SelectedCells[0].OwningRow.Cells["_inventory"].Value.ToString();
-                    note = dataGridView1.SelectedCells[0].OwningRow.Cells["_note"].Value.ToString();
-                    mostUsedMonth = dataGridView1.SelectedCells[0].OwningRow.Cells["_mostUsed"].Value.ToString();
+                    if (id != -1)
+                    {
+                        // Code xu ly lay du lieu tu ban ghi chuyen sang FormDetailMedicine
+                        medicineID = dataGridView1.SelectedCells[0].OwningRow.Cells["_id"].Value.ToString();
+                        medicineName = dataGridView1.SelectedCells[0].OwningRow.Cells["_name"].Value.ToString();
+                        medicineGroup = dataGridView1.SelectedCells[0].OwningRow.Cells["_group"].Value.ToString();
+                        uses = dataGridView1.SelectedCells[0].OwningRow.Cells["_uses"].Value.ToString();
+                        unit = dataGridView1.SelectedCells[0].OwningRow.Cells["_unit"].Value.ToString();
+                        price = dataGridView1.SelectedCells[0].OwningRow.Cells["_price"].Value.ToString();
+                        inventory = dataGridView1.SelectedCells[0].OwningRow.Cells["_inventory"].Value.ToString();
+                        note = dataGridView1.SelectedCells[0].OwningRow.Cells["_note"].Value.ToString();
+                        mostUsedMonth = dataGridView1.SelectedCells[0].OwningRow.Cells["_mostUsed"].Value.ToString();
 
-                    // Hien thi FormDetailMedicine
-                    Form form = new QuanLyThuoc.FormDetailMedicine();
-                    form.ShowDialog();
-                    LoadData();
+                        // Hien thi FormDetailMedicine
+                        Form form = new QuanLyThuoc.FormDetailMedicine();
+                        form.ShowDialog();
+                        LoadData();
+                    }
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["edit"].Index)
                 {
-                    // Code xu ly lay du lieu tu ban ghi chuyen sang FormEditMedicine
-                    medicineID = dataGridView1.SelectedCells[0].OwningRow.Cells["_id"].Value.ToString();
-                    medicineName = dataGridView1.SelectedCells[0].OwningRow.Cells["_name"].Value.ToString();
-                    medicineGroup = dataGridView1.SelectedCells[0].OwningRow.Cells["_group"].Value.ToString();
-                    uses = dataGridView1.SelectedCells[0].OwningRow.Cells["_uses"].Value.ToString();
-                    unit = dataGridView1.SelectedCells[0].OwningRow.Cells["_unit"].Value.ToString();
-                    price = dataGridView1.SelectedCells[0].OwningRow.Cells["_price"].Value.ToString();
-                    inventory = dataGridView1.SelectedCells[0].OwningRow.Cells["_inventory"].Value.ToString();
-                    note = dataGridView1.SelectedCells[0].OwningRow.Cells["_note"].Value.ToString();
-                    mostUsedMonth = dataGridView1.SelectedCells[0].OwningRow.Cells["_mostUsed"].Value.ToString();
+                    if (id != -1)
+                    {
+                        // Code xu ly lay du lieu tu ban ghi chuyen sang FormEditMedicine
+                        medicineID = dataGridView1.SelectedCells[0].OwningRow.Cells["_id"].Value.ToString();
+                        medicineName = dataGridView1.SelectedCells[0].OwningRow.Cells["_name"].Value.ToString();
+                        medicineGroup = dataGridView1.SelectedCells[0].OwningRow.Cells["_group"].Value.ToString();
+                        uses = dataGridView1.SelectedCells[0].OwningRow.Cells["_uses"].Value.ToString();
+                        unit = dataGridView1.SelectedCells[0].OwningRow.Cells["_unit"].Value.ToString();
+                        price = dataGridView1.SelectedCells[0].OwningRow.Cells["_price"].Value.ToString();
+                        inventory = dataGridView1.SelectedCells[0].OwningRow.Cells["_inventory"].Value.ToString();
+                        note = dataGridView1.SelectedCells[0].OwningRow.Cells["_note"].Value.ToString();
+                        mostUsedMonth = dataGridView1.SelectedCells[0].OwningRow.Cells["_mostUsed"].Value.ToString();
 
-                    // Hien thi FormEditMedicine
-                    Form form = new QuanLyThuoc.FormEditMedicine();
-                    form.ShowDialog();
-                    LoadData();
+                        // Hien thi FormEditMedicine
+                        Form form = new QuanLyThuoc.FormEditMedicine();
+                        form.ShowDialog();
+                        LoadData();
+                    }
                 }
                 else if (e.ColumnIndex == dataGridView1.Columns["delete"].Index)
                 {
@@ -202,6 +204,34 @@ namespace MedicineManagement.Views.QuanLyThuoc
             label5.Text = "Giá tiền    :  ";
             label6.Text = "Số lượng còn:  ";
             label7.Text = "Tháng dùng nhiều:  ";
+        }
+
+        private void UcQuanLyThuoc_VisibleChanged(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        public int GetCurrentIdentify()
+        {
+            string query = "SELECT IDENT_CURRENT('MEDICINE')";
+            string cn = "Data Source=DESKTOP-9DHLIM0;Initial Catalog=QuanLyThuoc;Integrated Security=True";
+            DataTable table = new DataTable();
+            using (SqlConnection connection = new SqlConnection(cn))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+
+                connection.Close();
+            }
+
+            dataGridView3.DataSource = table;
+
+            return Convert.ToInt32(dataGridView3.Rows[0].Cells[0].Value) + 1;
         }
     }
 }

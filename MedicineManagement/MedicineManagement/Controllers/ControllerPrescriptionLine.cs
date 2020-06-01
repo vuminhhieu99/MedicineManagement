@@ -53,7 +53,11 @@ namespace MedicineManagement.Controllers
             try
             {
                 ds.Clear();
-                string query = "SELECT * FROM DBO.PRESCRIPTIONLINE WHERE ID_Prescription = '" + ID_Prescription + "'";
+                //string query = "SELECT * FROM DBO.PRESCRIPTIONLINE WHERE ID_Prescription = '" + ID_Prescription + "'";
+                // sua lai cau quẻy
+                //string query = $"SELECT m.ID_Medicine AS N'Mã thuốc', m.Name AS N'Tên thuốc', m.Price AS N'Đơn giá', p.Amount AS N'Số lượng', p.HealthInsurance AS N'BHYT', p.IntoMoney AS N'Thành tiền'  FROM dbo.MEDICINE m, dbo.PRESCRIPTIONLINE p WHERE m.ID_Medicine = p.ID_Medicine AND p.ID_Prescription = {ID_Prescription}";
+                string query = $"SELECT m.ID_Medicine AS N'Mã thuốc', m.Name AS N'Tên thuốc', m.Price AS N'Đơn giá', p.Amount AS N'Số lượng', p.HealthInsurance AS N'BHYT', p.IntoMoney AS N'Thành tiền', p.ID_Prescription AS 'Mã đơn thuốc'  FROM dbo.MEDICINE m, dbo.PRESCRIPTIONLINE p WHERE m.ID_Medicine = p.ID_Medicine AND p.ID_Prescription = {ID_Prescription}";
+
                 adapter.SelectCommand = new SqlCommand(query, connection);
                 cb = new SqlCommandBuilder(adapter);
                 adapter.Fill(ds, "PRESCRIPTIONLINE");
@@ -226,9 +230,11 @@ namespace MedicineManagement.Controllers
                 return query;
             }
             if (Amount == "") { Amount = "0"; }
-            if (HealthInsurance == "") { HealthInsurance = "0"; }            
+            if (HealthInsurance == "") { HealthInsurance = "0"; }
 
-            query = "EXEC InsertPRESCRIPTIONLINE " + ID_Prescription + ", " + ID_Medicine + ", " + Amount + ", " + HealthInsurance;
+            //query = "EXEC InsertPRESCRIPTIONLINE " + ID_Prescription + ", " + ID_Medicine + ", " + Amount + ", " + HealthInsurance;
+            query = $"EXEC dbo.InsertPRESCRIPTIONLINE {ID_Prescription}, {ID_Medicine}, {Amount}, {HealthInsurance} ";
+
             return query;
         }
         // update 1 Inputcouponline row
