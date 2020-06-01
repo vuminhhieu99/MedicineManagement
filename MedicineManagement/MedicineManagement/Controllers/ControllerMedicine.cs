@@ -293,10 +293,6 @@ namespace MedicineManagement.Controllers
             if (Note == "") { Note = "null"; }
             if (MostUsedMonth == "") { MostUsedMonth = "null"; }
 
-
-
-            //query = "EXEC UpdateMEDICINE " + ID_Medicine + ", " + Name + ", " + MedicineGroup + ", " + Uses + ", " + Unit + ", " + Price + ", " + TotalInventory + ", " + Note + ", " + MostUsedMonth;
-
             // Sua lai cau query bi sai cu phap
 
             int mostUsed = Convert.ToInt32(MostUsedMonth);

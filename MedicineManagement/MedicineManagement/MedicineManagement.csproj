@@ -36,6 +36,10 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\..\Thực tập CSDL\something\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\ControllerExport.cs" />
     <Compile Include="Controllers\ControllerInputCoupon.cs" />
     <Compile Include="Controllers\ControllerInputCouponLine.cs" />
     <Compile Include="Controllers\ControllerMedicine.cs" />
@@ -59,11 +64,18 @@
     <Compile Include="Controllers\ControllerPrescriptionLine.cs" />
     <Compile Include="Controllers\ControllerStatistics.cs" />
     <Compile Include="Controllers\ControllerSupplier.cs" />
+    <Compile Include="Controllers\ConvertFromNumToText.cs" />
     <Compile Include="Models\Chart.cs" />
     <Compile Include="QuanLyThuocDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyThuocDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BanThuoc\FormDetailMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BanThuoc\FormDetailMedicine.Designer.cs">
+      <DependentUpon>FormDetailMedicine.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\BanThuoc\UcBanThuoc.cs">
       <SubType>UserControl</SubType>
@@ -199,6 +211,9 @@
     <Compile Include="Views\UI Example\UcExample.Designer.cs">
       <DependentUpon>UcExample.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\BanThuoc\FormDetailMedicine.resx">
+      <DependentUpon>FormDetailMedicine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\BanThuoc\UcBanThuoc.resx">
       <DependentUpon>UcBanThuoc.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -275,6 +290,7 @@
     <EmbeddedResource Include="Views\UI Example\UcExample.resx">
       <DependentUpon>UcExample.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

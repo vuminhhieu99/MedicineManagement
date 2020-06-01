@@ -73,6 +73,10 @@ E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManage
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormEditMedicine.resources
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormFilterMedicine.resources
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.UcBanThuoc.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe.config
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.pdb
@@ -104,3 +108,6 @@ D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormEditInputCoupon.resources
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.UcBanThuoc.resources
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormAddInputCoupon.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormDetailInputCoupon.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormEditInputCoupon.resources
