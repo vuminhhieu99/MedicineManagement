@@ -231,7 +231,7 @@ namespace MedicineManagement.Controllers
             {
                 string query = QueryInsert(inputcouponline);
                 ExecuteNonQuery(query);
-                MessageBox.Show("Thêm Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
 
             }
             catch (Exception)
@@ -263,9 +263,9 @@ namespace MedicineManagement.Controllers
             if (Price == "") { Price = "0"; }
             if (ExpiryDate == "") { ExpiryDate = "null"; }
             if (NumUnitOutput == "") { NumUnitOutput = "1"; }
-            if (ProductionBatch == "") { UnitInput = "null"; }
+            if (ProductionBatch == "") { ProductionBatch = "null"; }
             
-            query = "EXEC InsertINPUTCOUPONLINE " + ID_InputCoupon + ", " + ID_Medicine + ", " + Name + ", " + UnitInput + ", " + Amount + ", " + Price + ", '" + ExpiryDate + "', " + NumUnitOutput + ", " + ProductionBatch;
+            query = "EXEC InsertINPUTCOUPONLINE " + ID_InputCoupon + ", " + ID_Medicine + ", N'" + Name + "', N'" + UnitInput + "', " + Amount + ", " + Price + ", '" + ExpiryDate + "', " + NumUnitOutput + ", " + ProductionBatch;
             return query;
         }
         // update 1 Inputcouponline row
@@ -277,7 +277,6 @@ namespace MedicineManagement.Controllers
                 if (query == "")
                     return;
                 ExecuteNonQuery(query);
-                MessageBox.Show("Sửa Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch(Exception)
             {
@@ -321,8 +320,8 @@ namespace MedicineManagement.Controllers
             if (Price == "") { Price = "0"; }
             if (ExpiryDate == "") { ExpiryDate = "null"; }
             if (NumUnitOutput == "") { NumUnitOutput = "0"; }
-            if (ProductionBatch == "") { ExpiryDate = "null"; }
-            query = "EXEC UpdateINPUTCOUPONLINE " + ID_InputCouponLine + ", " + ID_InputCoupon + ", " + ID_Medicine  + ", '" + Name + "', " + UnitInput + ", " + Amount + ", " + Price + ", '" + ExpiryDate + "', " + NumUnitOutput + ", " + ProductionBatch ;
+            if (ProductionBatch == "") { ProductionBatch = "null"; }
+            query = "EXEC UpdateINPUTCOUPONLINE " + ID_InputCouponLine + ", " + ID_InputCoupon + ", " + ID_Medicine  + ", N'" + Name + "', N'"+ UnitInput + "', " + Amount + ", " + Price + ", '" + ExpiryDate + "', " + NumUnitOutput + ", " + ProductionBatch ;
 
             return query;
         }
@@ -335,13 +334,11 @@ namespace MedicineManagement.Controllers
             ID_InputCouponLine = ID_InputCouponLine.Trim();
             string query = "Delete DBO.INPUTCOUPONLINE WHERE ID_InputCouponLine = " + ID_InputCouponLine;
             ExecuteNonQuery(query);
-                MessageBox.Show("Xoá Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Xoá Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                
             }
         }
     }

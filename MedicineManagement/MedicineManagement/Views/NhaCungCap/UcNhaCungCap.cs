@@ -32,12 +32,14 @@ namespace MedicineManagement.Views.NhaCungCap
         {
             // Code chinh
             dataGridView1.DataSource = ctr.Load();
+            label_CountRecord.Text = (dataGridView1.Rows.Count - 1).ToString() + "/" + (dataGridView1.Rows.Count - 1).ToString();
         }
 
         private void btn_Reload_Click(object sender, EventArgs e)
         {
             // Code xu ly reload
             dataGridView1.DataSource = ctr.Load();
+            label_CountRecord.Text = (dataGridView1.Rows.Count - 1).ToString() + "/" + (dataGridView1.Rows.Count - 1).ToString();
         }
 
         private void btn_Export_Click(object sender, EventArgs e)
@@ -108,7 +110,11 @@ namespace MedicineManagement.Views.NhaCungCap
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = ctr.Load();
+            string recordOld = (dataGridView1.Rows.Count - 1).ToString();
             dataGridView1.DataSource =  ctr.Search(textBox_Search.Text);
+            string recordNew = (dataGridView1.Rows.Count - 1).ToString();
+            label_CountRecord.Text = recordNew + "/" + recordOld;
         }
     }
 }

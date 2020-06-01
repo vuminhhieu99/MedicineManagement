@@ -303,7 +303,7 @@ GO
 
 
 -- Update INPUTCOUPONLINE
-CREATE PROC UpdateINPUTCOUPONLINE (@ID_InputCouponLine INT, @ID_inputCoupon INT, @ID_medicine INT, @name NVARCHAR(100), @unitInput NVARCHAR(50), @amount INT, @price DECIMAL(10,0), @expiryDate DATE, @NumUnitOutput INT, @productionBatch NCHAR(10))
+ALTER PROC UpdateINPUTCOUPONLINE (@ID_InputCouponLine INT, @ID_inputCoupon INT, @ID_medicine INT, @name NVARCHAR(100), @unitInput NVARCHAR(50), @amount INT, @price DECIMAL(10,0), @expiryDate DATE, @NumUnitOutput INT, @productionBatch NCHAR(10))
 AS
 BEGIN
 	DECLARE @totalNumUnitOutput INT	
@@ -339,7 +339,7 @@ BEGIN
 	SET @intoMoney = @price * @amount
 	SET @totalNumUnitOutput = @numUnitOutput * @amount
 	-- Cập nhât INPUTCOUPONLINE
-	UPDATE dbo.INPUTCOUPONLINE SET [ID_InputCoupon] = @ID_inputCoupon, [ID_Medicine] = @ID_medicine, [Name] = @name, [UnitInput] = @unitInput, [Amount]= @amount, [Price] = @price , [ExpiryDate] = @expiryDate, [NumUnitOutput] = @numUnitOutput , [productionBatch] = @productionBatch
+	UPDATE dbo.INPUTCOUPONLINE SET [ID_InputCoupon] = @ID_inputCoupon, [ID_Medicine] = @ID_medicine, [Name] = @name, [UnitInput] = @unitInput, [Amount]= @amount, [Price] = @price , [ExpiryDate] = @expiryDate, [NumUnitOutput] = @numUnitOutput , [productionBatch] = @productionBatch , [IntoMoney] = @intoMoney --TRUONG EDIT HERE
 	WHERE ID_InputCouponLine = @ID_inputCouponLine
 
 	SET @totalNumUnitOutput = @numUnitOutput * @amount
