@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicineManagement.Controllers;
+using MedicineManagement.Models;
 
 namespace MedicineManagement.Views.NhaCungCap
 {
@@ -16,7 +18,8 @@ namespace MedicineManagement.Views.NhaCungCap
         {
             InitializeComponent();
         }
-
+        ControllerSupplier ctr = new ControllerSupplier();
+        Supplier ncc = new Supplier();
         // Shadow
         protected override CreateParams CreateParams
         {
@@ -32,10 +35,11 @@ namespace MedicineManagement.Views.NhaCungCap
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             // code xu ly them moi nha cung cap
-            // ...
-
-            // thong bao thanh cong
-            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ncc.Name = textBoxTenNCC.Text;
+            ncc.Address = textBoxDiaChi.Text;
+            ncc.Phone = textBoxSDT.Text;
+            ncc.Email = textBoxEmail.Text;
+            ctr.Insert(ncc);
 
             // dong form
             Close();

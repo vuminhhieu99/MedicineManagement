@@ -1,6 +1,6 @@
-﻿namespace MedicineManagement.Views.NhaCungCap
+﻿namespace MedicineManagement.Views.PhieuNhap
 {
-    partial class FormAddSupplier
+    partial class FormEditInputCoupon
     {
         /// <summary>
         /// Required designer variable.
@@ -28,80 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddSupplier));
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxTenNCC = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditInputCoupon));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxSDT = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxDiaChi = new System.Windows.Forms.TextBox();
+            this.textBoxTongTien = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btn_Cancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Submit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel_title = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxMaPN = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxMaNCC = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel_title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(30, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 19);
-            this.label4.TabIndex = 102;
-            this.label4.Text = "Địa chỉ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxTenNCC
-            // 
-            this.textBoxTenNCC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTenNCC.Location = new System.Drawing.Point(159, 25);
-            this.textBoxTenNCC.Name = "textBoxTenNCC";
-            this.textBoxTenNCC.Size = new System.Drawing.Size(609, 27);
-            this.textBoxTenNCC.TabIndex = 101;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(30, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 19);
-            this.label3.TabIndex = 100;
-            this.label3.Text = "Tên nhà cung cấp";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(37, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Thêm nhà cung cấp mới";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBoxEmail);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBoxSDT);
+            this.panel2.Controls.Add(this.textBoxMaNCC);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBoxDiaChi);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.textBoxTongTien);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBoxTenNCC);
+            this.panel2.Controls.Add(this.textBoxMaPN);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btn_Cancel);
             this.panel2.Controls.Add(this.btn_Submit);
@@ -109,55 +65,40 @@
             this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 405);
-            this.panel2.TabIndex = 82;
+            this.panel2.TabIndex = 86;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // textBoxEmail
+            // textBoxTongTien
             // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(159, 165);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(609, 27);
-            this.textBoxEmail.TabIndex = 107;
+            this.textBoxTongTien.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTongTien.Location = new System.Drawing.Point(159, 169);
+            this.textBoxTongTien.Name = "textBoxTongTien";
+            this.textBoxTongTien.Size = new System.Drawing.Size(609, 27);
+            this.textBoxTongTien.TabIndex = 103;
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(30, 165);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 19);
-            this.label6.TabIndex = 106;
-            this.label6.Text = "Email";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(30, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 19);
+            this.label4.TabIndex = 102;
+            this.label4.Text = "Tổng Tiền";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBoxSDT
+            // label3
             // 
-            this.textBoxSDT.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSDT.Location = new System.Drawing.Point(159, 119);
-            this.textBoxSDT.Name = "textBoxSDT";
-            this.textBoxSDT.Size = new System.Drawing.Size(609, 27);
-            this.textBoxSDT.TabIndex = 105;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(30, 119);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 19);
-            this.label5.TabIndex = 104;
-            this.label5.Text = "Số điện thoại";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxDiaChi
-            // 
-            this.textBoxDiaChi.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiaChi.Location = new System.Drawing.Point(159, 72);
-            this.textBoxDiaChi.Name = "textBoxDiaChi";
-            this.textBoxDiaChi.Size = new System.Drawing.Size(609, 27);
-            this.textBoxDiaChi.TabIndex = 103;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(30, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 19);
+            this.label3.TabIndex = 100;
+            this.label3.Text = "Ngày Lập";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btn_Cancel
             // 
@@ -221,11 +162,11 @@
             this.panel_title.Location = new System.Drawing.Point(0, 0);
             this.panel_title.Name = "panel_title";
             this.panel_title.Size = new System.Drawing.Size(800, 35);
-            this.panel_title.TabIndex = 81;
+            this.panel_title.TabIndex = 85;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MedicineManagement.Properties.Resources.create;
+            this.pictureBox1.Image = global::MedicineManagement.Properties.Resources.edit;
             this.pictureBox1.Location = new System.Drawing.Point(6, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 27);
@@ -233,7 +174,70 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // FormAddSupplier
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(37, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chỉnh Sửa Phiếu Nhập";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(30, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 19);
+            this.label2.TabIndex = 100;
+            this.label2.Text = "Mã Phiếu Nhập";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBoxMaPN
+            // 
+            this.textBoxMaPN.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaPN.Location = new System.Drawing.Point(159, 27);
+            this.textBoxMaPN.Name = "textBoxMaPN";
+            this.textBoxMaPN.ReadOnly = true;
+            this.textBoxMaPN.Size = new System.Drawing.Size(609, 27);
+            this.textBoxMaPN.TabIndex = 101;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(159, 123);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(609, 27);
+            this.dateTimePicker1.TabIndex = 105;
+            // 
+            // textBoxMaNCC
+            // 
+            this.textBoxMaNCC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaNCC.Location = new System.Drawing.Point(159, 75);
+            this.textBoxMaNCC.Name = "textBoxMaNCC";
+            this.textBoxMaNCC.Size = new System.Drawing.Size(609, 27);
+            this.textBoxMaNCC.TabIndex = 107;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(30, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 19);
+            this.label5.TabIndex = 106;
+            this.label5.Text = "Mã Nhà Cung Cấp";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // FormEditInputCoupon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,9 +246,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormAddSupplier";
+            this.Name = "FormEditInputCoupon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormAddSupplier";
+            this.Text = "FormEditInputCoupon";
+            this.Load += new System.EventHandler(this.FormEditInputCoupon_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_title.ResumeLayout(false);
@@ -255,19 +260,20 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBoxTongTien;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxTenNCC;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Cancel;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Submit;
+        private System.Windows.Forms.Panel panel_title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel_title;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxSDT;
+        private System.Windows.Forms.TextBox textBoxMaPN;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBoxMaNCC;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxDiaChi;
     }
 }

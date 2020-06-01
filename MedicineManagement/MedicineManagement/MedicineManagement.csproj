@@ -139,6 +139,24 @@
     <Compile Include="Views\NhapHang\UcNhapHang.Designer.cs">
       <DependentUpon>UcNhapHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PhieuNhap\FormAddInputCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhieuNhap\FormAddInputCoupon.Designer.cs">
+      <DependentUpon>FormAddInputCoupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhieuNhap\FormDetailInputCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhieuNhap\FormDetailInputCoupon.Designer.cs">
+      <DependentUpon>FormDetailInputCoupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhieuNhap\FormEditInputCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PhieuNhap\FormEditInputCoupon.Designer.cs">
+      <DependentUpon>FormEditInputCoupon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\PhieuNhap\UcPhieuNhap.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -198,6 +216,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BanThuoc\UcBanThuoc.resx">
       <DependentUpon>UcBanThuoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CaiDat\UcCaiDat.resx">
       <DependentUpon>UcCaiDat.cs</DependentUpon>
@@ -229,9 +248,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NhaCungCap\UcNhaCungCap.resx">
       <DependentUpon>UcNhaCungCap.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NhapHang\UcNhapHang.resx">
       <DependentUpon>UcNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhieuNhap\FormAddInputCoupon.resx">
+      <DependentUpon>FormAddInputCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhieuNhap\FormDetailInputCoupon.resx">
+      <DependentUpon>FormDetailInputCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhieuNhap\FormEditInputCoupon.resx">
+      <DependentUpon>FormEditInputCoupon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PhieuNhap\UcPhieuNhap.resx">
       <DependentUpon>UcPhieuNhap.cs</DependentUpon>
