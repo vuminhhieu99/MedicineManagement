@@ -500,6 +500,7 @@
             this.textBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(187, 633);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(475, 27);
             this.textBox5.TabIndex = 17;
             // 
@@ -518,6 +519,7 @@
             this.textBoxtongtien.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxtongtien.Location = new System.Drawing.Point(187, 594);
             this.textBoxtongtien.Name = "textBoxtongtien";
+            this.textBoxtongtien.ReadOnly = true;
             this.textBoxtongtien.Size = new System.Drawing.Size(475, 27);
             this.textBoxtongtien.TabIndex = 15;
             // 

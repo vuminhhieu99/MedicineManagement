@@ -286,6 +286,7 @@
             this.textBoxTongTienChu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTongTienChu.Location = new System.Drawing.Point(189, 632);
             this.textBoxTongTienChu.Name = "textBoxTongTienChu";
+            this.textBoxTongTienChu.ReadOnly = true;
             this.textBoxTongTienChu.Size = new System.Drawing.Size(475, 27);
             this.textBoxTongTienChu.TabIndex = 17;
             // 
@@ -304,6 +305,7 @@
             this.textBoxTongTienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTongTienSo.Location = new System.Drawing.Point(189, 593);
             this.textBoxTongTienSo.Name = "textBoxTongTienSo";
+            this.textBoxTongTienSo.ReadOnly = true;
             this.textBoxTongTienSo.Size = new System.Drawing.Size(475, 27);
             this.textBoxTongTienSo.TabIndex = 15;
             // 
