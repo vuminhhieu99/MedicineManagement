@@ -387,6 +387,7 @@
             this.Name = "FormAddMedicine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddMedicine";
+            this.VisibleChanged += new System.EventHandler(this.FormAddMedicine_VisibleChanged);
             this.panel_title.ResumeLayout(false);
             this.panel_title.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

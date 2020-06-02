@@ -78,4 +78,5 @@ E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManage
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CopyComplete
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
