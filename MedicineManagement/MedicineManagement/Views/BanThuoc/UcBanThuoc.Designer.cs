@@ -133,6 +133,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(549, 655);
             this.dataGridView1.TabIndex = 87;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // _id
             // 

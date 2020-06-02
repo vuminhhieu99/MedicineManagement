@@ -109,6 +109,7 @@
             this.label_CountRecord.Size = new System.Drawing.Size(86, 17);
             this.label_CountRecord.TabIndex = 89;
             this.label_CountRecord.Text = "30/30 bản ghi";
+            this.label_CountRecord.Click += new System.EventHandler(this.label_CountRecord_Click);
             // 
             // panel1
             // 
@@ -247,7 +248,7 @@
             // textBoxMaNCC
             // 
             this.textBoxMaNCC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMaNCC.Location = new System.Drawing.Point(141, 165);
+            this.textBoxMaNCC.Location = new System.Drawing.Point(161, 165);
             this.textBoxMaNCC.Name = "textBoxMaNCC";
             this.textBoxMaNCC.Size = new System.Drawing.Size(209, 27);
             this.textBoxMaNCC.TabIndex = 76;
@@ -258,14 +259,14 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(34, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 19);
+            this.label4.Size = new System.Drawing.Size(120, 19);
             this.label4.TabIndex = 75;
-            this.label4.Text = "Mã nhà CC";
+            this.label4.Text = "Mã nhà cung cấp";
             // 
             // textBoxMaPN
             // 
             this.textBoxMaPN.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMaPN.Location = new System.Drawing.Point(141, 122);
+            this.textBoxMaPN.Location = new System.Drawing.Point(161, 122);
             this.textBoxMaPN.Name = "textBoxMaPN";
             this.textBoxMaPN.Size = new System.Drawing.Size(209, 27);
             this.textBoxMaPN.TabIndex = 76;
@@ -285,6 +286,7 @@
             this.textBoxTongTienChu.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTongTienChu.Location = new System.Drawing.Point(189, 632);
             this.textBoxTongTienChu.Name = "textBoxTongTienChu";
+            this.textBoxTongTienChu.ReadOnly = true;
             this.textBoxTongTienChu.Size = new System.Drawing.Size(475, 27);
             this.textBoxTongTienChu.TabIndex = 17;
             // 
@@ -303,6 +305,7 @@
             this.textBoxTongTienSo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTongTienSo.Location = new System.Drawing.Point(189, 593);
             this.textBoxTongTienSo.Name = "textBoxTongTienSo";
+            this.textBoxTongTienSo.ReadOnly = true;
             this.textBoxTongTienSo.Size = new System.Drawing.Size(475, 27);
             this.textBoxTongTienSo.TabIndex = 15;
             // 

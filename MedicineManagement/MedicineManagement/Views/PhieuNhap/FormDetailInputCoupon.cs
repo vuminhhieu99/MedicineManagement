@@ -19,15 +19,15 @@ namespace MedicineManagement.Views.PhieuNhap
 
         private void FormDetailInputCoupon_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
             textBoxMaPN.Text = UcPhieuNhap.mapn;
             textBoxMaNCC.Text = UcPhieuNhap.mancc;
             textBoxTongTien.Text = UcPhieuNhap.tongtien;
             dateTimePicker1.Value = UcPhieuNhap.ngaylap;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
