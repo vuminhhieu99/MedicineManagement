@@ -38,8 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_UserAddress = new System.Windows.Forms.Label();
+            this.label_UserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox_Search = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -180,27 +180,27 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Mã đơn thuốc";
             // 
-            // label3
+            // label_UserAddress
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(250, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
+            this.label_UserAddress.AutoSize = true;
+            this.label_UserAddress.BackColor = System.Drawing.Color.Transparent;
+            this.label_UserAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserAddress.Location = new System.Drawing.Point(56, 30);
+            this.label_UserAddress.Name = "label_UserAddress";
+            this.label_UserAddress.Size = new System.Drawing.Size(250, 15);
+            this.label_UserAddress.TabIndex = 3;
+            this.label_UserAddress.Text = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
             // 
-            // label2
+            // label_UserName
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
+            this.label_UserName.AutoSize = true;
+            this.label_UserName.BackColor = System.Drawing.Color.Transparent;
+            this.label_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserName.Location = new System.Drawing.Point(56, 14);
+            this.label_UserName.Name = "label_UserName";
+            this.label_UserName.Size = new System.Drawing.Size(180, 15);
+            this.label_UserName.TabIndex = 2;
+            this.label_UserName.Text = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
             // 
             // pictureBox1
             // 
@@ -310,8 +310,8 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.textBox_ID);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label_UserAddress);
+            this.panel1.Controls.Add(this.label_UserName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(595, 67);
@@ -683,8 +683,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_ID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_UserAddress;
+        private System.Windows.Forms.Label label_UserName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox_Search;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
