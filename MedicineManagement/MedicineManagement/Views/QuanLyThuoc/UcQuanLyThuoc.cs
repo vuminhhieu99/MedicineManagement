@@ -214,7 +214,7 @@ namespace MedicineManagement.Views.QuanLyThuoc
         public int GetCurrentIdentify()
         {
             string query = "SELECT IDENT_CURRENT('MEDICINE')";
-            string cn = "Data Source=DESKTOP-9DHLIM0;Initial Catalog=QuanLyThuoc;Integrated Security=True";
+            string cn = "Data Source=DESKTOP-L2JEIFM\\SQLEXPRESS;Initial Catalog=QuanLyThuoc;Integrated Security=True";
             DataTable table = new DataTable();
             using (SqlConnection connection = new SqlConnection(cn))
             {

@@ -40,13 +40,15 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
-        public DataTable WarnInventory()
+        public DataTable WarnInventory(int value)
         {
+            
             DataTable dt = new DataTable();
+            string TotalInventory; try { TotalInventory = value.ToString().Trim(); } catch { return dt; }
             try
             {
                 ds.Clear();
-                string query = "SELECT * FROM DBO.MEDICINE WHERE totalInventory <= 10 ORDER BY totalInventory";
+                string query = "SELECT * FROM DBO.MEDICINE WHERE totalInventory <= "+ TotalInventory +" ORDER BY totalInventory";
                 adapter.SelectCommand = new SqlCommand(query, connection);
                 cb = new SqlCommandBuilder(adapter);
                 adapter.Fill(ds, "MEDICINE");
