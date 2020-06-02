@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcTrangChu));
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.label_MedicalRecordCountToMonth = new System.Windows.Forms.Label();
@@ -46,6 +44,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Cart_TevenueToday = new Bunifu.Framework.UI.BunifuCards();
+            this.label_MedicalRecordCountToDay = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label_TotalMoneyToDay = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.label_ = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_ImportMedicine = new Bunifu.Framework.UI.BunifuFlatButton();
             this.button_ThongKeTonKho = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -53,6 +58,9 @@
             this.label_Title = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ucTonkho1 = new MedicineManagement.Views.TrangChu.UcTonkho();
+            this.ucDoanhThuChart1 = new MedicineManagement.Views.TrangChu.UcDoanhThuChart();
+            this.ucDuBaoNhapThuoc1 = new MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc();
             this.panel3 = new System.Windows.Forms.Panel();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.label_InputcouponCountToDay = new System.Windows.Forms.Label();
@@ -75,26 +83,13 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.quanLyThuocDataSet1 = new MedicineManagement.QuanLyThuocDataSet();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.Cart_TevenueToday = new Bunifu.Framework.UI.BunifuCards();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label_ = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.label_TotalMoneyToDay = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label_MedicalRecordCountToDay = new System.Windows.Forms.Label();
-            this.ucTonkho1 = new MedicineManagement.Views.TrangChu.UcTonkho();
-            this.ucDoanhThuChart1 = new MedicineManagement.Views.TrangChu.UcDoanhThuChart();
-            this.ucDuBaoNhapThuoc1 = new MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.bunifuCards2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.bunifuCards3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
+            this.Cart_TevenueToday.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -105,9 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.bunifuCards6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet1)).BeginInit();
-            this.Cart_TevenueToday.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards2
@@ -122,7 +114,6 @@
             this.bunifuCards2.Controls.Add(this.label7);
             this.bunifuCards2.Controls.Add(this.label8);
             this.bunifuCards2.Controls.Add(this.pictureBox2);
-            this.bunifuTransition1.SetDecoration(this.bunifuCards2, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(462, 15);
             this.bunifuCards2.Name = "bunifuCards2";
@@ -135,7 +126,6 @@
             // 
             this.label_MedicalRecordCountToMonth.AutoSize = true;
             this.label_MedicalRecordCountToMonth.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_MedicalRecordCountToMonth, BunifuAnimatorNS.DecorationType.None);
             this.label_MedicalRecordCountToMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_MedicalRecordCountToMonth.ForeColor = System.Drawing.Color.Gold;
             this.label_MedicalRecordCountToMonth.Location = new System.Drawing.Point(209, 19);
@@ -148,7 +138,6 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label5, BunifuAnimatorNS.DecorationType.None);
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Snow;
             this.label5.Location = new System.Drawing.Point(312, 81);
@@ -161,7 +150,6 @@
             // 
             this.label_TotalMoneyToMonth.AutoSize = true;
             this.label_TotalMoneyToMonth.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_TotalMoneyToMonth, BunifuAnimatorNS.DecorationType.None);
             this.label_TotalMoneyToMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_TotalMoneyToMonth.ForeColor = System.Drawing.Color.Gold;
             this.label_TotalMoneyToMonth.Location = new System.Drawing.Point(195, 81);
@@ -174,7 +162,6 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Snow;
             this.label7.Location = new System.Drawing.Point(14, 81);
@@ -187,7 +174,6 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label8, BunifuAnimatorNS.DecorationType.None);
             this.label8.ForeColor = System.Drawing.Color.Snow;
             this.label8.Location = new System.Drawing.Point(207, 52);
             this.label8.Name = "label8";
@@ -198,7 +184,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.ErrorImage = null;
             this.pictureBox2.Image = global::MedicineManagement.Properties.Resources.statistical;
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(41, 19);
@@ -220,7 +206,6 @@
             this.bunifuCards3.Controls.Add(this.label_TotalMoneyToYear);
             this.bunifuCards3.Controls.Add(this.label12);
             this.bunifuCards3.Controls.Add(this.label13);
-            this.bunifuTransition1.SetDecoration(this.bunifuCards3, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards3.LeftSahddow = false;
             this.bunifuCards3.Location = new System.Drawing.Point(881, 15);
             this.bunifuCards3.Name = "bunifuCards3";
@@ -232,7 +217,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.pictureBox3, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox3.ErrorImage = null;
             this.pictureBox3.Image = global::MedicineManagement.Properties.Resources.statistical;
             this.pictureBox3.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.InitialImage")));
             this.pictureBox3.Location = new System.Drawing.Point(41, 19);
@@ -246,7 +231,6 @@
             // 
             this.label_MedicalRecordCountToYear.AutoSize = true;
             this.label_MedicalRecordCountToYear.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_MedicalRecordCountToYear, BunifuAnimatorNS.DecorationType.None);
             this.label_MedicalRecordCountToYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_MedicalRecordCountToYear.ForeColor = System.Drawing.Color.Gold;
             this.label_MedicalRecordCountToYear.Location = new System.Drawing.Point(209, 19);
@@ -259,7 +243,6 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label10, BunifuAnimatorNS.DecorationType.None);
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Snow;
             this.label10.Location = new System.Drawing.Point(312, 81);
@@ -272,7 +255,6 @@
             // 
             this.label_TotalMoneyToYear.AutoSize = true;
             this.label_TotalMoneyToYear.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_TotalMoneyToYear, BunifuAnimatorNS.DecorationType.None);
             this.label_TotalMoneyToYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_TotalMoneyToYear.ForeColor = System.Drawing.Color.Gold;
             this.label_TotalMoneyToYear.Location = new System.Drawing.Point(195, 81);
@@ -285,7 +267,6 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label12, BunifuAnimatorNS.DecorationType.None);
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Snow;
             this.label12.Location = new System.Drawing.Point(14, 81);
@@ -298,7 +279,6 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label13, BunifuAnimatorNS.DecorationType.None);
             this.label13.ForeColor = System.Drawing.Color.Snow;
             this.label13.Location = new System.Drawing.Point(207, 52);
             this.label13.Name = "label13";
@@ -312,12 +292,103 @@
             this.panel1.Controls.Add(this.Cart_TevenueToday);
             this.panel1.Controls.Add(this.bunifuCards3);
             this.panel1.Controls.Add(this.bunifuCards2);
-            this.bunifuTransition1.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1312, 151);
             this.panel1.TabIndex = 9;
+            // 
+            // Cart_TevenueToday
+            // 
+            this.Cart_TevenueToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Cart_TevenueToday.BorderRadius = 5;
+            this.Cart_TevenueToday.BottomSahddow = true;
+            this.Cart_TevenueToday.color = System.Drawing.Color.Transparent;
+            this.Cart_TevenueToday.Controls.Add(this.label_MedicalRecordCountToDay);
+            this.Cart_TevenueToday.Controls.Add(this.label2);
+            this.Cart_TevenueToday.Controls.Add(this.label_TotalMoneyToDay);
+            this.Cart_TevenueToday.Controls.Add(this.label);
+            this.Cart_TevenueToday.Controls.Add(this.label_);
+            this.Cart_TevenueToday.Controls.Add(this.pictureBox1);
+            this.Cart_TevenueToday.LeftSahddow = false;
+            this.Cart_TevenueToday.Location = new System.Drawing.Point(40, 15);
+            this.Cart_TevenueToday.Name = "Cart_TevenueToday";
+            this.Cart_TevenueToday.RightSahddow = true;
+            this.Cart_TevenueToday.ShadowDepth = 80;
+            this.Cart_TevenueToday.Size = new System.Drawing.Size(367, 116);
+            this.Cart_TevenueToday.TabIndex = 0;
+            // 
+            // label_MedicalRecordCountToDay
+            // 
+            this.label_MedicalRecordCountToDay.AutoSize = true;
+            this.label_MedicalRecordCountToDay.BackColor = System.Drawing.Color.Transparent;
+            this.label_MedicalRecordCountToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_MedicalRecordCountToDay.ForeColor = System.Drawing.Color.Gold;
+            this.label_MedicalRecordCountToDay.Location = new System.Drawing.Point(209, 19);
+            this.label_MedicalRecordCountToDay.Name = "label_MedicalRecordCountToDay";
+            this.label_MedicalRecordCountToDay.Size = new System.Drawing.Size(16, 17);
+            this.label_MedicalRecordCountToDay.TabIndex = 6;
+            this.label_MedicalRecordCountToDay.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Snow;
+            this.label2.Location = new System.Drawing.Point(312, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "VNĐ";
+            // 
+            // label_TotalMoneyToDay
+            // 
+            this.label_TotalMoneyToDay.AutoSize = true;
+            this.label_TotalMoneyToDay.BackColor = System.Drawing.Color.Transparent;
+            this.label_TotalMoneyToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_TotalMoneyToDay.ForeColor = System.Drawing.Color.Gold;
+            this.label_TotalMoneyToDay.Location = new System.Drawing.Point(195, 81);
+            this.label_TotalMoneyToDay.Name = "label_TotalMoneyToDay";
+            this.label_TotalMoneyToDay.Size = new System.Drawing.Size(16, 17);
+            this.label_TotalMoneyToDay.TabIndex = 4;
+            this.label_TotalMoneyToDay.Text = "0";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.BackColor = System.Drawing.Color.Transparent;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.Color.Snow;
+            this.label.Location = new System.Drawing.Point(14, 81);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(132, 17);
+            this.label.TabIndex = 3;
+            this.label.Text = "Doanh thu hôm nay";
+            // 
+            // label_
+            // 
+            this.label_.AutoSize = true;
+            this.label_.BackColor = System.Drawing.Color.Transparent;
+            this.label_.ForeColor = System.Drawing.Color.Snow;
+            this.label_.Location = new System.Drawing.Point(207, 52);
+            this.label_.Name = "label_";
+            this.label_.Size = new System.Drawing.Size(79, 13);
+            this.label_.TabIndex = 2;
+            this.label_.Text = "Hóa đơn thuốc";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::MedicineManagement.Properties.Resources.statistical;
+            this.pictureBox1.InitialImage = global::MedicineManagement.Properties.Resources.statistical1;
+            this.pictureBox1.Location = new System.Drawing.Point(41, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -326,7 +397,6 @@
             this.panel2.Controls.Add(this.button_DoanhThuChart);
             this.panel2.Controls.Add(this.label_Title);
             this.panel2.Controls.Add(this.panel4);
-            this.bunifuTransition1.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
             this.panel2.Location = new System.Drawing.Point(0, 151);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
@@ -341,7 +411,6 @@
             this.button_ImportMedicine.BorderRadius = 0;
             this.button_ImportMedicine.ButtonText = "Dự báo nhập thuốc";
             this.button_ImportMedicine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.button_ImportMedicine, BunifuAnimatorNS.DecorationType.None);
             this.button_ImportMedicine.DisabledColor = System.Drawing.Color.Gray;
             this.button_ImportMedicine.Iconcolor = System.Drawing.Color.Transparent;
             this.button_ImportMedicine.Iconimage = ((System.Drawing.Image)(resources.GetObject("button_ImportMedicine.Iconimage")));
@@ -377,7 +446,6 @@
             this.button_ThongKeTonKho.BorderRadius = 0;
             this.button_ThongKeTonKho.ButtonText = "Thống kê tồn kho";
             this.button_ThongKeTonKho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.button_ThongKeTonKho, BunifuAnimatorNS.DecorationType.None);
             this.button_ThongKeTonKho.DisabledColor = System.Drawing.Color.Gray;
             this.button_ThongKeTonKho.Iconcolor = System.Drawing.Color.Transparent;
             this.button_ThongKeTonKho.Iconimage = ((System.Drawing.Image)(resources.GetObject("button_ThongKeTonKho.Iconimage")));
@@ -413,7 +481,6 @@
             this.button_DoanhThuChart.BorderRadius = 0;
             this.button_DoanhThuChart.ButtonText = "Biểu đồ Doanh thu";
             this.button_DoanhThuChart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.button_DoanhThuChart, BunifuAnimatorNS.DecorationType.None);
             this.button_DoanhThuChart.DisabledColor = System.Drawing.Color.Gray;
             this.button_DoanhThuChart.Iconcolor = System.Drawing.Color.Transparent;
             this.button_DoanhThuChart.Iconimage = ((System.Drawing.Image)(resources.GetObject("button_DoanhThuChart.Iconimage")));
@@ -444,7 +511,6 @@
             // label_Title
             // 
             this.label_Title.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.label_Title, BunifuAnimatorNS.DecorationType.None);
             this.label_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Title.ForeColor = System.Drawing.Color.DarkRed;
             this.label_Title.Location = new System.Drawing.Point(35, 16);
@@ -456,7 +522,6 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.panel5);
-            this.bunifuTransition1.SetDecoration(this.panel4, BunifuAnimatorNS.DecorationType.None);
             this.panel4.Location = new System.Drawing.Point(0, 56);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
@@ -468,11 +533,33 @@
             this.panel5.Controls.Add(this.ucTonkho1);
             this.panel5.Controls.Add(this.ucDoanhThuChart1);
             this.panel5.Controls.Add(this.ucDuBaoNhapThuoc1);
-            this.bunifuTransition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
             this.panel5.Location = new System.Drawing.Point(0, -3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1312, 468);
             this.panel5.TabIndex = 1;
+            // 
+            // ucTonkho1
+            // 
+            this.ucTonkho1.Location = new System.Drawing.Point(0, 0);
+            this.ucTonkho1.Margin = new System.Windows.Forms.Padding(0);
+            this.ucTonkho1.Name = "ucTonkho1";
+            this.ucTonkho1.Size = new System.Drawing.Size(1312, 468);
+            this.ucTonkho1.TabIndex = 2;
+            // 
+            // ucDoanhThuChart1
+            // 
+            this.ucDoanhThuChart1.Location = new System.Drawing.Point(0, 0);
+            this.ucDoanhThuChart1.Name = "ucDoanhThuChart1";
+            this.ucDoanhThuChart1.Size = new System.Drawing.Size(1312, 468);
+            this.ucDoanhThuChart1.TabIndex = 1;
+            // 
+            // ucDuBaoNhapThuoc1
+            // 
+            this.ucDuBaoNhapThuoc1.Location = new System.Drawing.Point(0, 0);
+            this.ucDuBaoNhapThuoc1.Name = "ucDuBaoNhapThuoc1";
+            this.ucDuBaoNhapThuoc1.Size = new System.Drawing.Size(1312, 468);
+            this.ucDuBaoNhapThuoc1.TabIndex = 0;
+            this.ucDuBaoNhapThuoc1.Visible = false;
             // 
             // panel3
             // 
@@ -480,7 +567,6 @@
             this.panel3.Controls.Add(this.bunifuCards4);
             this.panel3.Controls.Add(this.bunifuCards5);
             this.panel3.Controls.Add(this.bunifuCards6);
-            this.bunifuTransition1.SetDecoration(this.panel3, BunifuAnimatorNS.DecorationType.None);
             this.panel3.Location = new System.Drawing.Point(0, 675);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
@@ -499,7 +585,6 @@
             this.bunifuCards4.Controls.Add(this.label17);
             this.bunifuCards4.Controls.Add(this.label18);
             this.bunifuCards4.Controls.Add(this.pictureBox4);
-            this.bunifuTransition1.SetDecoration(this.bunifuCards4, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards4.LeftSahddow = false;
             this.bunifuCards4.Location = new System.Drawing.Point(40, 20);
             this.bunifuCards4.Name = "bunifuCards4";
@@ -512,7 +597,6 @@
             // 
             this.label_InputcouponCountToDay.AutoSize = true;
             this.label_InputcouponCountToDay.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_InputcouponCountToDay, BunifuAnimatorNS.DecorationType.None);
             this.label_InputcouponCountToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_InputcouponCountToDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label_InputcouponCountToDay.Location = new System.Drawing.Point(209, 19);
@@ -525,7 +609,6 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label15, BunifuAnimatorNS.DecorationType.None);
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label15.Location = new System.Drawing.Point(312, 81);
@@ -538,7 +621,6 @@
             // 
             this.label_ImportMoneyToDay.AutoSize = true;
             this.label_ImportMoneyToDay.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_ImportMoneyToDay, BunifuAnimatorNS.DecorationType.None);
             this.label_ImportMoneyToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ImportMoneyToDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label_ImportMoneyToDay.Location = new System.Drawing.Point(195, 81);
@@ -551,7 +633,6 @@
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label17, BunifuAnimatorNS.DecorationType.None);
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label17.Location = new System.Drawing.Point(14, 81);
@@ -564,7 +645,6 @@
             // 
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label18, BunifuAnimatorNS.DecorationType.None);
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label18.Location = new System.Drawing.Point(217, 52);
             this.label18.Name = "label18";
@@ -575,7 +655,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.pictureBox4, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox4.ErrorImage = null;
             this.pictureBox4.Image = global::MedicineManagement.Properties.Resources.statistical;
             this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
             this.pictureBox4.Location = new System.Drawing.Point(41, 19);
@@ -597,7 +677,6 @@
             this.bunifuCards5.Controls.Add(this.label22);
             this.bunifuCards5.Controls.Add(this.label23);
             this.bunifuCards5.Controls.Add(this.pictureBox5);
-            this.bunifuTransition1.SetDecoration(this.bunifuCards5, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards5.LeftSahddow = false;
             this.bunifuCards5.Location = new System.Drawing.Point(881, 20);
             this.bunifuCards5.Name = "bunifuCards5";
@@ -610,7 +689,6 @@
             // 
             this.label_InputcouponCountToYear.AutoSize = true;
             this.label_InputcouponCountToYear.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_InputcouponCountToYear, BunifuAnimatorNS.DecorationType.None);
             this.label_InputcouponCountToYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_InputcouponCountToYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label_InputcouponCountToYear.Location = new System.Drawing.Point(209, 19);
@@ -623,7 +701,6 @@
             // 
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label20, BunifuAnimatorNS.DecorationType.None);
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label20.Location = new System.Drawing.Point(312, 81);
@@ -636,7 +713,6 @@
             // 
             this.label_ImportMoneyToYear.AutoSize = true;
             this.label_ImportMoneyToYear.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_ImportMoneyToYear, BunifuAnimatorNS.DecorationType.None);
             this.label_ImportMoneyToYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ImportMoneyToYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label_ImportMoneyToYear.Location = new System.Drawing.Point(195, 81);
@@ -649,7 +725,6 @@
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label22, BunifuAnimatorNS.DecorationType.None);
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label22.Location = new System.Drawing.Point(14, 81);
@@ -662,7 +737,6 @@
             // 
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label23, BunifuAnimatorNS.DecorationType.None);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label23.Location = new System.Drawing.Point(217, 52);
             this.label23.Name = "label23";
@@ -673,7 +747,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.pictureBox5, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox5.ErrorImage = null;
             this.pictureBox5.Image = global::MedicineManagement.Properties.Resources.statistical;
             this.pictureBox5.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.InitialImage")));
             this.pictureBox5.Location = new System.Drawing.Point(41, 19);
@@ -695,7 +769,6 @@
             this.bunifuCards6.Controls.Add(this.label27);
             this.bunifuCards6.Controls.Add(this.label28);
             this.bunifuCards6.Controls.Add(this.pictureBox6);
-            this.bunifuTransition1.SetDecoration(this.bunifuCards6, BunifuAnimatorNS.DecorationType.None);
             this.bunifuCards6.LeftSahddow = false;
             this.bunifuCards6.Location = new System.Drawing.Point(463, 20);
             this.bunifuCards6.Name = "bunifuCards6";
@@ -708,7 +781,6 @@
             // 
             this.label_InputcouponCountToMonth.AutoSize = true;
             this.label_InputcouponCountToMonth.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_InputcouponCountToMonth, BunifuAnimatorNS.DecorationType.None);
             this.label_InputcouponCountToMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_InputcouponCountToMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label_InputcouponCountToMonth.Location = new System.Drawing.Point(209, 19);
@@ -721,7 +793,6 @@
             // 
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label25, BunifuAnimatorNS.DecorationType.None);
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label25.Location = new System.Drawing.Point(312, 81);
@@ -734,7 +805,6 @@
             // 
             this.label_ImportMoneyToMonth.AutoSize = true;
             this.label_ImportMoneyToMonth.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_ImportMoneyToMonth, BunifuAnimatorNS.DecorationType.None);
             this.label_ImportMoneyToMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_ImportMoneyToMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.label_ImportMoneyToMonth.Location = new System.Drawing.Point(195, 81);
@@ -747,7 +817,6 @@
             // 
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label27, BunifuAnimatorNS.DecorationType.None);
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label27.Location = new System.Drawing.Point(14, 81);
@@ -760,7 +829,6 @@
             // 
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label28, BunifuAnimatorNS.DecorationType.None);
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label28.Location = new System.Drawing.Point(217, 52);
             this.label28.Name = "label28";
@@ -771,7 +839,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.pictureBox6, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox6.ErrorImage = null;
             this.pictureBox6.Image = global::MedicineManagement.Properties.Resources.statistical;
             this.pictureBox6.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.InitialImage")));
             this.pictureBox6.Location = new System.Drawing.Point(41, 19);
@@ -781,177 +849,15 @@
             this.pictureBox6.TabIndex = 1;
             this.pictureBox6.TabStop = false;
             // 
-            // quanLyThuocDataSet1
-            // 
-            this.quanLyThuocDataSet1.DataSetName = "QuanLyThuocDataSet";
-            this.quanLyThuocDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // Cart_TevenueToday
-            // 
-            this.Cart_TevenueToday.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Cart_TevenueToday.BorderRadius = 5;
-            this.Cart_TevenueToday.BottomSahddow = true;
-            this.Cart_TevenueToday.color = System.Drawing.Color.Transparent;
-            this.Cart_TevenueToday.Controls.Add(this.label_MedicalRecordCountToDay);
-            this.Cart_TevenueToday.Controls.Add(this.label2);
-            this.Cart_TevenueToday.Controls.Add(this.label_TotalMoneyToDay);
-            this.Cart_TevenueToday.Controls.Add(this.label);
-            this.Cart_TevenueToday.Controls.Add(this.label_);
-            this.Cart_TevenueToday.Controls.Add(this.pictureBox1);
-            this.bunifuTransition1.SetDecoration(this.Cart_TevenueToday, BunifuAnimatorNS.DecorationType.None);
-            this.Cart_TevenueToday.LeftSahddow = false;
-            this.Cart_TevenueToday.Location = new System.Drawing.Point(40, 15);
-            this.Cart_TevenueToday.Name = "Cart_TevenueToday";
-            this.Cart_TevenueToday.RightSahddow = true;
-            this.Cart_TevenueToday.ShadowDepth = 80;
-            this.Cart_TevenueToday.Size = new System.Drawing.Size(367, 116);
-            this.Cart_TevenueToday.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox1.Image = global::MedicineManagement.Properties.Resources.statistical;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(41, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 53);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label_
-            // 
-            this.label_.AutoSize = true;
-            this.label_.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_, BunifuAnimatorNS.DecorationType.None);
-            this.label_.ForeColor = System.Drawing.Color.Snow;
-            this.label_.Location = new System.Drawing.Point(207, 52);
-            this.label_.Name = "label_";
-            this.label_.Size = new System.Drawing.Size(79, 13);
-            this.label_.TabIndex = 2;
-            this.label_.Text = "Hóa đơn thuốc";
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label, BunifuAnimatorNS.DecorationType.None);
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.Color.Snow;
-            this.label.Location = new System.Drawing.Point(14, 81);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(132, 17);
-            this.label.TabIndex = 3;
-            this.label.Text = "Doanh thu hôm nay";
-            // 
-            // label_TotalMoneyToDay
-            // 
-            this.label_TotalMoneyToDay.AutoSize = true;
-            this.label_TotalMoneyToDay.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_TotalMoneyToDay, BunifuAnimatorNS.DecorationType.None);
-            this.label_TotalMoneyToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TotalMoneyToDay.ForeColor = System.Drawing.Color.Gold;
-            this.label_TotalMoneyToDay.Location = new System.Drawing.Point(195, 81);
-            this.label_TotalMoneyToDay.Name = "label_TotalMoneyToDay";
-            this.label_TotalMoneyToDay.Size = new System.Drawing.Size(16, 17);
-            this.label_TotalMoneyToDay.TabIndex = 4;
-            this.label_TotalMoneyToDay.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label2, BunifuAnimatorNS.DecorationType.None);
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(312, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "VNĐ";
-            // 
-            // label_MedicalRecordCountToDay
-            // 
-            this.label_MedicalRecordCountToDay.AutoSize = true;
-            this.label_MedicalRecordCountToDay.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuTransition1.SetDecoration(this.label_MedicalRecordCountToDay, BunifuAnimatorNS.DecorationType.None);
-            this.label_MedicalRecordCountToDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_MedicalRecordCountToDay.ForeColor = System.Drawing.Color.Gold;
-            this.label_MedicalRecordCountToDay.Location = new System.Drawing.Point(209, 19);
-            this.label_MedicalRecordCountToDay.Name = "label_MedicalRecordCountToDay";
-            this.label_MedicalRecordCountToDay.Size = new System.Drawing.Size(16, 17);
-            this.label_MedicalRecordCountToDay.TabIndex = 6;
-            this.label_MedicalRecordCountToDay.Text = "0";
-            // 
-            // ucTonkho1
-            // 
-            this.bunifuTransition1.SetDecoration(this.ucTonkho1, BunifuAnimatorNS.DecorationType.None);
-            this.ucTonkho1.Location = new System.Drawing.Point(0, 0);
-            this.ucTonkho1.Margin = new System.Windows.Forms.Padding(0);
-            this.ucTonkho1.Name = "ucTonkho1";
-            this.ucTonkho1.Size = new System.Drawing.Size(1312, 468);
-            this.ucTonkho1.TabIndex = 2;
-            // 
-            // ucDoanhThuChart1
-            // 
-            this.bunifuTransition1.SetDecoration(this.ucDoanhThuChart1, BunifuAnimatorNS.DecorationType.None);
-            this.ucDoanhThuChart1.Location = new System.Drawing.Point(0, 0);
-            this.ucDoanhThuChart1.Name = "ucDoanhThuChart1";
-            this.ucDoanhThuChart1.Size = new System.Drawing.Size(1312, 468);
-            this.ucDoanhThuChart1.TabIndex = 1;
-            // 
-            // ucDuBaoNhapThuoc1
-            // 
-            this.bunifuTransition1.SetDecoration(this.ucDuBaoNhapThuoc1, BunifuAnimatorNS.DecorationType.None);
-            this.ucDuBaoNhapThuoc1.Location = new System.Drawing.Point(0, 0);
-            this.ucDuBaoNhapThuoc1.Name = "ucDuBaoNhapThuoc1";
-            this.ucDuBaoNhapThuoc1.Size = new System.Drawing.Size(1312, 468);
-            this.ucDuBaoNhapThuoc1.TabIndex = 0;
-            this.ucDuBaoNhapThuoc1.Visible = false;
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 5;
-            // 
-            // bunifuTransition1
-            // 
-            this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
-            this.bunifuTransition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation1;
-            this.bunifuTransition1.TimeStep = 1F;
-            // 
             // UcTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MedicineManagement.Properties.Resources.e3531baed18523dfc38e320bd7bcf614;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Name = "UcTrangChu";
             this.Size = new System.Drawing.Size(1312, 822);
             this.Load += new System.EventHandler(this.UcTrangChu_Load);
@@ -962,6 +868,9 @@
             this.bunifuCards3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.Cart_TevenueToday.ResumeLayout(false);
+            this.Cart_TevenueToday.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -976,10 +885,6 @@
             this.bunifuCards6.ResumeLayout(false);
             this.bunifuCards6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet1)).EndInit();
-            this.Cart_TevenueToday.ResumeLayout(false);
-            this.Cart_TevenueToday.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1026,8 +931,6 @@
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuFlatButton button_DoanhThuChart;
         private System.Windows.Forms.Label label_Title;
-        private QuanLyThuocDataSet quanLyThuocDataSet1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Bunifu.Framework.UI.BunifuFlatButton button_ThongKeTonKho;
         private System.Windows.Forms.Panel panel5;
         private Bunifu.Framework.UI.BunifuFlatButton button_ImportMedicine;
@@ -1041,8 +944,5 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label_;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

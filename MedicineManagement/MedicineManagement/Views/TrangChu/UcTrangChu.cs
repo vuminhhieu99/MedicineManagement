@@ -93,7 +93,6 @@ namespace MedicineManagement.Views.TrangChu
             ucDuBaoNhapThuoc1.Visible = false;
             ucDoanhThuChart1.Visible = false;
             ucTonkho1.Visible = true;
-            bunifuTransition1.ShowSync(Cart_TevenueToday);
         }
 
         private void button_DoanhThuChart_Click(object sender, EventArgs e)
@@ -114,9 +113,6 @@ namespace MedicineManagement.Views.TrangChu
 
         }
 
-        private void Cart_TevenueToday_MouseLeave(object sender, EventArgs e)
-        {
-            bunifuTransition1.HideSync(Cart_TevenueToday);
-        }
+     
     }
 }
