@@ -28,49 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcDonThuoc));
             this.btn_Reload = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox_MedicalRecord = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_Doctor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_ID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_UserAddress = new System.Windows.Forms.Label();
+            this.label_UserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_Search = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_Search = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_Export = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btn_Create = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label1 = new System.Windows.Forms.Label();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label_CountRecord = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this._stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._mathuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._tenthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._bhyt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimePicker_CreateDate = new System.Windows.Forms.DateTimePicker();
+            this.textBox_TotalMoney_ByText = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox_TotalMoney_ByNum = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this._id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._createDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._medicalRecord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugstoresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._totalMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detail = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pRESCRIPTIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyThuocDataSet = new MedicineManagement.QuanLyThuocDataSet();
             this.btn_Save = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.pRESCRIPTIONTableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.PRESCRIPTIONTableAdapter();
+            this.btn_Renew = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRESCRIPTIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Reload
@@ -97,14 +112,16 @@
             this.btn_Reload.Size = new System.Drawing.Size(124, 45);
             this.btn_Reload.TabIndex = 77;
             this.btn_Reload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
             // 
-            // textBox6
+            // textBox_MedicalRecord
             // 
-            this.textBox6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(473, 161);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(189, 27);
-            this.textBox6.TabIndex = 11;
+            this.textBox_MedicalRecord.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_MedicalRecord.Location = new System.Drawing.Point(473, 161);
+            this.textBox_MedicalRecord.Name = "textBox_MedicalRecord";
+            this.textBox_MedicalRecord.Size = new System.Drawing.Size(189, 27);
+            this.textBox_MedicalRecord.TabIndex = 11;
+            this.textBox_MedicalRecord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_MedicalRecord_KeyPress);
             // 
             // label7
             // 
@@ -126,13 +143,13 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Ngày lập";
             // 
-            // textBox4
+            // textBox_Doctor
             // 
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(136, 161);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(209, 27);
-            this.textBox4.TabIndex = 7;
+            this.textBox_Doctor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Doctor.Location = new System.Drawing.Point(136, 161);
+            this.textBox_Doctor.Name = "textBox_Doctor";
+            this.textBox_Doctor.Size = new System.Drawing.Size(209, 27);
+            this.textBox_Doctor.TabIndex = 7;
             // 
             // label5
             // 
@@ -144,13 +161,14 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Bác sĩ";
             // 
-            // textBox3
+            // textBox_ID
             // 
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(136, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(209, 27);
-            this.textBox3.TabIndex = 5;
+            this.textBox_ID.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ID.Location = new System.Drawing.Point(136, 122);
+            this.textBox_ID.Name = "textBox_ID";
+            this.textBox_ID.ReadOnly = true;
+            this.textBox_ID.Size = new System.Drawing.Size(209, 27);
+            this.textBox_ID.TabIndex = 5;
             // 
             // label4
             // 
@@ -162,32 +180,27 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Mã đơn thuốc";
             // 
-            // label3
+            // label_UserAddress
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(250, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
+            this.label_UserAddress.AutoSize = true;
+            this.label_UserAddress.BackColor = System.Drawing.Color.Transparent;
+            this.label_UserAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserAddress.Location = new System.Drawing.Point(56, 30);
+            this.label_UserAddress.Name = "label_UserAddress";
+            this.label_UserAddress.Size = new System.Drawing.Size(250, 15);
+            this.label_UserAddress.TabIndex = 3;
+            this.label_UserAddress.Text = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
             // 
-            // columnHeader6
+            // label_UserName
             // 
-            this.columnHeader6.Text = "Thành tiền";
-            this.columnHeader6.Width = 124;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
+            this.label_UserName.AutoSize = true;
+            this.label_UserName.BackColor = System.Drawing.Color.Transparent;
+            this.label_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserName.Location = new System.Drawing.Point(56, 14);
+            this.label_UserName.Name = "label_UserName";
+            this.label_UserName.Size = new System.Drawing.Size(180, 15);
+            this.label_UserName.TabIndex = 2;
+            this.label_UserName.Text = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
             // 
             // pictureBox1
             // 
@@ -199,15 +212,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox2
+            // textBox_Search
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(23, 20);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(364, 30);
-            this.textBox2.TabIndex = 84;
+            this.textBox_Search.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Search.ForeColor = System.Drawing.Color.Black;
+            this.textBox_Search.Location = new System.Drawing.Point(23, 20);
+            this.textBox_Search.Multiline = true;
+            this.textBox_Search.Name = "textBox_Search";
+            this.textBox_Search.Size = new System.Drawing.Size(364, 30);
+            this.textBox_Search.TabIndex = 84;
             // 
             // dataGridViewImageColumn1
             // 
@@ -217,19 +230,20 @@
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
-            // bunifuImageButton1
+            // btn_Search
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bunifuImageButton1.Image = global::MedicineManagement.Properties.Resources.icon_search;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(386, 20);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(44, 30);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 85;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btn_Search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Search.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btn_Search.Image = global::MedicineManagement.Properties.Resources.icon_search;
+            this.btn_Search.ImageActive = null;
+            this.btn_Search.Location = new System.Drawing.Point(386, 20);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(44, 30);
+            this.btn_Search.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Search.TabIndex = 85;
+            this.btn_Search.TabStop = false;
+            this.btn_Search.Zoom = 10;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // btn_Export
             // 
@@ -255,31 +269,7 @@
             this.btn_Export.Size = new System.Drawing.Size(124, 45);
             this.btn_Export.TabIndex = 82;
             this.btn_Export.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_Create
-            // 
-            this.btn_Create.ActiveBorderThickness = 1;
-            this.btn_Create.ActiveCornerRadius = 20;
-            this.btn_Create.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btn_Create.ActiveForecolor = System.Drawing.Color.DarkRed;
-            this.btn_Create.ActiveLineColor = System.Drawing.Color.DarkRed;
-            this.btn_Create.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Create.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Create.BackgroundImage")));
-            this.btn_Create.ButtonText = "Đơn thuốc mới";
-            this.btn_Create.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Create.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Create.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btn_Create.IdleBorderThickness = 1;
-            this.btn_Create.IdleCornerRadius = 20;
-            this.btn_Create.IdleFillColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_Create.IdleForecolor = System.Drawing.Color.Navy;
-            this.btn_Create.IdleLineColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Create.Location = new System.Drawing.Point(1169, 12);
-            this.btn_Create.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Create.Name = "btn_Create";
-            this.btn_Create.Size = new System.Drawing.Size(124, 45);
-            this.btn_Create.TabIndex = 80;
-            this.btn_Create.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // label1
             // 
@@ -290,11 +280,6 @@
             this.label1.Size = new System.Drawing.Size(197, 41);
             this.label1.TabIndex = 1;
             this.label1.Text = "ĐƠN THUỐC";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Số lượng";
-            this.columnHeader5.Width = 93;
             // 
             // label_CountRecord
             // 
@@ -311,22 +296,22 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.dateTimePicker_CreateDate);
+            this.panel1.Controls.Add(this.textBox_TotalMoney_ByText);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.textBox_TotalMoney_ByNum);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.listView1);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textBox_MedicalRecord);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox_Doctor);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox_ID);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label_UserAddress);
+            this.panel1.Controls.Add(this.label_UserName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(595, 67);
@@ -334,23 +319,103 @@
             this.panel1.Size = new System.Drawing.Size(698, 689);
             this.panel1.TabIndex = 78;
             // 
-            // dateTimePicker1
+            // dataGridView2
             // 
-            this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(473, 122);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(189, 27);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._stt,
+            this._mathuoc,
+            this._tenthuoc,
+            this._dongia,
+            this._soluong,
+            this._bhyt,
+            this._thanhtien,
+            this._status});
+            this.dataGridView2.Location = new System.Drawing.Point(38, 232);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(624, 346);
+            this.dataGridView2.TabIndex = 89;
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             // 
-            // textBox7
+            // _stt
             // 
-            this.textBox7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(187, 633);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(475, 27);
-            this.textBox7.TabIndex = 17;
+            this._stt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this._stt.HeaderText = "STT";
+            this._stt.Name = "_stt";
+            this._stt.ReadOnly = true;
+            this._stt.Width = 53;
+            // 
+            // _mathuoc
+            // 
+            this._mathuoc.HeaderText = "Mã thuốc";
+            this._mathuoc.Name = "_mathuoc";
+            this._mathuoc.ReadOnly = true;
+            this._mathuoc.Visible = false;
+            // 
+            // _tenthuoc
+            // 
+            this._tenthuoc.HeaderText = "Tên thuốc";
+            this._tenthuoc.Name = "_tenthuoc";
+            this._tenthuoc.ReadOnly = true;
+            this._tenthuoc.Visible = false;
+            // 
+            // _dongia
+            // 
+            this._dongia.HeaderText = "Đơn giá";
+            this._dongia.Name = "_dongia";
+            this._dongia.ReadOnly = true;
+            this._dongia.Visible = false;
+            // 
+            // _soluong
+            // 
+            this._soluong.HeaderText = "Số lượng";
+            this._soluong.Name = "_soluong";
+            this._soluong.ReadOnly = true;
+            this._soluong.Visible = false;
+            // 
+            // _bhyt
+            // 
+            this._bhyt.HeaderText = "BHYT";
+            this._bhyt.Name = "_bhyt";
+            this._bhyt.ReadOnly = true;
+            this._bhyt.Visible = false;
+            // 
+            // _thanhtien
+            // 
+            this._thanhtien.HeaderText = "Thành tiền";
+            this._thanhtien.Name = "_thanhtien";
+            this._thanhtien.ReadOnly = true;
+            this._thanhtien.Visible = false;
+            // 
+            // _status
+            // 
+            this._status.HeaderText = "status";
+            this._status.Name = "_status";
+            this._status.ReadOnly = true;
+            this._status.Visible = false;
+            // 
+            // dateTimePicker_CreateDate
+            // 
+            this.dateTimePicker_CreateDate.CustomFormat = "";
+            this.dateTimePicker_CreateDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_CreateDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_CreateDate.Location = new System.Drawing.Point(473, 122);
+            this.dateTimePicker_CreateDate.Name = "dateTimePicker_CreateDate";
+            this.dateTimePicker_CreateDate.Size = new System.Drawing.Size(189, 27);
+            this.dateTimePicker_CreateDate.TabIndex = 20;
+            // 
+            // textBox_TotalMoney_ByText
+            // 
+            this.textBox_TotalMoney_ByText.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_TotalMoney_ByText.Location = new System.Drawing.Point(187, 633);
+            this.textBox_TotalMoney_ByText.Name = "textBox_TotalMoney_ByText";
+            this.textBox_TotalMoney_ByText.ReadOnly = true;
+            this.textBox_TotalMoney_ByText.Size = new System.Drawing.Size(475, 27);
+            this.textBox_TotalMoney_ByText.TabIndex = 17;
             // 
             // label9
             // 
@@ -362,13 +427,14 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Tổng tiền (bằng chữ)";
             // 
-            // textBox8
+            // textBox_TotalMoney_ByNum
             // 
-            this.textBox8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(187, 594);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(475, 27);
-            this.textBox8.TabIndex = 15;
+            this.textBox_TotalMoney_ByNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_TotalMoney_ByNum.Location = new System.Drawing.Point(187, 594);
+            this.textBox_TotalMoney_ByNum.Name = "textBox_TotalMoney_ByNum";
+            this.textBox_TotalMoney_ByNum.ReadOnly = true;
+            this.textBox_TotalMoney_ByNum.Size = new System.Drawing.Size(475, 27);
+            this.textBox_TotalMoney_ByNum.TabIndex = 15;
             // 
             // label10
             // 
@@ -390,44 +456,6 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Danh sách thuốc";
             // 
-            // listView1
-            // 
-            this.listView1.CheckBoxes = true;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(38, 228);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(624, 344);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "STT";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Mã thuốc";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Tên thuốc";
-            this.columnHeader3.Width = 180;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Đơn giá";
-            this.columnHeader4.Width = 101;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -443,18 +471,79 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._id,
+            this._createDate,
+            this._doctor,
+            this._medicalRecord,
+            this.drugstoresDataGridViewTextBoxColumn,
+            this._totalMoney,
             this.detail,
             this.edit,
             this.delete});
+            this.dataGridView1.DataSource = this.pRESCRIPTIONBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(23, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(549, 655);
             this.dataGridView1.TabIndex = 74;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // _id
+            // 
+            this._id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._id.DataPropertyName = "ID_Prescription";
+            this._id.HeaderText = "ID";
+            this._id.Name = "_id";
+            this._id.ReadOnly = true;
+            // 
+            // _createDate
+            // 
+            this._createDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this._createDate.DataPropertyName = "CreateDate";
+            this._createDate.HeaderText = "Ngày tạo";
+            this._createDate.Name = "_createDate";
+            this._createDate.ReadOnly = true;
+            this._createDate.Width = 75;
+            // 
+            // _doctor
+            // 
+            this._doctor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this._doctor.DataPropertyName = "Doctor";
+            this._doctor.HeaderText = "Bác sĩ";
+            this._doctor.Name = "_doctor";
+            this._doctor.ReadOnly = true;
+            this._doctor.Width = 64;
+            // 
+            // _medicalRecord
+            // 
+            this._medicalRecord.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this._medicalRecord.DataPropertyName = "MedicalRecord";
+            this._medicalRecord.HeaderText = "Hồ sơ bệnh án";
+            this._medicalRecord.Name = "_medicalRecord";
+            this._medicalRecord.ReadOnly = true;
+            this._medicalRecord.Width = 102;
+            // 
+            // drugstoresDataGridViewTextBoxColumn
+            // 
+            this.drugstoresDataGridViewTextBoxColumn.DataPropertyName = "Drugstores";
+            this.drugstoresDataGridViewTextBoxColumn.HeaderText = "Drugstores";
+            this.drugstoresDataGridViewTextBoxColumn.Name = "drugstoresDataGridViewTextBoxColumn";
+            this.drugstoresDataGridViewTextBoxColumn.ReadOnly = true;
+            this.drugstoresDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // _totalMoney
+            // 
+            this._totalMoney.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this._totalMoney.DataPropertyName = "TotalMoney";
+            this._totalMoney.HeaderText = "Tổng tiền";
+            this._totalMoney.Name = "_totalMoney";
+            this._totalMoney.ReadOnly = true;
+            this._totalMoney.Width = 77;
             // 
             // detail
             // 
@@ -486,6 +575,16 @@
             this.delete.ReadOnly = true;
             this.delete.Width = 32;
             // 
+            // pRESCRIPTIONBindingSource
+            // 
+            this.pRESCRIPTIONBindingSource.DataMember = "PRESCRIPTION";
+            this.pRESCRIPTIONBindingSource.DataSource = this.quanLyThuocDataSet;
+            // 
+            // quanLyThuocDataSet
+            // 
+            this.quanLyThuocDataSet.DataSetName = "QuanLyThuocDataSet";
+            this.quanLyThuocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btn_Save
             // 
             this.btn_Save.ActiveBorderThickness = 1;
@@ -511,17 +610,48 @@
             this.btn_Save.TabIndex = 86;
             this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Save.Visible = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // pRESCRIPTIONTableAdapter
+            // 
+            this.pRESCRIPTIONTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_Renew
+            // 
+            this.btn_Renew.ActiveBorderThickness = 1;
+            this.btn_Renew.ActiveCornerRadius = 20;
+            this.btn_Renew.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btn_Renew.ActiveForecolor = System.Drawing.Color.DarkRed;
+            this.btn_Renew.ActiveLineColor = System.Drawing.Color.DarkRed;
+            this.btn_Renew.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Renew.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Renew.BackgroundImage")));
+            this.btn_Renew.ButtonText = "Làm mới";
+            this.btn_Renew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Renew.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Renew.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btn_Renew.IdleBorderThickness = 1;
+            this.btn_Renew.IdleCornerRadius = 20;
+            this.btn_Renew.IdleFillColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_Renew.IdleForecolor = System.Drawing.Color.Navy;
+            this.btn_Renew.IdleLineColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Renew.Location = new System.Drawing.Point(1169, 12);
+            this.btn_Renew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Renew.Name = "btn_Renew";
+            this.btn_Renew.Size = new System.Drawing.Size(124, 45);
+            this.btn_Renew.TabIndex = 87;
+            this.btn_Renew.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Renew.Click += new System.EventHandler(this.btn_Renew_Click);
             // 
             // UcDonThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_Renew);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_Reload);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.bunifuImageButton1);
+            this.Controls.Add(this.textBox_Search);
+            this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.btn_Export);
-            this.Controls.Add(this.btn_Create);
             this.Controls.Add(this.label_CountRecord);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
@@ -529,11 +659,15 @@
             this.Name = "UcDonThuoc";
             this.Size = new System.Drawing.Size(1312, 822);
             this.Load += new System.EventHandler(this.UcDonThuoc_Load);
+            this.VisibleChanged += new System.EventHandler(this.UcDonThuoc_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Search)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRESCRIPTIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,42 +676,53 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Reload;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox_MedicalRecord;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_Doctor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_ID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_UserAddress;
+        private System.Windows.Forms.Label label_UserName;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_Search;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btn_Search;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Export;
-        private Bunifu.Framework.UI.BunifuThinButton2 btn_Create;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label_CountRecord;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox_TotalMoney_ByText;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox_TotalMoney_ByNum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private Bunifu.Framework.UI.BunifuThinButton2 btn_Save;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_CreateDate;
         private System.Windows.Forms.DataGridViewImageColumn detail;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _createDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _doctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _medicalRecord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drugstoresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _totalMoney;
+        private Bunifu.Framework.UI.BunifuThinButton2 btn_Save;
+        private System.Windows.Forms.BindingSource pRESCRIPTIONBindingSource;
+        private QuanLyThuocDataSet quanLyThuocDataSet;
+        private QuanLyThuocDataSetTableAdapters.PRESCRIPTIONTableAdapter pRESCRIPTIONTableAdapter;
+        private Bunifu.Framework.UI.BunifuThinButton2 btn_Renew;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _stt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _mathuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _tenthuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _dongia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _bhyt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _thanhtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _status;
     }
 }

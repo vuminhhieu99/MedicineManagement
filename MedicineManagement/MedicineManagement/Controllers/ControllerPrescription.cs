@@ -105,7 +105,7 @@ namespace MedicineManagement.Controllers
         {
             string sqlSelect = "";
 
-            string ID_Prescription; try { ID_Prescription = value.ToString().Trim(); } catch { ID_Prescription = ""; }            
+            string ID_Prescription; try { ID_Prescription = value.ToString().Trim(); } catch { ID_Prescription = ""; }
             string CreateDate; try { CreateDate = value.ToString().Trim(); } catch { CreateDate = ""; }
             string Doctor; try { Doctor = value.ToString().Trim(); } catch { Doctor = ""; }
             string MedicalRecord; try { MedicalRecord = value.ToString().Trim(); } catch { MedicalRecord = ""; }
@@ -212,8 +212,8 @@ namespace MedicineManagement.Controllers
 
         public void Insert(Prescription prescription)
         {
-            string query= QueryInsert(prescription);
-            ExecuteNonQuery(query);           
+            string query = QueryInsert(prescription);
+            ExecuteNonQuery(query);
         }
 
         private string QueryInsert(Prescription prescription)
@@ -229,9 +229,10 @@ namespace MedicineManagement.Controllers
             if (CreateDate == "") { CreateDate = "null"; }
             if (Doctor == "") { Doctor = "null"; }
             if (MedicalRecord == "") { MedicalRecord = "null"; }
-            if (Drugstores == "") { Drugstores = "null"; }           
+            if (Drugstores == "") { Drugstores = "null"; }
             if (TotalMoney == "") { TotalMoney = "0"; }
-            query = "EXEC InsertPRESCRIPTION " + CreateDate + ", " + Doctor + ", " + MedicalRecord + ", " + Drugstores + ", " + TotalMoney;
+            //query = "EXEC InsertPRESCRIPTION " + CreateDate + ", " + Doctor + ", " + MedicalRecord + ", " + Drugstores + ", " + TotalMoney;
+            query = $"EXEC dbo.InsertPRESCRIPTION '{CreateDate}', N'{Doctor}', {MedicalRecord}, {Drugstores}, {TotalMoney}";
             return query;
         }
 
@@ -267,7 +268,8 @@ namespace MedicineManagement.Controllers
             if (Drugstores == "") { Drugstores = "null"; }
             if (TotalMoney == "") { TotalMoney = "0"; }
 
-            query = "EXEC UpdatePRESCRIPTION " + ID_Prescription + CreateDate + ", " + Doctor + ", " + MedicalRecord + ", " + Drugstores + ", " + TotalMoney;
+            //query = "EXEC UpdatePRESCRIPTION " + ID_Prescription + CreateDate + ", " + Doctor + ", " + MedicalRecord + ", " + Drugstores + ", " + TotalMoney;
+            query = $"EXECUTE dbo.UpdatePRESCRIPTION {ID_Prescription},'{CreateDate}', N'{Doctor}',{MedicalRecord}, {Drugstores}, {TotalMoney}";
 
             return query;
         }
@@ -277,9 +279,7 @@ namespace MedicineManagement.Controllers
             ID_Prescription = ID_Prescription.Trim();
             string query = "Delete DBO.PRESCRIPTION WHERE ID_Prescription = " + ID_Prescription;
             ExecuteNonQuery(query);
-            
-        }
 
-        
+        }
     }
 }

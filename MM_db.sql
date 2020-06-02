@@ -38,12 +38,10 @@ GO
 	 Price decimal (10, 0) NULL,
 	 TotalInventory INT NULL,
 	 Note nvarchar (max) NULL,
-	 MostUsedMonth nvarchar(20)  NULL,
+	 MostUsedMonth int  NULL,
  CONSTRAINT  PK_THUOC  PRIMARY KEY ( ID_Medicine  ) 
  )
 GO
-
-
 
 CREATE TABLE PRESCRIPTION (
 	 ID_Prescription int  IDENTITY(1,1) NOT NULL,
@@ -75,6 +73,17 @@ CREATE TABLE SUPPLIER (
  CONSTRAINT  PK_NHACUNGCAP  PRIMARY KEY (	 ID_Supplier )
  )
 GO
+
+-- UserInfo
+CREATE TABLE USERINFO
+(
+	UserName NVARCHAR(200),
+	UserAddress NVARCHAR(400),
+	UserEmail VARCHAR(200),
+	UserPhone VARCHAR(15),
+	CreateDate DATE,
+)
+--
 
 ALTER TABLE [dbo].[INPUTCOUPON] ADD  CONSTRAINT [DF_PHIEUNHAP_TongTien]  DEFAULT ((0)) FOR [TotalMoney]
 GO
@@ -434,6 +443,7 @@ BEGIN
 	( SELECT deleted.ID_Medicine  FROM  deleted)	
 END
 GO
+
 
 --------------------------------INSERT DATA------------------------------
 

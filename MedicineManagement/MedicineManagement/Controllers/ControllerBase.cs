@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicineManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -11,6 +12,8 @@ namespace MedicineManagement.Controllers
 {
     abstract class ControllerBase
     {
+        public static UserInfo userInfo = new UserInfo();
+
         protected string connectionSTR;
         protected SqlConnection connection;
         protected SqlDataAdapter adapter;
@@ -25,14 +28,14 @@ namespace MedicineManagement.Controllers
 
         public ControllerBase()
         {
-            connectionSTR = "Data Source=DESKTOP-5ICMB9D;Initial Catalog=QuanLyThuoc;Integrated Security=True";
+            connectionSTR = "Data Source=DESKTOP-9DHLIM0;Initial Catalog=QuanLyThuoc;Integrated Security=True";
             connection = new SqlConnection(connectionSTR);
             ds = new DataSet();
             adapter = new SqlDataAdapter();
         }
         public abstract DataTable Load();
         public abstract DataTable Load(string ID);
-        public abstract DataTable Search(string text); 
+        public abstract DataTable Search(string text);
         public void ExecuteNonQuery(string query)
         {
             try
@@ -51,7 +54,7 @@ namespace MedicineManagement.Controllers
             }
         }
 
-        
+
 
     }
 }

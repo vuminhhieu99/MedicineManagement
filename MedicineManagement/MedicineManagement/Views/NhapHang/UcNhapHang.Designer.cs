@@ -52,6 +52,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.iDMedicineDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitInputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intoMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNPUTCOUPONLINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -64,8 +71,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxMaPN = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label_UserAddress = new System.Windows.Forms.Label();
+            this.label_UserName = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -207,6 +214,54 @@
             this.dataGridView1.Size = new System.Drawing.Size(549, 658);
             this.dataGridView1.TabIndex = 73;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // iDMedicineDataGridViewTextBoxColumn
+            // 
+            this.iDMedicineDataGridViewTextBoxColumn.DataPropertyName = "ID_Medicine";
+            this.iDMedicineDataGridViewTextBoxColumn.HeaderText = "Mã Thuốc";
+            this.iDMedicineDataGridViewTextBoxColumn.Name = "iDMedicineDataGridViewTextBoxColumn";
+            this.iDMedicineDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên Thuốc";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // medicineGroupDataGridViewTextBoxColumn
+            // 
+            this.medicineGroupDataGridViewTextBoxColumn.DataPropertyName = "MedicineGroup";
+            this.medicineGroupDataGridViewTextBoxColumn.HeaderText = "Nhóm Thuốc";
+            this.medicineGroupDataGridViewTextBoxColumn.Name = "medicineGroupDataGridViewTextBoxColumn";
+            this.medicineGroupDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Đơn Giá";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // add
+            // 
+            this.add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.add.HeaderText = "Thêm";
+            this.add.Image = global::MedicineManagement.Properties.Resources.icon_left_arrow;
+            this.add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.add.Name = "add";
+            this.add.ReadOnly = true;
+            this.add.Width = 40;
+            // 
+            // mEDICINEBindingSource
+            // 
+            this.mEDICINEBindingSource.DataMember = "MEDICINE";
+            this.mEDICINEBindingSource.DataSource = this.quanLyThuocDataSet;
+            // 
+            // quanLyThuocDataSet
+            // 
+            this.quanLyThuocDataSet.DataSetName = "QuanLyThuocDataSet";
+            this.quanLyThuocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // iDMedicineDataGridViewTextBoxColumn
             // 
@@ -450,8 +505,8 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.textBoxMaPN);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label_UserAddress);
+            this.panel2.Controls.Add(this.label_UserName);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(-1, -1);
@@ -589,27 +644,27 @@
             this.label15.TabIndex = 4;
             this.label15.Text = "Mã phiếu nhập";
             // 
-            // label16
+            // label_UserAddress
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(56, 30);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(250, 15);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
+            this.label_UserAddress.AutoSize = true;
+            this.label_UserAddress.BackColor = System.Drawing.Color.Transparent;
+            this.label_UserAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserAddress.Location = new System.Drawing.Point(56, 30);
+            this.label_UserAddress.Name = "label_UserAddress";
+            this.label_UserAddress.Size = new System.Drawing.Size(250, 15);
+            this.label_UserAddress.TabIndex = 3;
+            this.label_UserAddress.Text = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
             // 
-            // label17
+            // label_UserName
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(56, 14);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(180, 15);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
+            this.label_UserName.AutoSize = true;
+            this.label_UserName.BackColor = System.Drawing.Color.Transparent;
+            this.label_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UserName.Location = new System.Drawing.Point(56, 14);
+            this.label_UserName.Name = "label_UserName";
+            this.label_UserName.Size = new System.Drawing.Size(180, 15);
+            this.label_UserName.TabIndex = 2;
+            this.label_UserName.Text = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
             // 
             // label18
             // 
@@ -900,6 +955,7 @@
             this.Name = "UcNhapHang";
             this.Size = new System.Drawing.Size(1312, 822);
             this.Load += new System.EventHandler(this.UcNhapHang_Load);
+            this.VisibleChanged += new System.EventHandler(this.UcNhapHang_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).EndInit();
@@ -943,8 +999,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxMaPN;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label_UserAddress;
+        private System.Windows.Forms.Label label_UserName;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox7;

@@ -195,6 +195,11 @@ namespace MedicineManagement.Views.NhapHang
                 MessageBox.Show("Xoá Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+
+        private void UcNhapHang_VisibleChanged(object sender, EventArgs e)
+        {
+            label_UserName.Text = ControllerBase.userInfo.UserName.ToUpper();
+            label_UserAddress.Text = ControllerBase.userInfo.UserAddress;
         }
     }
 }

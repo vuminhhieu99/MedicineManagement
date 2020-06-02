@@ -148,6 +148,12 @@ namespace MedicineManagement.Views.PhieuNhap
 
         }
 
+        private void UcPhieuNhap_VisibleChanged(object sender, EventArgs e)
+        {
+            label_UserName.Text = ControllerBase.userInfo.UserName.ToUpper();
+            label_UserAddress.Text = ControllerBase.userInfo.UserAddress;
+        }
+
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = ctr1.Load();
