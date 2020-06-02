@@ -64,8 +64,10 @@
     <Compile Include="Controllers\ControllerPrescriptionLine.cs" />
     <Compile Include="Controllers\ControllerStatistics.cs" />
     <Compile Include="Controllers\ControllerSupplier.cs" />
+    <Compile Include="Controllers\ControllerUserInfo.cs" />
     <Compile Include="Controllers\ConvertFromNumToText.cs" />
     <Compile Include="Models\Chart.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="QuanLyThuocDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -320,9 +322,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\alert.png" />
+    <Content Include="Content\background.png" />
+    <Content Include="Content\background2.png" />
     <Content Include="Content\bell.png" />
     <Content Include="Content\btn exit.png" />
     <Content Include="Content\btn minimize.png" />
+    <Content Include="Content\copyright.png" />
     <Content Include="Content\create.png" />
     <Content Include="Content\delete.png" />
     <Content Include="Content\detail.png" />
@@ -350,6 +355,7 @@
     <Content Include="Content\logo.png" />
     <Content Include="Content\search.png" />
     <Content Include="Content\statistical.png" />
+    <Content Include="Content\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

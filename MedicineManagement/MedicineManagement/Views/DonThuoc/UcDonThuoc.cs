@@ -35,6 +35,8 @@ namespace MedicineManagement.Views.DonThuoc
 
         public void LoadDataPrescription()
         {
+            label_UserName.Text = ControllerBase.userInfo.UserName.ToUpper();
+            label_UserAddress.Text = ControllerBase.userInfo.UserAddress;
             textBox_Search.ResetText();
             dataGridView1.DataSource = ctrlP.Load();
             totalRecord = dataGridView1.Rows.Count - 1;

@@ -289,6 +289,8 @@ namespace MedicineManagement.Views.BanThuoc
 
         public void RenewPersciption()
         {
+            label_UserName.Text = ControllerBase.userInfo.UserName.ToUpper();
+            label_UserAddress.Text = ControllerBase.userInfo.UserAddress;
             textBox_ID.ResetText();
             textBox_Doctor.ResetText();
             textBox_TotalMoney_ByNum.ResetText();

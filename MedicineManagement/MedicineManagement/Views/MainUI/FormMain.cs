@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicineManagement.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,29 @@ using System.Windows.Forms;
 
 namespace MedicineManagement
 {
+    delegate int ShowUserInfo(int m);
+
     public partial class FormMain : Form
     {
+        ControllerUserInfo ctrlUser = new ControllerUserInfo();
+
         public FormMain()
         {
             InitializeComponent();
+
+            formFunctionPointer += new functioncall(ShowUserInfoInLayout);
+            ucCaiDat1.userFunctionPointer = formFunctionPointer;
+        }
+
+        // Delegate
+        public delegate void functioncall();
+        private event functioncall formFunctionPointer;
+        //
+
+        public void ShowUserInfoInLayout()
+        {
+            labelUserName.Text = ControllerBase.userInfo.UserName;
+            labelUserAddress.Text = ControllerBase.userInfo.UserAddress;
         }
 
         // Shadow
@@ -33,6 +52,7 @@ namespace MedicineManagement
         // Events
         private void Form1_Load(object sender, EventArgs e)
         {
+            getUserInfo();
             timer1.Start();
         }
 
@@ -114,5 +134,21 @@ namespace MedicineManagement
             ucCaiDat1.Visible = false;
             ucThongTin1.Visible = false;
         }
+
+        public void getUserInfo()
+        {
+            dataGridViewUser.DataSource = ctrlUser.Load();
+        
+            ControllerBase.userInfo.UserName = dataGridViewUser.Rows[0].Cells["UserName"].Value.ToString();
+            ControllerBase.userInfo.UserAddress = dataGridViewUser.Rows[0].Cells["UserAddress"].Value.ToString();
+            ControllerBase.userInfo.UserEmail = dataGridViewUser.Rows[0].Cells["UserEmail"].Value.ToString();
+            ControllerBase.userInfo.UserPhone = dataGridViewUser.Rows[0].Cells["UserPhone"].Value.ToString();
+            ControllerBase.userInfo.CreateDate = (DateTime)dataGridViewUser.Rows[0].Cells["CreateDate"].Value;
+            DateTime createDate = (DateTime)dataGridViewUser.Rows[0].Cells["CreateDate"].Value;
+
+            ShowUserInfoInLayout();
+        }
+
+       
     }
 }

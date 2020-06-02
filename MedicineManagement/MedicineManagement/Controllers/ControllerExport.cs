@@ -46,18 +46,18 @@ namespace MedicineManagement.Controllers
             // Tên hàng thuốc
             Microsoft.Office.Interop.Excel.Range head1 = oSheet.get_Range("B1", "G1");
             head1.MergeCells = true;
-            head1.Value2 = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
+            head1.Value2 = ControllerBase.userInfo.UserName.ToUpper();
             head1.Font.Bold = true;
-            head1.Font.Name = "Times New Roman";
+            head1.Font.Name = "Calibri";
             head1.Font.Size = "10";
             head1.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Địa chỉ nhà thuốc
             Microsoft.Office.Interop.Excel.Range head2 = oSheet.get_Range("B2", "G2");
             head2.MergeCells = true;
-            head2.Value2 = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
+            head2.Value2 = ControllerBase.userInfo.UserAddress;
             head2.Font.Bold = true;
-            head2.Font.Name = "Times New Roman";
+            head2.Font.Name = "Calibri";
             head2.Font.Size = "10";
             head2.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
@@ -66,52 +66,52 @@ namespace MedicineManagement.Controllers
             head3.MergeCells = true;
             head3.Value2 = "ĐƠN THUỐC";
             head3.Font.Bold = true;
-            head3.Font.Name = "Times New Roman";
-            head3.Font.Size = "25";
+            head3.Font.Name = "Calibri";
+            head3.Font.Size = "30";
             head3.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
             // Mã đơn thuốc
             Microsoft.Office.Interop.Excel.Range head4 = oSheet.get_Range("B6", "G6");
             head4.MergeCells = true;
-            head4.Value2 = $"Mã đơn thuốc   : {prescription.ID_Prescription}";
+            head4.Value2 = $"Mã đơn thuốc  : {prescription.ID_Prescription}";
             head4.Font.Bold = true;
-            head4.Font.Name = "Times New Roman";
+            head4.Font.Name = "Calibri";
             head4.Font.Size = "11";
             head4.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Ngày tạo
             Microsoft.Office.Interop.Excel.Range head5 = oSheet.get_Range("B7", "G7");
             head5.MergeCells = true;
-            head5.Value2 = $"Ngày tạo           : {prescription.CreateDate.Day}/{prescription.CreateDate.Month}/{prescription.CreateDate.Year}";
+            head5.Value2 = $"Ngày tạo             : {prescription.CreateDate.Day}/{prescription.CreateDate.Month}/{prescription.CreateDate.Year}";
             head5.Font.Bold = true;
-            head5.Font.Name = "Times New Roman";
+            head5.Font.Name = "Calibri";
             head5.Font.Size = "11";
             head5.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Bác sĩ
             Microsoft.Office.Interop.Excel.Range head6 = oSheet.get_Range("B8", "G8");
             head6.MergeCells = true;
-            head6.Value2 = $"Bác sĩ               : {prescription.Doctor}";
+            head6.Value2 = $"Bác sĩ                    : {prescription.Doctor}";
             head6.Font.Bold = true;
-            head6.Font.Name = "Times New Roman";
+            head6.Font.Name = "Calibri";
             head6.Font.Size = "11";
             head6.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Hồ sơ bệnh án
             Microsoft.Office.Interop.Excel.Range head7 = oSheet.get_Range("B9", "G9");
             head7.MergeCells = true;
-            head7.Value2 = $"Hồ sơ bệnh án  : {prescription.MedicalRecord}";
+            head7.Value2 = $"Hồ sơ bệnh án : {prescription.MedicalRecord}";
             head7.Font.Bold = true;
-            head7.Font.Name = "Times New Roman";
+            head7.Font.Name = "Calibri";
             head7.Font.Size = "11";
             head7.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
-            // Hồ sơ bệnh án
+            // Danh sách thuốc
             Microsoft.Office.Interop.Excel.Range head8 = oSheet.get_Range("B11", "G11");
             head8.MergeCells = true;
             head8.Value2 = "Danh sách thuốc";
             head8.Font.Bold = true;
-            head8.Font.Name = "Times New Roman";
+            head8.Font.Name = "Calibri";
             head8.Font.Size = "11";
             head8.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
@@ -280,18 +280,18 @@ namespace MedicineManagement.Controllers
             // Tên hàng thuốc
             Microsoft.Office.Interop.Excel.Range head1 = oSheet.get_Range("B1", "G1");
             head1.MergeCells = true;
-            head1.Value2 = "HỌC VIỆN KỸ THUẬT QUÂN SỰ";
+            head1.Value2 = ControllerBase.userInfo.UserName.ToUpper();
             head1.Font.Bold = true;
-            head1.Font.Name = "Times New Roman";
+            head1.Font.Name = "Calibri";
             head1.Font.Size = "10";
             head1.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Địa chỉ nhà thuốc
             Microsoft.Office.Interop.Excel.Range head2 = oSheet.get_Range("B2", "G2");
             head2.MergeCells = true;
-            head2.Value2 = "236 Hoàng Quốc Việt - Bắc Từ Liêm - Hà Nội";
+            head2.Value2 = ControllerBase.userInfo.UserAddress;
             head2.Font.Bold = true;
-            head2.Font.Name = "Times New Roman";
+            head2.Font.Name = "Calibri";
             head2.Font.Size = "10";
             head2.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
@@ -300,52 +300,52 @@ namespace MedicineManagement.Controllers
             head3.MergeCells = true;
             head3.Value2 = "ĐƠN THUỐC";
             head3.Font.Bold = true;
-            head3.Font.Name = "Times New Roman";
-            head3.Font.Size = "25";
+            head3.Font.Name = "Calibri";
+            head3.Font.Size = "30";
             head3.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
             // Mã đơn thuốc
             Microsoft.Office.Interop.Excel.Range head4 = oSheet.get_Range("B6", "G6");
             head4.MergeCells = true;
-            head4.Value2 = $"Mã đơn thuốc   : {prescription.ID_Prescription}";
+            head4.Value2 = $"Mã đơn thuốc  : {prescription.ID_Prescription}";
             head4.Font.Bold = true;
-            head4.Font.Name = "Times New Roman";
+            head4.Font.Name = "Calibri";
             head4.Font.Size = "11";
             head4.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Ngày tạo
             Microsoft.Office.Interop.Excel.Range head5 = oSheet.get_Range("B7", "G7");
             head5.MergeCells = true;
-            head5.Value2 = $"Ngày tạo           : {prescription.CreateDate.Day}/{prescription.CreateDate.Month}/{prescription.CreateDate.Year}";
+            head5.Value2 = $"Ngày tạo             : {prescription.CreateDate.Day}/{prescription.CreateDate.Month}/{prescription.CreateDate.Year}";
             head5.Font.Bold = true;
-            head5.Font.Name = "Times New Roman";
+            head5.Font.Name = "Calibri";
             head5.Font.Size = "11";
             head5.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Bác sĩ
             Microsoft.Office.Interop.Excel.Range head6 = oSheet.get_Range("B8", "G8");
             head6.MergeCells = true;
-            head6.Value2 = $"Bác sĩ               : {prescription.Doctor}";
+            head6.Value2 = $"Bác sĩ                    : {prescription.Doctor}";
             head6.Font.Bold = true;
-            head6.Font.Name = "Times New Roman";
+            head6.Font.Name = "Calibri";
             head6.Font.Size = "11";
             head6.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
             // Hồ sơ bệnh án
             Microsoft.Office.Interop.Excel.Range head7 = oSheet.get_Range("B9", "G9");
             head7.MergeCells = true;
-            head7.Value2 = $"Hồ sơ bệnh án  : {prescription.MedicalRecord}";
+            head7.Value2 = $"Hồ sơ bệnh án : {prescription.MedicalRecord}";
             head7.Font.Bold = true;
-            head7.Font.Name = "Times New Roman";
+            head7.Font.Name = "Calibri";
             head7.Font.Size = "11";
             head7.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
-            // Hồ sơ bệnh án
+            // Danh sách thuốc
             Microsoft.Office.Interop.Excel.Range head8 = oSheet.get_Range("B11", "G11");
             head8.MergeCells = true;
             head8.Value2 = "Danh sách thuốc";
             head8.Font.Bold = true;
-            head8.Font.Name = "Times New Roman";
+            head8.Font.Name = "Calibri";
             head8.Font.Size = "11";
             head8.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignLeft;
 
@@ -406,7 +406,7 @@ namespace MedicineManagement.Controllers
             {
                 DataRow dr = dt.Rows[r];
 
-                arr[r, 0] = r+1;
+                arr[r, 0] = r + 1;
                 arr[r, 1] = dr["Tên thuốc"];
                 arr[r, 2] = dr["Đơn giá"];
                 arr[r, 3] = dr["Số lượng"];
