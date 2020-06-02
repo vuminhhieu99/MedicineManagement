@@ -70,7 +70,7 @@ namespace MedicineManagement.Views.NhapHang
             }
         }
         int index;
-        
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -89,7 +89,7 @@ namespace MedicineManagement.Views.NhapHang
 
                     dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
 
-                    for (int i = 0; i < length-1; i++)
+                    for (int i = 0; i < length - 1; i++)
                     {
                         SumMoney += int.Parse(dataGridView2.Rows[i].Cells["intoMoney"].Value.ToString());
                     }
@@ -97,9 +97,9 @@ namespace MedicineManagement.Views.NhapHang
                     textBoxtongtien.Text = SumMoney.ToString();
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
-                MessageBox.Show("Thêm Phiếu mới trước khi thêm thuốc!", "Thông Báo!",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm Phiếu mới trước khi thêm thuốc!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -196,6 +196,8 @@ namespace MedicineManagement.Views.NhapHang
 
             }
 
+            
+        }
         private void UcNhapHang_VisibleChanged(object sender, EventArgs e)
         {
             label_UserName.Text = ControllerBase.userInfo.UserName.ToUpper();
