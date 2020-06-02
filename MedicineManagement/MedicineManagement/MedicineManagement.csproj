@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -201,6 +202,24 @@
     <Compile Include="Views\ThongTin\UcThongTin.Designer.cs">
       <DependentUpon>UcThongTin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\TrangChu\UcDoanhThuChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcDoanhThuChart.Designer.cs">
+      <DependentUpon>UcDoanhThuChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcDuBaoNhapThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcDuBaoNhapThuoc.Designer.cs">
+      <DependentUpon>UcDuBaoNhapThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcTonkho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrangChu\UcTonkho.Designer.cs">
+      <DependentUpon>UcTonkho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TrangChu\UcTrangChu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -286,6 +305,15 @@
     <EmbeddedResource Include="Views\ThongTin\UcThongTIn.resx">
       <DependentUpon>UcThongTin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrangChu\UcDoanhThuChart.resx">
+      <DependentUpon>UcDoanhThuChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrangChu\UcDuBaoNhapThuoc.resx">
+      <DependentUpon>UcDuBaoNhapThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrangChu\UcTonkho.resx">
+      <DependentUpon>UcTonkho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\TrangChu\UcTrangChu.resx">
       <DependentUpon>UcTrangChu.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +359,7 @@
     <Content Include="Content\create.png" />
     <Content Include="Content\delete.png" />
     <Content Include="Content\detail.png" />
+    <Content Include="Content\e3531baed18523dfc38e320bd7bcf614.png" />
     <Content Include="Content\edit.png" />
     <Content Include="Content\export.png" />
     <Content Include="Content\filter.png" />

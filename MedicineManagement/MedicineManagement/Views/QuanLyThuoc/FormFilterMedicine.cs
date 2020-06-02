@@ -16,6 +16,7 @@ namespace MedicineManagement.Views.QuanLyThuoc
     {
         ControllerMedicine ctrl = new ControllerMedicine();
         public static Medicine mdc = new Medicine();
+        
 
         public FormFilterMedicine()
         {

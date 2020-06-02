@@ -176,6 +176,7 @@ BEGIN
 	SET @intoMoney = @price * @amount
 	DECLARE @totalNumUnitOutput DECIMAL 
 	SET @totalNumUnitOutput = @numUnitOutput * @amount
+	
 
 	INSERT INTO dbo.INPUTCOUPONLINE ( [ID_InputCoupon], [ID_Medicine] ,[Name] ,[UnitInput] ,[Amount] ,[Price] ,[ExpiryDate] ,[NumUnitOutput] ,[ProductionBatch] ,[IntoMoney] )
 	VALUES  ( @ID_inputCoupon, @ID_medicine, @name, @unitInput, @amount, @price, @expiryDate, @NumUnitOutput, @productionBatch, @intoMoney )
