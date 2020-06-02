@@ -70,10 +70,13 @@ namespace MedicineManagement.Views.NhapHang
             }
         }
         int index;
+        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
             index = e.RowIndex;
+            int SumMoney = 0;
+            int length = dataGridView2.Rows.Count;
             try
             {
                 if (e.ColumnIndex == dataGridView1.Columns["add"].Index)
@@ -85,11 +88,18 @@ namespace MedicineManagement.Views.NhapHang
                     ctrdpn.Insert(dpn);
 
                     dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
+
+                    for (int i = 0; i < length-1; i++)
+                    {
+                        SumMoney += int.Parse(dataGridView2.Rows[i].Cells["intoMoney"].Value.ToString());
+                    }
+
+                    textBoxtongtien.Text = SumMoney.ToString();
                 }
             }
             catch(Exception)
             {
-                MessageBox.Show("Thêm Phiếu mới trước khi thêm thuốc!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm Phiếu mới trước khi thêm thuốc!", "Thông Báo!",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -97,6 +107,8 @@ namespace MedicineManagement.Views.NhapHang
         private void btn_Save_Click(object sender, EventArgs e)
         {
             int j = 0;
+            int SumMoney = 0;
+            int length = dataGridView2.Rows.Count;
             try
             {
 
@@ -122,6 +134,16 @@ namespace MedicineManagement.Views.NhapHang
                 dpn.ExpiryDate = (DateTime)dataGridView2.Rows[indexRow].Cells[j + 6].Value;
                 ctrdpn.Update(dpn);
                 MessageBox.Show("Sửa Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
+
+                for (int i = 0; i < length - 1; i++)
+                {
+                    SumMoney += int.Parse(dataGridView2.Rows[i].Cells["intoMoney"].Value.ToString());
+                }
+
+                textBoxtongtien.Text = SumMoney.ToString();
+
             }
             catch (Exception)
             {
@@ -139,10 +161,10 @@ namespace MedicineManagement.Views.NhapHang
                 {
                     for (int i = 0; i < length - 1; i++)
                     {
-                        ctrdpn.Delete(dataGridView2.Rows[i].Cells["maDPN"].Value.ToString());
+                        ctrdpn.DeleteOnInputCoupon(textBoxMaPN.Text);
                     }
                 }
-                dataGridView2.DataSource = ctrdpn.Load();
+                dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
                 MessageBox.Show("Xoá Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
@@ -165,7 +187,7 @@ namespace MedicineManagement.Views.NhapHang
                         ctrdpn.Delete(dataGridView2.Rows[item.Index].Cells["maDPN"].Value.ToString());
                     }
                 }
-                dataGridView2.DataSource = ctrdpn.Load();
+                dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
                 MessageBox.Show("Xoá Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)

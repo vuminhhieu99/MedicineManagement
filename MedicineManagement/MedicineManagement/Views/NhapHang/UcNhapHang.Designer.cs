@@ -100,7 +100,7 @@
             this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductionBatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumUnitOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intoMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intoMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).BeginInit();
@@ -473,7 +473,7 @@
             this.expiryDateDataGridViewTextBoxColumn,
             this.ProductionBatch,
             this.NumUnitOutput,
-            this.intoMoneyDataGridViewTextBoxColumn});
+            this.intoMoney});
             this.dataGridView2.DataSource = this.iNPUTCOUPONLINEBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(38, 240);
             this.dataGridView2.Name = "dataGridView2";
@@ -874,11 +874,11 @@
             this.NumUnitOutput.HeaderText = "số sản phẩm/đvị nhập";
             this.NumUnitOutput.Name = "NumUnitOutput";
             // 
-            // intoMoneyDataGridViewTextBoxColumn
+            // intoMoney
             // 
-            this.intoMoneyDataGridViewTextBoxColumn.DataPropertyName = "IntoMoney";
-            this.intoMoneyDataGridViewTextBoxColumn.HeaderText = "Thành Tiền";
-            this.intoMoneyDataGridViewTextBoxColumn.Name = "intoMoneyDataGridViewTextBoxColumn";
+            this.intoMoney.DataPropertyName = "IntoMoney";
+            this.intoMoney.HeaderText = "Thành Tiền";
+            this.intoMoney.Name = "intoMoney";
             // 
             // UcNhapHang
             // 
@@ -990,6 +990,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductionBatch;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumUnitOutput;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intoMoneyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intoMoney;
     }
 }

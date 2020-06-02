@@ -341,5 +341,21 @@ namespace MedicineManagement.Controllers
                 
             }
         }
+        //Truong thêm vào
+        public void DeleteOnInputCoupon(string ID_InputCoupon)
+        {
+            try
+            {
+
+                ID_InputCoupon = ID_InputCoupon.Trim();
+                string query = "Delete DBO.INPUTCOUPONLINE WHERE ID_InputCoupon = " + ID_InputCoupon;
+                ExecuteNonQuery(query);
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }
