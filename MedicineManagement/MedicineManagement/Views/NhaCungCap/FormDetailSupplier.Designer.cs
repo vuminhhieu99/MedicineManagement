@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetailSupplier));
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxTenNCC = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxMaNCC = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Return = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxSDT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxDiaChi = new System.Windows.Forms.TextBox();
             this.btn_Edit = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel_title = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -62,14 +62,14 @@
             this.label4.Text = "Địa chỉ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // textBoxTenNCC
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(159, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(609, 27);
-            this.textBox2.TabIndex = 101;
+            this.textBoxTenNCC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTenNCC.Location = new System.Drawing.Point(159, 75);
+            this.textBoxTenNCC.Name = "textBoxTenNCC";
+            this.textBoxTenNCC.ReadOnly = true;
+            this.textBoxTenNCC.Size = new System.Drawing.Size(609, 27);
+            this.textBoxTenNCC.TabIndex = 101;
             // 
             // label3
             // 
@@ -83,14 +83,15 @@
             this.label3.Text = "Tên nhà cung cấp";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // textBoxMaNCC
             // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(159, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(609, 27);
-            this.textBox1.TabIndex = 99;
+            this.textBoxMaNCC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaNCC.Location = new System.Drawing.Point(159, 29);
+            this.textBoxMaNCC.Name = "textBoxMaNCC";
+            this.textBoxMaNCC.ReadOnly = true;
+            this.textBoxMaNCC.Size = new System.Drawing.Size(609, 27);
+            this.textBoxMaNCC.TabIndex = 99;
+            this.textBoxMaNCC.TextChanged += new System.EventHandler(this.textBoxMaNCC_TextChanged);
             // 
             // label2
             // 
@@ -145,15 +146,15 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textBoxEmail);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.textBoxSDT);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBoxDiaChi);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.textBoxTenNCC);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.textBoxMaNCC);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btn_Return);
             this.panel2.Controls.Add(this.btn_Edit);
@@ -162,15 +163,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 405);
             this.panel2.TabIndex = 84;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // textBox5
+            // textBoxEmail
             // 
-            this.textBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(159, 215);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(609, 27);
-            this.textBox5.TabIndex = 107;
+            this.textBoxEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(159, 215);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.ReadOnly = true;
+            this.textBoxEmail.Size = new System.Drawing.Size(609, 27);
+            this.textBoxEmail.TabIndex = 107;
             // 
             // label6
             // 
@@ -184,14 +186,14 @@
             this.label6.Text = "Email";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox4
+            // textBoxSDT
             // 
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(159, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(609, 27);
-            this.textBox4.TabIndex = 105;
+            this.textBoxSDT.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSDT.Location = new System.Drawing.Point(159, 169);
+            this.textBoxSDT.Name = "textBoxSDT";
+            this.textBoxSDT.ReadOnly = true;
+            this.textBoxSDT.Size = new System.Drawing.Size(609, 27);
+            this.textBoxSDT.TabIndex = 105;
             // 
             // label5
             // 
@@ -205,14 +207,14 @@
             this.label5.Text = "Số điện thoại";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox3
+            // textBoxDiaChi
             // 
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(159, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(609, 27);
-            this.textBox3.TabIndex = 103;
+            this.textBoxDiaChi.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDiaChi.Location = new System.Drawing.Point(159, 122);
+            this.textBoxDiaChi.Name = "textBoxDiaChi";
+            this.textBoxDiaChi.ReadOnly = true;
+            this.textBoxDiaChi.Size = new System.Drawing.Size(609, 27);
+            this.textBoxDiaChi.TabIndex = 103;
             // 
             // btn_Edit
             // 
@@ -251,6 +253,7 @@
             this.panel_title.Name = "panel_title";
             this.panel_title.Size = new System.Drawing.Size(800, 35);
             this.panel_title.TabIndex = 83;
+            this.panel_title.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_title_Paint);
             // 
             // pictureBox1
             // 
@@ -274,6 +277,7 @@
             this.Name = "FormDetailSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDetailSupplier";
+            this.Load += new System.EventHandler(this.FormDetailSupplier_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_title.ResumeLayout(false);
@@ -286,18 +290,18 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxTenNCC;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxMaNCC;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Return;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxSDT;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxDiaChi;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Edit;
         private System.Windows.Forms.Panel panel_title;
         private System.Windows.Forms.PictureBox pictureBox1;

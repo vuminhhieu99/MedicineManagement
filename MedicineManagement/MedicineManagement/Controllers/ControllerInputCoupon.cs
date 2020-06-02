@@ -76,17 +76,17 @@ namespace MedicineManagement.Controllers
             string sqlSelect = "";
 
             string ID_InputCoupon; try { ID_InputCoupon = value.ToString().Trim(); } catch { ID_InputCoupon = ""; }
-            string CreateDate; try {CreateDate = value.ToString().Trim(); } catch { CreateDate = ""; }
-            
+            string CreateDate; try { CreateDate = value.ToString().Trim(); } catch { CreateDate = ""; }
+
             string ID_Supplier; try { ID_Supplier = value.ToString().Trim(); } catch { ID_Supplier = ""; }
             string TotalMoney; try { TotalMoney = value.ToString().Trim(); } catch { TotalMoney = ""; }
-           
+
 
             if (ID_InputCoupon != "") { sqlSelect = sqlSelect + " or ID_InputCoupon like '%" + ID_InputCoupon + "%'"; }
-            if (CreateDate != "") { sqlSelect = sqlSelect + " or CreateDate like  '%" + CreateDate + "%'"; }            
+            if (CreateDate != "") { sqlSelect = sqlSelect + " or CreateDate like  '%" + CreateDate + "%'"; }
             if (ID_Supplier != "") { sqlSelect = sqlSelect + " or ID_Supplier like '%" + ID_Supplier + "%'"; }
             if (TotalMoney != "") { sqlSelect = sqlSelect + " or TotalMoney like '%" + TotalMoney + "%'"; }
-          
+
             string query = "";
             if (sqlSelect != "")
             {
@@ -156,7 +156,100 @@ namespace MedicineManagement.Controllers
             }
             return query;
         }
-                
+
+        public DataTable SearchYear(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.INPUTCOUPON WHERE YEAR(CreateDate) >= " + start + " AND YEAR(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "INPUTCOUPON");
+                    dt = ds.Tables["INPUTCOUPON"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SearchMonth(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.INPUTCOUPON WHERE MONTH(CreateDate) >= " + start + " AND MONTH(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "INPUTCOUPON");
+                    dt = ds.Tables["INPUTCOUPON"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SearchDay(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.INPUTCOUPON WHERE DAY(CreateDate) >= " + start + " AND DAY(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "INPUTCOUPON");
+                    dt = ds.Tables["INPUTCOUPON"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
         public void Refresh()
         {
             try
@@ -173,69 +266,94 @@ namespace MedicineManagement.Controllers
                 connection.Close();
             }
         }
-                
+
         public void Insert(Inputcoupon inputcoupon)
         {
-            string query = QueryInsert(inputcoupon);
-            ExecuteNonQuery(query);  
+            try
+            {
+                string query = QueryInsert(inputcoupon);
+                ExecuteNonQuery(query);
+                MessageBox.Show("Thêm thành công", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Thêm thất bại", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private string QueryInsert(Inputcoupon inputcoupon)
         {
-            string query ="";            
+            string query = "";
 
             string CreateDate; try { CreateDate = inputcoupon.CreateDate.ToShortDateString().Trim(); } catch { CreateDate = ""; }
             string ID_Supplier; try { ID_Supplier = inputcoupon.ID_Supplier.ToString().Trim(); } catch { ID_Supplier = ""; }
             string TotalMoney; try { TotalMoney = inputcoupon.TotalMoney.ToString().Trim(); } catch { TotalMoney = ""; }
-            
+
             if (CreateDate == "") { CreateDate = "null"; }
             if (ID_Supplier == "") { ID_Supplier = "null"; }
             if (TotalMoney == "") { TotalMoney = "0"; }
-            query = "EXEC InsertINPUTCOUPON " + CreateDate + ", " + ID_Supplier + ", " + TotalMoney;
+            query = $"EXEC InsertINPUTCOUPON '{CreateDate}' , {ID_Supplier} , {TotalMoney}";
             return query;
         }
 
         // update 1 Inputcoupon row
         public void Update(Inputcoupon inputcoupon)
         {
-            string query = QueryUpdate(inputcoupon);
-            if (query == "")
+            try
             {
-                MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
-                return;
-            }
-            ExecuteNonQuery(query);
+                string query = QueryUpdate(inputcoupon);
+                if (query == "")
+                {
+                    MessageBox.Show("1 số trường không được bỏ trống", "Lỗi", MessageBoxButtons.OK);
+                    return;
+                }
+                ExecuteNonQuery(query);
+                MessageBox.Show("Sửa thành công", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Sửa thất bại", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         public string QueryUpdate(Inputcoupon inputcoupon)
         {
-            string query = "";            
+            string query = "";
             string ID_InputCoupon; try { ID_InputCoupon = inputcoupon.ID_InputCoupon.ToString().Trim(); } catch { ID_InputCoupon = ""; }
-            
+
             string CreateDate; try { CreateDate = inputcoupon.CreateDate.ToShortDateString().Trim(); } catch { CreateDate = ""; }
             string ID_Supplier; try { ID_Supplier = inputcoupon.ID_Supplier.ToString().Trim(); } catch { ID_Supplier = ""; }
             string TotalMoney; try { TotalMoney = inputcoupon.TotalMoney.ToString().Trim(); } catch { TotalMoney = ""; }
-           
+
             if (ID_InputCoupon == "")
-            {                
+            {
                 return query;
-            }                          
+            }
 
             if (CreateDate == "") { CreateDate = "null"; }
             if (ID_Supplier == "") { ID_Supplier = "null"; }
             if (TotalMoney == "") { TotalMoney = "0"; }
-            
-            query = "EXEC UpdateINPUTCOUPON " + ID_InputCoupon + ", " + CreateDate  + ", " + TotalMoney + ", " + ID_Supplier;
+
+            query = $"EXEC UpdateINPUTCOUPON {ID_InputCoupon} ,'{CreateDate}' , {TotalMoney} , {ID_Supplier}";
 
             return query;
         }
 
         public void Delete(string ID_InputCoupon)
         {
-
-            ID_InputCoupon = ID_InputCoupon.Trim();
-            string query = "Delete DBO.INPUTCOUPON WHERE ID_InputCoupon = " + ID_InputCoupon;
-            ExecuteNonQuery(query);           
+            try
+            {
+                ID_InputCoupon = ID_InputCoupon.Trim();
+                string query = "Delete DBO.INPUTCOUPON WHERE ID_InputCoupon = " + ID_InputCoupon;
+                ExecuteNonQuery(query);
+                MessageBox.Show("Xóa thành công ", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Xóa thất bại", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public override DataTable Load(string ID)

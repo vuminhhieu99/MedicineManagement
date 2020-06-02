@@ -160,6 +160,99 @@ namespace MedicineManagement.Controllers
             return dt;
         }
 
+        public DataTable SearchYear(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.PRESCRIPTION WHERE YEAR(CreateDate) >= " + start + " AND YEAR(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {                
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "PRESCRIPTION");
+                    dt = ds.Tables["PRESCRIPTION"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SearchMonth(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.PRESCRIPTION WHERE MONTH(CreateDate) >= " + start + " AND MONTH(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "PRESCRIPTION");
+                    dt = ds.Tables["PRESCRIPTION"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SearchDay(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.PRESCRIPTION WHERE DAY(CreateDate) >= " + start + " AND DAY(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "PRESCRIPTION");
+                    dt = ds.Tables["PRESCRIPTION"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
         private string QuerySearchAdvance(Prescription prescription)
         {
             string sqlSelect = "";

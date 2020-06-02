@@ -42,10 +42,6 @@ namespace MedicineManagement.Controllers
                     connection.Open();
                     command.CommandText = query;
                     var count = command.ExecuteNonQuery();
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Thành công", "thông báo", MessageBoxButtons.OK);
-                    }
                     connection.Close();
                 }
             }

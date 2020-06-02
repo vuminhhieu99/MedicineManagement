@@ -8,13 +8,13 @@ namespace MedicineManagement.Models
 {
     public class Supplier
     {
-        private int iD_Supplier;
+        private int? iD_Supplier;
         private string name;
         private string address;
         private string phone;
         private string email;
 
-        public int ID_Supplier { get => iD_Supplier; set => iD_Supplier = value; }
+        public int? ID_Supplier { get => iD_Supplier; set => iD_Supplier = value; }
         public string Name { get => name; set => name = value; }
         public string Address { get => address; set => address = value; }
         public string Phone { get => phone; set => phone = value; }

@@ -19,6 +19,8 @@ namespace MedicineManagement.Views.TrangChu
         public UcTrangChu()
         {
             InitializeComponent();
+            button_ImportMedicine.Text = "Dự báo nhập thuốc tháng " + DateTime.Now.AddMonths(1).Month;
+            
         }
 
         
@@ -69,23 +71,52 @@ namespace MedicineManagement.Views.TrangChu
             {
                 ImportMonneyToMonth += importMoneyMonth.ListColumn[i].value;
             }
-            label_TotalMoneyToMonth.Text = ImportMonneyToMonth.ToString();
+            label_ImportMoneyToMonth.Text = ImportMonneyToMonth.ToString();
 
 
             Chart importMoneyYear = ctrl.ImportMoney(DateTime.Parse(DateTime.Now.ToShortDateString()), DateTime.Parse(DateTime.Now.ToShortDateString()), DateStatistics.NAM);
-            label_MedicalRecordCountToYear.Text = importMoneyYear.Counting.ToString();
+            label_InputcouponCountToYear.Text = importMoneyYear.Counting.ToString();
             long ImportMonneyToYear = 0;
             for (int i = 0; i < importMoneyYear.ColumnCount; i++)
             {
                 ImportMonneyToYear += importMoneyYear.ListColumn[i].value;
             }
-            label_TotalMoneyToYear.Text = ImportMonneyToYear.ToString();
+            label_ImportMoneyToYear.Text = ImportMonneyToYear.ToString();
 
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
+        
 
+        private void button_ThongKeTonKho_Click(object sender, EventArgs e)
+        {
+            label_Title.Text = "Thống kê tồn kho";
+            ucDuBaoNhapThuoc1.Visible = false;
+            ucDoanhThuChart1.Visible = false;
+            ucTonkho1.Visible = true;
+            bunifuTransition1.ShowSync(Cart_TevenueToday);
+        }
+
+        private void button_DoanhThuChart_Click(object sender, EventArgs e)
+        {
+            label_Title.Text = "Biểu đồ doanh thu";
+            ucTonkho1.Visible = false;
+            ucDuBaoNhapThuoc1.Visible = false;
+            ucDoanhThuChart1.Visible = true;
+           
+        }
+
+        private void button_ImportMedicine_Click(object sender, EventArgs e)
+        {
+            label_Title.Text = button_ImportMedicine.Text;
+            ucTonkho1.Visible = false;            
+            ucDoanhThuChart1.Visible = false;
+            ucDuBaoNhapThuoc1.Visible = true;
+
+        }
+
+        private void Cart_TevenueToday_MouseLeave(object sender, EventArgs e)
+        {
+            bunifuTransition1.HideSync(Cart_TevenueToday);
         }
     }
 }

@@ -58,15 +58,15 @@
             this.panelStatus = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.labeDateTime = new System.Windows.Forms.Label();
             this.labelTask = new System.Windows.Forms.Label();
-            this.ucTrangChu1 = new MedicineManagement.Views.TrangChu.UcTrangChu();
-            this.ucBanThuoc1 = new MedicineManagement.Views.UcBanThuoc();
-            this.ucQuanLyThuoc1 = new MedicineManagement.Views.UcQuanLyThuoc();
-            this.ucNhapHang1 = new MedicineManagement.Views.NhapHang.UcNhapHang();
-            this.ucPhieuNhap1 = new MedicineManagement.Views.PhieuNhap.UcPhieuNhap();
-            this.ucDonThuoc1 = new MedicineManagement.Views.DonThuoc.UcDonThuoc();
-            this.ucNhaCungCap1 = new MedicineManagement.Views.NhaCungCap.UcNhaCungCap();
-            this.ucCaiDat1 = new MedicineManagement.Views.CaiDat.UcCaiDat();
             this.ucThongTin1 = new MedicineManagement.Views.ThongTin.UcThongTin();
+            this.ucCaiDat1 = new MedicineManagement.Views.CaiDat.UcCaiDat();
+            this.ucNhaCungCap1 = new MedicineManagement.Views.NhaCungCap.UcNhaCungCap();
+            this.ucDonThuoc1 = new MedicineManagement.Views.DonThuoc.UcDonThuoc();
+            this.ucPhieuNhap1 = new MedicineManagement.Views.PhieuNhap.UcPhieuNhap();
+            this.ucNhapHang1 = new MedicineManagement.Views.NhapHang.UcNhapHang();
+            this.ucQuanLyThuoc1 = new MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc();
+            this.ucBanThuoc1 = new MedicineManagement.Views.BanThuoc.UcBanThuoc();
+            this.ucTrangChu1 = new MedicineManagement.Views.TrangChu.UcTrangChu();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
@@ -660,61 +660,13 @@
             this.labelTask.TabIndex = 0;
             this.labelTask.Text = "Trang chủ";
             // 
-            // ucTrangChu1
+            // ucThongTin1
             // 
-            this.ucTrangChu1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTrangChu1.Location = new System.Drawing.Point(0, 0);
-            this.ucTrangChu1.Name = "ucTrangChu1";
-            this.ucTrangChu1.Size = new System.Drawing.Size(1310, 820);
-            this.ucTrangChu1.TabIndex = 8;
-            // 
-            // ucBanThuoc1
-            // 
-            this.ucBanThuoc1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucBanThuoc1.Location = new System.Drawing.Point(0, 0);
-            this.ucBanThuoc1.Name = "ucBanThuoc1";
-            this.ucBanThuoc1.Size = new System.Drawing.Size(1310, 820);
-            this.ucBanThuoc1.TabIndex = 7;
-            // 
-            // ucQuanLyThuoc1
-            // 
-            this.ucQuanLyThuoc1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucQuanLyThuoc1.Location = new System.Drawing.Point(0, 0);
-            this.ucQuanLyThuoc1.Name = "ucQuanLyThuoc1";
-            this.ucQuanLyThuoc1.Size = new System.Drawing.Size(1310, 820);
-            this.ucQuanLyThuoc1.TabIndex = 6;
-            // 
-            // ucNhapHang1
-            // 
-            this.ucNhapHang1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucNhapHang1.Location = new System.Drawing.Point(0, 0);
-            this.ucNhapHang1.Name = "ucNhapHang1";
-            this.ucNhapHang1.Size = new System.Drawing.Size(1310, 820);
-            this.ucNhapHang1.TabIndex = 5;
-            // 
-            // ucPhieuNhap1
-            // 
-            this.ucPhieuNhap1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucPhieuNhap1.Location = new System.Drawing.Point(0, 0);
-            this.ucPhieuNhap1.Name = "ucPhieuNhap1";
-            this.ucPhieuNhap1.Size = new System.Drawing.Size(1310, 820);
-            this.ucPhieuNhap1.TabIndex = 4;
-            // 
-            // ucDonThuoc1
-            // 
-            this.ucDonThuoc1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucDonThuoc1.Location = new System.Drawing.Point(0, 0);
-            this.ucDonThuoc1.Name = "ucDonThuoc1";
-            this.ucDonThuoc1.Size = new System.Drawing.Size(1310, 820);
-            this.ucDonThuoc1.TabIndex = 3;
-            // 
-            // ucNhaCungCap1
-            // 
-            this.ucNhaCungCap1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucNhaCungCap1.Location = new System.Drawing.Point(0, 0);
-            this.ucNhaCungCap1.Name = "ucNhaCungCap1";
-            this.ucNhaCungCap1.Size = new System.Drawing.Size(1310, 820);
-            this.ucNhaCungCap1.TabIndex = 2;
+            this.ucThongTin1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucThongTin1.Location = new System.Drawing.Point(0, 0);
+            this.ucThongTin1.Name = "ucThongTin1";
+            this.ucThongTin1.Size = new System.Drawing.Size(1310, 820);
+            this.ucThongTin1.TabIndex = 0;
             // 
             // ucCaiDat1
             // 
@@ -724,13 +676,61 @@
             this.ucCaiDat1.Size = new System.Drawing.Size(1310, 820);
             this.ucCaiDat1.TabIndex = 1;
             // 
-            // ucThongTin1
+            // ucNhaCungCap1
             // 
-            this.ucThongTin1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucThongTin1.Location = new System.Drawing.Point(0, 0);
-            this.ucThongTin1.Name = "ucThongTin1";
-            this.ucThongTin1.Size = new System.Drawing.Size(1310, 820);
-            this.ucThongTin1.TabIndex = 0;
+            this.ucNhaCungCap1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucNhaCungCap1.Location = new System.Drawing.Point(0, 0);
+            this.ucNhaCungCap1.Name = "ucNhaCungCap1";
+            this.ucNhaCungCap1.Size = new System.Drawing.Size(1310, 820);
+            this.ucNhaCungCap1.TabIndex = 2;
+            // 
+            // ucDonThuoc1
+            // 
+            this.ucDonThuoc1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDonThuoc1.Location = new System.Drawing.Point(0, 0);
+            this.ucDonThuoc1.Name = "ucDonThuoc1";
+            this.ucDonThuoc1.Size = new System.Drawing.Size(1310, 820);
+            this.ucDonThuoc1.TabIndex = 3;
+            // 
+            // ucPhieuNhap1
+            // 
+            this.ucPhieuNhap1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucPhieuNhap1.Location = new System.Drawing.Point(0, 0);
+            this.ucPhieuNhap1.Name = "ucPhieuNhap1";
+            this.ucPhieuNhap1.Size = new System.Drawing.Size(1310, 820);
+            this.ucPhieuNhap1.TabIndex = 4;
+            // 
+            // ucNhapHang1
+            // 
+            this.ucNhapHang1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucNhapHang1.Location = new System.Drawing.Point(0, 0);
+            this.ucNhapHang1.Name = "ucNhapHang1";
+            this.ucNhapHang1.Size = new System.Drawing.Size(1310, 820);
+            this.ucNhapHang1.TabIndex = 5;
+            // 
+            // ucQuanLyThuoc1
+            // 
+            this.ucQuanLyThuoc1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucQuanLyThuoc1.Location = new System.Drawing.Point(0, 0);
+            this.ucQuanLyThuoc1.Name = "ucQuanLyThuoc1";
+            this.ucQuanLyThuoc1.Size = new System.Drawing.Size(1310, 820);
+            this.ucQuanLyThuoc1.TabIndex = 6;
+            // 
+            // ucBanThuoc1
+            // 
+            this.ucBanThuoc1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucBanThuoc1.Location = new System.Drawing.Point(0, 0);
+            this.ucBanThuoc1.Name = "ucBanThuoc1";
+            this.ucBanThuoc1.Size = new System.Drawing.Size(1310, 820);
+            this.ucBanThuoc1.TabIndex = 7;
+            // 
+            // ucTrangChu1
+            // 
+            this.ucTrangChu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTrangChu1.Location = new System.Drawing.Point(0, 0);
+            this.ucTrangChu1.Name = "ucTrangChu1";
+            this.ucTrangChu1.Size = new System.Drawing.Size(1310, 820);
+            this.ucTrangChu1.TabIndex = 8;
             // 
             // FormMain
             // 
@@ -796,8 +796,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_BanThuoc;
         private Bunifu.Framework.UI.BunifuFlatButton btn_TrangChu;
         private Views.TrangChu.UcTrangChu ucTrangChu1;
-        private Views.UcBanThuoc ucBanThuoc1;
-        private Views.UcQuanLyThuoc ucQuanLyThuoc1;
+        private Views.BanThuoc.UcBanThuoc ucBanThuoc1;
+        private Views.QuanLyThuoc.UcQuanLyThuoc ucQuanLyThuoc1;
         private Views.NhapHang.UcNhapHang ucNhapHang1;
         private Views.PhieuNhap.UcPhieuNhap ucPhieuNhap1;
         private Views.DonThuoc.UcDonThuoc ucDonThuoc1;

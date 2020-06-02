@@ -34,11 +34,8 @@ namespace MedicineManagement.Controllers
                 chart.ColumnCount = monthCount;
                 chart.Counting = 0;
 
-                ControllerPrescription ctr = new ControllerPrescription();
-                Prescription prescription = new Prescription();
-                prescription.Search_StartCreateDate = Start;
-                prescription.Search_EndCreateDate = End;
-                DataTable dt = ctr.SearchAdvance(prescription);
+                ControllerPrescription ctr = new ControllerPrescription();                
+                DataTable dt = ctr.SearchMonth(Start.Month, End.Month);
 
                 chart.ListColumn = new List<column>(monthCount);
                 for (int i = 0; i < monthCount; i++)
@@ -98,14 +95,11 @@ namespace MedicineManagement.Controllers
                 chart.NameX = "tháng";
                 chart.NameY = "doanh thu / VNĐ";
                 chart.ColumnCount = dayCount;
-                chart.Counting = 0;
-                
+                chart.Counting = 0;                
 
                 ControllerPrescription ctr = new ControllerPrescription();
-                Prescription prescription = new Prescription();
-                prescription.Search_StartCreateDate = Start;
-                prescription.Search_EndCreateDate = End;
-                DataTable dt = ctr.SearchAdvance(prescription);
+                
+                DataTable dt = ctr.SearchDay(Start.Day, End.Day);
 
                 chart.ListColumn = new List<column>(dayCount);
                 for (int i = 0; i < dayCount; i++)
@@ -169,10 +163,8 @@ namespace MedicineManagement.Controllers
                 chart.Counting = 0;
 
                 ControllerPrescription ctr = new ControllerPrescription();
-                Prescription prescription = new Prescription();
-                prescription.Search_StartCreateDate = Start;
-                prescription.Search_EndCreateDate = End;
-                DataTable dt = ctr.SearchAdvance(prescription);
+                
+                DataTable dt = ctr.SearchYear(Start.Year, End.Year);
 
                 chart.ListColumn = new List<column>(namCount);
                 for (int i = 0; i < namCount; i++)
@@ -182,7 +174,7 @@ namespace MedicineManagement.Controllers
                     cl.percent = 0;
 
                     time = time.AddYears(i);
-                    cl.name = time.Month + "/" + time.Year;
+                    cl.name = time.Year.ToString();
 
                     chart.ListColumn.Add(cl);
                 }
@@ -192,7 +184,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < namCount; i++)
                 {
                     time = time.AddMonths(i);
-                    Pyear = time.Month;
+                    Pyear = time.Year;
                     column cl = chart.listColumn[i];
                     foreach (DataRow row in dt.Rows)
                     {
@@ -245,10 +237,8 @@ namespace MedicineManagement.Controllers
                 chart.Counting = 0;
 
                 ControllerInputCoupon ctr = new ControllerInputCoupon();
-                Inputcoupon inputcoupon = new Inputcoupon();
-                inputcoupon.Search_StartCreateDate = Start;
-                inputcoupon.Search_EndCreateDate = End;
-                DataTable dt = ctr.SearchAdvance(inputcoupon);
+                
+                DataTable dt = ctr.SearchMonth(Start.Month , End.Month);
 
                 chart.ListColumn = new List<column>(monthCount);
                 for (int i = 0; i < monthCount; i++)
@@ -314,10 +304,8 @@ namespace MedicineManagement.Controllers
 
 
                 ControllerInputCoupon ctr = new ControllerInputCoupon();
-                Inputcoupon inputcoupon = new Inputcoupon();
-                inputcoupon.Search_StartCreateDate = Start;
-                inputcoupon.Search_EndCreateDate = End;
-                DataTable dt = ctr.SearchAdvance(inputcoupon);
+                
+                DataTable dt = ctr.SearchDay(Start.Day, End.Day);
 
                 chart.ListColumn = new List<column>(dayCount);
                 for (int i = 0; i < dayCount; i++)
@@ -381,10 +369,8 @@ namespace MedicineManagement.Controllers
                 chart.Counting = 0;
 
                 ControllerInputCoupon ctr = new ControllerInputCoupon();
-                Inputcoupon inputcoupon = new Inputcoupon();
-                inputcoupon.Search_StartCreateDate = Start;
-                inputcoupon.Search_EndCreateDate = End;
-                DataTable dt = ctr.SearchAdvance(inputcoupon);
+                
+                DataTable dt = ctr.SearchYear(Start.Year, End.Year);
 
                 chart.ListColumn = new List<column>(namCount);
                 for (int i = 0; i < namCount; i++)
@@ -404,7 +390,7 @@ namespace MedicineManagement.Controllers
                 for (int i = 0; i < namCount; i++)
                 {
                     time = time.AddMonths(i);
-                    Pyear = time.Month;
+                    Pyear = time.Year;
                     column cl = chart.listColumn[i];
                     foreach (DataRow row in dt.Rows)
                     {
