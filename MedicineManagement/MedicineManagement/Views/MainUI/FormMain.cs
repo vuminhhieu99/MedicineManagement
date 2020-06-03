@@ -125,7 +125,8 @@ namespace MedicineManagement
         public void InVisibleAllUserControl()
         {
             ucTrangChu1.Visible = false;
-            ucBanThuoc1.Visible = false;
+        
+              ucBanThuoc1.Visible = false;
             ucQuanLyThuoc1.Visible = false;
             ucNhapHang1.Visible = false;
             ucPhieuNhap1.Visible = false;

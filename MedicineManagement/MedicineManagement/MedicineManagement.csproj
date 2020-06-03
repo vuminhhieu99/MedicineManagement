@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,6 +56,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ControllerBase.cs" />
@@ -353,9 +358,12 @@
     <Content Include="Content\background.png" />
     <Content Include="Content\background2.png" />
     <Content Include="Content\bell.png" />
+    <Content Include="Content\benh-thuy-dau-1.jpg" />
     <Content Include="Content\btn exit.png" />
     <Content Include="Content\btn minimize.png" />
+    <Content Include="Content\ChanTayMieng.jpg" />
     <Content Include="Content\copyright.png" />
+    <Content Include="Content\Covid.jpg" />
     <Content Include="Content\create.png" />
     <Content Include="Content\delete.png" />
     <Content Include="Content\detail.png" />
@@ -379,12 +387,22 @@
     <Content Include="Content\icon-provided.png" />
     <Content Include="Content\icon-sell.png" />
     <Content Include="Content\icon-setup.png" />
+    <Content Include="Content\icon_excel.png" />
     <Content Include="Content\kissclipart-medical-symbol-clipart-caduceus-as-a-symbol-of-med-4ad9414f9ee75178.png" />
     <Content Include="Content\left-arrow.png" />
     <Content Include="Content\logo.png" />
     <Content Include="Content\search.png" />
+    <Content Include="Content\SotRet.jpeg" />
     <Content Include="Content\statistical.png" />
     <Content Include="Content\user.png" />
+    <Content Include="Content\VNNB.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.83.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.83.0.0\build\Selenium.Chrome.WebDriver.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.83.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.83.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
+  </Target>
 </Project>
