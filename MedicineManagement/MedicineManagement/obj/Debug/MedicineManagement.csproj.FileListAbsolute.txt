@@ -122,3 +122,6 @@ D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDoanhThuChart.resources
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc.resources
 D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTonkho.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDoanhThuChart.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTonkho.resources
