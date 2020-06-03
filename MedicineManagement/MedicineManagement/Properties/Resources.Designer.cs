@@ -113,6 +113,16 @@ namespace MedicineManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap benh_thuy_dau_1 {
+            get {
+                object obj = ResourceManager.GetObject("benh-thuy-dau-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn_exit {
             get {
                 object obj = ResourceManager.GetObject("btn exit", resourceCulture);
@@ -133,9 +143,29 @@ namespace MedicineManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChanTayMieng {
+            get {
+                object obj = ResourceManager.GetObject("ChanTayMieng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap copyright {
             get {
                 object obj = ResourceManager.GetObject("copyright", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Covid {
+            get {
+                object obj = ResourceManager.GetObject("Covid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +256,16 @@ namespace MedicineManagement.Properties {
         internal static System.Drawing.Bitmap icon_edit {
             get {
                 object obj = ResourceManager.GetObject("icon edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_excel {
+            get {
+                object obj = ResourceManager.GetObject("icon_excel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,7 +433,16 @@ namespace MedicineManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
+        internal static System.Drawing.Bitmap SotRet {
+            get {
+                object obj = ResourceManager.GetObject("SotRet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap statistical {
             get {
                 object obj = ResourceManager.GetObject("statistical", resourceCulture);
@@ -410,10 +459,23 @@ namespace MedicineManagement.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
-
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VNNB {
+            get {
+                object obj = ResourceManager.GetObject("VNNB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

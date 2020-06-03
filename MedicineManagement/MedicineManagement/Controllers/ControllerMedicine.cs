@@ -334,7 +334,7 @@ namespace MedicineManagement.Controllers
         }
 
         // cảnh báo dịch bệnh theo mùa
-        public DataTable WarDisease()
+        public DataTable WarnDisease()
         {
             DataTable dt = new DataTable();
             int warnMonth = DateTime.Now.AddMonths(1).Month;
