@@ -109,18 +109,43 @@ namespace MedicineManagement.Views.PhieuNhap
         private void btn_Save_Click(object sender, EventArgs e)
         {
             int j = 0;
-            dpn.ID_InputCoupon = int.Parse(textBoxMaPN.Text);
-            for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
+            try
             {
-                dpn.ID_InputCouponLine = int.Parse(dataGridView2.Rows[i].Cells[j].Value.ToString());
-                dpn.ID_Medicine = int.Parse(dataGridView2.Rows[i].Cells[j+1].Value.ToString());
-                dpn.Name = dataGridView2.Rows[i].Cells[j + 2].Value.ToString();
-                dpn.UnitInput = dataGridView2.Rows[i].Cells[j + 3].Value.ToString();
-                dpn.Amount = int.Parse(dataGridView2.Rows[i].Cells[j+4].Value.ToString());
-                dpn.Price = decimal.Parse(dataGridView2.Rows[i].Cells[j + 5].Value.ToString());
-                dpn.ExpiryDate = (DateTime)dataGridView2.Rows[i].Cells[j + 6].Value;
+
+                dpn.ID_InputCoupon = int.Parse(textBoxMaPN.Text);
+                for (int i = 0; i < dataGridView2.Rows.Count-1; i++)
+                {
+                    dpn.ID_InputCouponLine = int.Parse(dataGridView2.Rows[i].Cells[j].Value.ToString());
+                    dpn.ID_Medicine = int.Parse(dataGridView2.Rows[i].Cells[j + 1].Value.ToString());
+                    dpn.Name = dataGridView2.Rows[i].Cells[j + 2].Value.ToString();
+                    dpn.UnitInput = dataGridView2.Rows[i].Cells[j + 3].Value.ToString();
+                    dpn.Amount = int.Parse(dataGridView2.Rows[i].Cells[j + 4].Value.ToString());
+                    dpn.Price = decimal.Parse(dataGridView2.Rows[i].Cells[j + 5].Value.ToString());
+                    dpn.ExpiryDate = (DateTime)dataGridView2.Rows[i].Cells[j + 6].Value;
+                    ctr2.Update(dpn);
+                }
+                int indexRow = dataGridView2.Rows.Count - 2;
+                dpn.ID_InputCouponLine = int.Parse(dataGridView2.Rows[indexRow].Cells[j].Value.ToString());
+                dpn.ID_Medicine = int.Parse(dataGridView2.Rows[indexRow].Cells[j + 1].Value.ToString());
+                dpn.Name = dataGridView2.Rows[indexRow].Cells[j + 2].Value.ToString();
+                dpn.UnitInput = dataGridView2.Rows[indexRow].Cells[j + 3].Value.ToString();
+                dpn.Amount = int.Parse(dataGridView2.Rows[indexRow].Cells[j + 4].Value.ToString());
+                dpn.Price = decimal.Parse(dataGridView2.Rows[indexRow].Cells[j + 5].Value.ToString());
+                dpn.ExpiryDate = (DateTime)dataGridView2.Rows[indexRow].Cells[j + 6].Value;
                 ctr2.Update(dpn);
+                MessageBox.Show("Sửa Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            catch(Exception)
+            {
+                MessageBox.Show("Sửa Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+        }
+
+        private void label_CountRecord_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void UcPhieuNhap_VisibleChanged(object sender, EventArgs e)

@@ -311,7 +311,7 @@ namespace MedicineManagement.Views.BanThuoc
         public int GetCurrentIdentify()
         {
             string query = "SELECT IDENT_CURRENT('PRESCRIPTION')";
-            string cn = "Data Source=DESKTOP-L2JEIFM\\SQLEXPRESS;Initial Catalog=QuanLyThuoc;Integrated Security=True";
+            string cn = "Data Source=DESKTOP-5ICMB9D;Initial Catalog=QuanLyThuoc;Integrated Security=True";
             DataTable table = new DataTable();
             using (SqlConnection connection = new SqlConnection(cn))
             {
@@ -331,5 +331,9 @@ namespace MedicineManagement.Views.BanThuoc
             return Convert.ToInt32(dataGridView3.Rows[0].Cells[0].Value) + 1;
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcNhapHang));
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.btn_Reload = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label_CountRecord = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,22 +52,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.iDMedicineDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitInputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intoMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+
+
             this.iNPUTCOUPONLINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxtongtien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBoxMaNCC = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxMaPN = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label_UserAddress = new System.Windows.Forms.Label();
             this.label_UserName = new System.Windows.Forms.Label();
@@ -96,6 +94,16 @@
             this.quanLyThuocDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mEDICINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.MEDICINETableAdapter();
             this.iNPUTCOUPONLINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.INPUTCOUPONLINETableAdapter();
+            this.maDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitInputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductionBatch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumUnitOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intoMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).BeginInit();
@@ -122,16 +130,17 @@
             this.bunifuImageButton1.TabIndex = 78;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
-            // textBox2
+            // textBoxSearch
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(20, 18);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(364, 30);
-            this.textBox2.TabIndex = 77;
+            this.textBoxSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.ForeColor = System.Drawing.Color.Black;
+            this.textBoxSearch.Location = new System.Drawing.Point(20, 18);
+            this.textBoxSearch.Multiline = true;
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(364, 30);
+            this.textBoxSearch.TabIndex = 77;
             // 
             // btn_Reload
             // 
@@ -157,6 +166,7 @@
             this.btn_Reload.Size = new System.Drawing.Size(124, 45);
             this.btn_Reload.TabIndex = 76;
             this.btn_Reload.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Reload.Click += new System.EventHandler(this.btn_Reload_Click);
             // 
             // label_CountRecord
             // 
@@ -197,8 +207,57 @@
             this.dataGridView1.Location = new System.Drawing.Point(20, 96);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 655);
+            this.dataGridView1.Size = new System.Drawing.Size(549, 658);
             this.dataGridView1.TabIndex = 73;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // iDMedicineDataGridViewTextBoxColumn
+            // 
+            this.iDMedicineDataGridViewTextBoxColumn.DataPropertyName = "ID_Medicine";
+            this.iDMedicineDataGridViewTextBoxColumn.HeaderText = "Mã Thuốc";
+            this.iDMedicineDataGridViewTextBoxColumn.Name = "iDMedicineDataGridViewTextBoxColumn";
+            this.iDMedicineDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Tên Thuốc";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // medicineGroupDataGridViewTextBoxColumn
+            // 
+            this.medicineGroupDataGridViewTextBoxColumn.DataPropertyName = "MedicineGroup";
+            this.medicineGroupDataGridViewTextBoxColumn.HeaderText = "Nhóm Thuốc";
+            this.medicineGroupDataGridViewTextBoxColumn.Name = "medicineGroupDataGridViewTextBoxColumn";
+            this.medicineGroupDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Đơn Giá";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // add
+            // 
+            this.add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.add.HeaderText = "Thêm";
+            this.add.Image = global::MedicineManagement.Properties.Resources.icon_left_arrow;
+            this.add.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.add.Name = "add";
+            this.add.ReadOnly = true;
+            this.add.Width = 40;
+            // 
+            // mEDICINEBindingSource
+            // 
+            this.mEDICINEBindingSource.DataMember = "MEDICINE";
+            this.mEDICINEBindingSource.DataSource = this.quanLyThuocDataSet;
+            // 
+            // quanLyThuocDataSet
+            // 
+            this.quanLyThuocDataSet.DataSetName = "QuanLyThuocDataSet";
+            this.quanLyThuocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // iDMedicineDataGridViewTextBoxColumn
             // 
@@ -272,6 +331,7 @@
             this.btn_Delete.Size = new System.Drawing.Size(124, 45);
             this.btn_Delete.TabIndex = 85;
             this.btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_SelectAll
             // 
@@ -282,7 +342,7 @@
             this.btn_SelectAll.ActiveLineColor = System.Drawing.Color.DarkRed;
             this.btn_SelectAll.BackColor = System.Drawing.SystemColors.Control;
             this.btn_SelectAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_SelectAll.BackgroundImage")));
-            this.btn_SelectAll.ButtonText = "Chọn tất cả";
+            this.btn_SelectAll.ButtonText = "Xóa tất cả";
             this.btn_SelectAll.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_SelectAll.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SelectAll.ForeColor = System.Drawing.Color.SeaGreen;
@@ -297,6 +357,7 @@
             this.btn_SelectAll.Size = new System.Drawing.Size(124, 45);
             this.btn_SelectAll.TabIndex = 84;
             this.btn_SelectAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_SelectAll.Click += new System.EventHandler(this.btn_SelectAll_Click);
             // 
             // btn_Export
             // 
@@ -347,6 +408,7 @@
             this.btn_Save.Size = new System.Drawing.Size(124, 45);
             this.btn_Save.TabIndex = 82;
             this.btn_Save.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Create
             // 
@@ -357,7 +419,7 @@
             this.btn_Create.ActiveLineColor = System.Drawing.Color.DarkRed;
             this.btn_Create.BackColor = System.Drawing.SystemColors.Control;
             this.btn_Create.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Create.BackgroundImage")));
-            this.btn_Create.ButtonText = "Hóa Đơn Mới";
+            this.btn_Create.ButtonText = "Phiếu nhập mới";
             this.btn_Create.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Create.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Create.ForeColor = System.Drawing.Color.SeaGreen;
@@ -372,6 +434,7 @@
             this.btn_Create.Size = new System.Drawing.Size(124, 45);
             this.btn_Create.TabIndex = 81;
             this.btn_Create.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Create.Click += new System.EventHandler(this.btn_Create_Click);
             // 
             // btn_Cancel
             // 
@@ -430,11 +493,13 @@
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.textBoxtongtien);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.textBox12);
+            this.panel2.Controls.Add(this.textBoxMaNCC);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.textBoxMaPN);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.label_UserAddress);
             this.panel2.Controls.Add(this.label_UserName);
@@ -448,71 +513,23 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDMedicineDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn1,
-            this.priceDataGridViewTextBoxColumn1,
+            this.maDPN,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
             this.unitInputDataGridViewTextBoxColumn,
             this.amountDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn3,
             this.expiryDateDataGridViewTextBoxColumn,
-            this.intoMoneyDataGridViewTextBoxColumn});
+            this.ProductionBatch,
+            this.NumUnitOutput,
+            this.intoMoney});
             this.dataGridView2.DataSource = this.iNPUTCOUPONLINEBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(38, 204);
+            this.dataGridView2.Location = new System.Drawing.Point(38, 240);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(624, 368);
-            this.dataGridView2.TabIndex = 74;
-            // 
-            // iDMedicineDataGridViewTextBoxColumn1
-            // 
-            this.iDMedicineDataGridViewTextBoxColumn1.DataPropertyName = "ID_Medicine";
-            this.iDMedicineDataGridViewTextBoxColumn1.HeaderText = "Mã Thuốc";
-            this.iDMedicineDataGridViewTextBoxColumn1.Name = "iDMedicineDataGridViewTextBoxColumn1";
-            this.iDMedicineDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Tên Thuốc";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn1
-            // 
-            this.priceDataGridViewTextBoxColumn1.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn1.HeaderText = "Đơn Giá";
-            this.priceDataGridViewTextBoxColumn1.Name = "priceDataGridViewTextBoxColumn1";
-            this.priceDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // unitInputDataGridViewTextBoxColumn
-            // 
-            this.unitInputDataGridViewTextBoxColumn.DataPropertyName = "UnitInput";
-            this.unitInputDataGridViewTextBoxColumn.HeaderText = "Đơn Vị";
-            this.unitInputDataGridViewTextBoxColumn.Name = "unitInputDataGridViewTextBoxColumn";
-            this.unitInputDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // expiryDateDataGridViewTextBoxColumn
-            // 
-            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "Hạn SD";
-            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
-            this.expiryDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // intoMoneyDataGridViewTextBoxColumn
-            // 
-            this.intoMoneyDataGridViewTextBoxColumn.DataPropertyName = "IntoMoney";
-            this.intoMoneyDataGridViewTextBoxColumn.HeaderText = "Thành Tiền";
-            this.intoMoneyDataGridViewTextBoxColumn.Name = "intoMoneyDataGridViewTextBoxColumn";
-            this.intoMoneyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(624, 338);
+            this.dataGridView2.TabIndex = 81;
             // 
             // iNPUTCOUPONLINEBindingSource
             // 
@@ -534,6 +551,7 @@
             this.textBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(187, 633);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(475, 27);
             this.textBox5.TabIndex = 17;
             // 
@@ -547,13 +565,14 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Tổng tiền (bằng chữ)";
             // 
-            // textBox6
+            // textBoxtongtien
             // 
-            this.textBox6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(187, 594);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(475, 27);
-            this.textBox6.TabIndex = 15;
+            this.textBoxtongtien.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxtongtien.Location = new System.Drawing.Point(187, 594);
+            this.textBoxtongtien.Name = "textBoxtongtien";
+            this.textBoxtongtien.ReadOnly = true;
+            this.textBoxtongtien.Size = new System.Drawing.Size(475, 27);
+            this.textBoxtongtien.TabIndex = 15;
             // 
             // label7
             // 
@@ -569,7 +588,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 177);
+            this.label11.Location = new System.Drawing.Point(34, 218);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(117, 19);
             this.label11.TabIndex = 13;
@@ -585,13 +604,31 @@
             this.label13.TabIndex = 8;
             this.label13.Text = "Ngày lập";
             // 
-            // textBox12
+            // textBoxMaNCC
             // 
-            this.textBox12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(136, 122);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(209, 27);
-            this.textBox12.TabIndex = 5;
+            this.textBoxMaNCC.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaNCC.Location = new System.Drawing.Point(157, 170);
+            this.textBoxMaNCC.Name = "textBoxMaNCC";
+            this.textBoxMaNCC.Size = new System.Drawing.Size(209, 27);
+            this.textBoxMaNCC.TabIndex = 5;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(34, 170);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(122, 19);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Mã Nhà cung cấp";
+            // 
+            // textBoxMaPN
+            // 
+            this.textBoxMaPN.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaPN.Location = new System.Drawing.Point(157, 122);
+            this.textBoxMaPN.Name = "textBoxMaPN";
+            this.textBoxMaPN.Size = new System.Drawing.Size(209, 27);
+            this.textBoxMaPN.TabIndex = 5;
             // 
             // label15
             // 
@@ -599,9 +636,9 @@
             this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(34, 125);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 19);
+            this.label15.Size = new System.Drawing.Size(106, 19);
             this.label15.TabIndex = 4;
-            this.label15.Text = "Mã đơn thuốc";
+            this.label15.Text = "Mã phiếu nhập";
             // 
             // label_UserAddress
             // 
@@ -830,6 +867,70 @@
             // 
             this.iNPUTCOUPONLINETableAdapter.ClearBeforeFill = true;
             // 
+            // maDPN
+            // 
+            this.maDPN.DataPropertyName = "ID_InputCouponLine";
+            this.maDPN.HeaderText = "Mã DPN";
+            this.maDPN.Name = "maDPN";
+            this.maDPN.ReadOnly = true;
+            this.maDPN.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Medicine";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Thuốc";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Thuốc";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // unitInputDataGridViewTextBoxColumn
+            // 
+            this.unitInputDataGridViewTextBoxColumn.DataPropertyName = "UnitInput";
+            this.unitInputDataGridViewTextBoxColumn.HeaderText = "Đơn vị";
+            this.unitInputDataGridViewTextBoxColumn.Name = "unitInputDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Đơn Giá";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // expiryDateDataGridViewTextBoxColumn
+            // 
+            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
+            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "Hạn SD";
+            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
+            this.expiryDateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ProductionBatch
+            // 
+            this.ProductionBatch.DataPropertyName = "ProductionBatch";
+            this.ProductionBatch.HeaderText = "Số Lô";
+            this.ProductionBatch.Name = "ProductionBatch";
+            this.ProductionBatch.Visible = false;
+            // 
+            // NumUnitOutput
+            // 
+            this.NumUnitOutput.DataPropertyName = "NumUnitOutput";
+            this.NumUnitOutput.HeaderText = "số sản phẩm/đvị nhập";
+            this.NumUnitOutput.Name = "NumUnitOutput";
+            // 
+            // intoMoney
+            // 
+            this.intoMoney.DataPropertyName = "IntoMoney";
+            this.intoMoney.HeaderText = "Thành Tiền";
+            this.intoMoney.Name = "intoMoney";
+            // 
             // UcNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -842,13 +943,14 @@
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bunifuImageButton1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.label_CountRecord);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UcNhapHang";
             this.Size = new System.Drawing.Size(1312, 822);
+            this.Load += new System.EventHandler(this.UcNhapHang_Load);
             this.VisibleChanged += new System.EventHandler(this.UcNhapHang_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -871,7 +973,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxSearch;
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Reload;
         private System.Windows.Forms.Label label_CountRecord;
         private System.Windows.Forms.TextBox textBox1;
@@ -884,15 +986,14 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btn_Cancel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxtongtien;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxMaPN;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label_UserAddress;
         private System.Windows.Forms.Label label_UserName;
@@ -929,12 +1030,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn medicineGroupDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn add;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMedicineDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TextBox textBoxMaNCC;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maDPN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitInputDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intoMoneyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductionBatch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumUnitOutput;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intoMoney;
     }
 }
