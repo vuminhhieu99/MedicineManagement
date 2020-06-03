@@ -157,6 +157,99 @@ namespace MedicineManagement.Controllers
             return query;
         }
 
+        public DataTable SearchYear(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.INPUTCOUPON WHERE YEAR(CreateDate) >= " + start + " AND YEAR(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "INPUTCOUPON");
+                    dt = ds.Tables["INPUTCOUPON"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SearchMonth(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.INPUTCOUPON WHERE MONTH(CreateDate) >= " + start + " AND MONTH(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "INPUTCOUPON");
+                    dt = ds.Tables["INPUTCOUPON"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public DataTable SearchDay(int start, int end)
+        {
+            ds.Clear();
+            string query = "SELECT * FROM DBO.INPUTCOUPON WHERE DAY(CreateDate) >= " + start + " AND DAY(CreateDate) <= " + end;
+            DataTable dt = new DataTable();
+            try
+            {
+                ds.Clear();
+                if (query == "")
+                {
+                    return this.Load();
+                }
+                else
+                {
+                    adapter.SelectCommand = new SqlCommand(query, connection);
+                    cb = new SqlCommandBuilder(adapter);
+                    adapter.Fill(ds, "INPUTCOUPON");
+                    dt = ds.Tables["INPUTCOUPON"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
         public void Refresh()
         {
             try

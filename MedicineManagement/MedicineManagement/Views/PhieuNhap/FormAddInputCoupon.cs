@@ -14,6 +14,9 @@ namespace MedicineManagement.Views.PhieuNhap
 {
     public partial class FormAddInputCoupon : Form
     {
+        public static string maNCC,tongtien;
+        public static DateTime ngaylap;
+
         public FormAddInputCoupon()
         {
             InitializeComponent();
@@ -29,6 +32,11 @@ namespace MedicineManagement.Views.PhieuNhap
             pn.ID_Supplier = int.Parse(textBoxMaNCC.Text);
             pn.TotalMoney = decimal.Parse(textBoxTongTien.Text);
             ctr1.Insert(pn);
+
+            maNCC = textBoxMaNCC.Text;
+            tongtien = textBoxTongTien.Text;
+            ngaylap = dateTimePicker1.Value.Date;
+
             Close();
         }
 
