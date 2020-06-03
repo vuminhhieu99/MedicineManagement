@@ -563,7 +563,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.bunifuCards4);
             this.panel3.Controls.Add(this.bunifuCards5);
             this.panel3.Controls.Add(this.bunifuCards6);
@@ -575,7 +575,7 @@
             // 
             // bunifuCards4
             // 
-            this.bunifuCards4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.bunifuCards4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.bunifuCards4.BorderRadius = 5;
             this.bunifuCards4.BottomSahddow = true;
             this.bunifuCards4.color = System.Drawing.Color.Transparent;
@@ -667,7 +667,7 @@
             // 
             // bunifuCards5
             // 
-            this.bunifuCards5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.bunifuCards5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.bunifuCards5.BorderRadius = 5;
             this.bunifuCards5.BottomSahddow = true;
             this.bunifuCards5.color = System.Drawing.Color.Transparent;
@@ -759,7 +759,7 @@
             // 
             // bunifuCards6
             // 
-            this.bunifuCards6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.bunifuCards6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.bunifuCards6.BorderRadius = 5;
             this.bunifuCards6.BottomSahddow = true;
             this.bunifuCards6.color = System.Drawing.Color.Transparent;
