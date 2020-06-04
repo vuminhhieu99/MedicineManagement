@@ -74,6 +74,11 @@
     <Compile Include="Controllers\ConvertFromNumToText.cs" />
     <Compile Include="Models\Chart.cs" />
     <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyThuocDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -255,14 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\NhaCungCap\FormAddSupplier.resx">
       <DependentUpon>FormAddSupplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +278,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NhapHang\UcNhapHang.resx">
       <DependentUpon>UcNhapHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PhieuNhap\FormAddInputCoupon.resx">
       <DependentUpon>FormAddInputCoupon.cs</DependentUpon>
@@ -315,6 +316,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TrangChu\UcDuBaoNhapThuoc.resx">
       <DependentUpon>UcDuBaoNhapThuoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TrangChu\UcTonkho.resx">
       <DependentUpon>UcTonkho.cs</DependentUpon>
@@ -355,8 +357,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\alert.png" />
+    <Content Include="Content\background home.png" />
     <Content Include="Content\background.png" />
     <Content Include="Content\background2.png" />
+    <Content Include="Content\background3.png" />
     <Content Include="Content\bell.png" />
     <Content Include="Content\benh-thuy-dau-1.jpg" />
     <Content Include="Content\btn exit.png" />
@@ -371,6 +375,13 @@
     <Content Include="Content\edit.png" />
     <Content Include="Content\export.png" />
     <Content Include="Content\filter.png" />
+    <None Include="Resources\medicine3.png" />
+    <None Include="Resources\medicine2.png" />
+    <None Include="Resources\medicine1.png" />
+    <None Include="Resources\money3.png" />
+    <None Include="Resources\money2.png" />
+    <None Include="Resources\money1.png" />
+    <None Include="Content\guestion-64.png" />
     <Content Include="Content\icon delete.png" />
     <Content Include="Content\icon detail.png" />
     <Content Include="Content\icon edit.png" />
@@ -391,6 +402,13 @@
     <Content Include="Content\kissclipart-medical-symbol-clipart-caduceus-as-a-symbol-of-med-4ad9414f9ee75178.png" />
     <Content Include="Content\left-arrow.png" />
     <Content Include="Content\logo.png" />
+    <None Include="Content\pie-chart-2-64.png" />
+    <Content Include="Content\medicine1.png" />
+    <Content Include="Content\medicine2.png" />
+    <Content Include="Content\medicine3.png" />
+    <Content Include="Content\money1.png" />
+    <Content Include="Content\money2.png" />
+    <Content Include="Content\money3.png" />
     <Content Include="Content\search.png" />
     <Content Include="Content\SotRet.jpeg" />
     <Content Include="Content\statistical.png" />

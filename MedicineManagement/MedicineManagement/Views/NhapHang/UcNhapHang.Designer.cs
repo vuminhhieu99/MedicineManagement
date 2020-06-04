@@ -52,6 +52,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.maDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donViNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumUnitOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intoMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNPUTCOUPONLINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxTongTienChu = new System.Windows.Forms.TextBox();
@@ -91,16 +101,6 @@
             this.quanLyThuocDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mEDICINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.MEDICINETableAdapter();
             this.iNPUTCOUPONLINETableAdapter = new MedicineManagement.QuanLyThuocDataSetTableAdapters.INPUTCOUPONLINETableAdapter();
-            this.maDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donViNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hanSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumUnitOutput = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intoMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICINEBindingSource)).BeginInit();
@@ -193,6 +193,7 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDMedicineDataGridViewTextBoxColumn,
@@ -463,6 +464,7 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maDPN,
@@ -480,6 +482,70 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(624, 338);
             this.dataGridView2.TabIndex = 81;
+            // 
+            // maDPN
+            // 
+            this.maDPN.DataPropertyName = "ID_InputCouponLine";
+            this.maDPN.HeaderText = "Mã DPN";
+            this.maDPN.Name = "maDPN";
+            this.maDPN.ReadOnly = true;
+            this.maDPN.Visible = false;
+            // 
+            // maThuoc
+            // 
+            this.maThuoc.DataPropertyName = "ID_Medicine";
+            this.maThuoc.HeaderText = "Mã Thuốc";
+            this.maThuoc.Name = "maThuoc";
+            // 
+            // tenThuoc
+            // 
+            this.tenThuoc.DataPropertyName = "Name";
+            this.tenThuoc.HeaderText = "Thuốc";
+            this.tenThuoc.Name = "tenThuoc";
+            // 
+            // donViNhap
+            // 
+            this.donViNhap.DataPropertyName = "UnitInput";
+            this.donViNhap.HeaderText = "Đơn vị";
+            this.donViNhap.Name = "donViNhap";
+            // 
+            // soLuong
+            // 
+            this.soLuong.DataPropertyName = "Amount";
+            this.soLuong.HeaderText = "Số Lượng";
+            this.soLuong.Name = "soLuong";
+            // 
+            // donGia
+            // 
+            this.donGia.DataPropertyName = "Price";
+            this.donGia.HeaderText = "Đơn Giá";
+            this.donGia.Name = "donGia";
+            // 
+            // hanSD
+            // 
+            this.hanSD.DataPropertyName = "ExpiryDate";
+            this.hanSD.HeaderText = "Hạn SD";
+            this.hanSD.Name = "hanSD";
+            this.hanSD.Visible = false;
+            // 
+            // soLo
+            // 
+            this.soLo.DataPropertyName = "ProductionBatch";
+            this.soLo.HeaderText = "Số Lô";
+            this.soLo.Name = "soLo";
+            this.soLo.Visible = false;
+            // 
+            // NumUnitOutput
+            // 
+            this.NumUnitOutput.DataPropertyName = "NumUnitOutput";
+            this.NumUnitOutput.HeaderText = "số sản phẩm/đvị nhập";
+            this.NumUnitOutput.Name = "NumUnitOutput";
+            // 
+            // intoMoney
+            // 
+            this.intoMoney.DataPropertyName = "IntoMoney";
+            this.intoMoney.HeaderText = "Thành Tiền";
+            this.intoMoney.Name = "intoMoney";
             // 
             // iNPUTCOUPONLINEBindingSource
             // 
@@ -816,70 +882,6 @@
             // iNPUTCOUPONLINETableAdapter
             // 
             this.iNPUTCOUPONLINETableAdapter.ClearBeforeFill = true;
-            // 
-            // maDPN
-            // 
-            this.maDPN.DataPropertyName = "ID_InputCouponLine";
-            this.maDPN.HeaderText = "Mã DPN";
-            this.maDPN.Name = "maDPN";
-            this.maDPN.ReadOnly = true;
-            this.maDPN.Visible = false;
-            // 
-            // maThuoc
-            // 
-            this.maThuoc.DataPropertyName = "ID_Medicine";
-            this.maThuoc.HeaderText = "Mã Thuốc";
-            this.maThuoc.Name = "maThuoc";
-            // 
-            // tenThuoc
-            // 
-            this.tenThuoc.DataPropertyName = "Name";
-            this.tenThuoc.HeaderText = "Thuốc";
-            this.tenThuoc.Name = "tenThuoc";
-            // 
-            // donViNhap
-            // 
-            this.donViNhap.DataPropertyName = "UnitInput";
-            this.donViNhap.HeaderText = "Đơn vị";
-            this.donViNhap.Name = "donViNhap";
-            // 
-            // soLuong
-            // 
-            this.soLuong.DataPropertyName = "Amount";
-            this.soLuong.HeaderText = "Số Lượng";
-            this.soLuong.Name = "soLuong";
-            // 
-            // donGia
-            // 
-            this.donGia.DataPropertyName = "Price";
-            this.donGia.HeaderText = "Đơn Giá";
-            this.donGia.Name = "donGia";
-            // 
-            // hanSD
-            // 
-            this.hanSD.DataPropertyName = "ExpiryDate";
-            this.hanSD.HeaderText = "Hạn SD";
-            this.hanSD.Name = "hanSD";
-            this.hanSD.Visible = false;
-            // 
-            // soLo
-            // 
-            this.soLo.DataPropertyName = "ProductionBatch";
-            this.soLo.HeaderText = "Số Lô";
-            this.soLo.Name = "soLo";
-            this.soLo.Visible = false;
-            // 
-            // NumUnitOutput
-            // 
-            this.NumUnitOutput.DataPropertyName = "NumUnitOutput";
-            this.NumUnitOutput.HeaderText = "số sản phẩm/đvị nhập";
-            this.NumUnitOutput.Name = "NumUnitOutput";
-            // 
-            // intoMoney
-            // 
-            this.intoMoney.DataPropertyName = "IntoMoney";
-            this.intoMoney.HeaderText = "Thành Tiền";
-            this.intoMoney.Name = "intoMoney";
             // 
             // UcNhapHang
             // 

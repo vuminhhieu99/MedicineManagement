@@ -222,7 +222,6 @@ namespace MedicineManagement.Views.NhapHang
 
             }
 
-
         }
         private void UcNhapHang_VisibleChanged(object sender, EventArgs e)
         {

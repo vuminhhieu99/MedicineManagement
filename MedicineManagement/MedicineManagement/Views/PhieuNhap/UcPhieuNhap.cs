@@ -151,6 +151,7 @@ namespace MedicineManagement.Views.PhieuNhap
             catch(Exception)
             {
                 MessageBox.Show("Sửa Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
 
         }
