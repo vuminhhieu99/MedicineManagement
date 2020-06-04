@@ -34,18 +34,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
+            this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuCards8 = new Bunifu.Framework.UI.BunifuCards();
+            this.label14 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.bunifuCards10 = new Bunifu.Framework.UI.BunifuCards();
+            this.label15 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
@@ -54,11 +59,6 @@
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.button_ExportExcel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtID_Medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,16 +95,27 @@
             this.bunifuCards1.Size = new System.Drawing.Size(194, 143);
             this.bunifuCards1.TabIndex = 2;
             // 
-            // label2
+            // label12
             // 
-            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(13, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 57);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Cefotaxim, NATURE’S WAY KIDS SMART DROPS PROBIOTIC, glycerin borat, Acetyl leucin" +
-    "";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label12.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label12.Location = new System.Drawing.Point(104, 120);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 21);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Xem thêm...";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label5
+            // 
+            this.label5.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label5.Location = new System.Drawing.Point(7, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 60);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Calci carbonat (tương đương\r\n500mg Calci) +\r\nCholecalciferol (tương đương";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -116,6 +127,17 @@
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bệnh sốt rét";
+            // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.Location = new System.Drawing.Point(13, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 57);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Cefotaxim, NATURE’S WAY KIDS SMART DROPS PROBIOTIC, glycerin borat, Acetyl leucin" +
+    "";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bunifuCards4
             // 
@@ -134,6 +156,18 @@
             this.bunifuCards4.ShadowDepth = 20;
             this.bunifuCards4.Size = new System.Drawing.Size(195, 145);
             this.bunifuCards4.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label11.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label11.Location = new System.Drawing.Point(103, 120);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 21);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Xem thêm...";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label3
             // 
@@ -175,15 +209,17 @@
             this.bunifuCards6.Size = new System.Drawing.Size(195, 145);
             this.bunifuCards6.TabIndex = 8;
             // 
-            // label5
+            // label13
             // 
-            this.label5.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label5.Location = new System.Drawing.Point(7, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 60);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Calci carbonat (tương đương\r\n500mg Calci) +\r\nCholecalciferol (tương đương";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label13.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label13.Location = new System.Drawing.Point(95, 117);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 21);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Xem thêm...";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label6
             // 
@@ -213,6 +249,18 @@
             this.bunifuCards8.ShadowDepth = 20;
             this.bunifuCards8.Size = new System.Drawing.Size(194, 143);
             this.bunifuCards8.TabIndex = 6;
+            // 
+            // label14
+            // 
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label14.Location = new System.Drawing.Point(102, 117);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(78, 21);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Xem thêm...";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label7
             // 
@@ -252,6 +300,18 @@
             this.bunifuCards10.ShadowDepth = 20;
             this.bunifuCards10.Size = new System.Drawing.Size(195, 145);
             this.bunifuCards10.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label15.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label15.Location = new System.Drawing.Point(103, 117);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 21);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Xem thêm...";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label9
             // 
@@ -396,66 +456,6 @@
             this.button_ExportExcel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ExportExcel.Click += new System.EventHandler(this.button_ExportExcel_Click);
             // 
-            // label11
-            // 
-            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label11.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label11.Location = new System.Drawing.Point(103, 120);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 21);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Xem thêm...";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // label12
-            // 
-            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label12.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label12.Location = new System.Drawing.Point(104, 120);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 21);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Xem thêm...";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label13
-            // 
-            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label13.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label13.Location = new System.Drawing.Point(95, 117);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 21);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "Xem thêm...";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // label14
-            // 
-            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label14.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label14.Location = new System.Drawing.Point(102, 117);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 21);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Xem thêm...";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
-            // label15
-            // 
-            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label15.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label15.Location = new System.Drawing.Point(103, 117);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(78, 21);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Xem thêm...";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
             // bunifuCustomDataGrid1
             // 
             this.bunifuCustomDataGrid1.AllowUserToAddRows = false;
@@ -469,7 +469,6 @@
             this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.bunifuCustomDataGrid1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

@@ -150,6 +150,9 @@ namespace MedicineManagement
             ShowUserInfoInLayout();
         }
 
-       
+        private void ucTrangChu1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

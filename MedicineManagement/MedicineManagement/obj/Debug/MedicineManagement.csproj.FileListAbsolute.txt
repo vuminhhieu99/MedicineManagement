@@ -81,3 +81,4 @@ E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManage
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\WebDriver.dll
 E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\WebDriver.xml
+E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
