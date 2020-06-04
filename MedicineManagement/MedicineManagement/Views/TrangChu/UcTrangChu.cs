@@ -19,7 +19,7 @@ namespace MedicineManagement.Views.TrangChu
         public UcTrangChu()
         {
             InitializeComponent();
-            button_ImportMedicine.Text = "Dự báo nhập thuốc tháng " + DateTime.Now.AddMonths(1).Month;
+            button_ImportMedicine.Text = " Dự báo nhập thuốc tháng " + DateTime.Now.AddMonths(1).Month;
             
         }
 
@@ -91,7 +91,6 @@ namespace MedicineManagement.Views.TrangChu
         {
             label_Title.Text = "Thống kê tồn kho";
             ucDuBaoNhapThuoc1.Visible = false;
-            ucDoanhThuChart1.Visible = false;
             ucTonkho1.Visible = true;
         }
 
@@ -100,7 +99,6 @@ namespace MedicineManagement.Views.TrangChu
             label_Title.Text = "Biểu đồ doanh thu";
             ucTonkho1.Visible = false;
             ucDuBaoNhapThuoc1.Visible = false;
-            ucDoanhThuChart1.Visible = true;
            
         }
 
@@ -108,11 +106,13 @@ namespace MedicineManagement.Views.TrangChu
         {
             label_Title.Text = button_ImportMedicine.Text;
             ucTonkho1.Visible = false;            
-            ucDoanhThuChart1.Visible = false;
             ucDuBaoNhapThuoc1.Visible = true;
 
         }
 
-     
+        private void UcTrangChu_VisibleChanged(object sender, EventArgs e)
+        {
+            UcTrangChu_Load(sender, e);
+        }
     }
 }

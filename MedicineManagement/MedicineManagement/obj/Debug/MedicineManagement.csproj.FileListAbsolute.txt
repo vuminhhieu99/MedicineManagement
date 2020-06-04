@@ -1,36 +1,32 @@
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Properties.Resources.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.GenerateResource.cache
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CoreCompileInputs.cache
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe.config
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.pdb
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\Bunifu_UI_v1.5.3.dll
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CopyComplete
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTrangChu.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.CaiDat.UcCaiDat.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.DonThuoc.UcDonThuoc.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.UcNhaCungCap.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhapHang.UcNhapHang.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.UcPhieuNhap.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.ThongTin.UcThongTin.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UcBanThuoc.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UcQuanLyThuoc.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UI_Example.UcExample.resources
-C:\Users\ADMIN\Desktop\HTTT Y tế\BTL - Medicine Management\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.FormMain.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe.config
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.pdb
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\WebDriver.dll
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\WebDriver.xml
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.UcBanThuoc.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.CaiDat.UcCaiDat.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.DonThuoc.UcDonThuoc.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.FormMain.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormAddSupplier.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormDetailSupplier.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormEditSupplier.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.UcNhaCungCap.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhapHang.UcNhapHang.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormAddInputCoupon.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormDetailInputCoupon.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormEditInputCoupon.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.UcPhieuNhap.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormAddMedicine.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormDetailMedicine.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormEditMedicine.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormFilterMedicine.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.ThongTin.UcThongTin.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDoanhThuChart.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc.resources
+C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTonkho.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTrangChu.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UI_Example.UcExample.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.GenerateResource.cache
@@ -38,90 +34,4 @@ C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\Medicin
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormAddMedicine.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormFilterMedicine.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormEditMedicine.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormDetailMedicine.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormAddSupplier.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormDetailSupplier.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormEditSupplier.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormAddMedicine.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe.config
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.pdb
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.UcBanThuoc.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.CaiDat.UcCaiDat.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.DonThuoc.UcDonThuoc.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.FormMain.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Properties.Resources.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormAddSupplier.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormDetailSupplier.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormEditSupplier.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.UcNhaCungCap.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhapHang.UcNhapHang.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormAddInputCoupon.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormDetailInputCoupon.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormEditInputCoupon.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.UcPhieuNhap.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormDetailMedicine.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormEditMedicine.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormFilterMedicine.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.ThongTin.UcThongTin.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDoanhThuChart.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTonkho.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTrangChu.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UI_Example.UcExample.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.GenerateResource.cache
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CoreCompileInputs.cache
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CopyComplete
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources
-E:\Kì 2 năm 3\Hệ thống thông tin y tế\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.UcBanThuoc.resources
 C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe.config
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.exe
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\bin\Debug\MedicineManagement.pdb
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csprojAssemblyReference.cache
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.CaiDat.UcCaiDat.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.DonThuoc.UcDonThuoc.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.FormMain.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Properties.Resources.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormAddSupplier.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormDetailSupplier.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.FormEditSupplier.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhaCungCap.UcNhaCungCap.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.NhapHang.UcNhapHang.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.UcPhieuNhap.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormAddMedicine.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormDetailMedicine.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormEditMedicine.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.FormFilterMedicine.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.ThongTin.UcThongTin.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTrangChu.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.UI_Example.UcExample.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.GenerateResource.cache
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CoreCompileInputs.cache
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.csproj.CopyComplete
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.exe
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.pdb
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormAddInputCoupon.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormDetailInputCoupon.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormEditInputCoupon.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.UcBanThuoc.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.QuanLyThuoc.UcQuanLyThuoc.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormAddInputCoupon.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormDetailInputCoupon.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.PhieuNhap.FormEditInputCoupon.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.BanThuoc.FormDetailMedicine.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDoanhThuChart.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc.resources
-D:\Kì 2 Năm 3\HTTTYTE\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTonkho.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDoanhThuChart.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcDuBaoNhapThuoc.resources
-C:\Users\ADMIN\Desktop\BTL-QLThuoc\MedicineManagement\MedicineManagement\MedicineManagement\obj\Debug\MedicineManagement.Views.TrangChu.UcTonkho.resources

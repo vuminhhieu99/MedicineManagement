@@ -14,17 +14,35 @@ namespace MedicineManagement.Views.TrangChu
     public partial class UcTonkho : UserControl
     {
         ControllerMedicine ctrl = new ControllerMedicine();
-        int Total;
+        int TotalInventory;
+        decimal TotalMoney;
         public UcTonkho()
         {
             InitializeComponent();
             bunifuCircleProgressbar1.animated = true;
-            Total = 0;
+            TotalInventory = 0;
+            TotalMoney = 0;
+        }
+        private void UpdatePrecentProgressbar()
+        {
+            TotalInventory = 0;
+            TotalMoney = 0;
+            foreach (DataGridViewRow item in bunifuCustomDataGrid1.Rows)
+            {
+                int v = 0; try { v = Convert.ToInt32(item.Cells["txtTotalInventory"].Value); } catch { v = 0; }
+                TotalInventory = TotalInventory + v;
+                decimal m = 0; try { m = Convert.ToDecimal(item.Cells["txtPrice"].Value); } catch { m = 0; }
+                TotalMoney += m;
+            }
+            if (TotalInventory == 0) { TotalInventory = 1; }            
+            label_TotalInventory.Text = TotalInventory.ToString();
+            label_TotalMoney.Text = TotalMoney.ToString();
         }
 
         private void UcTonkho_Load(object sender, EventArgs e)
         {
             bunifuCustomDataGrid1.DataSource = ctrl.WarnInventory(300000);
+            UpdatePrecentProgressbar();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,7 +63,13 @@ namespace MedicineManagement.Views.TrangChu
                 if (textBox_LimitInventory.Text != "")
                 {
                     bunifuCustomDataGrid1.DataSource = ctrl.WarnInventory(Convert.ToInt32(textBox_LimitInventory.Text));
+                    UpdatePrecentProgressbar();
                 }
+            }
+            else
+            {
+                bunifuCustomDataGrid1.DataSource = ctrl.WarnInventory(300000);
+                UpdatePrecentProgressbar();
             }
         }
 
@@ -56,38 +80,47 @@ namespace MedicineManagement.Views.TrangChu
                 if (textBox_LimitInventory.Text != "")
                 {
                     bunifuCustomDataGrid1.DataSource = ctrl.WarnInventory(Convert.ToInt32(textBox_LimitInventory.Text));
+                    UpdatePrecentProgressbar();
                 }
             }
         }
 
         private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //int row = e.RowIndex;
-            //if (row < 0)
-            //{
-            //    return;
-            //}
-            //tb_MaHang.Text = dtgv_MatHang.Rows[row].Cells["txtTotalInventory"].Value.ToString();
-            //MaHang = tb_MaHang.Text;
+            int row = e.RowIndex;
+            if (row < 0)
+            {
+                return;
+            }
+            int TotalInventory;try { TotalInventory = Convert.ToInt32( bunifuCustomDataGrid1.Rows[row].Cells["txtTotalInventory"].Value.ToString()); } catch { TotalInventory = 0; }
 
-            //if (MaHang != null && MaHang != "")
-            //{
-            //    ctrl.dsCU.Clear();
-            //    ctrl.dsLH.Clear();
-            //    dtgv_LoHang.DataSource = ctrl.LoadLoHang(MaHang);
-            //    dtgv_CungUng.DataSource = ctrl.LoadCungUng(MaHang);
-            //}
-            //else
-            //{
-            //    addMH = true;
-            //}
+            bunifuCircleProgressbar1.Value = TotalInventory;
+        }
 
-            //tb_TenHang.Text = dtgv_MatHang.Rows[row].Cells["txtTenHang"].Value.ToString();
-            //tb_DV.Text = dtgv_MatHang.Rows[row].Cells["txtDvTinh"].Value.ToString();
-            //tb_DonGia.Text = dtgv_MatHang.Rows[row].Cells["txtDonGia"].Value.ToString();
-            //cb_MaLoai.Text = dtgv_MatHang.Rows[row].Cells["txtMaLoai"].Value.ToString();
+        private void button_ExportExcel_Click(object sender, EventArgs e)
+        {
+            DataTable table = (DataTable)bunifuCustomDataGrid1.DataSource;
+            ControllerExport export = new ControllerExport();
+            export.ExportTonKho(table, "THỐNG KÊ TỒN KHO", label_TotalInventory.Text, label_TotalMoney.Text);
+        }
 
-            //tb_MaHang_LH.Text = MaHang;
+        private void UcTonkho_VisibleChanged(object sender, EventArgs e)
+        {
+            bunifuCustomDataGrid1.DataSource = ctrl.WarnInventory(300000);
+            UpdatePrecentProgressbar();
+        }
+
+        private void bunifuCustomDataGrid1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            if (row < 0)
+            {
+                return;
+            }
+            int TotalInventory; try { TotalInventory = Convert.ToInt32(bunifuCustomDataGrid1.Rows[row].Cells["txtTotalInventory"].Value.ToString()); } catch { TotalInventory = 0; }
+
+            bunifuCircleProgressbar1.Value = TotalInventory;
+           
         }
     }
 }

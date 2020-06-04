@@ -22,6 +22,7 @@ namespace MedicineManagement.Views.NhapHang
         ControllerInputCouponLine ctrdpn = new ControllerInputCouponLine();
         ControllerMedicine ctrt = new ControllerMedicine();
         ControllerInputCoupon ctrpn = new ControllerInputCoupon();
+        Inputcoupon pn = new Inputcoupon();
 
         Inputcouponline dpn = new Inputcouponline();
 
@@ -60,7 +61,7 @@ namespace MedicineManagement.Views.NhapHang
                 int index = datatb.Rows.Count - 1;
                 textBoxMaPN.Text = datatb.Rows[index][0].ToString();
 
-                textBoxtongtien.Text = FormAddInputCoupon.tongtien;
+                textBoxTongTienSo.Text = FormAddInputCoupon.tongtien;
                 textBoxMaNCC.Text = FormAddInputCoupon.maNCC;
                 dateTimePicker1.Value = (DateTime)FormAddInputCoupon.ngaylap;
             }
@@ -88,13 +89,16 @@ namespace MedicineManagement.Views.NhapHang
                     ctrdpn.Insert(dpn);
 
                     dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
-
+                    //gán lại độ dài sau khi thêm
+                    length = dataGridView2.Rows.Count;
                     for (int i = 0; i < length - 1; i++)
                     {
                         SumMoney += int.Parse(dataGridView2.Rows[i].Cells["intoMoney"].Value.ToString());
                     }
 
-                    textBoxtongtien.Text = SumMoney.ToString();
+                    textBoxTongTienSo.Text = SumMoney.ToString();
+                    textBoxTongTienChu.Text = ConvertFromNumToText.Convert(textBoxTongTienSo.Text);
+
                 }
             }
             catch (Exception)
@@ -106,48 +110,46 @@ namespace MedicineManagement.Views.NhapHang
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            int j = 0;
             int SumMoney = 0;
             int length = dataGridView2.Rows.Count;
             try
             {
 
-                dpn.ID_InputCoupon = int.Parse(textBoxMaPN.Text);
+
                 for (int i = 0; i < dataGridView2.Rows.Count - 1; i++)
                 {
-                    dpn.ID_InputCouponLine = int.Parse(dataGridView2.Rows[i].Cells[j].Value.ToString());
-                    dpn.ID_Medicine = int.Parse(dataGridView2.Rows[i].Cells[j + 1].Value.ToString());
-                    dpn.Name = dataGridView2.Rows[i].Cells[j + 2].Value.ToString();
-                    dpn.UnitInput = dataGridView2.Rows[i].Cells[j + 3].Value.ToString();
-                    dpn.Amount = int.Parse(dataGridView2.Rows[i].Cells[j + 4].Value.ToString());
-                    dpn.Price = decimal.Parse(dataGridView2.Rows[i].Cells[j + 5].Value.ToString());
-                    dpn.ExpiryDate = (DateTime)dataGridView2.Rows[i].Cells[j + 6].Value;
+                    dpn.ID_InputCoupon = int.Parse(textBoxMaPN.Text);
+                    dpn.ID_InputCouponLine = int.Parse(dataGridView2.Rows[i].Cells["maDPN"].Value.ToString());
+                    dpn.ID_Medicine = int.Parse(dataGridView2.Rows[i].Cells["maThuoc"].Value.ToString());
+                    dpn.Name = dataGridView2.Rows[i].Cells["tenThuoc"].Value.ToString();
+                    dpn.UnitInput = dataGridView2.Rows[i].Cells["donViNhap"].Value.ToString();
+                    dpn.Amount = int.Parse(dataGridView2.Rows[i].Cells["soLuong"].Value.ToString());
+                    dpn.Price = decimal.Parse(dataGridView2.Rows[i].Cells["donGia"].Value.ToString());
+                    dpn.ExpiryDate = (DateTime)dataGridView2.Rows[i].Cells["hanSD"].Value;
+                    dpn.NumUnitOutput = int.Parse(dataGridView2.Rows[i].Cells["NumUnitOutput"].Value.ToString());
                     ctrdpn.Update(dpn);
                 }
-                int indexRow = dataGridView2.Rows.Count - 2;
-                dpn.ID_InputCouponLine = int.Parse(dataGridView2.Rows[indexRow].Cells[j].Value.ToString());
-                dpn.ID_Medicine = int.Parse(dataGridView2.Rows[indexRow].Cells[j + 1].Value.ToString());
-                dpn.Name = dataGridView2.Rows[indexRow].Cells[j + 2].Value.ToString();
-                dpn.UnitInput = dataGridView2.Rows[indexRow].Cells[j + 3].Value.ToString();
-                dpn.Amount = int.Parse(dataGridView2.Rows[indexRow].Cells[j + 4].Value.ToString());
-                dpn.Price = decimal.Parse(dataGridView2.Rows[indexRow].Cells[j + 5].Value.ToString());
-                dpn.ExpiryDate = (DateTime)dataGridView2.Rows[indexRow].Cells[j + 6].Value;
-                ctrdpn.Update(dpn);
-                MessageBox.Show("Sửa Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
-
+                //gán lại độ dài sau khi load xong
+                length = dataGridView2.Rows.Count;
                 for (int i = 0; i < length - 1; i++)
                 {
                     SumMoney += int.Parse(dataGridView2.Rows[i].Cells["intoMoney"].Value.ToString());
                 }
 
-                textBoxtongtien.Text = SumMoney.ToString();
+                textBoxTongTienSo.Text = SumMoney.ToString();
+                textBoxTongTienChu.Text = ConvertFromNumToText.Convert(textBoxTongTienSo.Text);
 
+                pn.ID_InputCoupon = int.Parse(textBoxMaPN.Text);
+                pn.ID_Supplier = int.Parse(textBoxMaNCC.Text);
+                pn.CreateDate = dateTimePicker1.Value.Date;
+                pn.TotalMoney = decimal.Parse(textBoxTongTienSo.Text);
+                ctrpn.Update(pn);
+                
             }
             catch (Exception)
             {
-                MessageBox.Show("Sửa Thất Bại!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sửa Thất Bại! Kiểm tra lại điền đầy đủ thông tin!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -165,6 +167,18 @@ namespace MedicineManagement.Views.NhapHang
                     }
                 }
                 dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
+
+                int SumMoney = 0;
+                //gán lại độ dài sau khi load xong
+                length = dataGridView2.Rows.Count;
+                for (int i = 0; i < length - 1; i++)
+                {
+                    SumMoney += int.Parse(dataGridView2.Rows[i].Cells["intoMoney"].Value.ToString());
+                }
+
+                textBoxTongTienSo.Text = SumMoney.ToString();
+                textBoxTongTienChu.Text = ConvertFromNumToText.Convert(textBoxTongTienSo.Text);
+
                 MessageBox.Show("Xoá Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
@@ -188,6 +202,18 @@ namespace MedicineManagement.Views.NhapHang
                     }
                 }
                 dataGridView2.DataSource = ctrdpn.Load(textBoxMaPN.Text);
+
+                int SumMoney = 0;
+                //gán lại độ dài sau khi load xong
+                length = dataGridView2.Rows.Count - 1;
+                for (int i = 0; i < length; i++)
+                {
+                    SumMoney += int.Parse(dataGridView2.Rows[i].Cells["intoMoney"].Value.ToString());
+                }
+
+                textBoxTongTienSo.Text = SumMoney.ToString();
+                textBoxTongTienChu.Text = ConvertFromNumToText.Convert(textBoxTongTienSo.Text);
+
                 MessageBox.Show("Xoá Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
@@ -196,12 +222,27 @@ namespace MedicineManagement.Views.NhapHang
 
             }
 
-            
         }
         private void UcNhapHang_VisibleChanged(object sender, EventArgs e)
         {
             label_UserName.Text = ControllerBase.userInfo.UserName.ToUpper();
             label_UserAddress.Text = ControllerBase.userInfo.UserAddress;
+        }
+
+        private void btn_Export_Click(object sender, EventArgs e)
+        {
+            ControllerExport export = new ControllerExport();
+
+
+            DataTable table = ctrdpn.Load(textBoxMaPN.Text);
+
+            pn.ID_InputCoupon = Convert.ToInt32(textBoxMaPN.Text);
+            pn.CreateDate = dateTimePicker1.Value;
+            pn.ID_Supplier = Convert.ToInt32(textBoxMaNCC.Text);
+            pn.TotalMoney = Convert.ToInt32(textBoxTongTienSo.Text);
+
+            export.ExportInputCoupon(pn, table, "PHIEU NHAP");
+
         }
     }
 }

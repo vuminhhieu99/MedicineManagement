@@ -258,8 +258,8 @@ namespace MedicineManagement.Controllers
 
             if (ID_InputCoupon == "" || ID_Medicine == "") { return query; }
             if (Name == "") { Name = "null"; }
-            if (UnitInput == "") { UnitInput = "null"; }
-            if (Amount == "") { Amount = "0"; }
+            if (UnitInput == "") { UnitInput = "Hộp"; }
+            if (Amount == "") { Amount = "1"; }
             if (Price == "") { Price = "0"; }
             if (ExpiryDate == "") { ExpiryDate = "null"; }
             if (NumUnitOutput == "") { NumUnitOutput = "1"; }
