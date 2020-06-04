@@ -45,18 +45,18 @@
             this.label_TotalMoney = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.button_ExportExcel = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.textBox_LimitInventory = new System.Windows.Forms.TextBox();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtID_Medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMedicineGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTotalInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_ExportExcel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.textBox_LimitInventory = new System.Windows.Forms.TextBox();
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -232,6 +232,49 @@
             this.bunifuCustomDataGrid1.TabIndex = 14;
             this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick_1);
             // 
+            // txtName
+            // 
+            this.txtName.DataPropertyName = "Name";
+            this.txtName.HeaderText = "Tên thuốc";
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            // 
+            // txtID_Medicine
+            // 
+            this.txtID_Medicine.DataPropertyName = "ID_Medicine";
+            this.txtID_Medicine.HeaderText = "ID_Medicine";
+            this.txtID_Medicine.Name = "txtID_Medicine";
+            this.txtID_Medicine.ReadOnly = true;
+            this.txtID_Medicine.Visible = false;
+            // 
+            // txtMedicineGroup
+            // 
+            this.txtMedicineGroup.DataPropertyName = "MedicineGroup";
+            this.txtMedicineGroup.HeaderText = "Nhóm thuốc";
+            this.txtMedicineGroup.Name = "txtMedicineGroup";
+            this.txtMedicineGroup.ReadOnly = true;
+            // 
+            // txtTotalInventory
+            // 
+            this.txtTotalInventory.DataPropertyName = "TotalInventory";
+            this.txtTotalInventory.HeaderText = "Tồn kho";
+            this.txtTotalInventory.Name = "txtTotalInventory";
+            this.txtTotalInventory.ReadOnly = true;
+            // 
+            // txtUnit
+            // 
+            this.txtUnit.DataPropertyName = "Unit";
+            this.txtUnit.HeaderText = "Đơn vị";
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.ReadOnly = true;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.DataPropertyName = "Price";
+            this.txtPrice.HeaderText = "Giá";
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            // 
             // button_ExportExcel
             // 
             this.button_ExportExcel.Activecolor = System.Drawing.Color.ForestGreen;
@@ -313,11 +356,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(1010, 358);
+            this.label2.Location = new System.Drawing.Point(947, 358);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 29);
+            this.label2.Size = new System.Drawing.Size(298, 29);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Số lượng đã bán";
+            this.label2.Text = "Số lượng đã bán trong tháng";
             // 
             // bunifuCircleProgressbar1
             // 
@@ -340,49 +383,6 @@
             this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(207, 207);
             this.bunifuCircleProgressbar1.TabIndex = 2;
             this.bunifuCircleProgressbar1.Value = 0;
-            // 
-            // txtName
-            // 
-            this.txtName.DataPropertyName = "Name";
-            this.txtName.HeaderText = "Tên thuốc";
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            // 
-            // txtID_Medicine
-            // 
-            this.txtID_Medicine.DataPropertyName = "ID_Medicine";
-            this.txtID_Medicine.HeaderText = "ID_Medicine";
-            this.txtID_Medicine.Name = "txtID_Medicine";
-            this.txtID_Medicine.ReadOnly = true;
-            this.txtID_Medicine.Visible = false;
-            // 
-            // txtMedicineGroup
-            // 
-            this.txtMedicineGroup.DataPropertyName = "MedicineGroup";
-            this.txtMedicineGroup.HeaderText = "Nhóm thuốc";
-            this.txtMedicineGroup.Name = "txtMedicineGroup";
-            this.txtMedicineGroup.ReadOnly = true;
-            // 
-            // txtTotalInventory
-            // 
-            this.txtTotalInventory.DataPropertyName = "TotalInventory";
-            this.txtTotalInventory.HeaderText = "Tồn kho";
-            this.txtTotalInventory.Name = "txtTotalInventory";
-            this.txtTotalInventory.ReadOnly = true;
-            // 
-            // txtUnit
-            // 
-            this.txtUnit.DataPropertyName = "Unit";
-            this.txtUnit.HeaderText = "Đơn vị";
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.ReadOnly = true;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.DataPropertyName = "Price";
-            this.txtPrice.HeaderText = "Giá";
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
             // 
             // UcTonkho
             // 
