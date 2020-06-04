@@ -62,8 +62,9 @@ namespace MedicineManagement.Controllers
 
                         DateTime createDate;try { createDate = Convert.ToDateTime(row["createDate"].ToString()); } catch { continue; }
                         if(createDate.Month == Pmonth)
-                        {                            
-                            cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                        {
+                            long v; try {v = Convert.ToInt64(row["totalMoney"].ToString()); } catch { v = 0; }
+                            cl.value += v;
                             ++chart.Counting;
                         }
                     }
@@ -127,7 +128,8 @@ namespace MedicineManagement.Controllers
                         DateTime createDate; try { createDate = Convert.ToDateTime(row["createDate"].ToString()); } catch { continue; }
                         if (createDate.Day == Pday)
                         {
-                            cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            long v; try { v = Convert.ToInt64(row["totalMoney"].ToString()); } catch { v = 0; }
+                            cl.value += v;
                             ++chart.Counting;
                         }
                     }
@@ -192,7 +194,8 @@ namespace MedicineManagement.Controllers
                         DateTime createDate; try { createDate = Convert.ToDateTime(row["createDate"].ToString()); } catch { continue; }
                         if (createDate.Year == Pyear)
                         {
-                            cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            long v; try { v = Convert.ToInt64(row["totalMoney"].ToString()); } catch { v = 0; }
+                            cl.value += v;
                             ++chart.Counting;
                         }
                     }
@@ -266,7 +269,8 @@ namespace MedicineManagement.Controllers
                         DateTime createDate; try { createDate = Convert.ToDateTime(row["createDate"].ToString()); } catch { continue; }
                         if (createDate.Month == Pmonth)
                         {
-                            cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            long v; try {v= Convert.ToInt64(row["totalMoney"].ToString()); } catch { v = 0; }
+                            cl.value += v;
                             ++chart.Counting;
                         }
                     }
@@ -333,7 +337,8 @@ namespace MedicineManagement.Controllers
                         DateTime createDate; try { createDate = Convert.ToDateTime(row["createDate"].ToString()); } catch { continue; }
                         if (createDate.Day == Pday)
                         {
-                            cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            long v; try { v= Convert.ToInt64(row["totalMoney"].ToString()); } catch { v = 0; }
+                            cl.value += v;
                             ++chart.Counting;
                         }
                     }
@@ -398,7 +403,8 @@ namespace MedicineManagement.Controllers
                         DateTime createDate; try { createDate = Convert.ToDateTime(row["createDate"].ToString()); } catch { continue; }
                         if (createDate.Year == Pyear)
                         {
-                            cl.value += Convert.ToInt64(row["totalMoney"].ToString());
+                            long v; try { v=  Convert.ToInt64(row["totalMoney"].ToString()); } catch { v = 0; }
+                            cl.value += v;
                             ++chart.Counting;
                         }
                     }

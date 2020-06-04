@@ -34,14 +34,14 @@
             this.label_CountRecord = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMedicineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitInputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.intoMoneyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maDPN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donViNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hanSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.intoMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iNPUTCOUPONLINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyThuocDataSet = new MedicineManagement.QuanLyThuocDataSet();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -140,70 +140,72 @@
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.iDMedicineDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.unitInputDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.expiryDateDataGridViewTextBoxColumn,
-            this.intoMoneyDataGridViewTextBoxColumn});
+            this.maDPN,
+            this.maThuoc,
+            this.tenThuoc,
+            this.donViNhap,
+            this.soLuong,
+            this.donGia,
+            this.hanSD,
+            this.intoMoney});
             this.dataGridView2.DataSource = this.iNPUTCOUPONLINEBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(40, 228);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(624, 338);
             this.dataGridView2.TabIndex = 80;
             // 
-            // Column1
+            // maDPN
             // 
-            this.Column1.DataPropertyName = "ID_InputCouponLine";
-            this.Column1.HeaderText = "Mã DPN";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.maDPN.DataPropertyName = "ID_InputCouponLine";
+            this.maDPN.HeaderText = "Mã DPN";
+            this.maDPN.Name = "maDPN";
+            this.maDPN.ReadOnly = true;
             // 
-            // iDMedicineDataGridViewTextBoxColumn
+            // maThuoc
             // 
-            this.iDMedicineDataGridViewTextBoxColumn.DataPropertyName = "ID_Medicine";
-            this.iDMedicineDataGridViewTextBoxColumn.HeaderText = "Mã Thuốc";
-            this.iDMedicineDataGridViewTextBoxColumn.Name = "iDMedicineDataGridViewTextBoxColumn";
+            this.maThuoc.DataPropertyName = "ID_Medicine";
+            this.maThuoc.HeaderText = "Mã Thuốc";
+            this.maThuoc.Name = "maThuoc";
             // 
-            // nameDataGridViewTextBoxColumn
+            // tenThuoc
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Thuốc";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.tenThuoc.DataPropertyName = "Name";
+            this.tenThuoc.HeaderText = "Thuốc";
+            this.tenThuoc.Name = "tenThuoc";
             // 
-            // unitInputDataGridViewTextBoxColumn
+            // donViNhap
             // 
-            this.unitInputDataGridViewTextBoxColumn.DataPropertyName = "UnitInput";
-            this.unitInputDataGridViewTextBoxColumn.HeaderText = "Đơn Vị";
-            this.unitInputDataGridViewTextBoxColumn.Name = "unitInputDataGridViewTextBoxColumn";
+            this.donViNhap.DataPropertyName = "UnitInput";
+            this.donViNhap.HeaderText = "Đơn Vị";
+            this.donViNhap.Name = "donViNhap";
             // 
-            // amountDataGridViewTextBoxColumn
+            // soLuong
             // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Số Lượng";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.soLuong.DataPropertyName = "Amount";
+            this.soLuong.HeaderText = "Số Lượng";
+            this.soLuong.Name = "soLuong";
             // 
-            // priceDataGridViewTextBoxColumn
+            // donGia
             // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Đơn Giá";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.donGia.DataPropertyName = "Price";
+            this.donGia.HeaderText = "Đơn Giá";
+            this.donGia.Name = "donGia";
             // 
-            // expiryDateDataGridViewTextBoxColumn
+            // hanSD
             // 
-            this.expiryDateDataGridViewTextBoxColumn.DataPropertyName = "ExpiryDate";
-            this.expiryDateDataGridViewTextBoxColumn.HeaderText = "Hạn SD";
-            this.expiryDateDataGridViewTextBoxColumn.Name = "expiryDateDataGridViewTextBoxColumn";
+            this.hanSD.DataPropertyName = "ExpiryDate";
+            this.hanSD.HeaderText = "Hạn SD";
+            this.hanSD.Name = "hanSD";
+            this.hanSD.Visible = false;
             // 
-            // intoMoneyDataGridViewTextBoxColumn
+            // intoMoney
             // 
-            this.intoMoneyDataGridViewTextBoxColumn.DataPropertyName = "IntoMoney";
-            this.intoMoneyDataGridViewTextBoxColumn.HeaderText = "Thành Tiền";
-            this.intoMoneyDataGridViewTextBoxColumn.Name = "intoMoneyDataGridViewTextBoxColumn";
+            this.intoMoney.DataPropertyName = "IntoMoney";
+            this.intoMoney.HeaderText = "Thành Tiền";
+            this.intoMoney.Name = "intoMoney";
             // 
             // iNPUTCOUPONLINEBindingSource
             // 
@@ -268,6 +270,7 @@
             this.textBoxMaPN.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMaPN.Location = new System.Drawing.Point(161, 122);
             this.textBoxMaPN.Name = "textBoxMaPN";
+            this.textBoxMaPN.ReadOnly = true;
             this.textBoxMaPN.Size = new System.Drawing.Size(209, 27);
             this.textBoxMaPN.TabIndex = 76;
             // 
@@ -379,6 +382,7 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDInputCouponDataGridViewTextBoxColumn,
@@ -584,6 +588,7 @@
             this.btn_Export.Size = new System.Drawing.Size(124, 45);
             this.btn_Export.TabIndex = 93;
             this.btn_Export.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
             // 
             // btn_Create
             // 
@@ -686,13 +691,13 @@
         private System.Windows.Forms.DataGridViewImageColumn detail;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMedicineDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitInputDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expiryDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intoMoneyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maDPN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donViNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hanSD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intoMoney;
     }
 }

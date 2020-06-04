@@ -59,6 +59,7 @@
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.button_ExportExcel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtID_Medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +75,7 @@
             this.bunifuCards6.SuspendLayout();
             this.bunifuCards8.SuspendLayout();
             this.bunifuCards10.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +90,7 @@
             this.bunifuCards1.Controls.Add(this.label1);
             this.bunifuCards1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(326, 320);
+            this.bunifuCards1.Location = new System.Drawing.Point(293, 320);
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
@@ -150,7 +152,7 @@
             this.bunifuCards4.Controls.Add(this.label4);
             this.bunifuCards4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards4.LeftSahddow = false;
-            this.bunifuCards4.Location = new System.Drawing.Point(79, 320);
+            this.bunifuCards4.Location = new System.Drawing.Point(33, 320);
             this.bunifuCards4.Name = "bunifuCards4";
             this.bunifuCards4.RightSahddow = true;
             this.bunifuCards4.ShadowDepth = 20;
@@ -202,7 +204,7 @@
             this.bunifuCards6.Controls.Add(this.label6);
             this.bunifuCards6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards6.LeftSahddow = false;
-            this.bunifuCards6.Location = new System.Drawing.Point(565, 320);
+            this.bunifuCards6.Location = new System.Drawing.Point(560, 320);
             this.bunifuCards6.Name = "bunifuCards6";
             this.bunifuCards6.RightSahddow = true;
             this.bunifuCards6.ShadowDepth = 20;
@@ -243,7 +245,7 @@
             this.bunifuCards8.Controls.Add(this.label8);
             this.bunifuCards8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards8.LeftSahddow = false;
-            this.bunifuCards8.Location = new System.Drawing.Point(809, 320);
+            this.bunifuCards8.Location = new System.Drawing.Point(825, 320);
             this.bunifuCards8.Name = "bunifuCards8";
             this.bunifuCards8.RightSahddow = true;
             this.bunifuCards8.ShadowDepth = 20;
@@ -294,7 +296,7 @@
             this.bunifuCards10.Controls.Add(this.label10);
             this.bunifuCards10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards10.LeftSahddow = false;
-            this.bunifuCards10.Location = new System.Drawing.Point(1055, 320);
+            this.bunifuCards10.Location = new System.Drawing.Point(1083, 320);
             this.bunifuCards10.Name = "bunifuCards10";
             this.bunifuCards10.RightSahddow = true;
             this.bunifuCards10.ShadowDepth = 20;
@@ -344,7 +346,7 @@
             this.bunifuCards9.color = System.Drawing.Color.Transparent;
             this.bunifuCards9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards9.LeftSahddow = false;
-            this.bunifuCards9.Location = new System.Drawing.Point(1067, 267);
+            this.bunifuCards9.Location = new System.Drawing.Point(1095, 267);
             this.bunifuCards9.Name = "bunifuCards9";
             this.bunifuCards9.RightSahddow = true;
             this.bunifuCards9.ShadowDepth = 20;
@@ -361,7 +363,7 @@
             this.bunifuCards5.color = System.Drawing.Color.Transparent;
             this.bunifuCards5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards5.LeftSahddow = false;
-            this.bunifuCards5.Location = new System.Drawing.Point(577, 267);
+            this.bunifuCards5.Location = new System.Drawing.Point(572, 267);
             this.bunifuCards5.Name = "bunifuCards5";
             this.bunifuCards5.RightSahddow = true;
             this.bunifuCards5.ShadowDepth = 20;
@@ -378,7 +380,7 @@
             this.bunifuCards7.color = System.Drawing.Color.Transparent;
             this.bunifuCards7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards7.LeftSahddow = false;
-            this.bunifuCards7.Location = new System.Drawing.Point(818, 267);
+            this.bunifuCards7.Location = new System.Drawing.Point(834, 267);
             this.bunifuCards7.Name = "bunifuCards7";
             this.bunifuCards7.RightSahddow = true;
             this.bunifuCards7.ShadowDepth = 20;
@@ -395,7 +397,7 @@
             this.bunifuCards3.color = System.Drawing.Color.Transparent;
             this.bunifuCards3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards3.LeftSahddow = false;
-            this.bunifuCards3.Location = new System.Drawing.Point(91, 267);
+            this.bunifuCards3.Location = new System.Drawing.Point(45, 267);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 20;
@@ -412,7 +414,7 @@
             this.bunifuCards2.color = System.Drawing.Color.Transparent;
             this.bunifuCards2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(340, 267);
+            this.bunifuCards2.Location = new System.Drawing.Point(307, 267);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 20;
@@ -425,7 +427,7 @@
             this.button_ExportExcel.BackColor = System.Drawing.Color.ForestGreen;
             this.button_ExportExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_ExportExcel.BorderRadius = 5;
-            this.button_ExportExcel.ButtonText = "Xuất file Excel";
+            this.button_ExportExcel.ButtonText = "     Xuất file Excel";
             this.button_ExportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_ExportExcel.DisabledColor = System.Drawing.Color.Gray;
             this.button_ExportExcel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -441,20 +443,29 @@
             this.button_ExportExcel.IconVisible = true;
             this.button_ExportExcel.IconZoom = 80D;
             this.button_ExportExcel.IsTab = false;
-            this.button_ExportExcel.Location = new System.Drawing.Point(1142, 85);
+            this.button_ExportExcel.Location = new System.Drawing.Point(1074, 12);
             this.button_ExportExcel.Margin = new System.Windows.Forms.Padding(4);
             this.button_ExportExcel.Name = "button_ExportExcel";
             this.button_ExportExcel.Normalcolor = System.Drawing.Color.ForestGreen;
-            this.button_ExportExcel.OnHovercolor = System.Drawing.Color.Lime;
-            this.button_ExportExcel.OnHoverTextColor = System.Drawing.Color.DarkOliveGreen;
+            this.button_ExportExcel.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.button_ExportExcel.OnHoverTextColor = System.Drawing.Color.White;
             this.button_ExportExcel.selected = false;
-            this.button_ExportExcel.Size = new System.Drawing.Size(166, 59);
+            this.button_ExportExcel.Size = new System.Drawing.Size(208, 45);
             this.button_ExportExcel.TabIndex = 15;
-            this.button_ExportExcel.Text = "Xuất file Excel";
-            this.button_ExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button_ExportExcel.Text = "     Xuất file Excel";
+            this.button_ExportExcel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_ExportExcel.Textcolor = System.Drawing.Color.White;
-            this.button_ExportExcel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ExportExcel.TextFont = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ExportExcel.Click += new System.EventHandler(this.button_ExportExcel_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.bunifuCustomDataGrid1);
+            this.panel1.Location = new System.Drawing.Point(30, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1034, 242);
+            this.panel1.TabIndex = 16;
             // 
             // bunifuCustomDataGrid1
             // 
@@ -468,8 +479,9 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bunifuCustomDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.FloralWhite;
+            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuCustomDataGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.bunifuCustomDataGrid1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -503,7 +515,7 @@
             this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.WhiteSmoke;
             this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.MidnightBlue;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(12, 12);
+            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(2, 1);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.ReadOnly = true;
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -522,8 +534,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.bunifuCustomDataGrid1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.bunifuCustomDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1099, 238);
-            this.bunifuCustomDataGrid1.TabIndex = 16;
+            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1031, 238);
+            this.bunifuCustomDataGrid1.TabIndex = 20;
             // 
             // txtName
             // 
@@ -595,7 +607,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bunifuCustomDataGrid1);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button_ExportExcel);
             this.Controls.Add(this.bunifuCards9);
             this.Controls.Add(this.bunifuCards10);
@@ -607,8 +621,9 @@
             this.Controls.Add(this.bunifuCards4);
             this.Controls.Add(this.bunifuCards2);
             this.Controls.Add(this.bunifuCards1);
+            this.Location = new System.Drawing.Point(-1, 3);
             this.Name = "UcDuBaoNhapThuoc";
-            this.Size = new System.Drawing.Size(1312, 468);
+            this.Size = new System.Drawing.Size(1306, 466);
             this.Load += new System.EventHandler(this.UcDuBaoNhapThuoc_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
@@ -620,6 +635,7 @@
             this.bunifuCards8.PerformLayout();
             this.bunifuCards10.ResumeLayout(false);
             this.bunifuCards10.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.ResumeLayout(false);
 
@@ -652,6 +668,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private Bunifu.Framework.UI.BunifuFlatButton button_ExportExcel;
+        private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtID_Medicine;
