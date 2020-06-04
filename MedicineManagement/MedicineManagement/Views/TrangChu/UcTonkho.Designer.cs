@@ -45,17 +45,18 @@
             this.label_TotalMoney = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMedicineGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtTotalInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_ExportExcel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.textBox_LimitInventory = new System.Windows.Forms.TextBox();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtID_Medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMedicineGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotalInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyThuocDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -190,6 +191,7 @@
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtName,
+            this.txtID_Medicine,
             this.txtMedicineGroup,
             this.txtTotalInventory,
             this.txtUnit,
@@ -229,41 +231,6 @@
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(850, 408);
             this.bunifuCustomDataGrid1.TabIndex = 14;
             this.bunifuCustomDataGrid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bunifuCustomDataGrid1_CellClick_1);
-            // 
-            // txtName
-            // 
-            this.txtName.DataPropertyName = "Name";
-            this.txtName.HeaderText = "Tên thuốc";
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            // 
-            // txtMedicineGroup
-            // 
-            this.txtMedicineGroup.DataPropertyName = "MedicineGroup";
-            this.txtMedicineGroup.HeaderText = "Nhóm thuốc";
-            this.txtMedicineGroup.Name = "txtMedicineGroup";
-            this.txtMedicineGroup.ReadOnly = true;
-            // 
-            // txtTotalInventory
-            // 
-            this.txtTotalInventory.DataPropertyName = "TotalInventory";
-            this.txtTotalInventory.HeaderText = "Tồn kho";
-            this.txtTotalInventory.Name = "txtTotalInventory";
-            this.txtTotalInventory.ReadOnly = true;
-            // 
-            // txtUnit
-            // 
-            this.txtUnit.DataPropertyName = "Unit";
-            this.txtUnit.HeaderText = "Đơn vị";
-            this.txtUnit.Name = "txtUnit";
-            this.txtUnit.ReadOnly = true;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.DataPropertyName = "Price";
-            this.txtPrice.HeaderText = "Giá";
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
             // 
             // button_ExportExcel
             // 
@@ -374,6 +341,49 @@
             this.bunifuCircleProgressbar1.TabIndex = 2;
             this.bunifuCircleProgressbar1.Value = 0;
             // 
+            // txtName
+            // 
+            this.txtName.DataPropertyName = "Name";
+            this.txtName.HeaderText = "Tên thuốc";
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            // 
+            // txtID_Medicine
+            // 
+            this.txtID_Medicine.DataPropertyName = "ID_Medicine";
+            this.txtID_Medicine.HeaderText = "ID_Medicine";
+            this.txtID_Medicine.Name = "txtID_Medicine";
+            this.txtID_Medicine.ReadOnly = true;
+            this.txtID_Medicine.Visible = false;
+            // 
+            // txtMedicineGroup
+            // 
+            this.txtMedicineGroup.DataPropertyName = "MedicineGroup";
+            this.txtMedicineGroup.HeaderText = "Nhóm thuốc";
+            this.txtMedicineGroup.Name = "txtMedicineGroup";
+            this.txtMedicineGroup.ReadOnly = true;
+            // 
+            // txtTotalInventory
+            // 
+            this.txtTotalInventory.DataPropertyName = "TotalInventory";
+            this.txtTotalInventory.HeaderText = "Tồn kho";
+            this.txtTotalInventory.Name = "txtTotalInventory";
+            this.txtTotalInventory.ReadOnly = true;
+            // 
+            // txtUnit
+            // 
+            this.txtUnit.DataPropertyName = "Unit";
+            this.txtUnit.HeaderText = "Đơn vị";
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.ReadOnly = true;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.DataPropertyName = "Price";
+            this.txtPrice.HeaderText = "Giá";
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
+            // 
             // UcTonkho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,6 +424,7 @@
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtID_Medicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtMedicineGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtTotalInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtUnit;

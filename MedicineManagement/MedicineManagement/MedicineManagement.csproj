@@ -320,6 +320,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TrangChu\UcTonkho.resx">
       <DependentUpon>UcTonkho.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TrangChu\UcTrangChu.resx">
       <DependentUpon>UcTrangChu.cs</DependentUpon>

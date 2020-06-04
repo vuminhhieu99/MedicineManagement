@@ -273,5 +273,48 @@ namespace MedicineManagement.Controllers
             string query = "Delete DBO.PRESCRIPTIONLINE WHERE ID_Prescription = " + ID_Prescription + " AND ID_Medicine = "+ ID_Medicine;
             ExecuteNonQuery(query);            
         }
+
+        public int SellInMonth(string ID_Medicine)
+        {
+            int totalAmount = 0;
+            if(ID_Medicine == null || ID_Medicine == "")
+            {
+                return totalAmount;            }
+
+
+
+            ID_Medicine = ID_Medicine.Trim();
+
+            int month = DateTime.Now.Month;
+            string query= "SELECT Amount FROM DBO.PRESCRIPTIONLINE INNER JOIN PRESCRIPTION ON PRESCRIPTIONLINE.ID_Prescription = PRESCRIPTION.ID_Prescription AND MONTH(PRESCRIPTION.CreateDate) = MONTH(GETDATE()) AND PRESCRIPTIONLINE.ID_Medicine = " + ID_Medicine;
+                       
+
+            try
+            {
+                DataTable dt = new DataTable();
+                ds.Clear();             
+               
+                adapter.SelectCommand = new SqlCommand(query, connection);
+                cb = new SqlCommandBuilder(adapter);
+                adapter.Fill(ds, "PRESCRIPTIONLINE");
+                dt = ds.Tables["PRESCRIPTIONLINE"];
+               
+                foreach (DataRow row in dt.Rows)
+                {
+                    int value; try { value = Convert.ToInt32(row["Amount"].ToString()); } catch { continue; }
+                    totalAmount += value;                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return totalAmount;
+        }
+
     }
 }
