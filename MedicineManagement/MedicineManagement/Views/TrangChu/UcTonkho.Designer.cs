@@ -46,6 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.txtName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtID_Medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMedicineGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTotalInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -190,6 +191,7 @@
             this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtName,
+            this.txtID_Medicine,
             this.txtMedicineGroup,
             this.txtTotalInventory,
             this.txtUnit,
@@ -236,6 +238,14 @@
             this.txtName.HeaderText = "Tên thuốc";
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
+            // 
+            // txtID_Medicine
+            // 
+            this.txtID_Medicine.DataPropertyName = "ID_Medicine";
+            this.txtID_Medicine.HeaderText = "ID_Medicine";
+            this.txtID_Medicine.Name = "txtID_Medicine";
+            this.txtID_Medicine.ReadOnly = true;
+            this.txtID_Medicine.Visible = false;
             // 
             // txtMedicineGroup
             // 
@@ -346,11 +356,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(1010, 358);
+            this.label2.Location = new System.Drawing.Point(947, 358);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 29);
+            this.label2.Size = new System.Drawing.Size(298, 29);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Số lượng đã bán";
+            this.label2.Text = "Số lượng đã bán trong tháng";
             // 
             // bunifuCircleProgressbar1
             // 
@@ -414,6 +424,7 @@
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtID_Medicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtMedicineGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtTotalInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtUnit;

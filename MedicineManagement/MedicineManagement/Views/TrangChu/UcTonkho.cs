@@ -85,17 +85,7 @@ namespace MedicineManagement.Views.TrangChu
             }
         }
 
-        private void bunifuCustomDataGrid1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int row = e.RowIndex;
-            if (row < 0)
-            {
-                return;
-            }
-            int TotalInventory;try { TotalInventory = Convert.ToInt32( bunifuCustomDataGrid1.Rows[row].Cells["txtTotalInventory"].Value.ToString()); } catch { TotalInventory = 0; }
-
-            bunifuCircleProgressbar1.Value = TotalInventory;
-        }
+        
 
         private void button_ExportExcel_Click(object sender, EventArgs e)
         {
@@ -118,8 +108,20 @@ namespace MedicineManagement.Views.TrangChu
                 return;
             }
             int TotalInventory; try { TotalInventory = Convert.ToInt32(bunifuCustomDataGrid1.Rows[row].Cells["txtTotalInventory"].Value.ToString()); } catch { TotalInventory = 0; }
+            
+            string ID_Medicine;
+            try
+            {
+                ID_Medicine = bunifuCustomDataGrid1.Rows[row].Cells["txtID_Medicine"].Value.ToString();
+                ControllerPrescriptionLine ctrl = new ControllerPrescriptionLine();
+                int sellInMonth = ctrl.SellInMonth(ID_Medicine);
+                bunifuCircleProgressbar1.MaxValue = sellInMonth + TotalInventory;
+                bunifuCircleProgressbar1.Value = sellInMonth;
+            }
+            catch(Exception ex) { bunifuCircleProgressbar1.MaxValue = TotalInventory; }
+            
+            
 
-            bunifuCircleProgressbar1.Value = TotalInventory;
            
         }
     }

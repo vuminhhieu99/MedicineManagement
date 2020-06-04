@@ -175,6 +175,9 @@ namespace MedicineManagement.Views.DonThuoc
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            
+            
+
             dataGridView2.Columns["Số lượng"].ReadOnly = true; // khong cho phep sua nua
 
             string strTotalMoney = textBox_TotalMoney_ByNum.Text;
